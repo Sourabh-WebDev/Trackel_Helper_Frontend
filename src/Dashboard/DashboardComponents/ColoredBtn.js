@@ -9,7 +9,7 @@ const ColoredBtn = ({ btnName, bg, color, onClick }) => {
                 sx={{
                     backgroundColor: bg,
                     color: color,
-                    fontSize: "14px",
+                    fontSize: "12px",
                     fontWeight: "600",
                     padding: "15px 25px",
                 }}

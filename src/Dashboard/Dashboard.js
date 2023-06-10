@@ -163,7 +163,7 @@ const Dashboard = () => {
                     <ColoredBtn btnName={"Due Order"} bg={"#adadec"} color={"black"} />
                     <ColoredBtn btnName={"Pending Order"} bg={"#ffa500"} color={"black"} />
 
-                    <Box>
+                    {/* <Box>
                         <Button
                             sx={{
                                 backgroundColor: "#112c85",
@@ -176,7 +176,7 @@ const Dashboard = () => {
                             <DownloadOutlinedIcon sx={{ mr: "10px" }} />
                             Download Reports
                         </Button>
-                    </Box>
+                    </Box> */}
                 </Box>
 
                 {/* GRID & CHARTS */}
