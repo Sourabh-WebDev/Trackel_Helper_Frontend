@@ -189,14 +189,14 @@ body {
         padding: 10px;
     }
 
-    .footerform {
+    /* .footerform {
         position: absolute;
         width: 100%;
         transform: translate(20%, -75%);
         background-color: #fff;
         border-radius: 15px;
         padding: 50px;
-    }
+    } */
 
     .ThirdSectionRotatedLeft {
         transform: rotate(-0deg) !important;
@@ -367,11 +367,11 @@ body {
 
 .footerform {
     position: absolute;
-    width: 70%;
-    transform: translate(20%, -75%);
+    width: 90%;
+    transform: translate(5%, -80%);
     background-color: #fff;
     border-radius: 15px;
-    padding: 50px;
+    padding: 20px;
 }
 
 .emailInput {
