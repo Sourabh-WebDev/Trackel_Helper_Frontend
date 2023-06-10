@@ -1,0 +1,54 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.topBarImg {
+  min-width: 3rem;
+  max-height: 3rem;
+  max-width: 3rem;
+  min-height: 3rem;
+}
+
+button.Dash_dropDownBtn.btn.btn-secondary {
+  background: transparent !important;
+  color: #4d4d4d !important;
+  border-color: transparent !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+button.Dash_dropDownBtn.btn.btn-secondary:hover {
+  background: rgb(17, 44, 133) !important;
+  color: #e7e7e7 !important;
+  border-color: transparent !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+button.Dash_dropDownBtn_Active.btn.btn-secondary {
+  background: rgb(17, 44, 133) !important;
+  color: #e7e7e7 !important;
+  border-color: transparent !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+
+.AdjustWidthOfColumn {
+  width: fit-content !important;
+}
