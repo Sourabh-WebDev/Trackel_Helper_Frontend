@@ -1,5 +1,6 @@
 import React from 'react'
 import Slider from "react-slick";
+import Card from 'react-bootstrap/Card';
 
 const FifthSection = () => {
 
@@ -15,7 +16,7 @@ const FifthSection = () => {
 
     return (
         <div className='text-center p-4'>
-            <h2>Testimonal</h2>
+            <h2>Testimonial</h2>
             <Slider {...settings} className=''>
                 <div className='py-5'>
                     <center>
