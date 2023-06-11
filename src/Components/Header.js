@@ -9,7 +9,7 @@ function Header() {
     return (
         <Navbar className='bgColour' expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">
+                <Navbar.Brand className='animate__animated animate__flipInY' href="/">
                     <img src={Logo} alt="MainLogo" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />

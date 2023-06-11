@@ -11,18 +11,18 @@ const Navbar = () => {
                     <Col sm={12} xl={6}>
                         <div className='NavbarChild' >
                             <div className='px-2'>
-                                <FiPhone /> <span>+91 9999999999</span>
+                                <FiPhone /> <span> 0522-4300589</span>
                             </div>
                             |
                             <div className='px-2'>
-                                <FiClock /> <span>Mon - Fri 08:00 - 20:00 / Closed on Weekends</span>
+                                <FiClock /> <span>Mon - Sun 12Hours / We are 12*7 available</span>
                             </div>
                         </div>
                     </Col>
                     <Col sm={12} xl={6}>
                         <div className='NavbarChild' >
                             <div className='px-2'>
-                                <span>© 2017 Qode Interactive, All Rights Reserved</span>
+                                <span>© 2019 - 2023 All rights reserved | Helper Services</span>
                             </div>
                             |
                             <div className='px-2 NavbarChild'>

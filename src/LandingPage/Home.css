@@ -228,7 +228,7 @@ body {
     background-color: #142572;
     color: #fff;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -243,7 +243,7 @@ body {
     padding-top: 10px;
     background-color: transparent;
     border: 1px solid #eedc30;
-    border-radius: 0px;
+    border-radius: 35px;
 }
 
 .cardHover {
@@ -260,12 +260,13 @@ body {
 .bgSecondSectionServiceCard {
     position: absolute;
     background-color: whitesmoke;
-    min-width: 200px;
+    min-width: 150px;
     max-width: 200px;
     word-wrap: break-word;
-    left: 25px;
+    left: 50px;
     bottom: -35px;
     border-radius: 5px;
+    padding: 15px;
 }
 
 .ThirdSectionRotatedLeft {
