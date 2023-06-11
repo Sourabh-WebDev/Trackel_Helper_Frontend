@@ -291,11 +291,36 @@ body {
     transform: rotate(10deg);
 }
 
+.SixthSectionAwesome {
+    box-shadow: 10px -10px 5px 0px rgba(129, 219, 255, 0.75);
+    -webkit-box-shadow: 10px -10px 5px 0px rgba(129, 219, 255, 0.75);
+    -moz-box-shadow: 10px -10px 5px 0px rgba(129, 219, 255, 0.75);
+    border-radius: 50px 5px 50px 5px;
+    border: none;
+}
+
+.SixthSectionAwesome>img {
+    border-radius: 50px 0px 0px 0px;
+}
+
+.SixthSectionAwesome>.card-body {
+    padding: 0.25rem;
+    word-wrap: break-word;
+}
+
+
 .bgFifthSectionImg {
     background-image: url('https://cdn.wallpapersafari.com/94/58/HzhXAe.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+}
+
+.bgSixthSectionImg {
+    background-image: url('https://www.taylorcommunity.org/wp-content/uploads/2021/08/banner-internal-meet-team-hands_2560x693.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
 }
 
 .bgSeventhSectionImg {
@@ -307,6 +332,7 @@ body {
 
 .slick-prev {
     left: 45px !important;
+    z-index: 1000;
 }
 
 .slick-next {

@@ -91,7 +91,7 @@ const LandingPage = () => {
         </div>
       </section >
       <section>
-        <div className="container-fluid">
+        <div className="container-fluid bgSixthSectionImg">
           {/* <!-- --Tittle-- --> */}
           <SixthSection />
         </div>

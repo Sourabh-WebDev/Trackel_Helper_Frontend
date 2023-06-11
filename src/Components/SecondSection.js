@@ -6,8 +6,12 @@ import PlumberService from '../assets/img/PlumberServices.png'
 import Electrician from '../assets/img/ElectricianServices.png'
 import CarWashing from '../assets/img/CarService.png'
 import { Col, Row } from 'reactstrap';
+import { useNavigate } from 'react-router';
 
 const SecondSection = () => {
+
+    const navigate = useNavigate()
+
     const PrimaryServices = [
         {
             id: 1,
@@ -46,7 +50,7 @@ const SecondSection = () => {
 
                 <div className="bgSecondSectionImg">
                     {PrimaryServices.map((item, index) => (
-                        <Card className=' cardHover' key={item.id}>
+                        <Card onClick={() => navigate('/serviceName')} className=' cardHover' key={item.id}>
                             <Card.Img className='img-fluid' src={item.image} />
                             <Card.Body className='bgSecondSectionServiceCard'>
                                 <Card.Text >
