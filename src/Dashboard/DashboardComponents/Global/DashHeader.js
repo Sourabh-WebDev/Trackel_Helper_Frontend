@@ -9,6 +9,7 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import { NavigationButton } from "../../data/mockData"
 import { UseStateManager } from "../../../Context/StateManageContext";
 
 const DashHeader = () => {
@@ -58,12 +59,16 @@ const DashHeader = () => {
                 <div className="bg-warning shadow d-flex flex-nowrap justify-content-between px-3 align-items-center w-100">
                     <div className="TopNavigation d-flex align-items-center justify-content-center ">
                         {/* Navigation buttons */}
-                        <DropdownBtn
-                            setActiveTab={setActiveTab}
-                            activeTab={activeTab}
-                            buttonTitle={"Dashboard"}
-                            isMenu={false}
-                        />
+                        {NavigationButton.map((item, index) => (
+                            <DropdownBtn
+                                setActiveTab={setActiveTab}
+                                activeTab={activeTab}
+                                buttonTitle={item.name}
+                                isMenu={item.options ? true : false}
+                                options={item.options ? item.options : null}
+                            />
+                        ))}
+                        {/* 
                         <DropdownBtn
                             setActiveTab={setActiveTab}
                             activeTab={activeTab}
@@ -105,7 +110,7 @@ const DashHeader = () => {
                             activeTab={activeTab}
                             buttonTitle={"Expenses"}
                             isMenu={true}
-                        />
+                        /> */}
                     </div>
                     {/* ICONS */}
                     <Box display="flex">
