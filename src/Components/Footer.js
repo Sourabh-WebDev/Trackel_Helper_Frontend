@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="footerform">
                 <Row>
                     <Col sm={12} xl='6'>
-                        <img src={FooterBannner} alt="footerbanner" />
+                        <img src={FooterBannner} className='img-fluid' alt="footerbanner" />
                     </Col>
                     <Col sm={12} xl='6'>
                         <div className='text-start pt-3'>
@@ -20,8 +20,8 @@ const Footer = () => {
                             <h2 style={{ color: '#8d8d8d' }} >Get Our Every Single Notifications</h2>
 
                             <div style={{ color: '#8d8d8d' }}>
-                                <div><BsCircleFill className='mr-2' fill='#eedc30' />Regular Updates</div>
-                                <div><BsCheckCircle className='mr-2' />Regular Updates</div>
+                                <div><BsCircleFill className='mr-2' fill='#eedc30' /> <span>Regular Updates</span></div>
+                                <div><BsCheckCircle className='mr-2' /> <span>Regular Updates</span></div>
                                 <form className='mt-2' id="emailForm">
                                     <div class="input-container">
                                         <input className='form-control' type="email" id="emailInput" placeholder="Enter your email address" required />
@@ -131,16 +131,16 @@ const Footer = () => {
                         <Col md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
                             <p>
-                                <FaHome className="me-2" />
+                                <FaHome className="mr-2" />
                                 A/1412, Sector- I Ashiyana LDA Colony Near
                                 Pakripool Lucknow – 226012, UP, India
                             </p>
-                            <p>
-                                <FaEnvelope className="me-3" />
+                            <p className='text-nowrap'>
+                                <FaEnvelope className="mr-2" />
                                 helperforyourservices@gmail.com
                             </p>
-                            <p>
-                                <FaPhone className="me-3" /> 0522-4300589, 0522-4330641
+                            <p className='text-nowrap'>
+                                <FaPhone className="mr-2" /> 0522-4300589, 0522-4330641
                             </p>
                             {/* <p>
                                 <FaPrint className="me-3" /> + 01 234 567 89

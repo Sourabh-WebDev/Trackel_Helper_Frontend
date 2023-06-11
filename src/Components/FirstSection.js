@@ -12,7 +12,7 @@ const FirstSection = () => {
             <Row className='m-0'>
                 {/* Left Column */}
                 <Col xl='6'>
-                    <div className="d-flex justify-content-center align-items-center" style={{ height: '500px' }}>
+                    <div className="d-flex justify-content-center align-items-center animate__animated animate__backInLeft" style={{ height: '500px' }}>
                         <div>
                             <h1 className='FirstSectionHeadinng'>Home services, on demand. 👇</h1>
                             <InputGroup className="mb-3">
@@ -38,7 +38,7 @@ const FirstSection = () => {
                 {/* Right Column */}
                 <Col xl='6' className='text-center'>
                     {/* <img className='FirstSectionImgStyle img-fluid' src={FirstectionImg} alt="ADIMG" /> */}
-                    <div class="Enquiry container">
+                    <div class="Enquiry container animate__animated animate__backInDown">
                         <h2>Enquiry Form</h2>
                         <form className='p-2' action="#" method="post">
                             <div class="form-group">

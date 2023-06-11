@@ -9,33 +9,6 @@ import ServiceDirection from '../assets/img/ServiceDirection.png'
 import { Col, Row } from 'reactstrap';
 
 const ThirdSection = () => {
-    const Whychooseus = [
-        {
-            id: 1,
-            image: WomenSalon,
-            title: 'Women Salon'
-        },
-        {
-            id: 2,
-            image: WomenSalon,
-            title: 'Women Salon'
-        },
-        {
-            id: 3,
-            image: WomenSalon,
-            title: 'Women Salon'
-        },
-        {
-            id: 4,
-            image: WomenSalon,
-            title: 'Women Salon'
-        },
-        {
-            id: 5,
-            image: WomenSalon,
-            title: 'Women Salon'
-        }
-    ];
     return (
         <>
             <Row className='m-0'>
@@ -43,7 +16,7 @@ const ThirdSection = () => {
                 <Col xl='4'>
                     <div className="d-flex justify-content-center align-items-center p-5" >
                         <div className='ThirdSectionRotatedLeft'>
-                            <div className="d-flex">
+                            <div className="d-flex animate__animated animate__slideInLeft animate__delay-2s">
                                 <Card className='ThirdSectionCard'>
                                     <Card.Img className='img-fluid' src={ProServices} />
                                     <Card.Body className=''>
@@ -54,7 +27,7 @@ const ThirdSection = () => {
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="d-flex">
+                            <div className="d-flex animate__animated animate__slideInLeft animate__delay-2s">
                                 <Card className='ThirdSectionCard'>
                                     <Card.Img className='img-fluid' src={BestQuality} />
                                     <Card.Body className=''>
@@ -70,9 +43,9 @@ const ThirdSection = () => {
                 </Col>
                 {/* Right Column */}
                 <Col xl='4' className='text-center'>
-                    <div className='d-flex justify-content-center align-items-center' style={{ height: '800px' }}>
+                    <div className='d-flex justify-content-center align-items-center animate__animated animate__jackInTheBox animate__delay-2s' style={{ height: '800px' }}>
                         <div>
-                            <img src={ServiceDirection} />
+                            <img className='img-fluid' src={ServiceDirection} />
                             <h2>WHY CHOOSE US</h2>
                             <p>Choose us because we know how to do and what to do within right time with right working skill.</p>
                         </div>
@@ -81,7 +54,7 @@ const ThirdSection = () => {
                 <Col xl='4' className='text-center'>
                     <div className="d-flex justify-content-center align-items-center p-5" >
                         <div className='ThirdSectionRotatedRight'>
-                            <div className="d-flex">
+                            <div className="d-flex animate__animated animate__slideInRight animate__delay-2s">
                                 <Card className='ThirdSectionCard'>
                                     <Card.Img className='img-fluid' src={FastService} />
                                     <Card.Body className=''>
@@ -92,7 +65,7 @@ const ThirdSection = () => {
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="d-flex">
+                            <div className="d-flex animate__animated animate__slideInRight animate__delay-2s">
                                 <Card className='ThirdSectionCard'>
                                     <Card.Img className='img-fluid' src={AllDaysServices} />
                                     <Card.Body className=''>

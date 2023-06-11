@@ -38,7 +38,7 @@ const SecondSection = () => {
 
     return (
         <div className="bgColour">
-            <div className='bgColour p-5'>
+            <div className='bgColour py-5'>
                 <div className="text-center">
                     <h1 style={{ color: '#142572' }} >Our Prime Services</h1>
                     <p>Get our services at minimum cost in a required time at the best deal possible with granted good work.</p>

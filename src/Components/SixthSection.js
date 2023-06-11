@@ -44,7 +44,7 @@ const SixthSection = () => {
             <h2>Our Team</h2>
             <Slider {...settings} className=''>
                 <div className='py-5'>
-                    <div className="d-flex justify-content-evenly gap-2">
+                    <div className="d-flex justify-content-around gap-2">
                         <div className='borderRadiusTeamFirst'>
                             <img className='rounded-circle p-2' width={150} height={150} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
                             <h5>Singh ji</h5>
@@ -64,7 +64,7 @@ const SixthSection = () => {
                     </div>
                 </div>
                 <div className='py-5 mx-2'>
-                    <div className="d-flex justify-content-evenly gap-2">
+                    <div className="d-flex justify-content-around gap-2">
                         <div className='borderRadiusTeamFirst'>
                             <img className='rounded-circle p-2' width={150} height={150} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
                             <h5>Singh ji</h5>
@@ -84,7 +84,7 @@ const SixthSection = () => {
                     </div>
                 </div>
                 <div className='py-5'>
-                    <div className="d-flex justify-content-evenly gap-2">
+                    <div className="d-flex justify-content-around gap-2">
                         <div className='borderRadiusTeamFirst'>
                             <img className='rounded-circle p-2' width={150} height={150} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
                             <h5>Singh ji</h5>
