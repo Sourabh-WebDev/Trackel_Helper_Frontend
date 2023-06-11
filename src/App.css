@@ -5,3 +5,29 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
+
+:root {
+  --yello: #ffc107;
+  --blue: #112c85;
+  --text: #4d4d4d;
+}
+
+.cursor-p {
+  cursor: pointer;
+}
+
+.hoverThis {
+  transition: 0.2s ease;
+}
+.hoverThis:hover {
+  background-color: var(--blue);
+  color: var(--yello);
+}
+
+.Fw_500 {
+  font-weight: 500 !important;
+}
+
+.Fw_400 {
+  font-weight: 400 !important;
+}

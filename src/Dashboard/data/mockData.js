@@ -199,6 +199,18 @@ export const mockDataContacts = [
   },
 ];
 
+
+export const NavigationButton = [
+  { id: 1, name: "Dashboard" },
+  { id: 2, name: "Attendence", options: ["In Time", "Out Time", "Report", "Modify"] },
+  { id: 3, name: "Expense", options: ["Add/Manage Expense Head", "Add Expense", "Add Collection", "Today Report", "All Transaction Report"] },
+  { id: 4, name: "Manage HR", options: ["Manage Employee", "Manage Service Provider"] },
+  { id: 5, name: "Manage Master", options: ["Manage Services"] },
+  { id: 6, name: "Manage Page", options: ["Manage Testimonial", "Manage offer", "Manage Post", "Manage Advertisement"] },
+  { id: 7, name: "Customer", options: ["Manage Customer", "Member History", "Monthly Members", "Manage Enquiry"] },
+  { id: 8, name: "Profile" }
+]
+
 // export const mockDataInvoices = [
 //   {
 //     id: 1,

@@ -52,3 +52,17 @@ button.Dash_dropDownBtn_Active.btn.btn-secondary {
 .AdjustWidthOfColumn {
   width: fit-content !important;
 }
+
+button.Dash_dropdown_item.dropdown-item {
+  padding: 6px 12px !important;
+  transition: all 0.1s ease-in-out;
+}
+button.Dash_dropdown_item.dropdown-item:hover {
+  background-color: transparent !important;
+  color: #ffc107 !important;
+}
+
+.Dash_dropdown_Menu.dropdown-menu.show {
+  border: none !important;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1) !important;
+}
