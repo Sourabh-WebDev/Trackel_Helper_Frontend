@@ -39,19 +39,19 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='' className='mr-4 text-reset'>
                         <FaHome />
                     </a>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='' className='mr-4 text-reset'>
                         <FaTwitter />
                     </a>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='' className='mr-4 text-reset'>
                         <FaGoogle />
                     </a>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='' className='mr-4 text-reset'>
                         <FaInstagram />
                     </a>
-                    <a href='' className='me-4 text-reset'>
+                    <a href='' className='mr-4 text-reset'>
                         <FaLinkedinIn />
                     </a>
                 </div>

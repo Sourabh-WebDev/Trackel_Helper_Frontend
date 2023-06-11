@@ -5,3 +5,32 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
+
+
+.row {
+  margin: 0;
+}
+
+.col-xl-6 {
+  padding: 0px !important;
+}
+
+.col-xl-5 {
+  padding: 0px !important;
+}
+
+.col-xl-4 {
+  padding: 0px !important;
+}
+
+.col-xl-3 {
+  padding: 0px !important;
+}
+
+.col-xl-2 {
+  padding: 0px !important;
+}
+
+.col-xl-1 {
+  padding: 0px !important;
+}
