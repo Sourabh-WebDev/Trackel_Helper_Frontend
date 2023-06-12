@@ -107,12 +107,12 @@ const Footer = () => {
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='/Contact-Us' className='text-reset'>
                                     Contact Us
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='/Our-All-Services' className='text-reset'>
                                     Services
                                 </a>
                             </p>

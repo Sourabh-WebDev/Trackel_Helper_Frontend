@@ -42,7 +42,7 @@ const SixthSection = () => {
 
     return (
         <div className='text-center p-4'>
-            <h2>Our Team</h2>
+            <h1 className='txtColour'>Our Team</h1>
             <Slider {...settings} className=''>
 
                 <div className='d-flex justify-content-around align-items-center py-2'>

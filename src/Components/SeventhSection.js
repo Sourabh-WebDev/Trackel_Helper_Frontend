@@ -41,7 +41,7 @@ const SeventhSection = () => {
 
     return (
         <div className='text-center p-4 SixthSectionpadding'>
-            <h2 style={{ color: '#' }}>Our Service Provider Team</h2>
+            <h1 className='txtColour' >Our Service Provider Team</h1>
             <Slider {...settings} className=''>
                 <div className='py-5'>
                     <div className="d-flex justify-content-around gap-2">
