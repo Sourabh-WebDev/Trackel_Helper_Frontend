@@ -13,9 +13,9 @@ const AttendenceReport = () => {
     return (
         <Fragment>
             <DashHeader />
-            <div className=' h-100 positon-relative '>
+            <div className=' h-100 d-grid'>
                 <h3 className='p-3 mt-3 bg-transparent headingBelowBorder' style={{ color: "var(--blue)", maxWidth: "fit-content" }}>Attendence Report</h3>
-                <div className='text-blue bg-primary card shadow-lg border-0 MainAttendenceReportForm mt-3 p-4 d-flex flex-column align-items-end justify-content-center w-75 gap-3'>
+                <div className='text-blue bg-primary card shadow-lg border-0 MainAttendenceReportForm mt-5 p-4 d-flex flex-column align-items-end justify-content-center w-75 gap-3'>
                     <div className=' mt-3 d-flex flex-nowrap ReportFormWhole w-100'>
                         <div className='d-flex flex-column align-items-start  justify-content-center gap-1 w-100'>
                             <h6 >From Date</h6>

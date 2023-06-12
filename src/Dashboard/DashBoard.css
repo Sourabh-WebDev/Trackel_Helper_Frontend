@@ -98,10 +98,8 @@ button.Dash_dropdown_item.dropdown-item:hover {
 }
 
 .MainAttendenceReportForm {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  align-self: center;
+  justify-self: center;
 }
 
 .ReportFormWhole {
@@ -111,5 +109,6 @@ button.Dash_dropdown_item.dropdown-item:hover {
   gap: 1rem !important;
 }
 .ReportFormWhole > div {
-  flex: 1 1 150px;
+  flex: 1 1 20rem;
+  max-width: 22rem;
 }
