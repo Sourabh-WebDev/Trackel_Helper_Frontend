@@ -7,7 +7,7 @@
 }
 
 :root {
-  --yello: #ffc107;
+  --yellow: #ffc107;
   --blue: #112c85;
   --text: #4d4d4d;
 }
@@ -19,9 +19,27 @@
 .hoverThis {
   transition: 0.2s ease;
 }
+.hoverThis_active {
+  background-color: var(--blue);
+  color: var(--yellow);
+}
 .hoverThis:hover {
   background-color: var(--blue);
-  color: var(--yello);
+  color: var(--yellow);
+  border-color: var(--blue) !important;
+}
+
+.text-primary {
+  color: var(--yellow) !important;
+}
+.bg-primary {
+  background-color: var(--yellow) !important;
+}
+.text-blue {
+  color: var(--blue) !important;
+}
+.bg-blue {
+  background-color: var(--blue) !important;
 }
 
 .Fw_500 {
