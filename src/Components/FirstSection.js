@@ -17,7 +17,7 @@ const FirstSection = () => {
                             <h1 className='FirstSectionHeadinng'>Home services, on demand. 👇</h1>
                             <InputGroup className="mb-3">
                                 <DropdownButton
-                                    title="Select your Location ▿"
+                                    title="Select your Location"
                                     id="input-group-dropdown-1"
                                     className='txtColour'
                                 >
