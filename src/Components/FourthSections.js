@@ -6,7 +6,7 @@ const FourthSections = () => {
     return (
         <div style={{background:'#99DBF5'}}>
             <div className="text-center pt-4">
-                <h1>Our Best Plans</h1>
+                <h1 className='txtColour' >Our Best Plans</h1>
             </div>
             <Row>
                 <Col sm={12} xl={6}>
@@ -15,14 +15,14 @@ const FourthSections = () => {
                 <Col sm={12} xl={6}>
                     <div className="d-flex align-items-center justify-content-center mt-5">
                         <div>
-                            <h3>MONTHLY PLAN STARTING</h3>
+                            <h3 className='txtColour'>MONTHLY PLAN STARTING</h3>
                             <div>
                                 <ul>
                                     <li>4 FULL CAR WASHES ( INTERIOR & EXTERIOR )</li>
                                     <li>11 FREE DUSTING</li>
                                 </ul>
                             </div>
-                            <h3>ONE TIME WASH STARTING</h3>
+                            <h3 className='txtColour'>ONE TIME WASH STARTING</h3>
                             <div>
                                 <ul>
                                     <li>1 FULL CAR WASH</li>

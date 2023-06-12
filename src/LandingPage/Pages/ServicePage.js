@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from '../../Components/Navbar'
-import Header from '../../Components/Header'
-import Footer from '../../Components/Footer'
-import { Col, Row } from 'reactstrap'
+import React, { useEffect, useState } from 'react';
+import Navbar from '../../Components/Navbar';
+import Header from '../../Components/Header';
+import Footer from '../../Components/Footer';
+import { Button, Col, Row } from 'reactstrap';
 import Card from 'react-bootstrap/Card';
+import OfferSlider from './OfferSlider';
+import Done from '../../assets/gif/check-mark-verified-unscreen.gif';
 
 const ServicePage = () => {
-
+    // State variables
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [requestDone, setRequestDone] = useState(false);
 
+    // Array of images for the slideshow
     const images = [
-        'https://img.freepik.com/free-photo/service-maintenance-worker-repairing_23-2149176719.jpg?w=1060&t=st=1686385486~exp=1686386086~hmac=789297921380da93418cf1fb9293e187296424dc91b85157789f83be61775c2a',
-        'https://img.freepik.com/free-photo/beautiful-car-washing-service_23-2149212221.jpg?w=1060&t=st=1686385526~exp=1686386126~hmac=08d758c7c32c6a5dc553a2016751f28f0edbc3567bfa48beaa74e54cac68072b',
+        'https://img.freepik.com/free-photo/makeup-artist-applying-makeup-by-brush_329181-1926.jpg?w=900&t=st=1686553614~exp=1686554214~hmac=b6999330f17fb3affe417d0f9954f419042532b60ff4670f8f90de6ec11cfd50',
+        'https://img.freepik.com/free-photo/top-view-beauty-products-with-copy-space_23-2148620089.jpg?w=1380&t=st=1686553823~exp=1686554423~hmac=b059f1ede0f0ae5c8f473b1598938b1b671eb81771209bd3aa678d877fcd22bb',
         'https://img.freepik.com/free-photo/female-hairdresser-using-hairbrush-hair-dryer_329181-1929.jpg?w=1060&t=st=1686385570~exp=1686386170~hmac=1df49504b9b4ea54e4047b2e1240dc5074712a66bd501940f09d09531eab10fd',
-        'https://img.freepik.com/free-photo/male-electrician-works-switchboard-with-electrical-connecting-cable_169016-16352.jpg?w=1060&t=st=1686385727~exp=1686386327~hmac=20cc698313472fe69e35c41e9e5a27888b6e044722965226b7ab4aac649a2ea7'
+        'https://img.freepik.com/free-photo/cosmetologist-wiping-make-up-lady_23-2148398511.jpg?w=1380&t=st=1686553886~exp=1686554486~hmac=2eeaab3a88eaa23f4142644857c2b6486fbd108924e68c68d4487c4708e45125'
     ];
 
     useEffect(() => {
@@ -32,10 +36,11 @@ const ServicePage = () => {
             <Navbar />
 
             <section>
-                {/* <!-- --navbar-- --> */}
+                {/* Navbar section */}
 
                 <Header />
 
+                {/* Image slideshow section */}
                 <div
                     style={{
                         backgroundImage: `url(${images[currentImageIndex]})`,
@@ -44,70 +49,81 @@ const ServicePage = () => {
                         width: '100%',
                         height: '500px',
                     }}
-                    className="container-fluid">
-                    <div className="container" style={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
-                        <Card className=" border-0 bg-transparent text-center">
-                            <h1 className='display-1 font-weight-bold txtColour'>Women Salon</h1>
+                    className="container-fluid"
+                >
+                    <div className="container" style={{ display: 'grid', placeItems: 'center', height: '500px' }}>
+                        <Card className="bg-transparent text-center ServiceBanner p-2">
+                            <h1 className='display-3 font-weight-bold text-warning'>Women Salon</h1>
                         </Card>
                     </div>
                 </div>
-            </section >
+            </section>
+
             <section>
-                <div className="container-fluid ">
+                {/* First service section */}
+                <div className="container-fluid">
                     <Row>
-                        <Col xl={6} className=''>
-                            <img className='img-fluid' src="https://img.freepik.com/free-photo/beautician-with-brush-applies-white-moisturizing-mask-face-young-girl-client-spa-beauty-salon_343596-4247.jpg?w=1060&t=st=1686489226~exp=1686489826~hmac=2e19cf95f0c7845fad1257520e0eea10e6371084b662b734052402cf961f351a" alt="" />
+                        <Col xl={6} style={{ background: '#142572' }} className='p-5 text-center'>
+                            <h2 style={{ color: '#eedc30' }}><em>Facials</em></h2>
+                            <div className='text-white border' style={{ display: 'grid', placeItems: 'center', height: '300px' }}>
+                                <p>"We provide the best facial services ever, and we highly recommend trying it once to experience our affordable and convenient at-home service."</p>
+
+                                {/* Render different buttons based on the state */}
+                                {requestDone ?
+                                    <Button color='flat-primary' onClick={() => setRequestDone(false)} outline>
+                                        <img src={Done} width={25} alt="" />
+                                    </Button> :
+                                    <Button onClick={() => setRequestDone(true)}>Service Request</Button>
+                                }
+                            </div>
                         </Col>
-                        <Col xl={6} className=''>
-                            asdfghjklkjhgfdsdfghj
+                        <Col xl={6} className='p-0'>
+                            <img className='img-fluid ServiceBannerS' src="https://img.freepik.com/free-photo/beautician-with-brush-applies-white-moisturizing-mask-face-young-girl-client-spa-beauty-salon_343596-4247.jpg?w=1060&t=st=1686489226~exp=1686489826~hmac=2e19cf95f0c7845fad1257520e0eea10e6371084b662b734052402cf961f351a" alt="" />
                         </Col>
                     </Row>
                 </div>
-            </section >
+            </section>
+
             <section>
-                <div className="container-fluid ">
+                {/* Second service section */}
+                <div className="container-fluid">
                     <Row>
-                        <Col xl={6} className=''>
-                            <img className='img-fluid' src="https://img.freepik.com/free-photo/beautician-with-brush-applies-white-moisturizing-mask-face-young-girl-client-spa-beauty-salon_343596-4247.jpg?w=1060&t=st=1686489226~exp=1686489826~hmac=2e19cf95f0c7845fad1257520e0eea10e6371084b662b734052402cf961f351a" alt="" />
+                        <Col xl={6} className='p-0'>
+                            <img className='img-fluid ServiceBanner' src="https://img.freepik.com/free-photo/woman-washing-head-hairsalon_1157-27179.jpg?w=900&t=st=1686553216~exp=1686553816~hmac=0b1dadb1b646573d63ed387baa6906f266ad604f84855b8162585ca96429f136" alt="" />
                         </Col>
-                        <Col xl={6} className=''>
-                            asdfghjklkjhgfdsdfghj
+                        <Col xl={6} className='text-center bgColour p-5'>
+                            <h2 className='txtColour'><em>Hair Treatments</em></h2>
+                            <div className='border' style={{ display: 'grid', placeItems: 'center', height: '300px' }}>
+                                <p>"We provide the best facial services ever, and we highly recommend trying it once to experience our affordable and convenient at-home service."</p>
+
+                                {/* Render different buttons based on the state */}
+                                {requestDone ?
+                                    <Button color='flat-primary' onClick={() => setRequestDone(false)} outline>
+                                        <img src={Done} width={25} alt="" />
+                                    </Button> :
+                                    <Button onClick={() => setRequestDone(true)}>Service Request</Button>
+                                }
+                            </div>
                         </Col>
                     </Row>
                 </div>
-            </section >
-            {/* <section>
-        <div className="container-fluid bgFirstSectionImg ">
-          <ThirdSection />
-        </div>
-      </section >
-      <section>
-        <div className="container-fluid">
-          <FourthSections />
-        </div>
-      </section >
-      <section>
-        <div className="container-fluid bgFifthSectionImg">
-          <FifthSection />
-        </div>
-      </section >
-      <section>
-        <div className="container-fluid bgSixthSectionImg">
-          <SixthSection />
-        </div>
-      </section >
-      <section>
-        <div style={{ backgroundImage: `url(${OurServiceProvier})` }} className="container-fluid bgSeventhSectionImg">
-          <SeventhSection />
-        </div>
-      </section > */}
+            </section>
+
             <section>
+                {/* Slider section */}
+                <div style={{ backgroundImage: 'url(https://c4.wallpaperflare.com/wallpaper/492/842/325/sparkle-wallpaper-preview.jpg)' }} className="container-fluid bgSeventhSectionImg">
+                    <OfferSlider />
+                </div>
+            </section>
+
+            <section>
+                {/* Footer section */}
                 <div className="container-fluid">
                     <Footer />
                 </div>
-            </section >
+            </section>
         </>
-    )
-}
+    );
+};
 
-export default ServicePage
+export default ServicePage;

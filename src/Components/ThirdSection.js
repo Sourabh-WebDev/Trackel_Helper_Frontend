@@ -6,7 +6,7 @@ import FastService from '../assets/img/FastService.png'
 import BestQuality from '../assets/img/BestQuality.png'
 import AllDaysServices from '../assets/img/24l7Services.png'
 import ServiceDirection from '../assets/img/ServiceDirection.png'
-import { Col, Row } from 'reactstrap';
+import { Button, Col, Row } from 'reactstrap';
 
 const ThirdSection = () => {
     return (
@@ -46,8 +46,10 @@ const ThirdSection = () => {
                     <div className='d-flex justify-content-center align-items-center animate__animated animate__jackInTheBox animate__delay-2s' style={{ height: '800px' }}>
                         <div>
                             <img className='img-fluid' src={ServiceDirection} />
-                            <h2>WHY CHOOSE US</h2>
-                            <p>Choose us because we know how to do and what to do within right time with right working skill.</p>
+                            <h1 className='txtColour'>WHY CHOOSE US</h1>
+                            <p>"DELIVERIING BEST QUALITY SERVICES, SECURING YOUR SMILE."</p>
+                            <p> For we care! So that you have all your time in being more responsible for your people, and leave the rest to us for attending to!...</p>
+                            <Button className='bgColour txtColour'>Read More</Button>
                         </div>
                     </div>
                 </Col>

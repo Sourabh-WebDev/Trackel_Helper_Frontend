@@ -16,7 +16,7 @@ const FifthSection = () => {
 
     return (
         <div className='text-center p-4'>
-            <h2>Testimonial</h2>
+            <h2 style={{ color: '#eedc30' }} >Testimonial</h2>
             <Slider {...settings} className=''>
                 <div className='py-5'>
                     <center>
