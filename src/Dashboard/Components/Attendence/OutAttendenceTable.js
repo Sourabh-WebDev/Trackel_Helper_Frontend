@@ -1,16 +1,18 @@
 import { Box } from '@mui/material'
 import React, { Fragment } from 'react'
-import { columns } from '../GridTableCredentials/Colums'
+import { columns } from '../../GridTableCredentials/Colums'
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { mockDataContacts } from "../data/mockData";
+import { mockDataContacts } from "../../data/mockData";
+import DashHeader from '../../DashboardComponents/Global/DashHeader';
 // import { Card } from 'reactstrap'
 
 
-const InAttendenceTable = () => {
+const OutAttendenceTable = () => {
     return (
         <Fragment>
+            <DashHeader />
             <div className='p-3'>
-                <h3 style={{ color: "var(--blue)" }} >Attendence <sup><small>(In)</small></sup></h3>
+                <h3 style={{ color: "var(--blue)" }} >Attendence <sup><small>(Out)</small></sup></h3>
                 <div className='d-flex w-100 py-2 gap-3 flex-wrap'>
                     <span className='py-3 px-5 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center' style={{ minWidth: "15rem", maxWidth: "15rem" }}>
                         Employee
@@ -82,4 +84,4 @@ const InAttendenceTable = () => {
     )
 }
 
-export default InAttendenceTable
+export default OutAttendenceTable

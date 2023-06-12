@@ -1,26 +1,25 @@
 import { Box } from '@mui/material'
-import React, { Fragment } from 'react'
-import { columns } from '../GridTableCredentials/Colums'
+import React, { Fragment, useState } from 'react'
+import { columns } from '../../GridTableCredentials/Colums'
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { mockDataContacts } from "../data/mockData";
+import { mockDataContacts } from "../../data/mockData";
+import DashHeader from '../../DashboardComponents/Global/DashHeader';
 // import { Card } from 'reactstrap'
 
 
-const OutAttendenceTable = () => {
+const InAttendenceTable = () => {
+    const [selctedAttendence, setSelectedAttendence] = useState("Employee")
     return (
         <Fragment>
+            <DashHeader />
             <div className='p-3'>
-                <h3 style={{ color: "var(--blue)" }} >Attendence <sup><small>(Out)</small></sup></h3>
-                <div className='d-flex w-100 py-2 gap-3 flex-wrap'>
-                    <span className='py-3 px-5 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center' style={{ minWidth: "15rem", maxWidth: "15rem" }}>
-                        Employee
-                    </span>
-                    <span className='py-3 px-5 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center' style={{ minWidth: "15rem", maxWidth: "15rem" }}>
-                        Service Provider
-                    </span>
-                    <span className='py-3 px-5 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center' style={{ minWidth: "15rem", maxWidth: "15rem" }}>
-                        Out Source
-                    </span>
+                <h3 style={{ color: "var(--blue)" }} >Attendence <sup><small>(In)</small></sup></h3>
+                <div className='d-flex w-100 py-2 flex-wrap gap-3'>
+                    {["Employee", "Service Provider", "Out Source"].map((item, index) => (
+                        <div className={`py-3 px-5 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center  ${selctedAttendence === item ? "hoverThis_active" : ""}`} style={{ minWidth: "15rem", maxWidth: "15rem" }} onClick={() => { setSelectedAttendence(item) }}>
+                            {item}
+                        </div>
+                    ))}
                 </div>
                 <Box>
                     {/* <Header
@@ -82,4 +81,4 @@ const OutAttendenceTable = () => {
     )
 }
 
-export default OutAttendenceTable
+export default InAttendenceTable

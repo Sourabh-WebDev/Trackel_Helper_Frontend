@@ -3,10 +3,10 @@ import DashHeader from './DashboardComponents/Global/DashHeader'
 import Dashboard from './Components/Dashboard'
 import { UseStateManager } from '../Context/StateManageContext'
 import { TabContent, TabPane } from 'reactstrap'
-import InAttendenceTable from './Components/InAttendenceTable'
-import OutAttendenceTable from './Components/OutAttendenceTable'
-import AttendenceReport from './Components/AttendenceReport'
-import AttendenceModify from './Components/AttendenceModify'
+import InAttendenceTable from './Components/Attendence/InAttendenceTable'
+import OutAttendenceTable from './Components/Attendence/OutAttendenceTable'
+import AttendenceReport from './Components/Attendence/AttendenceReport'
+import AttendenceModify from './Components/Attendence/AttendenceModify'
 
 const SuperAdminPannel = () => {
     // ActivePage from context  
@@ -14,7 +14,8 @@ const SuperAdminPannel = () => {
     return (
         <Fragment>
             <DashHeader />
-            <TabContent activeTab={activeTab}>
+            <Dashboard />
+            {/* <TabContent activeTab={activeTab}>
                 <TabPane tabId="Dashboard">
                     <Dashboard />
                 </TabPane>
@@ -30,7 +31,7 @@ const SuperAdminPannel = () => {
                 <TabPane tabId="Modify">
                     <AttendenceModify />
                 </TabPane>
-            </TabContent>
+            </TabContent> */}
         </Fragment>
     )
 }

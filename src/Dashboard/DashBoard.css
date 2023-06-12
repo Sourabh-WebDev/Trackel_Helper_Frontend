@@ -1,21 +1,29 @@
+/* ::-webkit-scrollbar {
+  width: 2px;
+} */
+
 ::-webkit-scrollbar {
-  width: 10px;
+  display: none;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #e0e0e0;
+p {
+  margin-bottom: 0 !important;
 }
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #e0e0e0;
+
+} */
 
 /* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
+/* ::-webkit-scrollbar-thumb {
+  background: #ffee2d;
+} */
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+/* ::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
+} */
 
 .topBarImg {
   min-width: 3rem;
@@ -65,4 +73,43 @@ button.Dash_dropdown_item.dropdown-item:hover {
 .Dash_dropdown_Menu.dropdown-menu.show {
   border: none !important;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1) !important;
+}
+.headingBelowBorder {
+  position: relative;
+}
+
+.headingBelowBorder::before {
+  content: "";
+  height: 3px;
+  width: 60%;
+  background-color: var(--yellow);
+  position: absolute;
+  bottom: 0;
+  animation: BorderAnimation 1s ease-in-out;
+}
+
+@keyframes BorderAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+.MainAttendenceReportForm {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ReportFormWhole {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  flex-direction: row !important;
+  gap: 1rem !important;
+}
+.ReportFormWhole > div {
+  flex: 1 1 150px;
 }
