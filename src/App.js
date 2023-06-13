@@ -9,6 +9,14 @@ import InAttendenceTable from './Dashboard/Components/Attendence/InAttendenceTab
 import OutAttendenceTable from './Dashboard/Components/Attendence/OutAttendenceTable';
 import AttendenceModify from './Dashboard/Components/Attendence/AttendenceModify';
 import AttendenceReport from './Dashboard/Components/Attendence/AttendenceReport';
+import ManageHeadExpenses from './Dashboard/Components/Expenses/ManageHeadExpenses';
+import AddExpense from './Dashboard/Components/Expenses/AddExpense';
+import AddCollections from './Dashboard/Components/Expenses/AddCollections';
+import TodaysReport from './Dashboard/Components/Expenses/TodaysReport';
+import AllTransactionReport from './Dashboard/Components/Expenses/AllTransactionReport';
+import ManageEmployee from './Dashboard/Components/ManageHr/ManageEmployee';
+import ManageServiceProvider from './Dashboard/Components/ManageHr/ManageServiceProvider';
+import ManageService from './Dashboard/Components/ManageMaster/ManageService';
 import AboutUs from './LandingPage/Pages/AboutUs';
 import WhyChooseUs from './LandingPage/Pages/WhyChooseUs';
 import Privacy from './LandingPage/Pages/Privacy';
@@ -38,7 +46,14 @@ function App() {
         <Route path='/attendence/out-time' element={<OutAttendenceTable />} />
         <Route path='/attendence/report' element={<AttendenceReport />} />
         <Route path='/attendence/modify' element={<AttendenceModify />} />
-
+        <Route path='/expense/add/manage-expense-head' element={<ManageHeadExpenses />} />
+        <Route path='/expense/add-expense' element={<AddExpense />} />
+        <Route path='/expense/add-collection' element={<AddCollections />} />
+        <Route path='/expense/today-report' element={<TodaysReport />} />
+        <Route path='/expense/all-transaction-report' element={<AllTransactionReport />} />
+        <Route path='/managehr/manage-employee' element={<ManageEmployee />} />
+        <Route path='/managehr/manage-service-provider' element={<ManageServiceProvider />} />
+        <Route path='/managemaster/manage-services' element={<ManageService />} />
       </Routes>
     </BrowserRouter>
   );

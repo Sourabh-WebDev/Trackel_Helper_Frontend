@@ -22,7 +22,7 @@ const AttendenceReport = () => {
                             <Input type='date' id="fromdate" />
                         </div>
                         <div className='d-flex flex-column align-items-start  justify-content-center gap-1 w-100'>
-                            <h6 >From Date</h6>
+                            <h6 >To Date</h6>
                             <Input type='date' id="todate" />
                         </div>
                         <div className='d-flex flex-column   justify-content-center gap-1 w-100' >

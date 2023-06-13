@@ -97,17 +97,16 @@ button.Dash_dropdown_item.dropdown-item:hover {
   }
 }
 
-.MainAttendenceReportForm{
+.MainAttendenceReportForm {
   justify-self: center !important;
   align-self: center !important;
-  display: flex ;
+  display: flex;
   flex-direction: column;
 }
 
-.MainAttendenceReportForm{
+.MainAttendenceReportForm {
   width: 75%;
 }
-
 
 .ReportFormWhole {
   display: flex !important;
@@ -117,15 +116,40 @@ button.Dash_dropdown_item.dropdown-item:hover {
 }
 .ReportFormWhole > div {
   flex: 1 1 20rem;
-  max-width: 22rem;
+  max-width: 100%;
 }
+
+.AttendenceNavBtn {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.AttendenceNavBtn > div {
+  flex: 1 1 100px;
+  max-width: 16rem;
+  width: 16rem;
+}
+
+.TheAddOrderForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.TheAddOrderForm > div {
+  flex: 1 1 20rem;
+  max-height: 22rem;
+}
+
 @media (max-width: 992px) {
   .ReportFormWhole > div {
     flex: 1 1 20rem;
     max-width: 100%;
   }
-  .MainAttendenceReportForm{
+  .MainAttendenceReportForm {
     width: 90%;
   }
-  
+  .AttendenceNavBtn > div {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
 }
