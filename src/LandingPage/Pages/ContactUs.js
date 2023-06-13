@@ -65,7 +65,7 @@ const ContactUs = () => {
                     <Row className='m-0'>
                         {/* Left Column */}
                         <Col xl='6'>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28490.963766973822!2d80.913375!3d26.79633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfc0e597dde7b%3A0x58d52cd526585da0!2sA%2F1417%2C%20Aashiyana%20Chauraha%2C%20Sector%20I%2C%20Sector%20L%2C%20Ashiyana%2C%20Lucknow%2C%20Uttar%20Pradesh%20226012%2C%20India!5e0!3m2!1sen!2sus!4v1686632712385!5m2!1sen!2sus" width="750" height="600" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28490.963766973822!2d80.913375!3d26.79633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfc0e597dde7b%3A0x58d52cd526585da0!2sA%2F1417%2C%20Aashiyana%20Chauraha%2C%20Sector%20I%2C%20Sector%20L%2C%20Ashiyana%2C%20Lucknow%2C%20Uttar%20Pradesh%20226012%2C%20India!5e0!3m2!1sen!2sus!4v1686632712385!5m2!1sen!2sus" className='w-100' height="600" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </Col>
                         <Col xl='3' style={{ background: '#eedc30', color: '#142572', display: 'grid', placeItems: 'center' }}>
                             <div className="text-center">
