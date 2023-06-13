@@ -1,6 +1,6 @@
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 // import { mockTransactions } from "./data/mockData";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
+// import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import "../DashBoard.css"
 // import EmailIcon from "@mui/icons-material/Email";
 // import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
@@ -31,7 +31,7 @@ const Dashboard = () => {
       {/* <DashHeader /> */}
       <Box m="20px">
         {/* HEADER */}
-        <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Box display="flex" justifyContent="space-between" alignItems="center" flexWrap={"wrap"} >
           {/* <Header title="DASHBOARD" subtitle="Welcome to your dashboard" /> */}
           <ColoredBtn
             btnName={"All Orders"}

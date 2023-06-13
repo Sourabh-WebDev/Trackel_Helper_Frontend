@@ -97,12 +97,17 @@ button.Dash_dropdown_item.dropdown-item:hover {
   }
 }
 
-.MainAttendenceReportForm {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.MainAttendenceReportForm{
+  justify-self: center !important;
+  align-self: center !important;
+  display: flex ;
+  flex-direction: column;
 }
+
+.MainAttendenceReportForm{
+  width: 75%;
+}
+
 
 .ReportFormWhole {
   display: flex !important;
@@ -111,5 +116,16 @@ button.Dash_dropdown_item.dropdown-item:hover {
   gap: 1rem !important;
 }
 .ReportFormWhole > div {
-  flex: 1 1 150px;
+  flex: 1 1 20rem;
+  max-width: 22rem;
+}
+@media (max-width: 992px) {
+  .ReportFormWhole > div {
+    flex: 1 1 20rem;
+    max-width: 100%;
+  }
+  .MainAttendenceReportForm{
+    width: 90%;
+  }
+  
 }
