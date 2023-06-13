@@ -57,7 +57,7 @@ const DashHeader = () => {
                     </div>
                 </div>
                 <div className="bg-warning shadow d-flex flex-nowrap justify-content-between px-3 align-items-center w-100">
-                    <div className="TopNavigation d-flex align-items-center justify-content-center ">
+                    <div className="TopNavigation d-flex align-items-center justify-content-center flex-wrap ">
                         {/* Navigation buttons */}
                         {NavigationButton.map((item, index) => (
                             <DropdownBtn
