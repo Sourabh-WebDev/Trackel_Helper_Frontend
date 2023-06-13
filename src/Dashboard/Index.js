@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import DashHeader from './DashboardComponents/Global/DashHeader'
-import Dashboard from './Components/Dashboard'
+import Dashboard from './Components/Dashboard/Dashboard'
 import { UseStateManager } from '../Context/StateManageContext'
 import { TabContent, TabPane } from 'reactstrap'
 import InAttendenceTable from './Components/Attendence/InAttendenceTable'

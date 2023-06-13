@@ -13,8 +13,8 @@ const InAttendenceTable = () => {
         <Fragment>
             <DashHeader />
             <div className='p-3'>
-                <h3 style={{ color: "var(--blue)" }} >Attendence <sup><small>(In)</small></sup></h3>
-                <div className='d-flex w-100 py-2 flex-wrap gap-3'>
+                <h3 className='headingBelowBorder py-3 text-blue' style={{ maxWidth: "fit-content" }}  >Attendence <sup><small>(In)</small></sup></h3>
+                <div className='AttendenceNavBtn w-100 py-2 gap-3'>
                     {["Employee", "Service Provider", "Out Source"].map((item, index) => (
                         <div className={`py-3 px-5 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center  ${selctedAttendence === item ? "hoverThis_active" : ""}`} style={{ minWidth: "15rem", maxWidth: "15rem" }} onClick={() => { setSelectedAttendence(item) }}>
                             {item}

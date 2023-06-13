@@ -10,6 +10,8 @@
   --yellow: #ffc107;
   --blue: #112c85;
   --text: #4d4d4d;
+  --red: #d9393a;
+  --green: #81c14b;
 }
 
 .cursor-p {
@@ -34,12 +36,28 @@
 }
 .bg-primary {
   background-color: var(--yellow) !important;
+  border-color: var(--yellow) !important;
 }
 .text-blue {
   color: var(--blue) !important;
 }
 .bg-blue {
   background-color: var(--blue) !important;
+  border-color: var(--blue) !important;
+}
+.bg-red {
+  background-color: var(--red) !important;
+  border-color: var(--red) !important;
+}
+.text-red {
+  color: var(--red) !important;
+}
+.text-green {
+  color: var(--green) !important;
+}
+.bg-green {
+  background-color: var(--green) !important;
+  border-color: var(--green) !important;
 }
 
 .Fw_500 {

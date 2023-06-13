@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { columns } from '../../GridTableCredentials/Colums'
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { mockDataContacts } from "../../data/mockData";
@@ -8,21 +8,19 @@ import DashHeader from '../../DashboardComponents/Global/DashHeader';
 
 
 const OutAttendenceTable = () => {
+
+    const [selctedAttendence, setSelectedAttendence] = useState("Employee")
     return (
         <Fragment>
             <DashHeader />
             <div className='p-3'>
-                <h3 style={{ color: "var(--blue)" }} >Attendence <sup><small>(Out)</small></sup></h3>
-                <div className='d-flex w-100 py-2 gap-3 flex-wrap'>
-                    <span className='py-3 px-5 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center' style={{ minWidth: "15rem", maxWidth: "15rem" }}>
-                        Employee
-                    </span>
-                    <span className='py-3 px-5 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center' style={{ minWidth: "15rem", maxWidth: "15rem" }}>
-                        Service Provider
-                    </span>
-                    <span className='py-3 px-5 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center' style={{ minWidth: "15rem", maxWidth: "15rem" }}>
-                        Out Source
-                    </span>
+                <h3 className='headingBelowBorder py-3 text-blue' style={{ maxWidth: "fit-content" }} >Attendence <sup><small>(Out)</small></sup></h3>
+                <div className='AttendenceNavBtn w-100 py-2 gap-3'>
+                    {["Employee", "Service Provider", "Out Source"].map((item, index) => (
+                        <div className={`py-3 px-5 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center  ${selctedAttendence === item ? "hoverThis_active" : ""}`} style={{ minWidth: "15rem", maxWidth: "15rem" }} onClick={() => { setSelectedAttendence(item) }}>
+                            {item}
+                        </div>
+                    ))}
                 </div>
                 <Box>
                     {/* <Header

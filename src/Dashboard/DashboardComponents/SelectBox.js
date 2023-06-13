@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
-export default function SelectBox({options}) {
+export default function SelectBox({ options }) {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleChange = (selectedOption) => {
@@ -11,6 +11,7 @@ export default function SelectBox({options}) {
 
   return (
     <Select
+      className='borderColor-yellow'
       value={selectedOption}
       onChange={handleChange}
       options={options}
