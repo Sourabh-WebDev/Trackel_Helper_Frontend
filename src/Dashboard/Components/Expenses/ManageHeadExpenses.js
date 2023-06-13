@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-import DataTable from 'react-data-table-component';
 import DashHeader from '../../DashboardComponents/Global/DashHeader'
 import { DataGrid, GridToolbar, GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid';
 import { mockDataContacts } from '../../data/mockData';
