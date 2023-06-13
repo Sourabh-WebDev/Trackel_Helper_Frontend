@@ -1,14 +1,17 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-import WomenSalon from '../assets/img/BeautySalon.png';
 import ProServices from '../assets/img/ProffServices.png'
 import FastService from '../assets/img/FastService.png'
 import BestQuality from '../assets/img/BestQuality.png'
 import AllDaysServices from '../assets/img/24l7Services.png'
 import ServiceDirection from '../assets/img/ServiceDirection.png'
 import { Button, Col, Row } from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
 
 const ThirdSection = () => {
+
+    const navigate = useNavigate()
+
     return (
         <>
             <Row className='m-0'>
@@ -49,7 +52,7 @@ const ThirdSection = () => {
                             <h1 className='txtColour'>WHY CHOOSE US</h1>
                             <p>"DELIVERIING BEST QUALITY SERVICES, SECURING YOUR SMILE."</p>
                             <p> For we care! So that you have all your time in being more responsible for your people, and leave the rest to us for attending to!...</p>
-                            <Button className='bgColour txtColour'>Read More</Button>
+                            <Button onClick={() => navigate('/Why-Choose-Us')} className='bgColour txtColour'>Read More</Button>
                         </div>
                     </div>
                 </Col>

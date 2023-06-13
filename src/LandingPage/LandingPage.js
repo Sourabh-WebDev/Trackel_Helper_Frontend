@@ -16,6 +16,7 @@ const LandingPage = () => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+
   const images = [
     'https://img.freepik.com/free-photo/service-maintenance-worker-repairing_23-2149176719.jpg?w=1060&t=st=1686385486~exp=1686386086~hmac=789297921380da93418cf1fb9293e187296424dc91b85157789f83be61775c2a',
     'https://img.freepik.com/free-photo/beautiful-car-washing-service_23-2149212221.jpg?w=1060&t=st=1686385526~exp=1686386126~hmac=08d758c7c32c6a5dc553a2016751f28f0edbc3567bfa48beaa74e54cac68072b',
@@ -45,7 +46,7 @@ const LandingPage = () => {
 
         <div
           style={{
-            backgroundImage: `url(${images[currentImageIndex]})`,
+            backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             width: '100%',

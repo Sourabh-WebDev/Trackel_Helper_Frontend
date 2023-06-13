@@ -5,7 +5,7 @@ import AcService from '../assets/img/AcRepair.png'
 import PlumberService from '../assets/img/PlumberServices.png'
 import Electrician from '../assets/img/ElectricianServices.png'
 import CarWashing from '../assets/img/CarService.png'
-import { Col, Row } from 'reactstrap';
+import { BsFillCaretRightFill } from "react-icons/bs";
 import { useNavigate } from 'react-router';
 
 const SecondSection = () => {
@@ -41,7 +41,7 @@ const SecondSection = () => {
     ];
 
     return (
-        <div className="bgColour">
+        <div className="bgColour text-center">
             <div className='bgColour py-5'>
                 <div className="text-center">
                     <h1 style={{ color: '#142572' }} >Our Prime Services</h1>
@@ -50,7 +50,7 @@ const SecondSection = () => {
 
                 <div className="bgSecondSectionImg">
                     {PrimaryServices.map((item, index) => (
-                        <Card onClick={() => navigate('/serviceName')} className=' cardHover' key={item.id}>
+                        <Card style={{ cursor: 'pointer' }} onClick={() => navigate('/serviceName')} className=' cardHover' key={item.id}>
                             <Card.Img className='img-fluid' src={item.image} />
                             <Card.Body className='bgSecondSectionServiceCard'>
                                 <Card.Text >
@@ -59,7 +59,7 @@ const SecondSection = () => {
                             </Card.Body>
                         </Card>
                     ))}
-                    {/* <img className='img-fluid' src={LeftSideShowGirl} alt="ADIMG" /> */}
+                    <BsFillCaretRightFill onClick={() => navigate('/Our-All-Services')} style={{ cursor: 'pointer' }} size={50} />
                 </div>
             </div>
         </div>
