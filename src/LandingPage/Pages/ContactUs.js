@@ -3,8 +3,8 @@ import Navbar from '../../Components/Navbar';
 import Header from '../../Components/Header';
 import Card from 'react-bootstrap/Card';
 import Footer from '../../Components/Footer';
-import { TbAirConditioning } from "react-icons/tb";
-import { MdContentCut, MdElectricBolt, MdLocalCarWash, MdPlumbing } from "react-icons/md";
+import { BsFillBuildingFill, BsMailbox } from "react-icons/bs";
+import { SlSocialFacebook, SlSocialGoogle, SlSocialInstagram, SlSocialSkype } from "react-icons/sl";
 import { Col, Row } from 'reactstrap';
 
 const ContactUs = () => {
@@ -59,40 +59,65 @@ const ContactUs = () => {
                 </div>
             </section>
 
-            <section className='contactUsBanner'>
+            <section className='pt-1'>
                 {/* First service section */}
                 <div className="container-fluid">
                     <Row className='m-0'>
                         {/* Left Column */}
                         <Col xl='6'>
-                            <img src="" alt="" />
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28490.963766973822!2d80.913375!3d26.79633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfc0e597dde7b%3A0x58d52cd526585da0!2sA%2F1417%2C%20Aashiyana%20Chauraha%2C%20Sector%20I%2C%20Sector%20L%2C%20Ashiyana%2C%20Lucknow%2C%20Uttar%20Pradesh%20226012%2C%20India!5e0!3m2!1sen!2sus!4v1686632712385!5m2!1sen!2sus" className='w-100' height="600" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </Col>
-                        {/* Right Column */}
-                        <Col xl='6' className='text-center'>
-                            {/* <img className='FirstSectionImgStyle img-fluid' src={FirstectionImg} alt="ADIMG" /> */}
-                            <div class="Enquiry container animate__animated animate__backInDown">
-                                <h2>Enquiry Form</h2>
-                                <form className='p-2' action="#" method="post">
-                                    <div class="form-group">
-                                        <label for="name">Name:</label>
-                                        <input type="text" id="name" name="name" placeholder="Your name" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Mob No. :</label>
-                                        <input type="email" id="email" name="email" placeholder="Your Mobile No." required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Services looking for:</label>
-                                        <input type="email" id="email" name="email" placeholder="Services looking for" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message">Message:</label>
-                                        <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" value="Submit" />
-                                    </div>
-                                </form>
+                        <Col xl='3' style={{ background: '#eedc30', color: '#142572', display: 'grid', placeItems: 'center' }}>
+                            <div className="text-center">
+                                <BsFillBuildingFill size={60} />
+                                <h4 className='py-5'>OFFICE</h4>
+                                <p>A/1412, Sector- I Ashiyana LDA Colony Near Pakripool Lucknow – 226012, UP, India
+                                    Mobile No.: 0522-4300589, 0522-4330641</p>
+                            </div>
+                        </Col>
+                        <Col xl='3' style={{ background: '#142572', color: '#eedc30', display: 'grid', placeItems: 'center' }} >
+                            <div className="text-center">
+                                <BsMailbox size={60} />
+                                <h4 className='py-5'>Contact Via</h4>
+                                <p className='py-1'>Contact via <SlSocialFacebook size={25} className='ml-1' /></p>
+                                <p className='py-1'>Contact via <SlSocialInstagram size={25} className='ml-1' /></p>
+                                <p className='py-1'>Contact via <SlSocialGoogle size={25} className='ml-1' /></p>
+                                <p className='py-1'>Contact via <SlSocialSkype size={25} className='ml-1' /></p>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+            </section>
+            <section className=''>
+                {/* First service section */}
+                <div className="container-fluid">
+                    <Row className='m-0'>
+                        {/* Left Column */}
+                        <Col xl='12' className='p-0'>
+
+                            <div className="container-fluid text-center contactUsBanner">
+                                <h1>Send Us a Message</h1>
+                                <p>We Will Answer ASAP</p>
+                                <div className="ContactUS container animate__animated animate__backInDown">
+                                    <h2>Enquiry Form</h2>
+                                    <form className='p-2' action="#" method="post">
+                                        <div className="form-group">
+                                            <label style={{ color: '#eedc30' }} for="name">Name:</label>
+                                            <input type="text" id="name" name="name" placeholder="Your name" required />
+                                        </div>
+                                        <div className="form-group">
+                                            <label style={{ color: '#eedc30' }} for="email">Mob No. :</label>
+                                            <input type="email" id="email" name="email" placeholder="Your Mobile No." required />
+                                        </div>
+                                        <div className="form-group">
+                                            <label style={{ color: '#eedc30' }} for="message">Message:</label>
+                                            <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+                                        </div>
+                                        <div className="form-group">
+                                            <input type="submit" value="Send" />
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </Col>
                     </Row>

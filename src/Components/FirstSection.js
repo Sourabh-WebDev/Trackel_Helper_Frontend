@@ -17,7 +17,7 @@ const FirstSection = () => {
                             <h1 className='FirstSectionHeadinng'>Home services, on demand. 👇</h1>
                             <InputGroup className="mb-3">
                                 <DropdownButton
-                                    title="Select your Location ▿"
+                                    title="Select your Location"
                                     id="input-group-dropdown-1"
                                     className='txtColour'
                                 >
@@ -38,26 +38,26 @@ const FirstSection = () => {
                 {/* Right Column */}
                 <Col xl='6' className='text-center'>
                     {/* <img className='FirstSectionImgStyle img-fluid' src={FirstectionImg} alt="ADIMG" /> */}
-                    <div class="Enquiry container animate__animated animate__backInDown">
+                    <div className="Enquiry container animate__animated animate__backInDown">
                         <h2>Enquiry Form</h2>
                         <form className='p-2' action="#" method="post">
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="name">Name:</label>
                                 <input type="text" id="name" name="name" placeholder="Your name" required />
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="email">Mob No. :</label>
                                 <input type="email" id="email" name="email" placeholder="Your Mobile No." required />
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="email">Services looking for:</label>
                                 <input type="email" id="email" name="email" placeholder="Services looking for" required />
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="message">Message:</label>
                                 <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <input type="submit" value="Submit" />
                             </div>
                         </form>
