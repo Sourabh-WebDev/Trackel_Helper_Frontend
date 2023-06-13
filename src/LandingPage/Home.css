@@ -459,13 +459,25 @@ input[type="submit"] {
 }
 
 .contactUsBanner {
-    /* background-image: url('https://img.freepik.com/free-vector/contact-us-icons-paper-tags-sketch_98292-4688.jpg?w=1060&t=st=1686564918~exp=1686565518~hmac=0ead87d2a55cf3e520676de03876f5c105b6c7b399d38a1301205700c622b8df'); */
-    border-radius: 5px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    background: linear-gradient(313deg, rgba(20, 37, 114, 1) 70%, rgba(238, 220, 48, 1) 20%);
+    background: linear-gradient(313deg, rgba(238,220,48,1) 0%, rgba(20,37,114,0.3926820728291317) 73%), url('https://www.searchenginejournal.com/wp-content/uploads/2022/08/contact-us-2-62fa2cc2edbaf-sej-1280x720.png');
     padding-bottom: 15rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    color: #eedc30;
+
+}
+
+.ContactUS.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: transparent;
+    border-radius: 5px 40px 5px 40px;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .OurServiceCardflow {
@@ -474,7 +486,6 @@ input[type="submit"] {
     align-items: center;
     padding-bottom: 18rem !important;
     padding-top: 3rem !important
-    
 }
 
 .card-wrap {
