@@ -9,6 +9,10 @@ import InAttendenceTable from './Dashboard/Components/Attendence/InAttendenceTab
 import OutAttendenceTable from './Dashboard/Components/Attendence/OutAttendenceTable';
 import AttendenceModify from './Dashboard/Components/Attendence/AttendenceModify';
 import AttendenceReport from './Dashboard/Components/Attendence/AttendenceReport';
+import AboutUs from './LandingPage/Pages/AboutUs';
+import WhyChooseUs from './LandingPage/Pages/WhyChooseUs';
+import Privacy from './LandingPage/Pages/Privacy';
+import TermAndCondition from './LandingPage/Pages/TermAndCondition';
 
 
 
@@ -20,6 +24,10 @@ function App() {
         <Route path='/serviceName' element={<ServicePage />} />
         <Route path='/Our-All-Services' element={<OurServices />} />
         <Route path='/Contact-Us' element={<ContactUs />} />
+        <Route path='/About-Us' element={<AboutUs />} />
+        <Route path='/Why-Choose-Us' element={<WhyChooseUs />} />
+        <Route path='/Privacy-&-Policy' element={<Privacy />} />
+        <Route path='/Term-&-Condition' element={<TermAndCondition />} />
 
 
 
