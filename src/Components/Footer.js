@@ -73,27 +73,27 @@ const Footer = () => {
                         <Col md="2" lg="2" xl="2" className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Services</h6>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='/serviceName' className='text-reset'>
                                     Electrician
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='/serviceName' className='text-reset'>
                                     Plumber
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='/serviceName' className='text-reset'>
                                     Car Washing
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='/serviceName' className='text-reset'>
                                     Travels & Driver
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='/serviceName' className='text-reset'>
                                     Security Gaurd
                                 </a>
                             </p>
@@ -102,7 +102,7 @@ const Footer = () => {
                         <Col md="3" lg="2" xl="2" className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='/About-Us' className='text-reset'>
                                     About Us
                                 </a>
                             </p>
@@ -117,12 +117,12 @@ const Footer = () => {
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='/Term-&-Condition' className='text-reset'>
                                     Terms & Conditions
                                 </a>
                             </p>
                             <p>
-                                <a href='#!' className='text-reset'>
+                                <a href='/Privacy-&-Policy' className='text-reset'>
                                     Privacy Policy
                                 </a>
                             </p>

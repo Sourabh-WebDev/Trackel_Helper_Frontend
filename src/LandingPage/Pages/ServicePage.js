@@ -43,7 +43,7 @@ const ServicePage = () => {
                 {/* Image slideshow section */}
                 <div
                     style={{
-                        backgroundImage: `url(${images[currentImageIndex]})`,
+                        backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         width: '100%',
