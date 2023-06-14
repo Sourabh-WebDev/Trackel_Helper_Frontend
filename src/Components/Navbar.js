@@ -22,7 +22,7 @@ const Navbar = () => {
                     <Col sm={12} xl={6}>
                         <div className='NavbarChild' >
                             <div className='px-2'>
-                                <span>© 2019 - 2023 All rights reserved | Helper Services</span>
+                                <span>Helper Social</span>
                             </div>
                             |
                             <div className='px-2 NavbarChild'>

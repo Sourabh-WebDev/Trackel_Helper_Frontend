@@ -3,9 +3,14 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from '../assets/svg/we_logo.png'
-import { Link } from 'react-router-dom';
+import { NavDropdown } from 'react-bootstrap';
+import { UseStateManager } from '../Context/StateManageContext';
+import { LoginModal } from './Modal';
 
 function Header() {
+
+    const { LoginOpen, setLoginOpen } = UseStateManager()
+
     return (
         <Navbar className='bgColour' expand="lg">
             <Container fluid>
@@ -20,11 +25,21 @@ function Header() {
                         navbarScroll
                     >
                         <Nav.Link className='txtColour' href="#action1">Register As A Professional</Nav.Link>
-                        <Nav.Link className='txtColour' href="#action2">Help</Nav.Link>
-                        <Nav.Link className='txtColour' > <Link to={'/dashboard/overview'}> Login / Sign Up</Link></Nav.Link>
+                        <Nav.Link className='txtColour' href="#action2">Help </Nav.Link>
+                        <NavDropdown title="Login" id="nav-dropdown">
+                            <NavDropdown.Item onClick={() => setLoginOpen(!LoginOpen)} eventKey="4.1">Customer Login</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item eventKey="4.2">Vendor Login</NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown title="Sign Up" id="nav-dropdown">
+                            <NavDropdown.Item eventKey="4.1">Customer Sign Up</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item eventKey="4.2">Vendor Sign Up</NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
+            <LoginModal />
         </Navbar>
     );
 }

@@ -54,22 +54,27 @@ const TermAndCondition = () => {
                 </div>
             </section>
 
-            {/* <section className="">
-                <div className="container-fluid WhyChooseUsBanner">
+            <section className="">
+                <div className="container-fluid TermandConditionBanner">
                     <div className='p-5'>
-                        <u><h1 className='py-2'>Why Choose Us ?</h1></u>
-                        <p>1." DELIVERIING BEST QUALITY SERVICES, SECURING YOUR SMILE "</p>
-                        <p>2. For we care! So that you have all your time in being more responsible for your people, and leave the rest to us for attending to!</p>
-                        <p>3. We care for bringing you the best services at your doorstep – The moment you let us know about your concern; we make every effort to bring you the best and most enduring solutions at the comfort of your own home.</p>
-                        <p>4. We care for saving your time – We understand that your time is the most precious to you! No sooner than your order is initiated, within moments we have the best solutions ready for your service.</p>
-                        <p>5. We care for your decision to choose us to invest upon – The moment you zeroed upon us, that very moment we kept your value for money at the highest strata of our services. Optimum rates and best quality doesn’t just remain a wishful imagination from now on! For we bring both to you at paramount ease and convenience.</p>
-                        <p>6. We care for the utmost trust you render on us – Our continued series of bringing you the best services kindles the trust in you even more strongly with every passing day!</p>
-                        <p>7. We care to bring you the services minus the hassles involved – Our professionals being thoroughly equipped in understanding the concerns and quite adept with the places in and around the city, makes it really easy for you to receive the solutions with effortlessly!</p>
-                        <p> 8. We care to have only the experts with verified expertise in the past to address you – Carefully scrutinized and chosen experts are what we entirely rely upon! All because you can avail their expertise fearlessl</p>
+                        <div className='text-center'>
+                        <h3>TERMS AND CONDITIONS</h3>
+                        <h6>Last Updated: 29thApril, 2022</h6>
+                        </div>
+
+                        <p className='py-2'>
+                            These terms and conditions (“Terms”) govern the use of services made available on or through https://www.mytotalhelper.com and/or the Helper Company mobile app (collectively, the “Platform”, and together with the services made available on or through the Platform, the “Services”). These Terms also include our privacy policy, available at https://www.mytotalhelper.com/privacy-policy (“Privacy Policy”), and any guidelines, additional, or supplemental terms, policies, and disclaimers made available or issued by us from time to time (“Supplemental Terms”). The Privacy Policy and the Supplemental Terms form an integral part of these Terms. In the event of a conflict between these Terms and the Supplemental Terms with respect to applicable Services, the Supplemental Terms will prevail.
+                        </p>
+                        <p className='py-2'>
+                            The Terms constitute a binding and enforceable legal contract between Total helper (a company incorporated under the Companies Act, 2013 with its registered address at R-5, PNR House Green Park Market, New Delhi 110016, and its principal place of business at 416, Udyog Vihar III, Sector 20, Gurugram, Haryana 122008 and its affiliates (“UC”, “we”, “us”, or “our”), and you, a user of the Services, or any legal entity that books Pro Services (defined below) on behalf of end-users (“you” or “Customer”). By using the Services, you represent and warrant that you have full legal capacity and authority to agree to and bind yourself to these Terms. If you represent any other person, you confirm and represent that you have the necessary power and authority to bind such person to these Terms.
+                        </p>
+                        <p className='py-2'>
+                            By using the Services, you agree that you have read, understood, and are bound by, these Terms, as amended from time to time, and that you will comply with the requirements listed here. These Terms expressly supersede any prior written agreements with you. If you do not agree to these Terms, or comply with the requirements listed here, please do not use the Services.
+                        </p>
                     </div>
 
                 </div>
-            </section> */}
+            </section>
             <section>
                 {/* Footer section */}
                 <div className="container-fluid">
