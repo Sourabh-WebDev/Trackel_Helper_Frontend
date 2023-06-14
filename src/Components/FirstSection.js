@@ -1,12 +1,13 @@
 import React from 'react';
 import { Col, Row } from 'reactstrap';
-import FirstectionImg from '../assets/img/FirstectionImg.png';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 const FirstSection = () => {
+
+
     return (
         <>
             <Row className='m-0'>
@@ -17,7 +18,7 @@ const FirstSection = () => {
                             <h1 className='FirstSectionHeadinng'>Home services, on demand. 👇</h1>
                             <InputGroup className="mb-3">
                                 <DropdownButton
-                                    title="Select your Location"
+                                    title="Location"
                                     id="input-group-dropdown-1"
                                     className='txtColour'
                                 >
@@ -37,7 +38,6 @@ const FirstSection = () => {
                 </Col>
                 {/* Right Column */}
                 <Col xl='6' className='text-center'>
-                    {/* <img className='FirstSectionImgStyle img-fluid' src={FirstectionImg} alt="ADIMG" /> */}
                     <div className="Enquiry container animate__animated animate__backInDown">
                         <h2>Enquiry Form</h2>
                         <form className='p-2' action="#" method="post">

@@ -13,6 +13,10 @@ const StateMangerProvider = ({ children }) => {
     // add order Modal controller 
     const [Show, setShow] = useState(false)
 
+    // Login Modal 
+
+    const [LoginOpen, setLoginOpen] = useState(false)
+
 
     return <StateManagerContext.Provider value={{
         activeTab,
@@ -20,7 +24,9 @@ const StateMangerProvider = ({ children }) => {
         rows,
         setRows,
         Show,
-        setShow
+        setShow,
+        LoginOpen,
+        setLoginOpen
 
     }}>
         {children}
