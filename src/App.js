@@ -21,6 +21,12 @@ import AboutUs from './LandingPage/Pages/AboutUs';
 import WhyChooseUs from './LandingPage/Pages/WhyChooseUs';
 import Privacy from './LandingPage/Pages/Privacy';
 import TermAndCondition from './LandingPage/Pages/TermAndCondition';
+import AddServiceProvider from './Dashboard/Components/ManageHr/Forms/AddServiceProvider';
+import AddEmployeeForm from './Dashboard/Components/ManageHr/Forms/AddEmployeeForm';
+import ManageTestimonials from './Dashboard/Components/ManagePage/ManageTestimonials';
+import ManageOffer from './Dashboard/Components/ManagePage/ManageOffer';
+import ManagePost from './Dashboard/Components/ManagePage/ManagePost';
+import ManageAdvertisement from './Dashboard/Components/ManagePage/ManageAdvertisement';
 
 
 
@@ -53,7 +59,13 @@ function App() {
         <Route path='/expense/all-transaction-report' element={<AllTransactionReport />} />
         <Route path='/managehr/manage-employee' element={<ManageEmployee />} />
         <Route path='/managehr/manage-service-provider' element={<ManageServiceProvider />} />
+        <Route path='/managehr/manage-service-provider/add-servider-provider' element={<AddServiceProvider />} />
+        <Route path='/managehr/manage-service-provider/add-employee' element={<AddEmployeeForm />} />
         <Route path='/managemaster/manage-services' element={<ManageService />} />
+        <Route path='/managepage/manage-testimonial' element={<ManageTestimonials />} />
+        <Route path='/managepage/manage-offer' element={<ManageOffer />} />
+        <Route path='/managepage/manage-post' element={<ManagePost />} />
+        <Route path='/managepage/manage-advertisement' element={<ManageAdvertisement />} />
       </Routes>
     </BrowserRouter>
   );

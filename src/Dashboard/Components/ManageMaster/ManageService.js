@@ -5,6 +5,8 @@ import React, { Fragment, useState } from 'react'
 import { Button } from 'reactstrap';
 import DashHeader from '../../DashboardComponents/Global/DashHeader';
 import { mockDataContacts } from '../../data/mockData';
+import ModalComponent from '../../DashboardComponents/ModalComponent';
+import MasterAddService from './Form/MasterAddService';
 
 const ManageService = () => {
 
@@ -70,16 +72,20 @@ const ManageService = () => {
             </GridToolbarContainer>
         );
     };
+
+    const [masterAddService, setMasterAddServices] = useState(false)
+    const ToggleMasterAddService = () => setMasterAddServices(!masterAddService)
+
+
     return (
         <Fragment>
+            <ModalComponent modal={masterAddService} toggle={ToggleMasterAddService} data={<MasterAddService />} modalTitle={"Add Service"} />
             <DashHeader />
             <h4 className='p-3 px-4 mt-3 bg-transparent headingBelowBorder' style={{ color: "var(--blue)", maxWidth: "fit-content" }}>All Services List </h4>
             <div className='AttendenceNavBtn w-100 py-2 px-4 gap-3'>
-                {["Add New Services"].map((item, index) => (
-                    <div className={`py-2 px-4 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center `} style={{ minWidth: "15rem", maxWidth: "15rem" }} >
-                        {item}
-                    </div>
-                ))}
+                <div className={`py-2 px-4 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center `} style={{ minWidth: "15rem", maxWidth: "15rem" }} onClick={ToggleMasterAddService}>
+                    Add New Services
+                </div>
             </div>
             <div className='p-4'>
                 <Box

@@ -4,10 +4,11 @@ import { DataGrid, GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDe
 import { Box } from '@mui/material'
 import { mockDataContacts } from '../../data/mockData'
 import { Button } from 'reactstrap'
-import ModalComponent from '../../DashboardComponents/ModalComponent'
-import AddEmployeeForm from './Forms/AddEmployeeForm'
+import { useNavigate } from 'react-router-dom/dist'
 
 const ManageEmployee = () => {
+
+    const navigate = useNavigate()
 
     const [Block, setBlock] = useState(false)
 
@@ -75,11 +76,10 @@ const ManageEmployee = () => {
     return (
         <Fragment>
             {/* employee add form Modal  */}
-            <ModalComponent modal={addEmployee} toggle={ToggleAddEmployee} data={<AddEmployeeForm />} modalTitle={"Add Employee"} />
             <DashHeader />
             <h4 className='p-3 px-4 mt-3 bg-transparent headingBelowBorder' style={{ color: "var(--blue)", maxWidth: "fit-content" }}>Employee List</h4>
             <div className='AttendenceNavBtn w-100 py-2 px-4 gap-3'>
-                <div className={`py-2 px-4 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center `} style={{ minWidth: "15rem", maxWidth: "15rem" }} onClick={ToggleAddEmployee} >
+                <div className={`py-2 px-4 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center `} style={{ minWidth: "15rem", maxWidth: "15rem" }} onClick={() => navigate("/managehr/manage-service-provider/add-employee")} >
                     Add Employee
                 </div>
 
