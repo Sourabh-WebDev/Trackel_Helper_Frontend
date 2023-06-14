@@ -46,19 +46,19 @@ const SeventhSection = () => {
                 <div className='py-5'>
                     <div className="d-flex justify-content-around gap-2">
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_5.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_1.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_5.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_1.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                     </div>
@@ -66,19 +66,19 @@ const SeventhSection = () => {
                 <div className='py-5 mx-2'>
                     <div className="d-flex justify-content-around gap-2">
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_5.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_1.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_5.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_1.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                     </div>
@@ -86,19 +86,19 @@ const SeventhSection = () => {
                 <div className='py-5'>
                     <div className="d-flex justify-content-around gap-2">
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_5.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_1.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_5.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                         <div className='border-0 '>
-                            <img className='rounded-circle p-2' width={180} height={180} src='https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg' alt="" />
+                            <img className='rounded-circle p-2' width={180} height={180} src='https://themeholy.com/wordpress/plumer/wp-content/uploads/2023/04/team_1_1.jpg' alt="" />
                             <h5>Singh ji</h5>
                         </div>
                     </div>

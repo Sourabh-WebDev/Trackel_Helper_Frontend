@@ -5,11 +5,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import Logo from '../assets/svg/we_logo.png'
 import { NavDropdown } from 'react-bootstrap';
 import { UseStateManager } from '../Context/StateManageContext';
-import { LoginModal } from './Modal';
+import { LoginModal, SingupModal } from './Modal';
 
 function Header() {
 
-    const { LoginOpen, setLoginOpen } = UseStateManager()
+    const { LoginOpen, setLoginOpen, SingUp, setSingUp } = UseStateManager()
 
     return (
         <Navbar className='bgColour' expand="lg">
@@ -32,7 +32,7 @@ function Header() {
                             <NavDropdown.Item eventKey="4.2">Vendor Login</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Sign Up" id="nav-dropdown">
-                            <NavDropdown.Item eventKey="4.1">Customer Sign Up</NavDropdown.Item>
+                            <NavDropdown.Item onClick={() => setSingUp(!SingUp)} eventKey="4.1">Customer Sign Up</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item eventKey="4.2">Vendor Sign Up</NavDropdown.Item>
                         </NavDropdown>
@@ -40,6 +40,7 @@ function Header() {
                 </Navbar.Collapse>
             </Container>
             <LoginModal />
+            <SingupModal />
         </Navbar>
     );
 }
