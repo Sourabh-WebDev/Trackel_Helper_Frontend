@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Col, Row } from 'reactstrap'
-import { FaEnvelope, FaGoogle, FaHome, FaInstagram, FaLinkedinIn, FaPhone, FaPrint, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaGoogle, FaHome, FaInstagram, FaLinkedinIn, FaPhone, FaPrint, FaTwitter } from "react-icons/fa";
 import { Container } from 'react-bootstrap';
 import FooterBannner from '../assets/img/FooterBanner.png'
 import { BsCheckCircle, BsCircleFill } from "react-icons/bs";
@@ -40,7 +40,7 @@ const Footer = () => {
 
                 <div>
                     <a href='' className='mr-4 text-reset'>
-                        <FaHome />
+                        <FaFacebook />
                     </a>
                     <a href='' className='mr-4 text-reset'>
                         <FaTwitter />
@@ -50,9 +50,6 @@ const Footer = () => {
                     </a>
                     <a href='' className='mr-4 text-reset'>
                         <FaInstagram />
-                    </a>
-                    <a href='' className='mr-4 text-reset'>
-                        <FaLinkedinIn />
                     </a>
                 </div>
             </section>

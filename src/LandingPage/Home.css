@@ -62,6 +62,11 @@ body {
     box-shadow: 0 0 0 0.2rem #1f35963b;
 }
 
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+    left: -103px;
+}
+
 .form-control {
     display: block;
     width: 100%;
@@ -204,6 +209,10 @@ body {
 
     .ThirdSectionRotatedRight {
         transform: rotate(-0deg) !important;
+    }
+
+    .bgSecondSectionServiceCard {
+        bottom: -13px !important;
     }
 }
 
@@ -433,6 +442,12 @@ input[type="email"] {
     font-size: 16px;
 }
 
+input[type="password"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+
 input[type="submit"] {
     padding: 1px 20px;
     font-size: 16px;
@@ -491,6 +506,18 @@ input[type="submit"] {
     background-repeat: no-repeat;
     background-position: right;
     color: #142572;
+    font-weight: 600;
+}
+.TermandConditionBanner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background: linear-gradient(62deg, #19191d89 0%, #21201aa8 100%), url('https://img.freepik.com/free-photo/terms-service-conditions-rule-policy-regulation-concept_53876-124149.jpg?w=1380&t=st=1686730351~exp=1686730951~hmac=4bfe4eaea94b0b38d5c2455c8c16554d8a9a43367c6330e194eb8b087944ea6c');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    color: #fff;
+    padding-bottom: 16rem;
     font-weight: 600;
 }
 
