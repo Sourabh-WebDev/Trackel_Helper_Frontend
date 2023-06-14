@@ -39,23 +39,23 @@ const FirstSection = () => {
                 {/* Right Column */}
                 <Col xl='6' className='text-center'>
                     <div className="Enquiry container animate__animated animate__backInDown">
-                        <h2>Enquiry Form</h2>
-                        <form className='p-2' action="#" method="post">
+                        <b><h2 className='txtColour font-weight-bold p-1' >Enquiry Form</h2> </b>
+                        <form className='pb-2 px-2' action="#" method="post">
                             <div className="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" placeholder="Your name" required />
+                                <label for="name">Full Name:</label>
+                                <input type="text" id="name" name="name" placeholder="Enter Full Name" required />
                             </div>
                             <div className="form-group">
-                                <label for="email">Mob No. :</label>
-                                <input type="email" id="email" name="email" placeholder="Your Mobile No." required />
+                                <label for="email">Mobile Number :</label>
+                                <input type="email" id="email" name="email" placeholder="Enter Mobile Number" required />
                             </div>
                             <div className="form-group">
                                 <label for="email">Services looking for:</label>
-                                <input type="email" id="email" name="email" placeholder="Services looking for" required />
+                                <input type="email" id="email" name="email" placeholder="Please enter the service you are looking for." required />
                             </div>
                             <div className="form-group">
-                                <label for="message">Message:</label>
-                                <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+                                <label for="message">Discription (Please specify):</label>
+                                <textarea id="message" name="message" placeholder="Enter Discription" rows="5" required></textarea>
                             </div>
                             <div className="form-group">
                                 <input type="submit" value="Submit" />

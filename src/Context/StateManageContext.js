@@ -16,6 +16,7 @@ const StateMangerProvider = ({ children }) => {
     // Login Modal 
 
     const [LoginOpen, setLoginOpen] = useState(false)
+    const [SingUp, setSingUp] = useState(false)
 
 
     return <StateManagerContext.Provider value={{
@@ -26,8 +27,9 @@ const StateMangerProvider = ({ children }) => {
         Show,
         setShow,
         LoginOpen,
-        setLoginOpen
-
+        setLoginOpen,
+        SingUp,
+        setSingUp
     }}>
         {children}
     </StateManagerContext.Provider>

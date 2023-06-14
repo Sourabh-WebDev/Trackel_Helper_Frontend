@@ -46,32 +46,32 @@ const SixthSection = () => {
             <Slider {...settings} className=''>
 
                 <div className='d-flex justify-content-around align-items-center py-2'>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome '>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
+                        <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Sourabh Verma
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
+                        <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Abhishek Sharma
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome '>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
+                    <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Suman Singh
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
+                    <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Anil Kumar
@@ -80,32 +80,32 @@ const SixthSection = () => {
                     </Card>
                 </div>
                 <div className='d-flex justify-content-around align-items-center py-2'>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
+                        <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Sourabh Verma
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome '>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
+                        <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Abhishek Sharma
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
+                    <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Suman Singh
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome '>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
+                    <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Anil Kumar
@@ -114,32 +114,32 @@ const SixthSection = () => {
                     </Card>
                 </div>
                 <div className='d-flex justify-content-around align-items-center py-2'>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome '>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
+                        <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Sourabh Verma
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
+                        <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Abhishek Sharma
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome '>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
+                    <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Suman Singh
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card style={{ width: '12rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid' variant="top" src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" />
+                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
+                    <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                         <Card.Body>
                             <Card.Text>
                                 Anil Kumar
@@ -147,6 +147,7 @@ const SixthSection = () => {
                         </Card.Body>
                     </Card>
                 </div>
+
             </Slider>
         </div>
     )
