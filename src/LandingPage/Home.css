@@ -521,6 +521,19 @@ input[type="submit"] {
     font-weight: 600;
 }
 
+.PrivcyAndPolicyBanner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background: linear-gradient(62deg, #19191d89 0%, #21201aa8 100%), url('https://blog.ipleaders.in/wp-content/uploads/2020/10/bluestar_webbox_privacy-policy_1024x512_1218_V1_PRESS.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    color: #fff;
+    padding-bottom: 16rem;
+    font-weight: 600;
+}
+
 .ContactUS.container {
     max-width: 900px;
     margin: 20px auto;
