@@ -67,7 +67,7 @@ button.Dash_dropdown_item.dropdown-item {
 }
 button.Dash_dropdown_item.dropdown-item:hover {
   background-color: transparent !important;
-  color: #ffc107 !important;
+  color: var(--yellow) !important;
 }
 
 .Dash_dropdown_Menu.dropdown-menu.show {
@@ -175,4 +175,16 @@ button.Dash_dropdown_item.dropdown-item:hover {
   flex: 1 1 auto;
   max-width: fit-content;
   min-width: fit-content;
+}
+
+.Nav_hover {
+  transition: 0.3s ease-in-out;
+}
+.Nav_hover:hover {
+  background-color: var(--yellow);
+  color: var(--blue);
+}
+.Nav_hover_active {
+  background-color: var(--yellow);
+  color: var(--blue);
 }
