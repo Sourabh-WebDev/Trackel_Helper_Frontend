@@ -153,3 +153,26 @@ button.Dash_dropdown_item.dropdown-item:hover {
     width: 100% !important;
   }
 }
+
+.AddServiceMan_Main {
+  display: flex;
+  justify-content: center;
+}
+
+.TheServiceProviderForm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.6rem;
+}
+
+.AddServieProvder_services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.AddServieProvder_services > span {
+  flex: 1 1 auto;
+  max-width: fit-content;
+  min-width: fit-content;
+}

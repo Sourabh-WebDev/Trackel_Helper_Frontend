@@ -5,32 +5,29 @@ import { Button } from 'reactstrap';
 import DashHeader from '../../DashboardComponents/Global/DashHeader';
 import { mockDataContacts } from '../../data/mockData';
 import ModalComponent from '../../DashboardComponents/ModalComponent';
-import AddServiceProvider from './Forms/AddServiceProvider';
-import { useNavigate } from 'react-router-dom/dist';
+import AddTestimonialForm from './Forms/AddTestimonialForm';
+import AddNewPost from './Forms/AddNewPost';
 
-const ManageServiceProvider = () => {
-
-    const navigate = useNavigate()
-
+const ManagePost = () => {
     const [Block, setBlock] = useState(false)
 
     const column = [
         { field: "id", headerName: "Sr No", flex: 1, minWidth: 50, editable: true },
-        { field: "refName", headerName: "Ref Name", minWidth: 120, editable: true },
-        { field: "name", headerName: "Name", minWidth: 120, editable: true },
-        { field: "providerType", headerName: "Provider Type", minWidth: 120, editable: true },
-        { field: "servicename", headerName: "Service Name", minWidth: 400, editable: true },
-        { field: "aadhaarNumber", headerName: "Aadhaar No.", minWidth: 120, editable: true },
-        { field: "mobileNumber", headerName: "Mobile No.", minWidth: 120, editable: true },
-        { field: "email", headerName: "Email", minWidth: 120, editable: true },
-        { field: "address", headerName: "Address", minWidth: 250, editable: true },
-        { field: "username", headerName: "User Name", minWidth: 250, editable: true },
-        { field: "password", headerName: "password", minWidth: 250, editable: true },
-        { field: "zipCode", headerName: "Password", minWidth: 120, editable: true },
+        { field: "image", headerName: "Image", minWidth: 120, editable: true },
+        { field: "custid", headerName: "Cust.ID", minWidth: 120, editable: true },
+        { field: "discription", headerName: "Discription", minWidth: 400, editable: true },
+        { field: "postDate", headerName: "Post Date.", minWidth: 120, editable: true },
+        { field: "endDate", headerName: "End Date.", minWidth: 120, editable: true },
+        // { field: "mobileNumber", headerName: "Mobile No.", minWidth: 120, editable: true },
+        // { field: "email", headerName: "Email", minWidth: 120, editable: true },
+        // { field: "address", headerName: "Address", minWidth: 250, editable: true },
+        // { field: "username", headerName: "User Name", minWidth: 250, editable: true },
+        // { field: "password", headerName: "password", minWidth: 250, editable: true },
+        // { field: "zipCode", headerName: "Password", minWidth: 120, editable: true },
         {
             field: "status",
             minWidth: 150,
-            headerName: "Admin Status",
+            headerName: "Admin Approved",
             renderCell: (params) => (
                 <Button className="text-white bg-green">Approved</Button>
             ),
@@ -49,16 +46,15 @@ const ManageServiceProvider = () => {
         },
         {
             field: "block",
-            headerName: "Block",
-            minWidth: 320,
+            headerName: "Block Post",
+            minWidth: 250,
             renderCell: (params) => (
                 <div className="d-flex gap-2">
                     {Block ?
-                        <Button className="text-white bg-warning border-warning" onClick={() => setBlock(false)}>Un-Block</Button>
+                        <Button className="text-white bg-warning border-warning" onClick={() => setBlock(false)}>Un-Block Post</Button>
                         :
-                        <Button className="text-white bg-red" onClick={() => setBlock(true)}>Block </Button>
+                        <Button className="text-white bg-red" onClick={() => setBlock(true)}>Block Post</Button>
                     }
-                    <Button className='text-white bg-green'> Reset Ratings </Button>
                 </div>
             ),
         },
@@ -74,18 +70,20 @@ const ManageServiceProvider = () => {
                 <GridToolbarDensitySelector />
             </GridToolbarContainer>
         );
-    }
-    // Add service provider controller 
-    const [AddService, setAddServicer] = useState(false)
-    const ToggleAddServiceMan = () => setAddServicer(!AddService)
+    };
+
+    const [AddPost, setAddPost] = useState(false)
+    const ToggleAddNewPost = () => setAddPost(!AddPost)
+
+
     return (
         <Fragment>
+            <ModalComponent modal={AddPost} toggle={ToggleAddNewPost} data={<AddNewPost />} modalTitle={"Add New Post"} size={"lg"} scrollable={true} />
             <DashHeader />
-            <h4 className='p-3 px-4 mt-3 bg-transparent headingBelowBorder' style={{ color: "var(--blue)", maxWidth: "fit-content" }}>Employee List</h4>
+            <h4 className='p-3 px-4 mt-3 bg-transparent headingBelowBorder' style={{ color: "var(--blue)", maxWidth: "fit-content" }}>All Posts </h4>
             <div className='AttendenceNavBtn w-100 py-2 px-4 gap-3'>
-
-                <div className={`py-2 px-4 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center `} onClick={() => { navigate("/managehr/manage-service-provider/add-servider-provider") }} style={{ minWidth: "15rem", maxWidth: "15rem" }} >
-                    Add Service Provider
+                <div className={`py-2 px-4 border shadow rounded-2 cursor-p hoverThis Fw_500 d-flex align-items-center justify-content-center `} style={{ minWidth: "15rem", maxWidth: "15rem" }} onClick={ToggleAddNewPost}>
+                    Add New Post
                 </div>
             </div>
             <div className='p-4'>
@@ -139,4 +137,4 @@ const ManageServiceProvider = () => {
     )
 }
 
-export default ManageServiceProvider
+export default ManagePost

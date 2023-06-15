@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
+import { Modal, ModalBody, ModalHeader } from 'reactstrap'
 
-const ModalComponent = ({ modal, toggle, data, modalTitle }) => {
+const ModalComponent = ({ modal, toggle, data, modalTitle, size, scrollable }) => {
     return (
-        <Modal isOpen={modal} toggle={toggle} centered={true}>
+        <Modal isOpen={modal} toggle={toggle} centered={true} size={size ? size : ""} scrollable={scrollable === true ? true : false}>
             <ModalHeader toggle={toggle}>{modalTitle}</ModalHeader>
             <ModalBody>
                 {data}
