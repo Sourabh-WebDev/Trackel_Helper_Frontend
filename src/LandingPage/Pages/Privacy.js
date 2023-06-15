@@ -54,22 +54,27 @@ const Privacy = () => {
                 </div>
             </section>
 
-            {/* <section className="">
-                <div className="container-fluid WhyChooseUsBanner">
+            <section className="">
+                <div className="container-fluid PrivcyAndPolicyBanner">
                     <div className='p-5'>
-                        <u><h1 className='py-2'>Why Choose Us ?</h1></u>
-                        <p>1." DELIVERIING BEST QUALITY SERVICES, SECURING YOUR SMILE "</p>
-                        <p>2. For we care! So that you have all your time in being more responsible for your people, and leave the rest to us for attending to!</p>
-                        <p>3. We care for bringing you the best services at your doorstep – The moment you let us know about your concern; we make every effort to bring you the best and most enduring solutions at the comfort of your own home.</p>
-                        <p>4. We care for saving your time – We understand that your time is the most precious to you! No sooner than your order is initiated, within moments we have the best solutions ready for your service.</p>
-                        <p>5. We care for your decision to choose us to invest upon – The moment you zeroed upon us, that very moment we kept your value for money at the highest strata of our services. Optimum rates and best quality doesn’t just remain a wishful imagination from now on! For we bring both to you at paramount ease and convenience.</p>
-                        <p>6. We care for the utmost trust you render on us – Our continued series of bringing you the best services kindles the trust in you even more strongly with every passing day!</p>
-                        <p>7. We care to bring you the services minus the hassles involved – Our professionals being thoroughly equipped in understanding the concerns and quite adept with the places in and around the city, makes it really easy for you to receive the solutions with effortlessly!</p>
-                        <p> 8. We care to have only the experts with verified expertise in the past to address you – Carefully scrutinized and chosen experts are what we entirely rely upon! All because you can avail their expertise fearlessl</p>
+                        <div className='text-center'>
+                            <h3>Privacy & Policy</h3>
+                            <h6>Last Updated: 29thApril, 2022</h6>
+                        </div>
+
+                        <p className='py-2'>
+                            Welcome to Helper Services privacy policy (“Privacy Policy” or “Policy”).
+                        </p>
+                        <p className='py-2'>
+                            Helper Services India Private Limited and its affiliates are engaged in the business of providing web-based solutions to facilitate connections between customers that seek specific services and service professionals that offer these services. This Policy outlines our practices in relation to the collection, storage, usage, processing, and disclosure of personal data that you have consented to to share with us when you access, use, or otherwise interact with our website available at https://www.mytotalhelper.com/ or mobile application ‘Urban Company’ (collectively, “Platform”) or avail products or services that Helper services offers you on or through the Platform (collectively, the “Services”).In this Policy, the services offered to you by service professionals on or through the Platform are referred to as “Professional Services”.
+                        </p>
+                        <p className='py-2'>
+                            At Helper Company, we are committed to protecting your personal data and respecting your privacy. In order to provide you with access to the Services or the Professional Services, we have to collect and otherwise process certain data about you. This Policy explains how we process and use personal data about you.
+                        </p>
                     </div>
 
                 </div>
-            </section> */}
+            </section>
             <section>
                 {/* Footer section */}
                 <div className="container-fluid">

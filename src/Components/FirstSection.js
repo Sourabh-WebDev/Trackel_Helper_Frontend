@@ -4,6 +4,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { Button } from 'react-bootstrap';
+import { MdSearch } from "react-icons/md";
 
 const FirstSection = () => {
 
@@ -32,6 +34,7 @@ const FirstSection = () => {
                                     <Dropdown.Item >Charbagh</Dropdown.Item>
                                 </DropdownButton>
                                 <Form.Control style={{ padding: '21px' }} className='txtColour' placeholder='Search for services' aria-label="Text input with dropdown button" />
+                                <Button className='bgColour' variant="outline-secondary"><MdSearch color='#142572' size={30} /></Button>
                             </InputGroup>
                         </div>
                     </div>
