@@ -304,12 +304,12 @@ body {
     box-shadow: 10px -10px 5px 0px rgba(129, 219, 255, 0.75);
     -webkit-box-shadow: 10px -10px 5px 0px rgba(129, 219, 255, 0.75);
     -moz-box-shadow: 10px -10px 5px 0px rgba(129, 219, 255, 0.75);
-    border-radius: 50px 5px 50px 5px;
     border: none;
 }
 
 .SixthSectionAwesome>img {
-    border-radius: 50px 0px 0px 0px;
+    height: 100%;
+    width: 100%;
 }
 
 .SixthSectionAwesome>.card-body {
@@ -326,7 +326,7 @@ body {
 }
 
 .bgSixthSectionImg {
-    background-image: url('https://www.taylorcommunity.org/wp-content/uploads/2021/08/banner-internal-meet-team-hands_2560x693.jpg');
+    background-image: linear-gradient(313deg, rgba(238, 220, 48, 1) 0%, rgba(43, 57, 117, 0.393) 73%), url('https://www.taylorcommunity.org/wp-content/uploads/2021/08/banner-internal-meet-team-hands_2560x693.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -508,6 +508,7 @@ input[type="submit"] {
     color: #142572;
     font-weight: 600;
 }
+
 .TermandConditionBanner {
     background-size: cover;
     background-repeat: no-repeat;

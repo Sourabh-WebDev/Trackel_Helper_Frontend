@@ -46,108 +46,47 @@ const SixthSection = () => {
             <Slider {...settings} className=''>
 
                 <div className='d-flex justify-content-around align-items-center py-2'>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
-                        <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Sourabh Verma
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
+                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                     </Card>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Abhishek Sharma
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
+                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                     </Card>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
-                    <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Suman Singh
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
+                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                     </Card>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
-                    <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Anil Kumar
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
+                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                     </Card>
                 </div>
                 <div className='d-flex justify-content-around align-items-center py-2'>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
-                        <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Sourabh Verma
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
+                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                     </Card>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Abhishek Sharma
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
+                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                     </Card>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
-                    <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Suman Singh
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
+                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                     </Card>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
-                    <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Anil Kumar
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
+                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                     </Card>
                 </div>
                 <div className='d-flex justify-content-around align-items-center py-2'>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
-                        <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Sourabh Verma
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
+                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                     </Card>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Abhishek Sharma
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
+                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                     </Card>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome '>
-                    <Card.Img className='img-fluid' variant="top" src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Suman Singh
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
+                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                     </Card>
-                    <Card style={{ width: '12rem', height: '10rem' }} className='SixthSectionAwesome mt-5'>
-                    <Card.Img className='img-fluid' variant="top" src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                        <Card.Body>
-                            <Card.Text>
-                                Anil Kumar
-                            </Card.Text>
-                        </Card.Body>
+                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
+                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                     </Card>
                 </div>
-
             </Slider>
         </div>
     )
