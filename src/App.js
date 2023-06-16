@@ -27,6 +27,10 @@ import ManageTestimonials from './Dashboard/Components/ManagePage/ManageTestimon
 import ManageOffer from './Dashboard/Components/ManagePage/ManageOffer';
 import ManagePost from './Dashboard/Components/ManagePage/ManagePost';
 import ManageAdvertisement from './Dashboard/Components/ManagePage/ManageAdvertisement';
+import ManageCustomer from './Dashboard/Components/Customer/ManageCustomer';
+import CustomerHistory from './Dashboard/Components/Customer/CustomerHistory';
+import MonthlyMembers from './Dashboard/Components/Customer/MonthlyMembers';
+import ManageEnquiry from './Dashboard/Components/Customer/ManageEnquiry';
 
 
 
@@ -66,6 +70,10 @@ function App() {
         <Route path='/managepage/manage-offer' element={<ManageOffer />} />
         <Route path='/managepage/manage-post' element={<ManagePost />} />
         <Route path='/managepage/manage-advertisement' element={<ManageAdvertisement />} />
+        <Route path='/customer/manage-customer' element={<ManageCustomer />} />
+        <Route path='customer/member-history' element={<CustomerHistory />} />
+        <Route path='/customer/monthly-members' element={<MonthlyMembers />} />
+        <Route path='/customer/manage-enquiry' element={<ManageEnquiry />} />
       </Routes>
     </BrowserRouter>
   );

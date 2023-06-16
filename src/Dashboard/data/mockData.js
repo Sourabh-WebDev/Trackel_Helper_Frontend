@@ -208,7 +208,6 @@ export const NavigationButton = [
   { id: 5, name: "Manage Master", options: ["Manage Services"] },
   { id: 6, name: "Manage Page", options: ["Manage Testimonial", "Manage offer", "Manage Post", "Manage Advertisement"] },
   { id: 7, name: "Customer", options: ["Manage Customer", "Member History", "Monthly Members", "Manage Enquiry"] },
-  { id: 8, name: "Profile" }
 ]
 
 // export const mockDataInvoices = [
