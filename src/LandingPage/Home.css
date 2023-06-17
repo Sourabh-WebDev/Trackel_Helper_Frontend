@@ -240,6 +240,9 @@ body {
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    background-position: center;
 }
 
 .bgSecondSectionImg>.card {
@@ -257,14 +260,31 @@ body {
 
 .cardHover {
     transition: transform 0.3s ease;
-    color: #000000;
+    box-shadow: 0px 0px 30px rgba(0,0,0, 0.6);
 }
 
 .cardHover:hover {
     transform: rotateY(15deg);
-    background-color: #eedb306e;
+    background-color: #142572;
+    color: #142572;
+    border: 1px solid gold;
+}
+
+
+.cardHover>div {
+    background: #142572;
+    color: #fff;
+}
+
+.cardHover>div:hover {
+    background: #fff;
     color: #142572;
 }
+
+.cardHover>div img:hover {
+    transform: scale(1.5);
+}
+
 
 .bgSecondSectionServiceCard {
     position: absolute;
