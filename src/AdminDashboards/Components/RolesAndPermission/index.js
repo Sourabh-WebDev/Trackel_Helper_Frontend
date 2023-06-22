@@ -8,7 +8,7 @@ import SupervisorRoles from './SupervisorRoles'
 import OfficeRoles from './OfficeRoles'
 
 const AdminRolesAndPermission = () => {
-    const [attendanceActive, setActiveAttendance] = useState("customer")
+    const [attendanceActive, setActiveAttendance] = useState("admin")
     return (
         <Fragment>
             <AdminHeader />
