@@ -12,6 +12,8 @@
   --text: #4d4d4d;
   --red: #d9393a;
   --green: #81c14b;
+  --light-text: #8c8c8c;
+  --white: #ffffff;
 }
 
 .cursor-p {
@@ -22,13 +24,14 @@
   transition: 0.2s ease;
 }
 .hoverThis_active {
-  background-color: var(--blue);
-  color: var(--yellow);
+  background-color: var(--yellow);
+  color: var(--white);
+  border-color: var(--yellow) !important;
 }
 .hoverThis:hover {
-  background-color: var(--blue);
-  color: var(--yellow);
-  border-color: var(--blue) !important;
+  background-color: var(--yellow);
+  color: var(--white);
+  border-color: var(--yellow) !important;
 }
 
 .text-primary {
@@ -60,8 +63,22 @@
   border-color: var(--green) !important;
 }
 
+.bg-glass {
+  background: rgba(255, 255, 255, 0.445);
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .bg-glass {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
 .Fw_500 {
   font-weight: 500 !important;
+}
+.Fw_600 {
+  font-weight: 600 !important;
 }
 
 .Fw_400 {
@@ -69,3 +86,29 @@
 }
 
 /* heellooooo */
+
+/* hover classes */
+.hoverShadow {
+  transition: 0.3s ease !important;
+}
+.hoverShadow:hover {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px !important;
+}
+.hoverShadow_active {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px !important;
+}
+.hoverPrimary {
+  transition: 0.3s ease;
+}
+.hoverPrimary:hover {
+  color: var(--blue) !important;
+  background-color: var(--yellow) !important;
+}
+.hoverPrimary_active {
+  color: var(--blue);
+  background-color: var(--yellow);
+}
+
+.HoverColorBlue:hover {
+  color: var(--blue);
+}
