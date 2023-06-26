@@ -43,7 +43,6 @@ import AdminCustomerManage from './AdminDashboards/Components/Customer';
 import AdminRolesAndPermission from './AdminDashboards/Components/RolesAndPermission';
 
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -100,6 +99,8 @@ function App() {
         <Route path='customer/member-history' element={<CustomerHistory />} />
         <Route path='/customer/monthly-members' element={<MonthlyMembers />} />
         <Route path='/customer/manage-enquiry' element={<ManageEnquiry />} />
+
+
       </Routes>
     </BrowserRouter>
   );

@@ -74,9 +74,9 @@ const ThirdSection = () => {
                                 <Card className='ThirdSectionCard'>
                                     <Card.Img className='img-fluid' src={AllDaysServices} />
                                     <Card.Body className=''>
-                                        <Card.Title>12/7 SERVICE AVAILABLE</Card.Title>
+                                        <Card.Title>24/7 SERVICE AVAILABLE</Card.Title>
                                         <Card.Text >
-                                            We are 12*7 available to you and ready to help you out with your home appliances problem.
+                                            We are 24*7 available to you and ready to help you out with your home appliances problem.
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>

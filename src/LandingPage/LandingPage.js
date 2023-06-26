@@ -56,7 +56,7 @@ const LandingPage = () => {
             width: '100%',
             // height: '100vh',
           }}
-          className="container-fluid">
+          className="container-fluid custom-shape-divider-bottom-1687584617">
           {/* <div
             style={{
               position: 'absolute',
