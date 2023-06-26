@@ -6,9 +6,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import SeviceAddReducer from '../../../../Store/Reducers/Dashboard/ServiceAddReducer';
 import axios from 'axios';
 import { API_URL } from '../../../../config';
-import { ResetTvSharp } from '@mui/icons-material';
 import { AddService } from '../../../../Store/Actions/Dashboard/servicesAction';
-const MasterAddService = () => {
+import Swal from 'sweetalert2';
+import { GetAllServices } from '../../../../Store/Actions/Dashboard/servicesAction';
+import { async } from 'q';
+
+
+
+const MasterAddService = ({ ToggleMasterAddService }) => {
+
     // data 
     const [cateName, setCateName] = useState("")
     const [selectedIcon, setSelectedIcon] = useState({})
@@ -66,6 +72,19 @@ const MasterAddService = () => {
         return response;
     };
 
+    useEffect(() => {
+        if (serviceResult.isSuccess === true) {
+            Swal.fire(
+                'Successfully Added',
+                `new Service added ${serviceResult.data.data.serviceName}`,
+                'success'
+            )
+
+            ToggleMasterAddService()
+            dispatch(GetAllServices())
+        }
+    }, [serviceResult.isSuccess])
+
     const ImageUpload = async (e) => {
 
         const file = e.target.files[0];
@@ -77,6 +96,14 @@ const MasterAddService = () => {
             const response = await axios.post(API_URL + "/util/uploadfile", fd, { method: "POST" })
             if (response.status === 200) {
                 setSelectedImage(response.data.fileName)
+                Swal.fire({
+                    title: 'Sweet!',
+                    text: 'Image Successfully Uploaded',
+                    imageUrl: `${API_URL}/static/uploads/${response.data.fileName}`,
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                })
             } else {
                 console.log("File Not Uploaded")
             }
@@ -88,7 +115,7 @@ const MasterAddService = () => {
 
 
 
-    // successfull with this 
+
 
     return (
         <div>
