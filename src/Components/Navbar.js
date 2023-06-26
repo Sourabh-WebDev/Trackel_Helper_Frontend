@@ -15,7 +15,7 @@ const Navbar = () => {
                             </div>
                             |
                             <div className='px-2'>
-                                <FiClock /> <span>Mon - Sun 12Hours / We are 12*7 available</span>
+                                <FiClock /> <span>Mon - Sun 12Hours / We are 24*7 available</span>
                             </div>
                         </div>
                     </Col>
