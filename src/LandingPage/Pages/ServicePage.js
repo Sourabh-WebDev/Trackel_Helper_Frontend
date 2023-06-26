@@ -6,6 +6,10 @@ import { Button, Col, Row } from 'reactstrap';
 import Card from 'react-bootstrap/Card';
 import OfferSlider from './OfferSlider';
 import Done from '../../assets/gif/check-mark-verified-unscreen.gif';
+import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
+import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
+import SalonBanner from '../../assets/img/SalonBanner.jpg'
+import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
 
 const ServicePage = () => {
     // State variables
@@ -14,10 +18,10 @@ const ServicePage = () => {
 
     // Array of images for the slideshow
     const images = [
-        'https://img.freepik.com/free-photo/makeup-artist-applying-makeup-by-brush_329181-1926.jpg?w=900&t=st=1686553614~exp=1686554214~hmac=b6999330f17fb3affe417d0f9954f419042532b60ff4670f8f90de6ec11cfd50',
-        'https://img.freepik.com/free-photo/top-view-beauty-products-with-copy-space_23-2148620089.jpg?w=1380&t=st=1686553823~exp=1686554423~hmac=b059f1ede0f0ae5c8f473b1598938b1b671eb81771209bd3aa678d877fcd22bb',
-        'https://img.freepik.com/free-photo/female-hairdresser-using-hairbrush-hair-dryer_329181-1929.jpg?w=1060&t=st=1686385570~exp=1686386170~hmac=1df49504b9b4ea54e4047b2e1240dc5074712a66bd501940f09d09531eab10fd',
-        'https://img.freepik.com/free-photo/cosmetologist-wiping-make-up-lady_23-2148398511.jpg?w=1380&t=st=1686553886~exp=1686554486~hmac=2eeaab3a88eaa23f4142644857c2b6486fbd108924e68c68d4487c4708e45125'
+        PlumberBanner,
+        CarWashingBanner,
+        SalonBanner,
+        ElectricBanner
     ];
 
     useEffect(() => {

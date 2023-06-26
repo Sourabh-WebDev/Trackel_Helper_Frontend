@@ -34,7 +34,7 @@ const Footer = () => {
                         </div>
                     </Col>
                     <Col sm={12} xl='4'>
-                        <div className="Enquiry container animate__animated animate__backInDown">
+                        <div className="Enquiry container animate__animated animate__backInRight">
                             <b><h2 className='txtColour font-weight-bold p-1' >Enquiry Form</h2> </b>
                             <form className='pb-2 px-2' action="#" method="post">
                                 <div className="form-group">
