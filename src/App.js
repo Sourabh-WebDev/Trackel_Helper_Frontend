@@ -31,6 +31,16 @@ import ManageCustomer from './Dashboard/Components/Customer/ManageCustomer';
 import CustomerHistory from './Dashboard/Components/Customer/CustomerHistory';
 import MonthlyMembers from './Dashboard/Components/Customer/MonthlyMembers';
 import ManageEnquiry from './Dashboard/Components/Customer/ManageEnquiry';
+import AdminDashboard from './AdminDashboards/AdminDashboard';
+import AdminPannel from './AdminDashboards';
+import AdminAttendance from './AdminDashboards/Components/Attendence';
+import AdminExpenses from './AdminDashboards/Components/Expenses';
+import AdminManageHr from './AdminDashboards/Components/ManageHr';
+import AdminAddEmployeeForm from './AdminDashboards/Components/ManageHr/Forms/AdminAddEmployeeForm';
+import AdminManageMaster from './AdminDashboards/Components/ManageMaster';
+import AdminManageWebsite from './AdminDashboards/Components/ManagePage';
+import AdminCustomerManage from './AdminDashboards/Components/Customer';
+import AdminRolesAndPermission from './AdminDashboards/Components/RolesAndPermission';
 
 
 
@@ -51,7 +61,23 @@ function App() {
 
         {/* Dashboard Routes */}
 
-        <Route path='/admin' element={<SuperAdminPannel />} />
+        <Route path='/admin' element={<AdminPannel />} />
+        <Route path="/admin/attendance" element={<AdminAttendance />} />
+        <Route path="/admin/expenses" element={<AdminExpenses />} />
+        <Route path="/admin/manage-hr" element={<AdminManageHr />} />
+        <Route path="/admin/manage-hr/employee-form" element={<AdminAddEmployeeForm />} />
+        <Route path="/admin/manage-master" element={<AdminManageMaster />} />
+        <Route path="/admin/manage-website" element={<AdminManageWebsite />} />
+        <Route path="/admin/customer" element={<AdminCustomerManage />} />
+        <Route path="/admin/roles-&-permission" element={<AdminRolesAndPermission />} />
+
+
+
+
+
+
+
+
         <Route path='/attendence/in-time' element={<InAttendenceTable />} />
         <Route path='/attendence/out-time' element={<OutAttendenceTable />} />
         <Route path='/attendence/report' element={<AttendenceReport />} />

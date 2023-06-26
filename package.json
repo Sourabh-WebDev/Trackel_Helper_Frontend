@@ -16,11 +16,13 @@
     "@testing-library/user-event": "^13.5.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.0",
+    "chart.js": "^4.3.0",
     "dayjs": "^1.11.8",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
+    "react-redux": "^8.1.1",
     "react-router-dom": "^6.12.1",
     "react-scripts": "5.0.1",
     "react-scroll-parallax": "^3.4.2",
@@ -28,6 +30,9 @@
     "react-slick": "^0.29.0",
     "react-swipeable-views": "^0.14.0",
     "reactstrap": "^9.1.10",
+    "recharts": "^2.7.1",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
