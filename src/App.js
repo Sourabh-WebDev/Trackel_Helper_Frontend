@@ -42,9 +42,6 @@ import AdminManageWebsite from './AdminDashboards/Components/ManagePage';
 import AdminCustomerManage from './AdminDashboards/Components/Customer';
 import AdminRolesAndPermission from './AdminDashboards/Components/RolesAndPermission';
 
-import VendorPannel from './VendorPanelDashboard/Index'
-
-
 
 function App() {
   return (
@@ -103,9 +100,6 @@ function App() {
         <Route path='/customer/monthly-members' element={<MonthlyMembers />} />
         <Route path='/customer/manage-enquiry' element={<ManageEnquiry />} />
 
-        {/*  Vendor Routes  */}
-
-        <Route path='/Vendor' element={<VendorPannel />} />
 
       </Routes>
     </BrowserRouter>
