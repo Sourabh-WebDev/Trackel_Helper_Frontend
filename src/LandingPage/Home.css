@@ -498,7 +498,7 @@ input[type="submit"] {
     background-repeat: no-repeat;
     background-position: bottom;
     background: linear-gradient(313deg, rgba(238, 220, 48, 1) 0%, rgba(20, 37, 114, 0.3926820728291317) 73%), url('https://www.searchenginejournal.com/wp-content/uploads/2022/08/contact-us-2-62fa2cc2edbaf-sej-1280x720.png');
-    padding-bottom: 15rem;
+    padding-bottom: 25rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
@@ -511,7 +511,7 @@ input[type="submit"] {
     background-repeat: no-repeat;
     background-position: bottom;
     background: linear-gradient(62deg, #14257289 0%, #eedb30a8 100%), url('https://gophp.in/wp-content/uploads/2020/01/go-php-about-us.jpg');
-    padding-bottom: 15rem;
+    padding-bottom: 20rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
@@ -568,7 +568,7 @@ input[type="submit"] {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding-bottom: 18rem !important;
+    padding-bottom: 30rem !important;
     padding-top: 3rem !important
 }
 
@@ -583,6 +583,7 @@ input[type="submit"] {
         rgba(0, 0, 0, 0.23) 0px 6px 6px;
     cursor: pointer;
     transition: all .2s ease-in-out;
+    min-height: 320px;
 }
 
 .card-wrap:hover {

@@ -6,7 +6,6 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { Button } from 'react-bootstrap';
 import { MdSearch } from "react-icons/md";
-import HelperBanner from '../assets/img/HelperBanner.png'
 
 const FirstSection = () => {
 

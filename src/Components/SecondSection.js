@@ -5,7 +5,6 @@ import AcService from '../assets/img/AcRepair.png'
 import PlumberService from '../assets/img/PlumberServices.png'
 import Electrician from '../assets/img/ElectricianServices.png'
 import CarWashing from '../assets/img/CarService.png'
-import { BsFillCaretRightFill } from "react-icons/bs";
 import { useNavigate } from 'react-router';
 import { Col, Row } from 'reactstrap';
 import BackGrid from '../assets/img/White-Grid.png'

@@ -5,17 +5,21 @@ import Card from 'react-bootstrap/Card';
 import Footer from '../../Components/Footer';
 import { TbAirConditioning } from "react-icons/tb";
 import { MdContentCut, MdElectricBolt, MdLocalCarWash, MdPlumbing } from "react-icons/md";
+import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
+import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
+import SalonBanner from '../../assets/img/SalonBanner.jpg'
+import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
 
 const OurServices = () => {
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const images = [
-        'https://img.freepik.com/free-photo/service-maintenance-worker-repairing_23-2149176719.jpg?w=1060&t=st=1686385486~exp=1686386086~hmac=789297921380da93418cf1fb9293e187296424dc91b85157789f83be61775c2a',
-        'https://img.freepik.com/free-photo/beautiful-car-washing-service_23-2149212221.jpg?w=1060&t=st=1686385526~exp=1686386126~hmac=08d758c7c32c6a5dc553a2016751f28f0edbc3567bfa48beaa74e54cac68072b',
-        'https://img.freepik.com/free-photo/female-hairdresser-using-hairbrush-hair-dryer_329181-1929.jpg?w=1060&t=st=1686385570~exp=1686386170~hmac=1df49504b9b4ea54e4047b2e1240dc5074712a66bd501940f09d09531eab10fd',
-        'https://img.freepik.com/free-photo/male-electrician-works-switchboard-with-electrical-connecting-cable_169016-16352.jpg?w=1060&t=st=1686385727~exp=1686386327~hmac=20cc698313472fe69e35c41e9e5a27888b6e044722965226b7ab4aac649a2ea7'
-    ];
+        PlumberBanner,
+        CarWashingBanner,
+        SalonBanner,
+        ElectricBanner
+      ];
 
     const Servicecards = [
         {
@@ -29,7 +33,7 @@ const OurServices = () => {
         {
             headerClass: "two",
             iconClass: <TbAirConditioning size={85} />,
-            title: " Air SERVICES",
+            title: " AC SERVICES",
             text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             btnClass: "two",
             btnText: "Request"
@@ -104,7 +108,7 @@ const OurServices = () => {
                 <div className="container-fluid OurServiceCardflow">
                     {Servicecards.map((card, index) => (
                         <div className="card-wrap" key={index}>
-                            <div className={`card-header txtColour ${card.headerClass}`}>
+                            <div className={`card-header text-white ${card.headerClass}`}>
                                 {card.iconClass}
                             </div>
                             <div className="card-content">
