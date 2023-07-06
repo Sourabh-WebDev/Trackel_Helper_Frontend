@@ -25,7 +25,6 @@ const MasterAddService = () => {
 
     return (
         <div>
-            {console.log(ALlIcon)}
             <FormGroup>
                 <Label for="department">Category Name</Label>
                 <Input type="text" placeholder="Category Name" />
