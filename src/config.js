@@ -1,1 +1,1 @@
-export const API_URL = "https://mybackendserver-production.up.railway.app"
+export const API_URL = "https://helper-i1ln.onrender.com"
