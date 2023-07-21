@@ -688,6 +688,10 @@ input[type="submit"] {
     width: 100%;
 }
 
+.paddingForMain {
+    padding-left: 160px;
+}
+
 @media (max-width: 1000px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -697,6 +701,9 @@ input[type="submit"] {
 @media (max-width: 620px) {
     .card-grid {
         grid-template-columns: repeat(1, 1fr);
+    }
+    .paddingForMain {
+        padding-left: 0px;
     }
 }
 
@@ -751,3 +758,21 @@ input[type="submit"] {
 .card-grid:hover>.card:not(:hover).card {
     filter: brightness(0.8) grayscale(0.6) contrast(1.2) blur(10px);
 }
+
+.floating-button {
+    position: fixed;
+    bottom: 300px;
+    right: -15px;
+    padding: 10px 20px;
+    background-color: #1c2575;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .floating-button:hover {
+    background-color: #4a59e4;
+  }

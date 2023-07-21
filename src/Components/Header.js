@@ -61,6 +61,9 @@ function Header() {
                 <Navbar.Brand className='animate__animated animate__flipInY' href="/">
                     <img src={Logo} alt="MainLogo" />
                 </Navbar.Brand>
+                <div className='paddingForMain'>
+                    <h5>Welcome to <b>Helper Services</b></h5>
+                </div>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav

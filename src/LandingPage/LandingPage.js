@@ -15,11 +15,19 @@ import PlumberBanner from '../assets/img/PlumberBanner.jpg'
 import CarWashingBanner from '../assets/img/CarWashingBanner.jpg'
 import SalonBanner from '../assets/img/SalonBanner.jpg'
 import ElectricBanner from '../assets/img/ElectricBanner.jpg'
+import { Button, Offcanvas } from 'react-bootstrap'
+import PermPhoneMsgIcon from '@mui/icons-material/PermPhoneMsg';
+import SmartToyIcon from '@mui/icons-material/SmartToy';
+import { Col, Row } from 'reactstrap'
+import { BsFillTelephoneFill } from 'react-icons/bs'
 
 const LandingPage = () => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const images = [
     PlumberBanner,
@@ -42,6 +50,45 @@ const LandingPage = () => {
   return (
     <>
       <Navbar />
+      <Button variant="primary" onClick={handleShow} className="me-2 floating-button">
+        {/* <PermPhoneMsgIcon style={{ fontSize: 'larger' }} /> */}
+        <BsFillTelephoneFill size={25} />
+      </Button>
+      <Offcanvas className='bg-warning' placement={'end'} show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          {/* <Offcanvas.Title>Offcanvas</Offcanvas.Title> */}
+        </Offcanvas.Header>
+        <Offcanvas.Body >
+          <Row>
+            <Col sm={12} xl='12'>
+              <div className="Enquiry container">
+                <b><h2 className='txtColour font-weight-bold p-1' >Enquiry Form</h2> </b>
+                <form className='pb-2 px-2' action="#" method="post">
+                  <div className="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Full Name" required />
+                  </div>
+                  <div className="form-group">
+                    <label for="email">Mobile Number :</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Mobile Number" required />
+                  </div>
+                  <div className="form-group">
+                    <label for="email">Services looking for:</label>
+                    <input type="email" id="email" name="email" placeholder="Please enter the service you are looking for." required />
+                  </div>
+                  <div className="form-group">
+                    <label for="message">Discription (Please specify):</label>
+                    <textarea id="message" name="message" placeholder="Enter Discription" rows="5" required></textarea>
+                  </div>
+                  <div className="form-group">
+                    <input type="submit" value="Submit" />
+                  </div>
+                </form>
+              </div>
+            </Col>
+          </Row>
+        </Offcanvas.Body>
+      </Offcanvas>
 
       <section>
         {/* <!-- --navbar-- --> */}
