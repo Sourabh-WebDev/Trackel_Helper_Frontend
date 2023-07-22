@@ -9,12 +9,17 @@ import { useNavigate } from 'react-router-dom/dist';
 import AdminDataTable from '../../Elements/AdminDataTable';
 import ModalComponent from '../../Elements/ModalComponent';
 import AdminAddServiceProvider from './Forms/AdminAddServiceProvider';
+import { useSelector } from 'react-redux';
+import { WaitLoader } from '../../Elements/WaitLoader';
 
 const ManageServiceProvider = () => {
 
     const navigate = useNavigate()
 
     const [Block, setBlock] = useState(false)
+
+    const ImageResult = useSelector(pre => pre.ImageUploadReducer);
+
 
     const column = [
         { field: "id", headerName: "Sr No", flex: 1, minWidth: 50, editable: true },
@@ -82,6 +87,7 @@ const ManageServiceProvider = () => {
     const ToggleAddServiceMan = () => setAddServicer(!AddService)
     return (
         <Fragment>
+            
             <ModalComponent data={<AdminAddServiceProvider />} modal={AddService} toggle={ToggleAddServiceMan} size={"xl"} scrollable={true} modalTitle={"Add Service Provider"} />
             <h4 className='p-3 px-4 mt-3 bg-transparent headingBelowBorder text-white' style={{ maxWidth: "fit-content" }}>Service Provider List</h4>
             <div className='AttendenceNavBtn w-100 py-2 px-4 gap-3'>

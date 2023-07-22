@@ -4,7 +4,8 @@ const initialState = {
     isLoading: false,
     isUploaded: null,
     fileName: "",
-    isError: false
+    isError: false,
+    isField: {}
 }
 
 const ImageUploadReducer = (state = initialState, action) => {
@@ -19,7 +20,8 @@ const ImageUploadReducer = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 isUploaded: true,
-                fileName: action.payload.data.fileName
+                fileName: action.payload.data.fileName,
+                isField: { [action.file]: action.payload.data.fileName }
             }
         case constant.IMAGE_UPLOAD_ERROR:
             return {

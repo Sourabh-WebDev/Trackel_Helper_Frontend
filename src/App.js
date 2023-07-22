@@ -41,9 +41,13 @@ import AdminManageMaster from './AdminDashboards/Components/ManageMaster';
 import AdminManageWebsite from './AdminDashboards/Components/ManagePage';
 import AdminCustomerManage from './AdminDashboards/Components/Customer';
 import AdminRolesAndPermission from './AdminDashboards/Components/RolesAndPermission';
+import AdminSignIn from './AdminDashboards/Components/LoginSignup/AdminSignIn';
+import { useUserRoleContext } from './Context/RolesContext';
 
 
 function App() {
+  const { userRole, setUserRole } = useUserRoleContext()
+
   return (
     <BrowserRouter>
       <Routes>
@@ -59,16 +63,18 @@ function App() {
 
 
         {/* Dashboard Routes */}
+        <Route path='/admin' element={<AdminSignIn />}>
+          <Route path='dashboard' element={<AdminPannel />} />
+          <Route path='attendance' element={<AdminAttendance />} />
+          <Route path='expenses' element={<AdminExpenses />} />
+          <Route path='manage-hr' element={<AdminManageHr />} />
+          <Route path='manage-hr/employee-form' element={<AdminAddEmployeeForm />} />
+          <Route path='manage-master' element={<AdminManageMaster />} />
+          <Route path='manage-website' element={<AdminManageWebsite />} />
+          <Route path='customer' element={<AdminCustomerManage />} />
+          <Route path='roles-&-permission' element={<AdminRolesAndPermission />} />
+        </Route>
 
-        <Route path='/admin' element={<AdminPannel />} />
-        <Route path="/admin/attendance" element={<AdminAttendance />} />
-        <Route path="/admin/expenses" element={<AdminExpenses />} />
-        <Route path="/admin/manage-hr" element={<AdminManageHr />} />
-        <Route path="/admin/manage-hr/employee-form" element={<AdminAddEmployeeForm />} />
-        <Route path="/admin/manage-master" element={<AdminManageMaster />} />
-        <Route path="/admin/manage-website" element={<AdminManageWebsite />} />
-        <Route path="/admin/customer" element={<AdminCustomerManage />} />
-        <Route path="/admin/roles-&-permission" element={<AdminRolesAndPermission />} />
 
 
 

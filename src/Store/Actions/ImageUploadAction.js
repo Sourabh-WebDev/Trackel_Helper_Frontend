@@ -1,6 +1,8 @@
 import * as constant from "../Constants/ImageUploadConstants"
 import axios from "axios"
 import { API_URL } from "../../config"
+import Swal from "sweetalert2"
+import { GridLoader } from "react-spinners"
 
 
 
@@ -17,10 +19,25 @@ export const ImageUploadAction = (e) => {
             const response = await axios.post(API_URL + "/util/uploadfile", fd, { method: "POST" })
 
             if (response.status === 200) {
-                dispatch({ type: constant.IMAGE_UPLOAD_SUCCESS, payload: response })
+                dispatch({ type: constant.IMAGE_UPLOAD_SUCCESS, payload: response, file: e.target.name })
+                // ShowMessage(false, "Image Uploaded Successfully")
             }
         } catch (error) {
             dispatch({ type: constant.IMAGE_UPLOAD_ERROR })
         }
     }
-} 
+}
+
+
+
+
+
+const ShowMessage = (error, message) => {
+    return Swal.fire({ icon: error ? "error" : "success", title: message })
+}
+
+
+// Loader 
+const WaitLoader = ({ loading, offset }) => {
+    return <GridLoader loading={loading} color={"#FFD700"} size={30} style={{ position: "absolute", left: `${offset[0]}%`, top: `${offset[1]}%`, transform: "translate(-50%,-50%)", zIndex: "10" }} />
+}
