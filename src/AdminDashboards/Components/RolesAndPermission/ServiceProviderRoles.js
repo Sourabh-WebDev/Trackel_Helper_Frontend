@@ -1,21 +1,21 @@
 import { Switch } from '@mui/material'
+import axios from 'axios'
 import React, { Fragment, useEffect, useState } from 'react'
 import { Card, Col, Row } from 'reactstrap'
 import { API_URL, roles } from '../../../config'
 import Swal from 'sweetalert2'
-import axios from 'axios'
 
-const AdminRoles = ({ adminRoles }) => {
+const ServiceProviderRoles = ({ serviceprovider }) => {
     const [subAttendance, setSubAttendance] = useState(false)
     const [subExpense, setSubExpense] = useState(false)
     const [subCustomer, setSubCustomer] = useState(false)
     const [subHr, setSubHr] = useState(false)
     const [subServices, setSubServices] = useState(false)
     const [subWebsite, setSubWebsite] = useState(false)
-    const [adminRolesData, setAdminRolesData] = useState(null)
+    const [serviceProviderRoleData, setServiceProviderRoleData] = useState(serviceprovider)
 
 
-    const role = roles.admin
+    const role = roles.service
 
     const handleTheUpdateRoles = (role, field, value) => {
         Swal.fire({
@@ -30,7 +30,7 @@ const AdminRoles = ({ adminRoles }) => {
                 try {
                     const response = await axios.get(API_URL + `/roles/update/${role}/${field}/${!value}`)
                     if (response.status === 200) {
-                        setAdminRolesData(response.data.data)
+                        setServiceProviderRoleData(response.data.data)
                         Swal.fire(
                             'Updated!',
                             'Field has Updated',
@@ -48,37 +48,32 @@ const AdminRoles = ({ adminRoles }) => {
         })
     }
 
-
     let AllRoles;
-    if (adminRolesData) {
-        AllRoles = [Object.keys(adminRolesData).filter(x => ["_id", "role", "Profile", "__v"].includes(x) === false)]
+    if (serviceProviderRoleData) {
+        AllRoles = [Object.keys(serviceProviderRoleData).filter(x => ["_id", "role", "Profile", "__v"].includes(x) === false)]
     }
 
-
     useEffect(() => {
-        setAdminRolesData(adminRoles)
-    }, [adminRoles])
+        setServiceProviderRoleData(serviceprovider)
+    }, [serviceprovider])
     return (
         <Fragment>
             <div className='p-3'>
                 <Card className='bg-glass p-3 mt-2'>
-                    <h5 className='text-light p-3'>Roles & Permission (<span className='text-primary'>{adminRolesData && adminRolesData.role ? adminRolesData.role : ""}</span>)</h5>
+                    <h5 className='text-light p-3'>Roles & Permission (<span className='text-primary'>{serviceProviderRoleData && serviceProviderRoleData.role ? serviceProviderRoleData.role : ""}</span>)</h5>
                     <Row>
-                        {/* {console.log(AllRoles)} */}
                         <Col md={12}>
                             <Card className='p-3 shadow-lg d-flex flex-column gap-3'>
                                 {/* main role */}
                                 {AllRoles ? AllRoles[0].map((item, index) => (
                                     <div className='permissionWithSwitch d-flex align-items-center justify-content-between'>
                                         <h6 className='Fw_600 text-blue'>{item}</h6>
-                                        <Switch color="warning" checked={adminRolesData[item]} onChange={() => { handleTheUpdateRoles(role, item, adminRolesData[item]) }} />
+                                        <Switch checked={serviceProviderRoleData[item]} onChange={() => { handleTheUpdateRoles(role, item, serviceProviderRoleData[item]) }} color="warning" />
                                     </div>
                                 )) : ""}
 
                             </Card>
-
                         </Col>
-
                     </Row>
                 </Card>
             </div>
@@ -86,4 +81,4 @@ const AdminRoles = ({ adminRoles }) => {
     )
 }
 
-export default AdminRoles
+export default ServiceProviderRoles

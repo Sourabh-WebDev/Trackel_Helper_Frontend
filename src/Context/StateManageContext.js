@@ -7,6 +7,8 @@ const StateManagerContext = createContext()
 
 const StateMangerProvider = ({ children }) => {
 
+    const [Loader, setLoader] = useState(false)
+
     const [activeTab, setActiveTab] = useState("Dashboard")
 
     const [rows, setRows] = useState(mockDataContacts); // Initial rows state
@@ -29,7 +31,9 @@ const StateMangerProvider = ({ children }) => {
         LoginOpen,
         setLoginOpen,
         SingUp,
-        setSingUp
+        setSingUp,
+        Loader,
+        setLoader
     }}>
         {children}
     </StateManagerContext.Provider>

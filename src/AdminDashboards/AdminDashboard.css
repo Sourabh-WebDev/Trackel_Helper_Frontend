@@ -8,6 +8,26 @@
   border-radius: 100%;
 }
 
+.dropDownMenu-header.dropdown-menu.show {
+  transform: translate3d(40px, 83.5px, 0px) !important;
+}
+
+button.dropdownMenu-btn-header.dropdown-toggle.btn.btn-secondary {
+  padding: 0 !important;
+  background: transparent !important;
+  color: #4d4d4d !important;
+  border-color: white !important;
+  box-shadow: none !important;
+}
+
+button.dropdownMenu-btn-header.btn.btn-secondary {
+  background-color: transparent !important;
+  color: #4d4d4d !important;
+  border-color: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
 .AllMenuCards {
   display: flex;
   flex-wrap: wrap;

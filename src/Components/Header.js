@@ -10,8 +10,11 @@ import GetLogInReducers from '../Store/Reducers/LandingPage/AuthReducer';
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import { Diversity1Outlined, Logout } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+
+    const navigate = useNavigate()
 
     const [currentUser, setCurrentUser] = useState(
         JSON.parse(sessionStorage.getItem("user"))
@@ -95,7 +98,7 @@ function Header() {
                                 <NavDropdown title="Login" id="nav-dropdown">
                                     <NavDropdown.Item onClick={() => setLoginOpen(!LoginOpen)} eventKey="4.1">Customer Login</NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item eventKey="4.2">Vendor Login</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={() => navigate("/admin")} eventKey="4.2">Office Login</NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown title="Sign Up" id="nav-dropdown">
                                     <NavDropdown.Item onClick={() => setSingUp(!SingUp)} eventKey="4.1">Customer Sign Up</NavDropdown.Item>
