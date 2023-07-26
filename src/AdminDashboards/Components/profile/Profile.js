@@ -95,37 +95,31 @@ const Profile = () => {
                         <tr>
                             <td>  adhar  </td>
                             <td colspan="3">
-
+                                <div className='d-flex justify-content-center align-items-center'>
+                                    <img width={200} className='img-thumbnail' src='https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk=' />
+                                </div>
                             </td>
 
                         </tr>
                         <tr>
                             <td>  pen card </td>
                             <td colspan="3">
-
+                                <div className='d-flex justify-content-center align-items-center'>
+                                    <img width={200} className='img-thumbnail' src='https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk=' />
+                                </div>
                             </td>
 
                         </tr>
                         <tr>
                             <td>  PHOTO </td>
                             <td colspan="3">
-
+                                <div className='d-flex justify-content-center align-items-center'>
+                                    <img width={200} className='img-thumbnail' src='https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk=' />
+                                </div>
                             </td>
 
                         </tr>
 
-                        <tr>
-                            <td>  City  </td>
-                            <td> Lucknow </td>
-                            <td> Area    </td>
-                            <td>  ASHIYANA </td>
-                        </tr>
-
-                        <tr>
-                            <td> Location Area  </td>
-                            <td colspan="3"> Ashiyana, Lucknow, Uttar Pradesh, India </td>
-
-                        </tr>
                     </tbody></table>
 
             </div>
