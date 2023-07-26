@@ -43,6 +43,7 @@ import AdminCustomerManage from './AdminDashboards/Components/Customer';
 import AdminRolesAndPermission from './AdminDashboards/Components/RolesAndPermission';
 import AdminSignIn from './AdminDashboards/Components/LoginSignup/AdminSignIn';
 import { useUserRoleContext } from './Context/RolesContext';
+import Profile from './AdminDashboards/Components/profile/Profile';
 
 
 function App() {
@@ -73,6 +74,9 @@ function App() {
           <Route path='manage-website' element={<AdminManageWebsite />} />
           <Route path='customer' element={<AdminCustomerManage />} />
           <Route path='roles-&-permission' element={<AdminRolesAndPermission />} />
+
+          <Route path='profile' element={<Profile />} />
+        
         </Route>
 
 
