@@ -320,21 +320,11 @@ body {
     transform: rotate(10deg);
 }
 
-.SixthSectionAwesome {
-    box-shadow: 10px -10px 5px 0px rgba(129, 219, 255, 0.75);
-    -webkit-box-shadow: 10px -10px 5px 0px rgba(129, 219, 255, 0.75);
-    -moz-box-shadow: 10px -10px 5px 0px rgba(129, 219, 255, 0.75);
-    border: none;
-}
 
 .SixthSectionAwesome>img {
     height: 100%;
     width: 100%;
-}
-
-.SixthSectionAwesome>.card-body {
-    padding: 0.25rem;
-    word-wrap: break-word;
+    border-radius: 50% !important;
 }
 
 
@@ -343,6 +333,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+    height: 60vh;
 }
 
 .bgSixthSectionImg {
@@ -689,7 +680,7 @@ input[type="submit"] {
 }
 
 .paddingForMain {
-    padding-left: 160px;
+    padding-left: 350px;
 }
 
 @media (max-width: 1000px) {
@@ -761,7 +752,7 @@ input[type="submit"] {
 
 .floating-button {
     position: fixed;
-    bottom: 300px;
+    bottom: 350px;
     right: -15px;
     padding: 10px 20px;
     background-color: #1c2575;
@@ -774,5 +765,23 @@ input[type="submit"] {
   }
   
   .floating-button:hover {
+    background-color: #4a59e4;
+  }
+
+.floating-buttonS {
+    position: fixed;
+    bottom: 300px;
+    right: -15px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .floating-buttonS:hover {
     background-color: #4a59e4;
   }

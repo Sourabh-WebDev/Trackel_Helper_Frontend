@@ -17,42 +17,77 @@ const SecondSection = () => {
         {
             id: 1,
             image: WomenSalon,
-            title: 'Women Salon'
+            title: 'Plumber'
         },
         {
             id: 2,
             image: AcService,
-            title: 'AC Services'
+            title: 'Car Servicing'
         },
         {
             id: 3,
             image: PlumberService,
-            title: 'Plumber Services'
+            title: 'Travel & Driver'
         },
         {
             id: 4,
             image: Electrician,
-            title: 'Electric Services'
+            title: 'Security Guard'
         },
         {
             id: 5,
             image: CarWashing,
-            title: 'Car Washing'
-        }
+            title: 'Doctor'
+        },
+        {
+            id: 6,
+            image: WomenSalon,
+            title: 'Medicine'
+        },
+        {
+            id: 7,
+            image: AcService,
+            title: 'Day to Day Supply'
+        },
+        {
+            id: 8,
+            image: PlumberService,
+            title: 'Restaurants'
+        },
+        {
+            id: 9,
+            image: Electrician,
+            title: 'Nurses'
+        },
+        {
+            id: 10,
+            image: CarWashing,
+            title: 'Interior Designer'
+        },
+        {
+            id: 11,
+            image: CarWashing,
+            title: 'Catering'
+        },
+        {
+            id: 12,
+            image: CarWashing,
+            title: 'Marriage Lawn'
+        },
     ];
 
     return (
-        <div className="bgColour text-center">
-            <div className='bgColour py-5'>
-                <div className="text-center">
-                    <h1 style={{ color: '#142572' }} >Our Prime Services</h1>
-                    <p>Get our services at minimum cost in a required time at the best deal possible with granted good work.</p>
+        <div className="bgColour text-center pt-3 pb-5">
+                <div className="text-center pb-3">
+                    <h1 style={{ color: '#142572' }} >Our Services</h1>
+                    <h5>Get our services at minimum cost in a required time at the best deal possible with granted good work.</h5>
                 </div>
+            <div className='bgColour'>
 
-                <div style={{ backgroundImage: `url(${BackGrid})` }} className="bgSecondSectionImg">
-                    <Row xs={1} md={1} lg={3} xl={5} className="g-4 pb-4">
+                <div className="bgSecondSectionImg">
+                    <Row className="g-4 pb-4">
                         {PrimaryServices.map((item, index) => (
-                            <Col key={index}>
+                            <Col xs={6} md={6} lg={2} xl={2} key={index}>
                                 <Card className='p-2 cardHover' style={{ height: '16rem' }}>
                                     <div className="border">
                                         <Card.Img height={150} src={item.image} />
