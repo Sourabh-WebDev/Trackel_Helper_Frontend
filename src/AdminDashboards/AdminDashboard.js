@@ -5,7 +5,7 @@ import StackBox from './Elements/StackBox'
 
 import LineCharts from './Charts/LineCharts'
 import { GridToolbarColumnsButton, GridToolbarFilterButton } from '@mui/x-data-grid'
-import { columns } from '../Dashboard/GridTableCredentials/Colums'
+import { columns } from './GridTableCredentials/Colums'
 import { GridToolbarContainer } from '@mui/x-data-grid'
 import { GridToolbarQuickFilter } from '@mui/x-data-grid'
 import { GridToolbarExport } from '@mui/x-data-grid'
