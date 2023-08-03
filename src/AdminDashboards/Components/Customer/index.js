@@ -17,14 +17,18 @@ const AdminCustomerManage = () => {
     const ActiveTabFunction = () => {
         if (userRole.ManageCustomer) {
             setActiveAttendance('customer')
-        } else if (userRole.AttendenceReport) {
-            setActiveAttendance("report")
-        } else if (userRole.AttendenceModify) {
-            setActiveAttendance("modify")
-        } else {
-            setActiveAttendance('in')
+        } else if (userRole.ManageHistory) {
+            setActiveAttendance("history")
+        } else if (userRole.MonthlyMembers) {
+            setActiveAttendance("members")
+        } else if (userRole.ManageEnquiry) {
+            setActiveAttendance('enquiry')
         }
     }
+
+    useEffect(() => {
+        ActiveTabFunction()
+    }, [userRole])
 
     useEffect(() => {
         UserRoleCalled()
@@ -44,18 +48,26 @@ const AdminCustomerManage = () => {
                         {userRole && userRole.ManageEnquiry ? < span className={` ${attendanceActive === "enquiry" ? "AttendenceTabs_Active" : ""}`} onClick={() => { setActiveAttendance("enquiry") }}>Manage Enquiry</span> : null}
                     </div>
                     <TabContent activeTab={attendanceActive} >
-                        <TabPane tabId="customer">
-                            <ManageCustomer />
-                        </TabPane>
-                        <TabPane tabId="history">
-                            <CustomerHistory />
-                        </TabPane>
-                        <TabPane tabId="members">
-                            <MonthlyMembers />
-                        </TabPane>
-                        <TabPane tabId="enquiry">
-                            <ManageEnquiry />
-                        </TabPane>
+                        {userRole && userRole.ManageCustomer ?
+                            <TabPane tabId="customer">
+                                <ManageCustomer />
+                            </TabPane>
+                            : null}
+                        {userRole && userRole.ManageHistory ?
+                            <TabPane tabId="history">
+                                <CustomerHistory />
+                            </TabPane>
+                            : null}
+                        {userRole && userRole.MonthlyMembers ?
+                            <TabPane tabId="members">
+                                <MonthlyMembers />
+                            </TabPane>
+                            : null}
+                        {userRole && userRole.ManageEnquiry ?
+                            <TabPane tabId="enquiry">
+                                <ManageEnquiry />
+                            </TabPane>
+                            : null}
                     </TabContent>
                 </div>
             </div>
