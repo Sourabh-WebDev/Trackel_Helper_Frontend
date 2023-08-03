@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { mockDataContacts } from "../Dashboard/data/mockData";
+import { mockDataContacts } from "../AdminDashboards/data/mockData";
 
 
 const StateManagerContext = createContext()
