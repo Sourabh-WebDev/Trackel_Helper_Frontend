@@ -1,19 +1,38 @@
-import React, { Fragment, useState } from 'react'
+ import React, { Fragment, useState } from 'react'
 
 import { DataGrid, GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid'
 import { Box } from '@mui/material'
 import { mockDataContacts } from '../../data/mockData'
-import { Button } from 'reactstrap'
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
 import { useNavigate } from 'react-router-dom/dist'
 import AdminDataTable from '../../Elements/AdminDataTable'
 import ModalComponent from '../../Elements/ModalComponent'
 import AdminAddEmployeeForm from './Forms/AdminAddEmployeeForm'
+import AdminEditEmploye from './Forms/AdminEditEmploye'
 
 const ManageEmployee = () => {
 
     const navigate = useNavigate()
 
     const [Block, setBlock] = useState(false)
+    
+    const [modal, setModal] = useState(false);
+
+    const toggle = () => setModal(!modal);
+    const ModalForEdit = () => {
+
+      
+        return(
+
+            <Modal isOpen={modal} toggle={toggle} >
+            <ModalHeader toggle={toggle}> Edit Empy Form</ModalHeader>
+            <ModalBody>
+                <AdminEditEmploye closeModal={toggle}/>
+            </ModalBody>
+          </Modal>
+        )
+    }
+
 
     const column = [
         { field: "id", headerName: "Sr No", flex: 1, minWidth: 50, editable: true },
@@ -39,7 +58,7 @@ const ManageEmployee = () => {
             minWidth: 250,
             renderCell: (params) => (
                 <div className="d-flex gap-2">
-                    <Button className="text-white bg-blue">Edit</Button>
+                    <Button onClick={toggle} className="text-white bg-blue">Edit</Button>
                     <Button className="text-white bg-green">View</Button>
                     <Button className="text-white bg-red">Delete</Button>
                 </div>
@@ -90,6 +109,7 @@ const ManageEmployee = () => {
             <div className='p-4'>
                 <AdminDataTable rows={mockDataContacts} columns={column} CustomToolbar={CustomToolbar} />
             </div>
+            <ModalForEdit/>
         </Fragment>
     )
 }

@@ -50,16 +50,8 @@ function App() {
           <Route path='manage-website' element={<AdminManageWebsite />} />
           <Route path='customer' element={<AdminCustomerManage />} />
           <Route path='roles-&-permission' element={<AdminRolesAndPermission />} />
-
           <Route path='profile' element={<Profile />} />
-        
         </Route>
-
-
-
-
-
-
 
 
       </Routes>
