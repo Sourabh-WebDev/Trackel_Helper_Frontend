@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
         try {
             let response;
             if (logger === roles.admin || logger === roles.supervisor || logger === roles.office) {
-                response = await axios.post(API_URL + "/employee/login", formData);
+                response = await axios.post(API_URL + "/employee/login/" + logger, formData);
             } else if (logger === roles.super) {
                 response = await axios.post(API_URL + "/admin/login", formData);
             } else if (logger === roles.service) {

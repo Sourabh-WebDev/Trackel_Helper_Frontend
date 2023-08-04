@@ -41,51 +41,27 @@ const SixthSection = () => {
     };
 
     return (
-        <div className='text-center p-4'>
+        <div style={{background:'#99DBF5'}} className='text-center p-4'>
             <h1 className='txtColour'>Our Team</h1>
             <Slider {...settings} className=''>
 
-                <div className='d-flex justify-content-around align-items-center py-2'>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
-                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    </Card>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                    </Card>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
-                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    </Card>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                    </Card>
+                <div className='d-flex justify-content-evenly SixthSectionAwesome align-items-center py-2'>
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                 </div>
-                <div className='d-flex justify-content-around align-items-center py-2'>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
-                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    </Card>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                    </Card>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
-                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    </Card>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                    </Card>
+                <div className='d-flex justify-content-evenly SixthSectionAwesome align-items-center py-2'>
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                 </div>
-                <div className='d-flex justify-content-around align-items-center py-2'>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
-                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    </Card>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                    </Card>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mb-5'>
-                        <Card.Img className='img-fluid'  src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    </Card>
-                    <Card style={{ width: '15rem', height: '20rem' }} className='SixthSectionAwesome mt-5'>
-                        <Card.Img className='img-fluid'  src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                    </Card>
+                <div className='d-flex justify-content-evenly SixthSectionAwesome align-items-center py-2'>
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
                 </div>
             </Slider>
         </div>
