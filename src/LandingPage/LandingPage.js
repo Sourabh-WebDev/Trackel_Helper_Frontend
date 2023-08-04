@@ -19,7 +19,7 @@ import { Button, Offcanvas } from 'react-bootstrap'
 import PermPhoneMsgIcon from '@mui/icons-material/PermPhoneMsg';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import { Col, Row } from 'reactstrap'
-import { BsFillTelephoneFill } from 'react-icons/bs'
+import { BsFillTelephoneFill, BsWhatsapp } from 'react-icons/bs'
 
 const LandingPage = () => {
 
@@ -31,6 +31,7 @@ const LandingPage = () => {
 
   const images = [
     PlumberBanner,
+    // "https://img.freepik.com/free-photo/close-up-car-care-washing_23-2149172897.jpg?w=1060&t=st=1691048961~exp=1691049561~hmac=2cbfd2d151e2f365ff96c5e8bf7c08c9d1f93b5e4f7132c96ace2327908e93c2",
     CarWashingBanner,
     SalonBanner,
     ElectricBanner
@@ -41,7 +42,7 @@ const LandingPage = () => {
     const timer = setInterval(() => {
       // Increment the current image index
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change the image every 5 seconds
+    }, 2000); // Change the image every 5 seconds
 
     // Cleanup the timer when the component is unmounted
     return () => clearInterval(timer);
@@ -50,6 +51,10 @@ const LandingPage = () => {
   return (
     <>
       <Navbar />
+      <Button variant="primary" className="me-2 floating-buttonS">
+        {/* <PermPhoneMsgIcon style={{ fontSize: 'larger' }} /> */}
+        <BsWhatsapp color='#00e6a1' size={25} />
+      </Button>
       <Button variant="primary" onClick={handleShow} className="me-2 floating-button">
         {/* <PermPhoneMsgIcon style={{ fontSize: 'larger' }} /> */}
         <BsFillTelephoneFill size={25} />
@@ -99,9 +104,13 @@ const LandingPage = () => {
           style={{
             backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'top',
             width: '100%',
-            // height: '100vh',
+            height: '90vh',
+            backgroundColor: 'transparent',
+            display: 'grid',
+            placeItems: 'center'
+
           }}
           className="container-fluid custom-shape-divider-bottom-1687584617">
           {/* <div
