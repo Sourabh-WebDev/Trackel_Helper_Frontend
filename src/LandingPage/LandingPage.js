@@ -16,10 +16,8 @@ import CarWashingBanner from '../assets/img/CarWashingBanner.jpg'
 import SalonBanner from '../assets/img/SalonBanner.jpg'
 import ElectricBanner from '../assets/img/ElectricBanner.jpg'
 import { Button, Offcanvas } from 'react-bootstrap'
-import PermPhoneMsgIcon from '@mui/icons-material/PermPhoneMsg';
-import SmartToyIcon from '@mui/icons-material/SmartToy';
 import { Col, Row } from 'reactstrap'
-import { BsFillTelephoneFill, BsWhatsapp } from 'react-icons/bs'
+import { BsFillTelephoneFill, BsWhatsapp, BsFacebook } from 'react-icons/bs'
 
 const LandingPage = () => {
 
@@ -37,6 +35,13 @@ const LandingPage = () => {
     ElectricBanner
   ];
 
+    const phoneNumber = '1234567890'; // Replace with the actual phone number
+    const whatsappWebURL = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+  
+    const handleButtonClick = () => {
+      window.open(whatsappWebURL, '_blank');
+    };
+
   useEffect(() => {
     // Function to handle the timer
     const timer = setInterval(() => {
@@ -51,8 +56,10 @@ const LandingPage = () => {
   return (
     <>
       <Navbar />
-      <Button variant="primary" className="me-2 floating-buttonS">
-        {/* <PermPhoneMsgIcon style={{ fontSize: 'larger' }} /> */}
+      <Button href='https://www.facebook.com/mytotal.helper?ref=br_rs' target='_blank' variant="primary" className="me-2 floating-buttonT">
+        <BsFacebook  color='#0777ff' size={25} />
+      </Button>
+      <Button onClick={handleButtonClick} variant="primary" className="me-2 floating-buttonS">
         <BsWhatsapp color='#00e6a1' size={25} />
       </Button>
       <Button variant="primary" onClick={handleShow} className="me-2 floating-button">
@@ -61,7 +68,6 @@ const LandingPage = () => {
       </Button>
       <Offcanvas className='bg-warning' placement={'end'} show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          {/* <Offcanvas.Title>Offcanvas</Offcanvas.Title> */}
         </Offcanvas.Header>
         <Offcanvas.Body >
           <Row>
@@ -155,12 +161,6 @@ const LandingPage = () => {
         <div className="container-fluid bgSixthSectionImg">
           {/* <!-- --Tittle-- --> */}
           <SixthSection />
-        </div>
-      </section >
-      <section>
-        <div style={{ backgroundImage: `url(${OurServiceProvier})` }} className="container-fluid bgSeventhSectionImg">
-          {/* <!-- --Tittle-- --> */}
-          <SeventhSection />
         </div>
       </section >
       <section>

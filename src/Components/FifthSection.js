@@ -1,41 +1,83 @@
+import { Card } from '@mui/material';
 import React from 'react'
 import Slider from "react-slick";
-import Card from 'react-bootstrap/Card';
 
 const FifthSection = () => {
 
     const settings = {
         dots: true,
         infinite: true,
-        speed: 5000,
-        slidesToShow: 1,
+        speed: 500,
+        slidesToShow: 2, // Change this to 1 for mobile devices
         slidesToScroll: 1,
         autoplay: true,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 768, // Adjust this breakpoint according to your design
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 1200, // Adjust this breakpoint according to your design
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
     };
 
+
     return (
-        <div className='text-center p-4'>
+        <div className='text-center p-4 min-100-vh'>
             <h2 style={{ color: '#eedc30' }} >Testimonial</h2>
             <Slider {...settings} className=''>
-                <div className='m-5 p-2'>
-                    <center>
-                        <img width={80} height={80} className='rounded-circle border' src="https://cdn1.vectorstock.com/i/1000x1000/94/40/indian-man-face-avatar-cartoon-vector-25919440.jpg" alt="Male" />
-                    </center>
-
-                    <h4>Vimal Tiwari</h4>
-                    <div className='p-2'>
-                        <h4 className='text-white'>“Fridge repair was very much essential for my home them and I was unable find a repairing company. Then they came like God saved.”</h4>
-                    </div>
+                <div className='p-2'>
+                    <Card style={{ border: '5px solid #1c2575', textAlign: 'center' }}>
+                        <h4 className='text-primary p-2'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
+                        <div className="d-flex justify-content-center ">
+                            <center>
+                                <img width={80} height={80} className='rounded-circle border' src="https://cdn5.vectorstock.com/i/1000x1000/91/79/indian-woman-face-avatar-cartoon-vector-25919179.jpg" alt="female" />
+                                <h4>Tina Singh</h4>
+                            </center>
+                        </div>
+                    </Card>
                 </div>
-                <div className='m-5 p-2'>
-                    <center>
-                        <img width={80} height={80} className='rounded-circle border' src="https://cdn5.vectorstock.com/i/1000x1000/91/79/indian-woman-face-avatar-cartoon-vector-25919179.jpg" alt="female" />
-                    </center>
-                    <h4>Tina Singh</h4>
-                    <div className="p-2">
-                        <h4 className='text-white'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
-                    </div>
+                <div className='p-2'>
+                    <Card style={{ border: '5px solid #1c2575', textAlign: 'center' }}>
+                        <h4 className='text-primary p-2'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
+                        <div className="d-flex justify-content-center ">
+                            <center>
+                                <img width={80} height={80} className='rounded-circle border' src="https://cdn5.vectorstock.com/i/1000x1000/91/79/indian-woman-face-avatar-cartoon-vector-25919179.jpg" alt="female" />
+                                <h4>Tina Singh</h4>
+                            </center>
+                        </div>
+                    </Card>
+                </div>
+                <div className='p-2'>
+                    <Card style={{ border: '5px solid #1c2575', textAlign: 'center' }}>
+                        <h4 className='text-primary p-2'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
+                        <div className="d-flex justify-content-center ">
+                            <center>
+                                <img width={80} height={80} className='rounded-circle border' src="https://cdn5.vectorstock.com/i/1000x1000/91/79/indian-woman-face-avatar-cartoon-vector-25919179.jpg" alt="female" />
+                                <h4>Tina Singh</h4>
+                            </center>
+                        </div>
+                    </Card>
+                </div>
+                <div className='p-2'>
+                    <Card style={{ border: '5px solid #1c2575', textAlign: 'center' }}>
+                        <h4 className='text-primary p-2'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
+                        <div className="d-flex justify-content-center ">
+                            <center>
+                                <img width={80} height={80} className='rounded-circle border' src="https://cdn5.vectorstock.com/i/1000x1000/91/79/indian-woman-face-avatar-cartoon-vector-25919179.jpg" alt="female" />
+                                <h4>Tina Singh</h4>
+                            </center>
+                        </div>
+                    </Card>
                 </div>
             </Slider>
         </div>

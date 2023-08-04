@@ -8,7 +8,7 @@ import AboutUs from './LandingPage/Pages/AboutUs';
 import WhyChooseUs from './LandingPage/Pages/WhyChooseUs';
 import Privacy from './LandingPage/Pages/Privacy';
 import TermAndCondition from './LandingPage/Pages/TermAndCondition';
-import AdminPannel from './AdminDashboards';
+import AdminSignIn from './AdminDashboards/Components/LoginSignup/AdminSignIn';
 import AdminAttendance from './AdminDashboards/Components/Attendence';
 import AdminExpenses from './AdminDashboards/Components/Expenses';
 import AdminManageHr from './AdminDashboards/Components/ManageHr';
@@ -17,8 +17,8 @@ import AdminManageMaster from './AdminDashboards/Components/ManageMaster';
 import AdminManageWebsite from './AdminDashboards/Components/ManagePage';
 import AdminCustomerManage from './AdminDashboards/Components/Customer';
 import AdminRolesAndPermission from './AdminDashboards/Components/RolesAndPermission';
-import AdminSignIn from './AdminDashboards/Components/LoginSignup/AdminSignIn';
 import { useUserRoleContext } from './Context/RolesContext';
+import AdminPannel from './AdminDashboards/AdminPannel';
 
 
 function App() {
@@ -50,14 +50,6 @@ function App() {
           <Route path='customer' element={<AdminCustomerManage />} />
           <Route path='roles-&-permission' element={<AdminRolesAndPermission />} />
         </Route>
-
-
-
-
-
-
-
-
       </Routes>
     </BrowserRouter>
   );

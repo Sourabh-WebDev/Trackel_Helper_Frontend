@@ -40,8 +40,8 @@ const SeventhSection = () => {
     };
 
     return (
-        <div className='text-center p-4 SixthSectionpadding'>
-            <h1 className='txtColour' >Our Service Provider Team</h1>
+        <div style={{ marginTop: '15rem' }} className='text-center p-4'>
+            <h1 >Our Service Provider Team</h1>
             <Slider {...settings} className=''>
                 <div className='py-5'>
                     <div className="d-flex justify-content-around gap-2">
