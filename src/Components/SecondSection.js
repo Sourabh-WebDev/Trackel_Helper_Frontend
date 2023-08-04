@@ -5,9 +5,19 @@ import AcService from '../assets/img/AcRepair.png'
 import PlumberService from '../assets/img/PlumberServices.png'
 import Electrician from '../assets/img/ElectricianServices.png'
 import CarWashing from '../assets/img/CarService.png'
+import CarServicing from '../assets/img/CarServicing.png'
+import TravelDriver from '../assets/img/Travel&Driver.png'
+import SecurityGuard from '../assets/img/SecurityGuard.png'
+import Medicine from '../assets/img/Medicine.png'
+import Doctors from '../assets/img/Doctors.png'
+import DayTodaySupply from '../assets/img/DayTodaySupply.png'
+import ResturantService from '../assets/img/ResturantService.png'
+import InteriorDesigner from '../assets/img/InteriorDesigner.png'
+import Catering from '../assets/img/Catering.png'
+import MarriageLawn from '../assets/img/MarriageLawn.png'
+import Nurses from '../assets/img/Nurses.png'
 import { useNavigate } from 'react-router';
 import { Col, Row } from 'reactstrap';
-import BackGrid from '../assets/img/White-Grid.png'
 
 const SecondSection = () => {
 
@@ -16,62 +26,62 @@ const SecondSection = () => {
     const PrimaryServices = [
         {
             id: 1,
-            image: WomenSalon,
+            image: PlumberService,
             title: 'Plumber'
         },
         {
             id: 2,
-            image: AcService,
+            image: CarServicing,
             title: 'Car Servicing'
         },
         {
             id: 3,
-            image: PlumberService,
+            image: TravelDriver,
             title: 'Travel & Driver'
         },
         {
             id: 4,
-            image: Electrician,
+            image: SecurityGuard,
             title: 'Security Guard'
         },
         {
             id: 5,
-            image: CarWashing,
+            image: Doctors,
             title: 'Doctor'
         },
         {
             id: 6,
-            image: WomenSalon,
+            image: Medicine,
             title: 'Medicine'
         },
         {
             id: 7,
-            image: AcService,
+            image: DayTodaySupply,
             title: 'Day to Day Supply'
         },
         {
             id: 8,
-            image: PlumberService,
+            image: ResturantService,
             title: 'Restaurants'
         },
         {
             id: 9,
-            image: Electrician,
+            image: Nurses,
             title: 'Nurses'
         },
         {
             id: 10,
-            image: CarWashing,
+            image: InteriorDesigner,
             title: 'Interior Designer'
         },
         {
             id: 11,
-            image: CarWashing,
+            image: Catering,
             title: 'Catering'
         },
         {
             id: 12,
-            image: CarWashing,
+            image: MarriageLawn,
             title: 'Marriage Lawn'
         },
     ];
