@@ -19,7 +19,27 @@ const ContactUs = () => {
         CarWashingBanner,
         SalonBanner,
         ElectricBanner
-      ];
+    ];
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Form Data:', formData);
+        // Here you can perform further actions, like sending data to a server
+    };
 
     useEffect(() => {
         // Function to handle the timer
@@ -116,24 +136,48 @@ const ContactUs = () => {
                                 <p>We Will Answer ASAP</p>
                                 <div className="ContactUS container animate__animated animate__backInDown">
                                     <h2>Enquiry Form</h2>
-                                    <form className="p-2" action="#" method="post">
+                                    <form className="p-2" onSubmit={handleSubmit}>
                                         <div className="form-group">
                                             <label style={{ color: '#eedc30' }} htmlFor="name">
                                                 Name:
                                             </label>
-                                            <input type="text" id="name" name="name" placeholder="Your name" required />
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                placeholder="Your name"
+                                                value={formData.name}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
                                         </div>
                                         <div className="form-group">
                                             <label style={{ color: '#eedc30' }} htmlFor="email">
                                                 Mob No. :
                                             </label>
-                                            <input type="email" id="email" name="email" placeholder="Your Mobile No." required />
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                placeholder="Your Mobile No."
+                                                value={formData.email}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
                                         </div>
                                         <div className="form-group">
                                             <label style={{ color: '#eedc30' }} htmlFor="message">
                                                 Message:
                                             </label>
-                                            <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+                                            <textarea
+                                                id="message"
+                                                name="message"
+                                                placeholder="Your message"
+                                                rows="5"
+                                                value={formData.message}
+                                                onChange={handleInputChange}
+                                                required
+                                            ></textarea>
                                         </div>
                                         <div className="form-group">
                                             <input type="submit" value="Send" />

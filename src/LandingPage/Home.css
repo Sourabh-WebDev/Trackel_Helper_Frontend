@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+
 * {
     font-family: 'Poppins', sans-serif !important;
 }
@@ -33,7 +34,7 @@ body {
 
 .btn-primary:hover {
     color: #eedc30;
-    background-color: #142572;
+    background-color: #3d5ce8;
 }
 
 .dropdown-item {
@@ -107,7 +108,7 @@ body {
 
 .Navbar {
     padding: 8px 0px;
-    background-color: #142572;
+    background-color: #3d5ce8;
     color: #fff;
 }
 
@@ -174,7 +175,7 @@ body {
 }
 
 .form-group input[type="submit"] {
-    background-color: #142572;
+    background-color: #3d5ce8;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -234,7 +235,7 @@ body {
 }
 
 .bgSecondSectionImg {
-    background-color: #142572;
+    background-color: #3d5ce8;
     color: #fff;
     display: flex;
     justify-content: space-evenly;
@@ -265,14 +266,14 @@ body {
 
 .cardHover:hover {
     transform: rotateY(15deg);
-    background-color: #142572;
+    background-color: #3d5ce8;
     color: #142572;
     border: 1px solid gold;
 }
 
 
 .cardHover>div {
-    background: #142572;
+    background: #3d5ce8;
     color: #fff;
 }
 
