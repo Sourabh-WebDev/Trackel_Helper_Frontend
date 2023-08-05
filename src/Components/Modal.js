@@ -39,7 +39,6 @@ export const LoginModal = () => {
         <Modal className='modal-dialog-centered' isOpen={LoginOpen} toggle={() => setLoginOpen(!LoginOpen)}>
             <ModalHeader toggle={() => setLoginOpen(!LoginOpen)}> Login</ModalHeader>
             <ModalBody>
-                {console.log(LoginResult)}
                 <div className='text-center bgColour rounded'>
                     <img src={Logo} alt="MainLogo" />
                     <div className="text-center">

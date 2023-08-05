@@ -302,8 +302,10 @@ button.Dash_dropdown_item.dropdown-item:hover {
 .Nav_hover:hover {
   background-color: var(--yellow);
   color: var(--blue);
+  border-color: var(--yellow);
 }
 .Nav_hover_active {
   background-color: var(--yellow);
   color: var(--blue);
+  border-color: var(--yellow);
 }

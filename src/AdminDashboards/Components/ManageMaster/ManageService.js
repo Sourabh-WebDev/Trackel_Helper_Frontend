@@ -81,13 +81,16 @@ const ManageService = () => {
         { field: "serviceName", headerName: "Service Name", minWidth: 400, editable: true },
         {
             field: "icon", headerName: "Icon", minWidth: 120, renderCell: (params) => {
-                return <IconWrapper icon={params.value} />;
+                return <img src={`${API_URL}/uploads/${params.value}`} />;
             }
         },
         {
             field: "image", headerName: "Image", minWidth: 120, renderCell: (params) => (
                 <img src={API_URL + "/uploads/" + params.value} alt="Image" style={{ width: 100, height: 100 }} />
             )
+        },
+        {
+            field: "details", headerName: 'Service Details', minWidth: 300, innerHeight: 200
         },
         // { field: "mobileNumber", headerName: "Mobile No.", minWidth: 120, editable: true },
         // { field: "email", headerName: "Email", minWidth: 120, editable: true },
