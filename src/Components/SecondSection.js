@@ -19,10 +19,9 @@ import Nurses from '../assets/img/Nurses.png'
 import { useNavigate } from 'react-router';
 import { Col, Row } from 'reactstrap';
 
-const SecondSection = () => {
+const SecondSection = ({data}) => {
 
     const navigate = useNavigate()
-
     const PrimaryServices = [
         {
             id: 1,

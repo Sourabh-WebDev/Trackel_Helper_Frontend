@@ -86,6 +86,7 @@ export const mockDataContacts = [
     city: "New York",
     zipCode: "10001",
     registrarId: 123512,
+    status: "Complete",
   },
   {
     id: 2,
@@ -97,6 +98,7 @@ export const mockDataContacts = [
     city: "New York",
     zipCode: "13151",
     registrarId: 123512,
+    status: "Running",
   },
   {
     id: 3,
@@ -108,6 +110,7 @@ export const mockDataContacts = [
     city: "New York",
     zipCode: "87281",
     registrarId: 4132513,
+    status: "Hold",
   },
   {
     id: 4,
@@ -119,6 +122,7 @@ export const mockDataContacts = [
     city: "New York",
     zipCode: "15551",
     registrarId: 123512,
+    status: "Due",
   },
   {
     id: 5,
@@ -130,6 +134,7 @@ export const mockDataContacts = [
     city: "Tenting",
     zipCode: "14215",
     registrarId: 123512,
+    status: "Cancel",
   },
   {
     id: 6,
@@ -141,6 +146,7 @@ export const mockDataContacts = [
     city: "Esvazark",
     zipCode: "10001",
     registrarId: 123512,
+    status: "Pending",
   },
   {
     id: 7,
@@ -152,6 +158,7 @@ export const mockDataContacts = [
     city: "Evertin",
     zipCode: "51523",
     registrarId: 123512,
+    status: "Complete",
   },
   {
     id: 8,
@@ -163,6 +170,7 @@ export const mockDataContacts = [
     city: "Esteras",
     zipCode: "44215",
     registrarId: 512315,
+    status: "Running",
   },
   {
     id: 9,
@@ -174,6 +182,7 @@ export const mockDataContacts = [
     city: "Colunza",
     zipCode: "111234",
     registrarId: 928397,
+    status: "Hold",
   },
   {
     id: 10,
@@ -185,6 +194,7 @@ export const mockDataContacts = [
     city: "Esteras",
     zipCode: "44215",
     registrarId: 533215,
+    status: "Due",
   },
   {
     id: 11,
@@ -196,6 +206,7 @@ export const mockDataContacts = [
     city: "Colunza",
     zipCode: "1234",
     registrarId: 92197,
+    status: "Cancel",
   },
 ];
 
