@@ -701,6 +701,11 @@ input[type="submit"] {
     .SixthSectionpadding {
         padding-bottom: 50rem !important;
     }
+
+    .footerform {
+
+        padding: 0px;
+    }
 }
 
 .whyCard.card {
