@@ -19,9 +19,11 @@ import Nurses from '../assets/img/Nurses.png'
 import { useNavigate } from 'react-router';
 import { Col, Row } from 'reactstrap';
 
-const SecondSection = ({data}) => {
+const SecondSection = ({ data }) => {
 
     const navigate = useNavigate()
+
+
     const PrimaryServices = [
         {
             id: 1,
@@ -85,23 +87,25 @@ const SecondSection = ({data}) => {
         },
     ];
 
+    console.log(data.data[0])
+
     return (
         <div className="bgColour text-center pt-3 pb-5">
-                <div className="text-center pb-3">
-                    <h1 style={{ color: '#142572' }} >Our Services</h1>
-                    <h5>Get our services at minimum cost in a required time at the best deal possible with granted good work.</h5>
-                </div>
+            <div className="text-center pb-3">
+                <h1 style={{ color: '#142572' }} >Our Services</h1>
+                <h5>Get our services at minimum cost in a required time at the best deal possible with granted good work.</h5>
+            </div>
             <div className='bgColour'>
 
                 <div className="bgSecondSectionImg">
                     <Row className="g-4 pb-4">
-                        {PrimaryServices.map((item, index) => (
+                        {data.data.map((item, index) => (
                             <Col xs={6} md={6} lg={2} xl={2} key={index}>
                                 <Card className='p-2 cardHover' style={{ height: '16rem' }}>
                                     <div className="border">
                                         <Card.Img height={150} src={item.image} />
                                         <Card.Body>
-                                            <Card.Title>{item.title}</Card.Title>
+                                            <Card.Title>{item.serviceName}</Card.Title>
                                         </Card.Body>
                                     </div>
                                 </Card>
