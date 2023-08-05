@@ -69,7 +69,7 @@ function Header() {
                     <Nav className='ml-auto my-2 my-lg-0' style={{ maxHeight: '100px' }} navbarScroll>
 
                         <Nav.Link className='txtColour' href='#action1'>Register As A Professional</Nav.Link>
-                        <Nav.Link className='txtColour' href='/About-Us'>About Us</Nav.Link>
+                        <Nav.Link className='txtColour' to='/About-Us'>About Us</Nav.Link>
                         <Nav.Link className='txtColour' href='/Our-All-Services'>Services</Nav.Link>
                         <Nav.Link className='txtColour' href='/Contact-Us'>Help</Nav.Link>
                         {currentUser !== null ? (

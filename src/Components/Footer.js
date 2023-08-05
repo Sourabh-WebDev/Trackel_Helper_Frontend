@@ -1,15 +1,50 @@
-import React from 'react'
-import { Button, Col, Row } from 'reactstrap'
+import React, { useState } from 'react'
+import { Col, Row } from 'reactstrap'
 import { FaEnvelope, FaFacebook, FaGoogle, FaHome, FaInstagram, FaLinkedinIn, FaPhone, FaPrint, FaTwitter } from "react-icons/fa";
 import { Container } from 'react-bootstrap';
 import FooterBannner from '../assets/img/FooterBanner.png'
 import { BsCheckCircle, BsCircleFill } from "react-icons/bs";
 import { IoMdSend, IoSend } from "react-icons/io";
 import SeventhSection from './SeventhSection';
+import { Button, InputAdornment, TextField } from '@mui/material';
 
 const Footer = () => {
+
+    const [message, setMessage] = useState('');
+
+    const handleMessageChange = (event) => {
+        setMessage(event.target.value);
+    };
+
+    const handleSendClick = () => {
+        // Handle sending the message here
+        console.log('Sending message:', message);
+        // Clear the input field after sending
+        setMessage('');
+    };
+
+    const [formData, setFormData] = useState({
+        name: '',
+        mobileNumber: '',
+        services: '',
+        description: '',
+    });
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Form Data:', formData);
+    };
+
     return (
-        <footer style={{ background: '#142572', paddingTop: '5rem' }} className='text-center text-lg-start text-white'>
+        <footer style={{ background: '#3d5ce8', paddingTop: '5rem' }} className='text-center text-lg-start text-white'>
             <div className="footerform">
                 <Row>
                     <Col sm={12} xl='4' style={{ display: 'grid', placeItems: 'center' }}>
@@ -26,9 +61,27 @@ const Footer = () => {
                                 <div><BsCircleFill className='mr-2' fill='#eedc30' /> <span>Regular Updates</span></div>
                                 <div><BsCheckCircle className='mr-2' /> <span>Regular Updates</span></div>
                                 <form className='mt-2' id="emailForm">
-                                    <div class="input-container">
-                                        <input className='form-control' type="email" id="emailInput" placeholder="Enter your email address" required />
-                                        <input className='' type="submit" value="Send" />
+                                    <div>
+                                        <TextField
+                                            label="Type your message"
+                                            variant="outlined"
+                                            fullWidth
+                                            value={message}
+                                            onChange={handleMessageChange}
+                                            InputProps={{
+                                                endAdornment: (
+                                                    <InputAdornment position="end">
+                                                        <Button
+                                                            variant="text"
+                                                            color="primary"
+                                                            onClick={handleSendClick}
+                                                        >
+                                                            <IoMdSend size={30} />
+                                                        </Button>
+                                                    </InputAdornment>
+                                                ),
+                                            }}
+                                        />
                                     </div>
                                 </form>
                             </div>
@@ -37,22 +90,54 @@ const Footer = () => {
                     <Col sm={12} xl='4'>
                         <div className="Enquiry container animate__animated animate__backInRight">
                             <b><h2 className='txtColour font-weight-bold p-1' >Enquiry Form</h2> </b>
-                            <form className='pb-2 px-2' action="#" method="post">
+                            <form className="pb-2 px-2" onSubmit={handleSubmit}>
                                 <div className="form-group">
-                                    <label for="name">Full Name:</label>
-                                    <input type="text" id="name" name="name" placeholder="Enter Full Name" required />
+                                    <label htmlFor="name">Full Name:</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Enter Full Name"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                        required
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <label for="email">Mobile Number :</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter Mobile Number" required />
+                                    <label htmlFor="mobileNumber">Mobile Number:</label>
+                                    <input
+                                        type="text"
+                                        id="mobileNumber"
+                                        name="mobileNumber"
+                                        placeholder="Enter Mobile Number"
+                                        value={formData.mobileNumber}
+                                        onChange={handleInputChange}
+                                        required
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <label for="email">Services looking for:</label>
-                                    <input type="email" id="email" name="email" placeholder="Please enter the service you are looking for." required />
+                                    <label htmlFor="services">Services looking for:</label>
+                                    <input
+                                        type="text"
+                                        id="services"
+                                        name="services"
+                                        placeholder="Please enter the service you are looking for."
+                                        value={formData.services}
+                                        onChange={handleInputChange}
+                                        required
+                                    />
                                 </div>
                                 <div className="form-group">
-                                    <label for="message">Discription (Please specify):</label>
-                                    <textarea id="message" name="message" placeholder="Enter Discription" rows="5" required></textarea>
+                                    <label htmlFor="description">Description (Please specify):</label>
+                                    <textarea
+                                        id="description"
+                                        name="description"
+                                        placeholder="Enter Description"
+                                        rows="5"
+                                        value={formData.description}
+                                        onChange={handleInputChange}
+                                        required
+                                    ></textarea>
                                 </div>
                                 <div className="form-group">
                                     <input type="submit" value="Submit" />

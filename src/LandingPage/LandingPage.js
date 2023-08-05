@@ -18,6 +18,7 @@ import ElectricBanner from '../assets/img/ElectricBanner.jpg'
 import { Button, Offcanvas } from 'react-bootstrap'
 import { Col, Row } from 'reactstrap'
 import { BsFillTelephoneFill, BsWhatsapp, BsFacebook } from 'react-icons/bs'
+import ServicesSlider from '../Components/ServicesSlider'
 
 const LandingPage = () => {
 
@@ -35,12 +36,32 @@ const LandingPage = () => {
     ElectricBanner
   ];
 
-    const phoneNumber = '1234567890'; // Replace with the actual phone number
-    const whatsappWebURL = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
-  
-    const handleButtonClick = () => {
-      window.open(whatsappWebURL, '_blank');
-    };
+  const phoneNumber = '1234567890'; // Replace with the actual phone number
+  const whatsappWebURL = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+
+  const handleButtonClick = () => {
+    window.open(whatsappWebURL, '_blank');
+  };
+
+  const [formData, setFormData] = useState({
+    name: '',
+    mobileNumber: '',
+    services: '',
+    description: '',
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form Data:', formData);
+  };
 
   useEffect(() => {
     // Function to handle the timer
@@ -56,16 +77,20 @@ const LandingPage = () => {
   return (
     <>
       <Navbar />
+
       <Button href='https://www.facebook.com/mytotal.helper?ref=br_rs' target='_blank' variant="primary" className="me-2 floating-buttonT">
-        <BsFacebook  color='#0777ff' size={25} />
+        <BsFacebook color='#0777ff' size={25} />
       </Button>
+
       <Button onClick={handleButtonClick} variant="primary" className="me-2 floating-buttonS">
         <BsWhatsapp color='#00e6a1' size={25} />
       </Button>
+
       <Button variant="primary" onClick={handleShow} className="me-2 floating-button">
         {/* <PermPhoneMsgIcon style={{ fontSize: 'larger' }} /> */}
         <BsFillTelephoneFill size={25} />
       </Button>
+
       <Offcanvas className='bg-warning' placement={'end'} show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
         </Offcanvas.Header>
@@ -74,22 +99,54 @@ const LandingPage = () => {
             <Col sm={12} xl='12'>
               <div className="Enquiry container">
                 <b><h2 className='txtColour font-weight-bold p-1' >Enquiry Form</h2> </b>
-                <form className='pb-2 px-2' action="#" method="post">
+                <form className="pb-2 px-2" onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter Full Name" required />
+                    <label htmlFor="name">Full Name:</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Enter Full Name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
                   <div className="form-group">
-                    <label for="email">Mobile Number :</label>
-                    <input type="email" id="email" name="email" placeholder="Enter Mobile Number" required />
+                    <label htmlFor="mobileNumber">Mobile Number:</label>
+                    <input
+                      type="text"
+                      id="mobileNumber"
+                      name="mobileNumber"
+                      placeholder="Enter Mobile Number"
+                      value={formData.mobileNumber}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
                   <div className="form-group">
-                    <label for="email">Services looking for:</label>
-                    <input type="email" id="email" name="email" placeholder="Please enter the service you are looking for." required />
+                    <label htmlFor="services">Services looking for:</label>
+                    <input
+                      type="text"
+                      id="services"
+                      name="services"
+                      placeholder="Please enter the service you are looking for."
+                      value={formData.services}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
                   <div className="form-group">
-                    <label for="message">Discription (Please specify):</label>
-                    <textarea id="message" name="message" placeholder="Enter Discription" rows="5" required></textarea>
+                    <label htmlFor="description">Description (Please specify):</label>
+                    <textarea
+                      id="description"
+                      name="description"
+                      placeholder="Enter Description"
+                      rows="5"
+                      value={formData.description}
+                      onChange={handleInputChange}
+                      required
+                    ></textarea>
                   </div>
                   <div className="form-group">
                     <input type="submit" value="Submit" />
@@ -112,25 +169,21 @@ const LandingPage = () => {
             backgroundSize: 'cover',
             backgroundPosition: 'top',
             width: '100%',
-            height: '90vh',
+            height: '80vh',
             backgroundColor: 'transparent',
             display: 'grid',
             placeItems: 'center'
 
           }}
           className="container-fluid custom-shape-divider-bottom-1687584617">
-          {/* <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black color
-            }}
-          ></div> */}
           {/* <!-- --Tittle-- --> */}
           <FirstSection />
+        </div>
+      </section >
+      <section>
+        <div style={{ background: '#3d5ce8' }} className="container-fluid ">
+          {/* <!-- --Tittle-- --> */}
+          <ServicesSlider />
         </div>
       </section >
       <section>

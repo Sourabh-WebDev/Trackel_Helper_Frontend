@@ -1,12 +1,15 @@
 import React from 'react';
 import Slider from 'react-slick';
+import { Card, CardMedia } from '@mui/material';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const ServicesSlider = () => {
     const settings = {
         dots: true,
-        infinite: false,
+        infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
         autoplay: true,
@@ -40,15 +43,57 @@ const ServicesSlider = () => {
 
     return (
         <div className='text-center'>
-            <Slider {...settings} className=''>
-                <div>
-                    <h3>Slide 1</h3>
+            <Slider {...settings} className='py-2'>
+                <div >
+                    <Card sx={{ background: '#3d5ce8', maxWidth: 800, padding: 1, boxShadow: 'none' }}>
+                        <img
+                            style={{ height: 400 }}
+                            className='w-100'
+                            src="https://mytotalhelper.com//upload/WhatsApp_Image_2019-05-16_at_14_27_26.jpeg"
+                            title="green iguana"
+                        />
+                    </Card>
                 </div>
                 <div>
-                    <h3>Slide 2</h3>
+                    <Card sx={{ background: '#3d5ce8', maxWidth: 800, padding: 1, boxShadow: 'none' }}>
+                        <img
+                            style={{ height: 400 }}
+                            className='w-100'
+                            src="https://mytotalhelper.com//upload/WhatsApp_Image_2019-05-15_at_11_48_44.jpeg"
+                            title="green iguana"
+                        />
+                    </Card>
                 </div>
                 <div>
-                    <h3>Slide 3</h3>
+                    <Card sx={{ background: '#3d5ce8', maxWidth: 800, padding: 1, boxShadow: 'none' }}>
+                        <img
+                            style={{ height: 400 }}
+                            className='w-100'
+                            src="https://mytotalhelper.com//upload/WhatsApp_Image_2019-05-16_at_14_27_26.jpeg"
+                            title="green iguana"
+                        />
+                    </Card>
+                </div>
+
+                <div>
+                    <Card sx={{ background: '#3d5ce8', maxWidth: 800, padding: 1, boxShadow: 'none' }}>
+                        <img
+                            style={{ height: 400 }}
+                            className='w-100'
+                            src="https://mytotalhelper.com//upload/WhatsApp_Image_2019-05-15_at_13_57_53.jpeg"
+                            title="green iguana"
+                        />
+                    </Card>
+                </div>
+                <div>
+                    <Card sx={{ background: '#3d5ce8', maxWidth: 800, padding: 1, boxShadow: 'none' }}>
+                        <img
+                            style={{ height: 400 }}
+                            className='w-100'
+                            src="https://mytotalhelper.com//upload/WhatsApp_Image_2019-05-15_at_11_48_44.jpeg"
+                            title="green iguana"
+                        />
+                    </Card>
                 </div>
             </Slider>
         </div>
