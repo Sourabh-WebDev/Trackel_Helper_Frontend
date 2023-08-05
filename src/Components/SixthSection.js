@@ -5,7 +5,7 @@ import Slider from "react-slick";
 const SixthSection = () => {
 
     const settings = {
-        dots: true,
+        ddots: true,
         infinite: false,
         speed: 500,
         slidesToShow: 1,
