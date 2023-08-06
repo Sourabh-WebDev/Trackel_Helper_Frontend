@@ -19,6 +19,8 @@ import { Button, Offcanvas } from 'react-bootstrap'
 import { Col, Row } from 'reactstrap'
 import { BsFillTelephoneFill, BsWhatsapp, BsFacebook } from 'react-icons/bs'
 import ServicesSlider from '../Components/ServicesSlider'
+import { useDispatch, useSelector } from 'react-redux'
+import { GetAllServices } from '../Store/Actions/Dashboard/servicesAction'
 
 const LandingPage = () => {
 
@@ -73,6 +75,17 @@ const LandingPage = () => {
     // Cleanup the timer when the component is unmounted
     return () => clearInterval(timer);
   }, []);
+
+
+  const { data } = useSelector(state => state.GetAllServicesReducer)
+
+  const dispatch = useDispatch()
+
+
+
+  useEffect(() => {
+    dispatch(GetAllServices())
+  }, [])
 
   return (
     <>
@@ -189,7 +202,7 @@ const LandingPage = () => {
       <section>
         <div className="container-fluid ">
           {/* <!-- --Tittle-- --> */}
-          <SecondSection />
+          <SecondSection data={data} />
         </div>
       </section >
       <section>

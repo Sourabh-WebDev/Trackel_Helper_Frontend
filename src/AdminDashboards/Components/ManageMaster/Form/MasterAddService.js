@@ -25,12 +25,19 @@ const MasterAddService = ({ ToggleMasterAddService }) => {
 
     const dispatch = useDispatch()
 
+    // to manage the loading 
+    const [Loading, setLoading] = useState(false)
+
     // data from redux store
     const serviceResult = useSelector(pre => pre.SeviceAddReducer)
     // for image upload 
     const imgUpload = useSelector(pre => pre.ImageUploadReducer)
 
     const [allIcons, setAllIcons] = useState([])
+
+    const [ImgUploaded, setImgUploaded] = useState(null)
+
+    const [details, setDetails] = useState("")
 
     // make the wraper of the icon 
     const IconWrapper = ({ icon }) => {
@@ -55,14 +62,15 @@ const MasterAddService = ({ ToggleMasterAddService }) => {
     // service Form 
     const ServiceFormData = {
         serviceName: cateName,
-        icon: selectedIcon.value !== null ? selectedIcon.value : "",
-        image: imgUpload.fileName ? imgUpload.fileName : "",
+        icon: ImgUploaded && ImgUploaded.icon ? ImgUploaded.icon : "",
+        image: ImgUploaded && ImgUploaded.image ? ImgUploaded.image : "",
+        details: details
     }
 
     // submit the services 
     // Define the HandleSubmit function
     const HandleSubmit = () => {
-
+        setLoading(true)
         // Check the data is null or filled
         let response = null;
 
@@ -75,15 +83,17 @@ const MasterAddService = ({ ToggleMasterAddService }) => {
         } else {
             dispatch(AddService(ServiceFormData))
                 .then(() => {
+                    setLoading(false)
+                    ToggleMasterAddService()
                     Swal.fire(
                         'Successfully Added',
-                        `new Service added ${serviceResult.data.data.serviceName}`,
+                        `new Service added ${serviceResult && serviceResult.data.data ? serviceResult.data.data.serviceName : "New Service"}`,
                         'success'
                     )
-                    ToggleMasterAddService()
                     dispatch(GetAllServices())
                 })
                 .catch((error) => {
+                    setLoading(false)
                     console.log(error);
                 });
         }
@@ -111,17 +121,20 @@ const MasterAddService = ({ ToggleMasterAddService }) => {
     // }, [imgUpload.isUploaded])
 
     const handleImageUpload = (e) => {
+        setLoading(true)
         dispatch(ImageUploadAction(e))
             .then(() => {
+                setLoading(false)
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Image Uploaded successfully',
+                    title: 'Image uploaded successfully',
                     showConfirmButton: false,
                     timer: 1500
                 })
 
             }).catch((err) => {
+                setLoading(false)
                 console.log(err)
                 Swal.fire({
                     icon: "error",
@@ -131,26 +144,35 @@ const MasterAddService = ({ ToggleMasterAddService }) => {
     }
 
 
+    useEffect(() => {
+        if (imgUpload.isField) {
+            setImgUploaded({ ...ImgUploaded, ...imgUpload.isField })
+        }
+    }, [imgUpload])
+
     return (
         <div className='position-relative'>
-            <div className={`${imgUpload.isLoading ? "d-flex" : "d-none"} align-items-center justify-content-center`} style={{ zIndex: "10", background: "rgba(0,0,0,0.6)", position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }}>
+            <div className={`${Loading ? "d-flex" : "d-none"} align-items-center justify-content-center`} style={{ zIndex: "10", background: "rgba(0,0,0,0.6)", position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }}>
                 <BounceLoader
                     color="#fff83f"
-                    loading={imgUpload.isLoading}
+                    loading={Loading}
                 />
             </div>
             <FormGroup>
-                {console.log(imgUpload.fileName)}
                 <Label for="department">Category Name</Label>
                 <Input onChange={(e) => setCateName(e.target.value)} value={cateName} type="text" placeholder="Category Name" />
             </FormGroup>
             <FormGroup>
-                <Label for="fa icon">Fa Icon Name</Label>
-                <SelectBox options={allIcons} setSelcted={setSelectedIcon} />
+                <Label for="icon">Upload Icon</Label>
+                <Input type="file" name='icon' onChange={handleImageUpload} />
             </FormGroup>
             <FormGroup>
                 <Label for="image" >Choose Image</Label>
-                <Input type="file" onChange={handleImageUpload} />
+                <Input type="file" name='image' onChange={handleImageUpload} />
+            </FormGroup>
+            <FormGroup>
+                <Label for="image" >Details (360 characters)</Label>
+                <Input type='textarea' value={details} onChange={(e) => setDetails(e.target.value)} max={360} placeholder='typing ....' />
             </FormGroup>
             <Button type='submit' onClick={() => HandleSubmit()}>Submit</Button>
         </div>

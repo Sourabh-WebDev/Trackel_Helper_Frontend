@@ -10,11 +10,32 @@ import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
 import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
 import SalonBanner from '../../assets/img/SalonBanner.jpg'
 import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
+import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import GetSearchReducer from '../../Store/Reducers/LandingPage/SearchReducer';
+import { GetSearchServices } from '../../Store/Actions/LandingPage/SearchAction';
+import { BounceLoader } from 'react-spinners';
+import { API_URL } from '../../config';
 
 const ServicePage = () => {
+
+    const location = useLocation()
+
+    const qureyParmas = new URLSearchParams(location.search)
+    const serviceName = qureyParmas.get('serviceName')
+
+
+    const search = {
+        serviceName: serviceName ? serviceName : ""
+    }
+
     // State variables
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [requestDone, setRequestDone] = useState(false);
+
+    const getSearchData = useSelector(state => state.GetSearchReducer)
+
+    const dispatch = useDispatch()
 
     // Array of images for the slideshow
     const images = [
@@ -35,98 +56,106 @@ const ServicePage = () => {
         return () => clearInterval(timer);
     }, []);
 
+    useEffect(() => {
+        dispatch(GetSearchServices(search))
+    }, [])
+
     return (
-        <>
-            <Navbar />
+        getSearchData && getSearchData.data ?
+            <>
+                <Navbar />
+                <section>
+                    {/* Navbar section */}
 
-            <section>
-                {/* Navbar section */}
+                    <Header />
 
-                <Header />
-
-                {/* Image slideshow section */}
-                <div
-                    style={{
-                        backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        width: '100%',
-                        height: '500px',
-                    }}
-                    className="container-fluid"
-                >
-                    <div className="container" style={{ display: 'grid', placeItems: 'center', height: '500px' }}>
-                        <Card className="bg-transparent text-center ServiceBanner p-2">
-                            <h1 className='display-3 font-weight-bold text-warning'>Women Salon</h1>
-                        </Card>
+                    {/* Image slideshow section */}
+                    <div
+                        style={{
+                            backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            width: '100%',
+                            height: '500px',
+                        }}
+                        className="container-fluid"
+                    >
+                        <div className="container" style={{ display: 'grid', placeItems: 'center', height: '500px' }}>
+                            <Card className="bg-transparent text-center ServiceBanner p-2">
+                                <h1 className='display-3 font-weight-bold text-warning'>{serviceName}</h1>
+                            </Card>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section>
-                {/* First service section */}
-                <div className="container-fluid">
-                    <Row>
-                        <Col xl={6} style={{ background: '#142572' }} className='p-5 text-center'>
-                            <h2 style={{ color: '#eedc30' }}><em>Facials</em></h2>
-                            <div className='text-white border' style={{ display: 'grid', placeItems: 'center', height: '300px' }}>
-                                <p>"We provide the best facial services ever, and we highly recommend trying it once to experience our affordable and convenient at-home service."</p>
+                {getSearchData && getSearchData.data ? getSearchData.data.map((item, index) => (
+                    <section>
+                        {/* First service section */}
+                        <div className="container-fluid">
+                            <Row>
+                                <Col xl={6} style={{ background: '#142572' }} className='p-5 text-center'>
+                                    <h2 style={{ color: '#eedc30' }}><em>{item.serviceName}</em></h2>
+                                    <div className='text-white border' style={{ display: 'grid', placeItems: 'center', height: '300px' }}>
+                                        <p>"We provide the best facial services ever, and we highly recommend trying it once to experience our affordable and convenient at-home service."</p>
 
-                                {/* Render different buttons based on the state */}
-                                {requestDone ?
-                                    <Button color='flat-primary' onClick={() => setRequestDone(false)} outline>
-                                        <img src={Done} width={25} alt="" />
-                                    </Button> :
-                                    <Button onClick={() => setRequestDone(true)}>Service Request</Button>
-                                }
-                            </div>
-                        </Col>
-                        <Col xl={6} className='p-0'>
-                            <img className='img-fluid ServiceBannerS' src="https://img.freepik.com/free-photo/beautician-with-brush-applies-white-moisturizing-mask-face-young-girl-client-spa-beauty-salon_343596-4247.jpg?w=1060&t=st=1686489226~exp=1686489826~hmac=2e19cf95f0c7845fad1257520e0eea10e6371084b662b734052402cf961f351a" alt="" />
-                        </Col>
-                    </Row>
-                </div>
-            </section>
+                                        {/* Render different buttons based on the state */}
+                                        {requestDone ?
+                                            <Button color='flat-primary' onClick={() => setRequestDone(false)} outline>
+                                                <img src={Done} width={25} alt="" />
+                                            </Button> :
+                                            <Button onClick={() => setRequestDone(true)}>Service Request</Button>
+                                        }
+                                    </div>
+                                </Col>
+                                <Col xl={6} className='p-0'>
+                                    <img style={{ objectFit: "cover" }} className='img-fluid ServiceBannerS' src={API_URL + "/uploads/" + item.image} alt="" />
+                                </Col>
+                            </Row>
+                        </div>
+                    </section>
+                )) : null}
 
-            <section>
-                {/* Second service section */}
-                <div className="container-fluid">
-                    <Row>
-                        <Col xl={6} className='p-0'>
-                            <img className='img-fluid ServiceBanner' src="https://img.freepik.com/free-photo/woman-washing-head-hairsalon_1157-27179.jpg?w=900&t=st=1686553216~exp=1686553816~hmac=0b1dadb1b646573d63ed387baa6906f266ad604f84855b8162585ca96429f136" alt="" />
-                        </Col>
-                        <Col xl={6} className='text-center bgColour p-5'>
-                            <h2 className='txtColour'><em>Hair Treatments</em></h2>
-                            <div className='border' style={{ display: 'grid', placeItems: 'center', height: '300px' }}>
-                                <p>"We provide the best facial services ever, and we highly recommend trying it once to experience our affordable and convenient at-home service."</p>
 
-                                {/* Render different buttons based on the state */}
-                                {requestDone ?
-                                    <Button color='flat-primary' onClick={() => setRequestDone(false)} outline>
-                                        <img src={Done} width={25} alt="" />
-                                    </Button> :
-                                    <Button onClick={() => setRequestDone(true)}>Service Request</Button>
-                                }
-                            </div>
-                        </Col>
-                    </Row>
-                </div>
-            </section>
+                <section>
+                    {/* Second service section */}
+                    <div className="container-fluid">
+                        <Row>
+                            <Col xl={6} className='p-0'>
+                                <img className='img-fluid ServiceBanner' src="https://img.freepik.com/free-photo/woman-washing-head-hairsalon_1157-27179.jpg?w=900&t=st=1686553216~exp=1686553816~hmac=0b1dadb1b646573d63ed387baa6906f266ad604f84855b8162585ca96429f136" alt="" />
+                            </Col>
+                            <Col xl={6} className='text-center bgColour p-5'>
+                                <h2 className='txtColour'><em>Hair Treatments</em></h2>
+                                <div className='border' style={{ display: 'grid', placeItems: 'center', height: '300px' }}>
+                                    <p>"We provide the best facial services ever, and we highly recommend trying it once to experience our affordable and convenient at-home service."</p>
 
-            <section>
-                {/* Slider section */}
-                <div style={{ backgroundImage: 'url(https://c4.wallpaperflare.com/wallpaper/492/842/325/sparkle-wallpaper-preview.jpg)' }} className="container-fluid bgSeventhSectionImg">
-                    <OfferSlider />
-                </div>
-            </section>
+                                    {/* Render different buttons based on the state */}
+                                    {requestDone ?
+                                        <Button color='flat-primary' onClick={() => setRequestDone(false)} outline>
+                                            <img src={Done} width={25} alt="" />
+                                        </Button> :
+                                        <Button onClick={() => setRequestDone(true)}>Service Request</Button>
+                                    }
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
+                </section>
 
-            <section>
-                {/* Footer section */}
-                <div className="container-fluid">
-                    <Footer />
-                </div>
-            </section>
-        </>
+                <section>
+                    {/* Slider section */}
+                    <div style={{ backgroundImage: 'url(https://c4.wallpaperflare.com/wallpaper/492/842/325/sparkle-wallpaper-preview.jpg)' }} className="container-fluid bgSeventhSectionImg">
+                        <OfferSlider />
+                    </div>
+                </section>
+
+                <section>
+                    {/* Footer section */}
+                    <div className="container-fluid">
+                        <Footer />
+                    </div>
+                </section>
+            </>
+            : <BounceLoader loading='true' />
     );
 };
 

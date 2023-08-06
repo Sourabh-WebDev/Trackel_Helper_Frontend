@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import React from 'react'
 
-const AdminDataTable = ({ rows, columns, CustomToolbar }) => {
+const AdminDataTable = ({ rows, columns, CustomToolbar, cellcolor, ...args }) => {
 
     return (
         <Box
@@ -14,6 +14,7 @@ const AdminDataTable = ({ rows, columns, CustomToolbar }) => {
                 },
                 "& .MuiDataGrid-cell": {
                     borderBottom: "none",
+                    background: cellcolor
                 },
                 "& .name-column--cell": {
                     // color: colors.greenAccent[300],
@@ -53,6 +54,7 @@ const AdminDataTable = ({ rows, columns, CustomToolbar }) => {
         >
 
             <DataGrid
+                {...args}
                 rows={rows}
                 columns={columns}
                 components={{ Toolbar: CustomToolbar }}

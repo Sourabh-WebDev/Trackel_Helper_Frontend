@@ -147,3 +147,22 @@ button.dropdownMenu-btn-header.btn.btn-secondary {
   color: #4d4d4d;
   border: 1px solid white;
 }
+
+.complete-cell {
+  background-color: green !important;
+}
+.running-cell {
+  background-color: yellow !important;
+}
+.cancel-cell {
+  background-color: gray !important;
+}
+.hold-cell {
+  background-color: #f08080 !important;
+}
+.due-cell {
+  background-color: #adadec !important;
+}
+.pending-cell {
+  background-color: #ffa500 !important;
+}
