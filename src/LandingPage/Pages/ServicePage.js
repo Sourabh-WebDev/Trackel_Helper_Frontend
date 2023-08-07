@@ -6,10 +6,10 @@ import { Button, Col, Row } from 'reactstrap';
 import Card from 'react-bootstrap/Card';
 import OfferSlider from './OfferSlider';
 import Done from '../../assets/gif/check-mark-verified-unscreen.gif';
-import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
-import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
-import SalonBanner from '../../assets/img/SalonBanner.jpg'
-import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
+import PlumberBanner from '../../assets/img/PlumberBanner.png'
+import CarWashingBanner from '../../assets/img/CarWashingBanner.png'
+import SalonBanner from '../../assets/img/SalonBanner.png'
+import ElectricBanner from '../../assets/img/ElectricBanner.png'
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import GetSearchReducer from '../../Store/Reducers/LandingPage/SearchReducer';

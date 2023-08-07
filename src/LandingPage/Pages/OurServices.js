@@ -5,10 +5,10 @@ import Card from 'react-bootstrap/Card';
 import Footer from '../../Components/Footer';
 import { TbAirConditioning } from "react-icons/tb";
 import { MdContentCut, MdElectricBolt, MdLocalCarWash, MdPlumbing } from "react-icons/md";
-import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
-import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
-import SalonBanner from '../../assets/img/SalonBanner.jpg'
-import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
+import PlumberBanner from '../../assets/img/PlumberBanner.png'
+import CarWashingBanner from '../../assets/img/CarWashingBanner.png'
+import SalonBanner from '../../assets/img/SalonBanner.png'
+import ElectricBanner from '../../assets/img/ElectricBanner.png'
 
 const OurServices = () => {
 
@@ -19,7 +19,7 @@ const OurServices = () => {
         CarWashingBanner,
         SalonBanner,
         ElectricBanner
-      ];
+    ];
 
     const Servicecards = [
         {

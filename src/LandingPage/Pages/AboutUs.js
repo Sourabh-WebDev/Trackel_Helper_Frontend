@@ -5,10 +5,10 @@ import Card from 'react-bootstrap/Card';
 import Footer from '../../Components/Footer';
 import { Col, Row } from 'reactstrap';
 import AboutUsImg from '../../assets/img/AboutUs.png';
-import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
-import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
-import SalonBanner from '../../assets/img/SalonBanner.jpg'
-import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
+import PlumberBanner from '../../assets/img/PlumberBanner.png'
+import CarWashingBanner from '../../assets/img/CarWashingBanner.png'
+import SalonBanner from '../../assets/img/SalonBanner.png'
+import ElectricBanner from '../../assets/img/ElectricBanner.png'
 
 const AboutUs = () => {
   // State to keep track of the current image index
