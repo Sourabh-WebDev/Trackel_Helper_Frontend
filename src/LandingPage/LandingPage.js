@@ -10,10 +10,10 @@ import FourthSections from '../Components/FourthSections'
 import FifthSection from '../Components/FifthSection'
 import SixthSection from '../Components/SixthSection'
 import Footer from '../Components/Footer'
-import PlumberBanner from '../assets/img/PlumberBanner.jpg'
-import CarWashingBanner from '../assets/img/CarWashingBanner.jpg'
-import SalonBanner from '../assets/img/SalonBanner.jpg'
-import ElectricBanner from '../assets/img/ElectricBanner.jpg'
+import PlumberBanner from '../assets/img/PlumberBanner.png'
+import CarWashingBanner from '../assets/img/CarWashingBanner.png'
+import SalonBanner from '../assets/img/SalonBanner.png'
+import ElectricBanner from '../assets/img/ElectricBanner.png'
 import { Button, Offcanvas } from 'react-bootstrap'
 import { Col, Row } from 'reactstrap'
 import { BsFillTelephoneFill, BsWhatsapp, BsFacebook } from 'react-icons/bs'
@@ -67,7 +67,7 @@ const LandingPage = () => {
     const timer = setInterval(() => {
       // Increment the current image index
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 1900); // Change the image every 5 seconds
+    }, 2000); // Change the image every 5 seconds
 
     // Cleanup the timer when the component is unmounted
     return () => clearInterval(timer);
@@ -171,9 +171,6 @@ const LandingPage = () => {
       </Offcanvas>
 
       <section>
-        {/* <!-- --navbar-- --> */}
-
-
         <div
           style={{
             backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,

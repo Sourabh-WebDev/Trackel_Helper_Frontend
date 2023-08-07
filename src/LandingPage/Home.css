@@ -275,10 +275,11 @@ body {
 .cardHover>div {
     background: #3d5ce8;
     color: #fff;
+    cursor: pointer;
 }
 
 .cardHover>div:hover {
-    background: #fff;
+    background: #eedc30;
     color: #142572;
 }
 
