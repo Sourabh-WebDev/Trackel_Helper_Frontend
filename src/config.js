@@ -1,4 +1,5 @@
-export const API_URL = "https://helper-i1ln.onrender.com"
+// export const API_URL = "https://helper-i1ln.onrender.com"
+export const API_URL = "http://ec2-16-171-125-47.eu-north-1.compute.amazonaws.com"
 // export const API_URL = "http://localhost:5000"
 
 
