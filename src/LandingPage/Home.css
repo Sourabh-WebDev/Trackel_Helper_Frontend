@@ -128,7 +128,7 @@ body {
 
 .Enquiry.container {
     max-width: 450px;
-    /* margin: 20px auto; */
+    margin: 20px auto;
     background-color: #eedc30;
     border-radius: 5px 40px 5px 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -334,7 +334,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 60vh;
+    height: 100vh;
 }
 
 .bgSixthSectionImg {
@@ -706,6 +706,7 @@ input[type="submit"] {
     .footerform {
 
         padding: 0px;
+        margin: 20px auto;
     }
 }
 

@@ -6,7 +6,7 @@ const SixthSection = () => {
 
     const settings = {
         ddots: true,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -43,25 +43,67 @@ const SixthSection = () => {
     return (
         <div style={{ background: '#99DBF5', paddingTop: '5rem' }} className='text-center SixthSectionpadding'>
             <h1 className='txtColour'>Our Team</h1>
-            <Slider {...settings} className=''>
+            <Slider {...settings} className='text-center'>
 
-                <div className='d-flex justify-content-evenly SixthSectionAwesome align-items-center py-2'>
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
+                <div className='SixthSectionAwesome d-flex justify-content-evenly gap-2 py-2'>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+
                 </div>
-                <div className='d-flex justify-content-evenly SixthSectionAwesome align-items-center py-2'>
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
+                <div className='SixthSectionAwesome d-flex justify-content-evenly gap-2 py-2'>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+
                 </div>
-                <div className='d-flex justify-content-evenly SixthSectionAwesome align-items-center py-2'>
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
-                    <img style={{ width: '15rem', height: '15rem' }} src="https://i.ytimg.com/vi/Y7B_k4K-o4U/maxresdefault.jpg" />
+                <div className='SixthSectionAwesome d-flex justify-content-evenly gap-2 py-2'>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+
+                </div>
+                <div className='SixthSectionAwesome d-flex justify-content-evenly gap-2 py-2'>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+                    <div>
+                        <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
+                    </div>
+
                 </div>
             </Slider>
         </div>
