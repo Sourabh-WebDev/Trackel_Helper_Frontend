@@ -55,19 +55,22 @@ const ContactUs = () => {
     return (
         <>
             <Navbar />
+            <Header />
 
             <section>
                 {/* Navbar section */}
-                <Header />
 
                 {/* Image slideshow section */}
                 <div
                     style={{
-                        backgroundImage: `url(${images[currentImageIndex]})`,
+                        backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
                         backgroundSize: 'cover',
-                        backgroundPosition: 'center',
+                        backgroundPosition: 'top',
                         width: '100%',
-                        height: '500px',
+                        height: '110vh',
+                        backgroundColor: 'transparent',
+                        display: 'grid',
+                        placeItems: 'center'
                     }}
                     className="container-fluid"
                 >
@@ -126,7 +129,7 @@ const ContactUs = () => {
                 </div>
             </section>
 
-            <section className="">
+            <section >
                 {/* First service section */}
                 <div className="container-fluid">
                     <Row className="m-0">
@@ -190,9 +193,9 @@ const ContactUs = () => {
                 </div>
             </section>
 
-            <section>
+            <section style={{ background: '#4b5ced' }} >
                 {/* Footer section */}
-                <div className="container-fluid">
+                <div className="container-fluid contactUsPadding">
                     <Footer />
                 </div>
             </section>

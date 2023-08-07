@@ -86,6 +86,11 @@ const SecondSection = ({ data }) => {
         },
     ];
 
+    const HandleServiceSubmit = (serviceName) => {
+        const query = new URLSearchParams({ serviceName: serviceName })
+        navigate(`/serviceName?${query}`)
+    }
+
 
     return (
         <div className="bgColour text-center pt-3 pb-5">
@@ -98,7 +103,7 @@ const SecondSection = ({ data }) => {
                     <Row className="g-4 pb-4">
                         {data.data && data.data.map((item, index) => (
                             <Col xs={6} md={6} lg={data.data && data.data.length >= 5 ? 2 : 4} xl={data.data && data.data.length >= 5 ? 2 : 4} style={{ maxWidth: '100%' }} key={index}>
-                                <Card className='p-2 cardHover' onClick={() => navigate('/serviceName')} style={{ height: '16rem' }}>
+                                <Card className='p-2 cardHover' onClick={() => HandleServiceSubmit(item.serviceName)} style={{ height: '16rem' }}>
                                     <div className="border">
                                         <img className='w-100' height={150} src={API_URL + "/uploads/" + item.icon} />
                                         <Card.Body>

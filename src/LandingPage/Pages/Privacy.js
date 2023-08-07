@@ -34,18 +34,22 @@ const Privacy = () => {
     return (
         <>
             <Navbar />
+            <Header />
 
             <section>
-                <Header />
 
                 {/* Hero section with a rotating background image */}
                 <div
                     style={{
                         backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
                         backgroundSize: 'cover',
-                        backgroundPosition: 'center',
+                        backgroundPosition: 'top',
                         width: '100%',
-                        height: '500px',
+                        height: '110vh',
+                        backgroundColor: 'transparent',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'start'
                     }}
                     className="container-fluid"
                 >
@@ -79,9 +83,9 @@ const Privacy = () => {
 
                 </div>
             </section>
-            <section>
+            <section style={{ background: '#4b5ced' }}>
                 {/* Footer section */}
-                <div className="container-fluid">
+                <div className="container-fluid privacyAndpolicyPadding">
                     <Footer />
                 </div>
             </section>

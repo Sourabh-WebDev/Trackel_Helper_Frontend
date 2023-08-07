@@ -74,9 +74,13 @@ const ServicePage = () => {
                         style={{
                             backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
                             backgroundSize: 'cover',
-                            backgroundPosition: 'center',
+                            backgroundPosition: 'top',
                             width: '100%',
-                            height: '500px',
+                            height: '110vh',
+                            backgroundColor: 'transparent',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'start'
                         }}
                         className="container-fluid"
                     >
@@ -90,7 +94,6 @@ const ServicePage = () => {
 
                 {getSearchData && getSearchData.data ? getSearchData.data.map((item, index) => (
                     <section>
-                        {/* First service section */}
                         <div className="container-fluid">
                             <Row>
                                 <Col xl={6} style={{ background: '#142572' }} className='p-5 text-center'>
@@ -98,7 +101,6 @@ const ServicePage = () => {
                                     <div className='text-white border' style={{ display: 'grid', placeItems: 'center', height: '300px' }}>
                                         <p>"We provide the best facial services ever, and we highly recommend trying it once to experience our affordable and convenient at-home service."</p>
 
-                                        {/* Render different buttons based on the state */}
                                         {requestDone ?
                                             <Button color='flat-primary' onClick={() => setRequestDone(false)} outline>
                                                 <img src={Done} width={25} alt="" />
@@ -116,30 +118,6 @@ const ServicePage = () => {
                 )) : null}
 
 
-                <section>
-                    {/* Second service section */}
-                    <div className="container-fluid">
-                        <Row>
-                            <Col xl={6} className='p-0'>
-                                <img className='img-fluid ServiceBanner' src="https://img.freepik.com/free-photo/woman-washing-head-hairsalon_1157-27179.jpg?w=900&t=st=1686553216~exp=1686553816~hmac=0b1dadb1b646573d63ed387baa6906f266ad604f84855b8162585ca96429f136" alt="" />
-                            </Col>
-                            <Col xl={6} className='text-center bgColour p-5'>
-                                <h2 className='txtColour'><em>Hair Treatments</em></h2>
-                                <div className='border' style={{ display: 'grid', placeItems: 'center', height: '300px' }}>
-                                    <p>"We provide the best facial services ever, and we highly recommend trying it once to experience our affordable and convenient at-home service."</p>
-
-                                    {/* Render different buttons based on the state */}
-                                    {requestDone ?
-                                        <Button color='flat-primary' onClick={() => setRequestDone(false)} outline>
-                                            <img src={Done} width={25} alt="" />
-                                        </Button> :
-                                        <Button onClick={() => setRequestDone(true)}>Service Request</Button>
-                                    }
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
-                </section>
 
                 <section>
                     {/* Slider section */}
