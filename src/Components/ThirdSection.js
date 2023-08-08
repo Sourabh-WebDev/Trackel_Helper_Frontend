@@ -19,7 +19,7 @@ const ThirdSection = () => {
                 <Col xl='4'>
                     <div className="d-flex justify-content-center align-items-center p-5" >
                         <div className='ThirdSectionRotatedLeft'>
-                            <div className="d-flex animate__animated animate__slideInLeft animate__delay-2s">
+                            <div  className="d-flex">
                                 <Card className='ThirdSectionCard'>
                                     <Card.Img className='img-fluid' src={ProServices} />
                                     <Card.Body className=''>
@@ -30,7 +30,7 @@ const ThirdSection = () => {
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="d-flex animate__animated animate__slideInLeft animate__delay-2s">
+                            <div  className="d-flex">
                                 <Card className='ThirdSectionCard'>
                                     <Card.Img className='img-fluid' src={BestQuality} />
                                     <Card.Body className=''>
@@ -44,7 +44,7 @@ const ThirdSection = () => {
                         </div>
                     </div>
                 </Col>
-                {/* Right Column */}
+                {/* Center Column */}
                 <Col xl='4' className='text-center'>
                     <div className='d-flex justify-content-center align-items-center animate__animated animate__jackInTheBox animate__delay-2s' style={{ height: '800px' }}>
                         <div>
@@ -56,10 +56,11 @@ const ThirdSection = () => {
                         </div>
                     </div>
                 </Col>
+                {/* Right Column */}
                 <Col xl='4' className='text-center'>
                     <div className="d-flex justify-content-center align-items-center p-5" >
                         <div className='ThirdSectionRotatedRight'>
-                            <div className="d-flex animate__animated animate__slideInRight animate__delay-2s">
+                            <div  className="d-flex">
                                 <Card className='ThirdSectionCard'>
                                     <Card.Img className='img-fluid' src={FastService} />
                                     <Card.Body className=''>
@@ -70,7 +71,7 @@ const ThirdSection = () => {
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="d-flex animate__animated animate__slideInRight animate__delay-2s">
+                            <div  className="d-flex">
                                 <Card className='ThirdSectionCard'>
                                     <Card.Img className='img-fluid' src={AllDaysServices} />
                                     <Card.Body className=''>

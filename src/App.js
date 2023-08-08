@@ -19,6 +19,7 @@ import AdminCustomerManage from './AdminDashboards/Components/Customer';
 import AdminRolesAndPermission from './AdminDashboards/Components/RolesAndPermission';
 import { useUserRoleContext } from './Context/RolesContext';
 import AdminPannel from './AdminDashboards/AdminPannel';
+import ProfileHistory from './LandingPage/Pages/ProfileHistory';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path='/Why-Choose-Us' element={<WhyChooseUs />} />
         <Route path='/Privacy-&-Policy' element={<Privacy />} />
         <Route path='/Term-&-Condition' element={<TermAndCondition />} />
+        <Route path='/YourPrifile/:id' element={<ProfileHistory />} />
 
 
 
