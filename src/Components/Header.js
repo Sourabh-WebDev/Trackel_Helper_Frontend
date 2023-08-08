@@ -3,13 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from '../assets/svg/we_logo.png';
+import Swal from 'sweetalert2';
 import { NavDropdown } from 'react-bootstrap';
 import { UseStateManager } from '../Context/StateManageContext';
 import { LoginModal, SingupModal } from './Modal';
-import GetLogInReducers from '../Store/Reducers/LandingPage/AuthReducer';
 import { useSelector } from 'react-redux';
-import Swal from 'sweetalert2';
-import { Diversity1Outlined, Logout } from '@mui/icons-material';
+import { Logout } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
@@ -63,34 +62,24 @@ function Header() {
 
                 <Navbar.Toggle aria-controls='navbarScroll' />
                 <Navbar.Collapse id='navbarScroll'>
-                    <div className='paddingForMain'>
-                        <h4>Welcome to <b>Helper Services</b></h4>
-                    </div>
                     <Nav className='ml-auto my-2 my-lg-0' style={{ maxHeight: '100px' }} navbarScroll>
 
                         <Nav.Link className='txtColour' href='#action1'>Register As A Professional</Nav.Link>
                         <Nav.Link className='txtColour' to='/About-Us'>About Us</Nav.Link>
                         <Nav.Link className='txtColour' href='/Our-All-Services'>Services</Nav.Link>
                         <Nav.Link className='txtColour' href='/Contact-Us'>Help</Nav.Link>
-                        {currentUser !== null ? (
-                            <div className='d-flex align-items-center justify-content-center'>
-                                <h6>{currentUser.name}</h6> &nbsp;&nbsp;
-                                <Logout className='cursor-p' onClick={() => GetLogOut()} />
-                            </div>
-                        ) : (
+                        {currentUser !== null ? <>
+                            <Nav.Link className='txtColour' >{currentUser.name}</Nav.Link>
+                            <Nav.Link className='txtColour' ><Logout className='cursor-p' onClick={() => GetLogOut()} /></Nav.Link>
+                        </> :
                             <>
                                 <NavDropdown title='Login' id='nav-dropdown'>
                                     <NavDropdown.Item onClick={() => setLoginOpen(!LoginOpen)} eventKey='4.1'>Customer Login</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item onClick={() => navigate('/admin')} eventKey='4.2'>Office Login</NavDropdown.Item>
                                 </NavDropdown>
-                                {/* <NavDropdown title="Sign Up" id="nav-dropdown">
-                                    <NavDropdown.Item onClick={() => setSingUp(!SingUp)} eventKey="4.1">Customer Sign Up</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item eventKey="4.2">Vendor Sign Up</NavDropdown.Item>
-                                </NavDropdown> */}
                             </>
-                        )}
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>

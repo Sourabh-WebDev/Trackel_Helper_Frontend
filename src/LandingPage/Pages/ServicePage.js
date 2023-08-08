@@ -119,8 +119,8 @@ const ServicePage = () => {
 
 
 
+                {/* Slider section */}
                 <section>
-                    {/* Slider section */}
                     <div style={{ backgroundImage: 'url(https://c4.wallpaperflare.com/wallpaper/492/842/325/sparkle-wallpaper-preview.jpg)' }} className="container-fluid bgSeventhSectionImg">
                         <OfferSlider />
                     </div>
