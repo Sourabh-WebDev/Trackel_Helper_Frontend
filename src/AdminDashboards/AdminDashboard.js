@@ -47,10 +47,7 @@ const AdminDashboard = () => {
         );
     };
 
-    useEffect(() => {
-        UserRoleCalled()
-    }, [])
-
+  
     const BarKeys = [
         { key: "Income", color: "#81c14b" },
         { key: "Expense", color: "#000000" },

@@ -14,9 +14,7 @@ const OutAttendenceTable = () => {
 
     const { userRole, setUserRole, UserRoleCalled } = useUserRoleContext();
 
-    useEffect(() => {
-        UserRoleCalled()
-    }, [])
+   
 
     const [selctedAttendence, setSelectedAttendence] = useState("Employee")
     const Office = ['Employee', 'Service Provider', 'Out Source']

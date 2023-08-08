@@ -30,9 +30,6 @@ const AdminCustomerManage = () => {
         ActiveTabFunction()
     }, [userRole])
 
-    useEffect(() => {
-        UserRoleCalled()
-    }, [])
 
     return (
         <Fragment>
