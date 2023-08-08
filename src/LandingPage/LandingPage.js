@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
-import FirstSection from '../Components/FirstSection'
-import Header from '../Components/Header'
 import Navbar from '../Components/Navbar'
+import Header from '../Components/Header'
+import ServicesSlider from '../Components/ServicesSlider'
+import FirstSection from '../Components/FirstSection'
 import SecondSection from '../Components/SecondSection'
 import ThirdSection from '../Components/ThirdSection'
-import FifthSection from '../Components/FifthSection'
 import FourthSections from '../Components/FourthSections'
+import FifthSection from '../Components/FifthSection'
 import SixthSection from '../Components/SixthSection'
 import Footer from '../Components/Footer'
-import SeventhSection from '../Components/SeventhSection'
-import OurServiceProvier from '../assets/img/TeamProvider.png'
-import PlumberBanner from '../assets/img/PlumberBanner.jpg'
-import CarWashingBanner from '../assets/img/CarWashingBanner.jpg'
-import SalonBanner from '../assets/img/SalonBanner.jpg'
-import ElectricBanner from '../assets/img/ElectricBanner.jpg'
+import PlumberBanner from '../assets/img/PlumberBanner.png'
+import CarWashingBanner from '../assets/img/CarWashingBanner.png'
+import SalonBanner from '../assets/img/SalonBanner.png'
+import ElectricBanner from '../assets/img/ElectricBanner.png'
 import { Button, Offcanvas } from 'react-bootstrap'
 import { Col, Row } from 'reactstrap'
 import { BsFillTelephoneFill, BsWhatsapp, BsFacebook } from 'react-icons/bs'
+import { useDispatch, useSelector } from 'react-redux'
+import { GetAllServices } from '../Store/Actions/Dashboard/servicesAction'
 
 const LandingPage = () => {
 
@@ -29,18 +30,37 @@ const LandingPage = () => {
 
   const images = [
     PlumberBanner,
-    // "https://img.freepik.com/free-photo/close-up-car-care-washing_23-2149172897.jpg?w=1060&t=st=1691048961~exp=1691049561~hmac=2cbfd2d151e2f365ff96c5e8bf7c08c9d1f93b5e4f7132c96ace2327908e93c2",
     CarWashingBanner,
     SalonBanner,
     ElectricBanner
   ];
 
-    const phoneNumber = '1234567890'; // Replace with the actual phone number
-    const whatsappWebURL = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
-  
-    const handleButtonClick = () => {
-      window.open(whatsappWebURL, '_blank');
-    };
+  const phoneNumber = '7290900835'; // Replace with the actual phone number
+  const whatsappWebURL = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+
+  const handleButtonClick = () => {
+    window.open(whatsappWebURL, '_blank');
+  };
+
+  const [formData, setFormData] = useState({
+    name: '',
+    mobileNumber: '',
+    services: '',
+    description: '',
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form Data:', formData);
+  };
 
   useEffect(() => {
     // Function to handle the timer
@@ -53,19 +73,36 @@ const LandingPage = () => {
     return () => clearInterval(timer);
   }, []);
 
+
+  const { data } = useSelector(state => state.GetAllServicesReducer)
+
+  const dispatch = useDispatch()
+
+
+
+  useEffect(() => {
+    dispatch(GetAllServices())
+  }, [])
+
   return (
     <>
       <Navbar />
+      <Header />
+
+
       <Button href='https://www.facebook.com/mytotal.helper?ref=br_rs' target='_blank' variant="primary" className="me-2 floating-buttonT">
-        <BsFacebook  color='#0777ff' size={25} />
+        <BsFacebook color='#0777ff' size={25} />
       </Button>
+
       <Button onClick={handleButtonClick} variant="primary" className="me-2 floating-buttonS">
         <BsWhatsapp color='#00e6a1' size={25} />
       </Button>
+
       <Button variant="primary" onClick={handleShow} className="me-2 floating-button">
         {/* <PermPhoneMsgIcon style={{ fontSize: 'larger' }} /> */}
         <BsFillTelephoneFill size={25} />
       </Button>
+
       <Offcanvas className='bg-warning' placement={'end'} show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
         </Offcanvas.Header>
@@ -74,22 +111,54 @@ const LandingPage = () => {
             <Col sm={12} xl='12'>
               <div className="Enquiry container">
                 <b><h2 className='txtColour font-weight-bold p-1' >Enquiry Form</h2> </b>
-                <form className='pb-2 px-2' action="#" method="post">
+                <form className="pb-2 px-2" onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter Full Name" required />
+                    <label htmlFor="name">Full Name:</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Enter Full Name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
                   <div className="form-group">
-                    <label for="email">Mobile Number :</label>
-                    <input type="email" id="email" name="email" placeholder="Enter Mobile Number" required />
+                    <label htmlFor="mobileNumber">Mobile Number:</label>
+                    <input
+                      type="text"
+                      id="mobileNumber"
+                      name="mobileNumber"
+                      placeholder="Enter Mobile Number"
+                      value={formData.mobileNumber}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
                   <div className="form-group">
-                    <label for="email">Services looking for:</label>
-                    <input type="email" id="email" name="email" placeholder="Please enter the service you are looking for." required />
+                    <label htmlFor="services">Services looking for:</label>
+                    <input
+                      type="text"
+                      id="services"
+                      name="services"
+                      placeholder="Please enter the service you are looking for."
+                      value={formData.services}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
                   <div className="form-group">
-                    <label for="message">Discription (Please specify):</label>
-                    <textarea id="message" name="message" placeholder="Enter Discription" rows="5" required></textarea>
+                    <label htmlFor="description">Description (Please specify):</label>
+                    <textarea
+                      id="description"
+                      name="description"
+                      placeholder="Enter Description"
+                      rows="5"
+                      value={formData.description}
+                      onChange={handleInputChange}
+                      required
+                    ></textarea>
                   </div>
                   <div className="form-group">
                     <input type="submit" value="Submit" />
@@ -102,41 +171,33 @@ const LandingPage = () => {
       </Offcanvas>
 
       <section>
-        {/* <!-- --navbar-- --> */}
-
-        <Header />
-
         <div
           style={{
             backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
             backgroundSize: 'cover',
             backgroundPosition: 'top',
             width: '100%',
-            height: '90vh',
+            height: '110vh',
             backgroundColor: 'transparent',
-            display: 'grid',
-            placeItems: 'center'
-
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'start'
           }}
           className="container-fluid custom-shape-divider-bottom-1687584617">
-          {/* <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black color
-            }}
-          ></div> */}
           {/* <!-- --Tittle-- --> */}
           <FirstSection />
         </div>
       </section >
       <section>
+        <div style={{ background: '#3d5ce8' }} className="container-fluid ">
+          {/* <!-- --Tittle-- --> */}
+          <ServicesSlider />
+        </div>
+      </section >
+      <section>
         <div className="container-fluid ">
           {/* <!-- --Tittle-- --> */}
-          <SecondSection />
+          <SecondSection data={data} />
         </div>
       </section >
       <section>

@@ -20,7 +20,7 @@ export const ImageUploadAction = (e) => {
 
             if (response.status === 200) {
                 dispatch({ type: constant.IMAGE_UPLOAD_SUCCESS, payload: response, file: e.target.name })
-                // ShowMessage(false, "Image Uploaded Successfully")
+                ShowMessage(false, "Image Uploaded Successfully")
             }
         } catch (error) {
             dispatch({ type: constant.IMAGE_UPLOAD_ERROR })

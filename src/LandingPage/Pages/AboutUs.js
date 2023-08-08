@@ -5,10 +5,10 @@ import Card from 'react-bootstrap/Card';
 import Footer from '../../Components/Footer';
 import { Col, Row } from 'reactstrap';
 import AboutUsImg from '../../assets/img/AboutUs.png';
-import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
-import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
-import SalonBanner from '../../assets/img/SalonBanner.jpg'
-import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
+import PlumberBanner from '../../assets/img/PlumberBanner.png'
+import CarWashingBanner from '../../assets/img/CarWashingBanner.png'
+import SalonBanner from '../../assets/img/SalonBanner.png'
+import ElectricBanner from '../../assets/img/ElectricBanner.png'
 
 const AboutUs = () => {
   // State to keep track of the current image index
@@ -26,7 +26,7 @@ const AboutUs = () => {
     const timer = setInterval(() => {
       // Increment the current image index
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change the image every 5 seconds
+    }, 2000); // Change the image every 5 seconds
 
     // Cleanup the timer when the component is unmounted
     return () => clearInterval(timer);
@@ -36,21 +36,24 @@ const AboutUs = () => {
     <>
       <Navbar />
 
+      <Header />
       <section>
-        <Header />
 
         {/* Hero section with a rotating background image */}
         <div
           style={{
             backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'bottom',
             width: '100%',
-            height: '500px',
+            height: '100vh',
+            backgroundColor: 'transparent',
+            display: 'grid',
+            placeItems: 'center'
           }}
           className="container-fluid"
         >
-          <div className="container" style={{ display: 'grid', placeItems: 'center', height: '500px' }}>
+          <div className="container" style={{ display: 'grid', placeItems: 'center' }}>
             <Card className="bg-transparent text-center ServiceBanner p-2">
               <h1 className="display-3 font-weight-bold text-warning">About Us</h1>
               <span className="text-white font-weight-bold">Home &#62; About Us</span>
@@ -59,17 +62,17 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="">
+      <section style={{ height: '100vh' }}>
         {/* Section with information about the company */}
         <div className="container-fluid aboutUsBanner">
-          <Row className="m-0">
+          <Row>
             {/* Displaying an image on the left side */}
             <Col xl="6" style={{ display: 'grid', placeItems: 'center' }}>
               <img className="img-fluid" src={AboutUsImg} alt="" />
             </Col>
             {/* Displaying company description on the right side */}
             <Col xl="6" style={{ color: '#fff', display: 'grid', placeItems: 'center' }}>
-              <div className="text-center">
+              <div style={{ overflow: 'hidden' }} className="text-center">
                 <h1 className="txtColour">About Us</h1>
                 <h5>
                   Linking businesses to customers, Providing all suitable opportunities to the service providers and
@@ -82,9 +85,9 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section>
+      <section style={{ background: '#4b5ced' }} >
         {/* Footer section */}
-        <div className="container-fluid">
+        <div className="container-fluid aboutUsPadding">
           <Footer />
         </div>
       </section>

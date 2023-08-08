@@ -6,10 +6,10 @@ import Footer from '../../Components/Footer';
 import { BsFillBuildingFill, BsMailbox } from 'react-icons/bs';
 import { SlSocialFacebook, SlSocialGoogle, SlSocialInstagram, SlSocialSkype } from 'react-icons/sl';
 import { Col, Row } from 'reactstrap';
-import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
-import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
-import SalonBanner from '../../assets/img/SalonBanner.jpg'
-import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
+import PlumberBanner from '../../assets/img/PlumberBanner.png'
+import CarWashingBanner from '../../assets/img/CarWashingBanner.png'
+import SalonBanner from '../../assets/img/SalonBanner.png'
+import ElectricBanner from '../../assets/img/ElectricBanner.png'
 
 const ContactUs = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -19,7 +19,27 @@ const ContactUs = () => {
         CarWashingBanner,
         SalonBanner,
         ElectricBanner
-      ];
+    ];
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Form Data:', formData);
+        // Here you can perform further actions, like sending data to a server
+    };
 
     useEffect(() => {
         // Function to handle the timer
@@ -35,19 +55,22 @@ const ContactUs = () => {
     return (
         <>
             <Navbar />
+            <Header />
 
             <section>
                 {/* Navbar section */}
-                <Header />
 
                 {/* Image slideshow section */}
                 <div
                     style={{
-                        backgroundImage: `url(${images[currentImageIndex]})`,
+                        backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
                         backgroundSize: 'cover',
-                        backgroundPosition: 'center',
+                        backgroundPosition: 'top',
                         width: '100%',
-                        height: '500px',
+                        height: '110vh',
+                        backgroundColor: 'transparent',
+                        display: 'grid',
+                        placeItems: 'center'
                     }}
                     className="container-fluid"
                 >
@@ -106,7 +129,7 @@ const ContactUs = () => {
                 </div>
             </section>
 
-            <section className="">
+            <section >
                 {/* First service section */}
                 <div className="container-fluid">
                     <Row className="m-0">
@@ -116,24 +139,48 @@ const ContactUs = () => {
                                 <p>We Will Answer ASAP</p>
                                 <div className="ContactUS container animate__animated animate__backInDown">
                                     <h2>Enquiry Form</h2>
-                                    <form className="p-2" action="#" method="post">
+                                    <form className="p-2" onSubmit={handleSubmit}>
                                         <div className="form-group">
                                             <label style={{ color: '#eedc30' }} htmlFor="name">
                                                 Name:
                                             </label>
-                                            <input type="text" id="name" name="name" placeholder="Your name" required />
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                placeholder="Your name"
+                                                value={formData.name}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
                                         </div>
                                         <div className="form-group">
                                             <label style={{ color: '#eedc30' }} htmlFor="email">
                                                 Mob No. :
                                             </label>
-                                            <input type="email" id="email" name="email" placeholder="Your Mobile No." required />
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                placeholder="Your Mobile No."
+                                                value={formData.email}
+                                                onChange={handleInputChange}
+                                                required
+                                            />
                                         </div>
                                         <div className="form-group">
                                             <label style={{ color: '#eedc30' }} htmlFor="message">
                                                 Message:
                                             </label>
-                                            <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+                                            <textarea
+                                                id="message"
+                                                name="message"
+                                                placeholder="Your message"
+                                                rows="5"
+                                                value={formData.message}
+                                                onChange={handleInputChange}
+                                                required
+                                            ></textarea>
                                         </div>
                                         <div className="form-group">
                                             <input type="submit" value="Send" />
@@ -146,9 +193,9 @@ const ContactUs = () => {
                 </div>
             </section>
 
-            <section>
+            <section style={{ background: '#4b5ced' }} >
                 {/* Footer section */}
-                <div className="container-fluid">
+                <div className="container-fluid contactUsPadding">
                     <Footer />
                 </div>
             </section>

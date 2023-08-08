@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import "./AdminDashboard.css"
 
 import StackBox from './Elements/StackBox'
@@ -18,10 +18,20 @@ import ColoredBtn from './Elements/ColoredBtn'
 import { barchartdata } from './DummyData'
 import BarCharts from './Charts/BarCharts'
 import { Col, Row } from 'reactstrap'
+import { useUserRoleContext } from '../Context/RolesContext'
+import { FiPlusSquare } from 'react-icons/fi'
+import ModalComponent from './Elements/ModalComponent'
+import AddOrderForm from './Components/Dashboard/AddOrderForm'
 
 
 const AdminDashboard = () => {
     const { rows, setRows, Show, setShow } = UseStateManager()
+
+    const { userRole, setUserRole, UserRoleCalled } = useUserRoleContext();
+
+
+    // modal controller
+    const toggleAddOrders = () => setShow(!Show)
     const CustomToolbar = () => {
         return (
             <GridToolbarContainer>
@@ -30,64 +40,108 @@ const AdminDashboard = () => {
                 <GridToolbarFilterButton />
                 <GridToolbarExport />
                 <GridToolbarDensitySelector />
+                <div onClick={toggleAddOrders} style={{ color: "#ffffff" }} className="cursor-p ">
+                    <FiPlusSquare /> Add Order
+                </div>
             </GridToolbarContainer>
         );
     };
+
+    useEffect(() => {
+        UserRoleCalled()
+    }, [])
 
     const BarKeys = [
         { key: "Income", color: "#81c14b" },
         { key: "Expense", color: "#000000" },
         { key: "Profit", color: "#00FFFF" }
     ]
+
+    const [cellColor, setCellColor] = useState(null)
+
+
+    const RowDataFilter = (data, cellColor) => {
+        let formattedData;
+        if (cellColor === null) {
+            formattedData = data
+        } else {
+            formattedData = data.filter(x => x.status === cellColor.type)
+        }
+        return formattedData
+    }
+
+    const getRowClassName = (params) => {
+        const status = params.row.status;
+
+        if (status === "Complete") {
+            return 'complete-cell';
+        } else if (status === "Running") {
+            return 'running-cell';
+        } else if (status === 'Cancel') {
+            return 'cancel-cell';
+        } else if (status === 'Hold') {
+            return 'hold-cell'
+        } else if (status === 'Due') {
+            return 'due-cell'
+        } else if (status === 'Pending') {
+            return 'pending-cell'
+        }
+
+        return '';
+    };
+
+
     return (
         <Fragment>
+            <ModalComponent modalTitle={"Add Order"} modal={Show} toggle={toggleAddOrders} data={<AddOrderForm />} />
             <div className='position-relative'>
                 <AnimatedBackground />
                 <div className='BackgroundTopContents' style={{ overflowX: "hidden" }} >
-                    <AdminNavItems />
-                    {/* Stacks  */}
-                    <h4 className='p-4 fs-5 Fw_600 text-white '>Analytics</h4>
+                    {userRole && userRole.Dashboard ?
+                        <AdminNavItems />
+                        : null}
+                    <h4 className='p-4 fs-5 Fw_600 text-white '>{userRole && userRole.Dashboard ? "Analytics" : "Dashboard"}</h4>
 
                     <div className='d-flex align-items-center justify-content-between w-100 px-4 pb-4'>
                         <ColoredBtn
+                            onClick={() => { setCellColor(null) }}
                             btnName={"All Orders"}
                             bg={"cornflowerblue"}
                             color={"black"}
                         />
-                        <ColoredBtn btnName={"Complete Order"} bg={"green"} color={"black"} />
-                        <ColoredBtn btnName={"Running Order"} bg={"yellow"} color={"black"} />
-                        <ColoredBtn btnName={"Cancel Order"} bg={"gray"} color={"black"} />
-                        <ColoredBtn btnName={"Hold Order"} bg={"#f08080"} color={"black"} />
-                        <ColoredBtn btnName={"Due Order"} bg={"#adadec"} color={"black"} />
-                        <ColoredBtn btnName={"Pending Order"} bg={"#ffa500"} color={"black"} />
+                        <ColoredBtn onClick={() => { setCellColor({ type: "Complete", color: 'green' }) }} btnName={"Complete Order"} bg={"green"} color={"black"} />
+                        <ColoredBtn onClick={() => { setCellColor({ type: "Running", color: 'yellow' }) }} btnName={"Running Order"} bg={"yellow"} color={"black"} />
+                        <ColoredBtn onClick={() => { setCellColor({ type: "Cancel", color: 'gray' }) }} btnName={"Cancel Order"} bg={"gray"} color={"black"} />
+                        <ColoredBtn onClick={() => { setCellColor({ type: "Hold", color: '#f08080' }) }} btnName={"Hold Order"} bg={"#f08080"} color={"black"} />
+                        <ColoredBtn onClick={() => { setCellColor({ type: "Due", color: '#adadec' }) }} btnName={"Due Order"} bg={"#adadec"} color={"black"} />
+                        <ColoredBtn onClick={() => { setCellColor({ type: "Pending", color: '#ffa500' }) }} btnName={"Pending Order"} bg={"#ffa500"} color={"black"} />
                     </div>
 
-                    <Row>
-                        <Col md={7}>
-                            <div className='card bg-glass shadow-lg' style={{ height: "50vh", width: "100%" }}>
-                                {/* <LineCharts style={{}} /> */}
-                                <BarCharts data={barchartdata} dataValue={BarKeys} />
-                            </div>
-                        </Col>
-                        <Col md={5}>
-                            <div className='DashboardAnalytics'>
-                                <StackBox title="Total Income" amount={20000} rupee={true} style={{ background: "linear-gradient(to right bottom ,var(--yellow) , var(--yellow))", gridArea: "one" }} />
-                                <StackBox title={"Total Expenses"} amount={20000000} rupee={true} style={{ background: "linear-gradient(to right bottom ,yellow , goldenrod)", gridArea: "two" }} />
-                                <StackBox title={"Total Services"} amount={2482} rupee={false} style={{ background: "linear-gradient(to right bottom ,lightgreen , skyblue", gridArea: "three" }} />
-                                <StackBox title={"Total Employee"} amount={202} rupee={false} style={{ background: "linear-gradient(to right bottom ,cornflowerblue , aqua", gridArea: "four" }} />
-                            </div>
-                        </Col>
-                    </Row>
+                    {userRole && userRole.Dashboard ?
+                        <Row>
+                            <Col md={7}>
+                                <div className='card bg-glass shadow-lg' style={{ height: "50vh", width: "100%" }}>
+                                    {/* <LineCharts style={{}} /> */}
+                                    <BarCharts data={barchartdata} dataValue={BarKeys} />
+                                </div>
+                            </Col>
+                            <Col md={5}>
+                                <div className='DashboardAnalytics'>
+                                    <StackBox title="Total Income" amount={20000} rupee={true} style={{ background: "linear-gradient(to right bottom ,var(--yellow) , var(--yellow))", gridArea: "one" }} />
+                                    <StackBox title={"Total Expenses"} amount={20000000} rupee={true} style={{ background: "linear-gradient(to right bottom ,yellow , goldenrod)", gridArea: "two" }} />
+                                    <StackBox title={"Total Services"} amount={2482} rupee={false} style={{ background: "linear-gradient(to right bottom ,lightgreen , skyblue", gridArea: "three" }} />
+                                    <StackBox title={"Total Employee"} amount={202} rupee={false} style={{ background: "linear-gradient(to right bottom ,cornflowerblue , aqua", gridArea: "four" }} />
+                                </div>
+                            </Col>
+                        </Row>
+
+                        : null}
 
 
-                    {/* Graphs */}
-                    <div className='p-4'>
-
-                    </div>
 
                     {/* Data Table  */}
                     <div className='p-4'>
-                        <AdminDataTable rows={rows} columns={columns} CustomToolbar={CustomToolbar} />
+                        <AdminDataTable rows={RowDataFilter(rows, cellColor)} getRowClassName={getRowClassName} columns={columns} CustomToolbar={CustomToolbar} cellcolor={cellColor !== null ? cellColor.color : null} />
                     </div>
                 </div>
             </div>

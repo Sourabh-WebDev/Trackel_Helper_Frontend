@@ -32,7 +32,7 @@ const InAttendenceTable = () => {
             <div className='p-3'>
                 <h3 className='headingBelowBorder py-3 text-white' style={{ maxWidth: "fit-content" }}  >Attendence <sup><small>(In)</small></sup></h3>
                 <div className='AttendenceNavBtn w-100 py-2 gap-3'>
-                    {RoleWiseBtn(Office).map((item, index) => (
+                    {RoleWiseBtn(Office) && RoleWiseBtn(Office).map((item, index) => (
                         <div className={`py-2 px-4 border shadow rounded-2 cursor-p text-white hoverThis Fw_500 d-flex align-items-center justify-content-center  ${selctedAttendence === item ? "hoverThis_active" : ""}`} style={{ minWidth: "15rem", maxWidth: "15rem" }} onClick={() => { setSelectedAttendence(item) }}>
                             {item}
                         </div>
