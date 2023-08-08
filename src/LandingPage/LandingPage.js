@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
-import FirstSection from '../Components/FirstSection'
-import Header from '../Components/Header'
 import Navbar from '../Components/Navbar'
+import Header from '../Components/Header'
+import ServicesSlider from '../Components/ServicesSlider'
+import FirstSection from '../Components/FirstSection'
 import SecondSection from '../Components/SecondSection'
 import ThirdSection from '../Components/ThirdSection'
-import FifthSection from '../Components/FifthSection'
 import FourthSections from '../Components/FourthSections'
+import FifthSection from '../Components/FifthSection'
 import SixthSection from '../Components/SixthSection'
 import Footer from '../Components/Footer'
-import SeventhSection from '../Components/SeventhSection'
-import OurServiceProvier from '../assets/img/TeamProvider.png'
-import PlumberBanner from '../assets/img/PlumberBanner.jpg'
-import CarWashingBanner from '../assets/img/CarWashingBanner.jpg'
-import SalonBanner from '../assets/img/SalonBanner.jpg'
-import ElectricBanner from '../assets/img/ElectricBanner.jpg'
+import PlumberBanner from '../assets/img/PlumberBanner.png'
+import CarWashingBanner from '../assets/img/CarWashingBanner.png'
+import SalonBanner from '../assets/img/SalonBanner.png'
+import ElectricBanner from '../assets/img/ElectricBanner.png'
 import { Button, Offcanvas } from 'react-bootstrap'
 import { Col, Row } from 'reactstrap'
 import { BsFillTelephoneFill, BsWhatsapp, BsFacebook } from 'react-icons/bs'
-import ServicesSlider from '../Components/ServicesSlider'
 import { useDispatch, useSelector } from 'react-redux'
 import { GetAllServices } from '../Store/Actions/Dashboard/servicesAction'
 
@@ -32,13 +30,12 @@ const LandingPage = () => {
 
   const images = [
     PlumberBanner,
-    // "https://img.freepik.com/free-photo/close-up-car-care-washing_23-2149172897.jpg?w=1060&t=st=1691048961~exp=1691049561~hmac=2cbfd2d151e2f365ff96c5e8bf7c08c9d1f93b5e4f7132c96ace2327908e93c2",
     CarWashingBanner,
     SalonBanner,
     ElectricBanner
   ];
 
-  const phoneNumber = '1234567890'; // Replace with the actual phone number
+  const phoneNumber = '7290900835'; // Replace with the actual phone number
   const whatsappWebURL = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
 
   const handleButtonClick = () => {
@@ -90,6 +87,8 @@ const LandingPage = () => {
   return (
     <>
       <Navbar />
+      <Header />
+
 
       <Button href='https://www.facebook.com/mytotal.helper?ref=br_rs' target='_blank' variant="primary" className="me-2 floating-buttonT">
         <BsFacebook color='#0777ff' size={25} />
@@ -172,21 +171,17 @@ const LandingPage = () => {
       </Offcanvas>
 
       <section>
-        {/* <!-- --navbar-- --> */}
-
-        <Header />
-
         <div
           style={{
             backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
             backgroundSize: 'cover',
             backgroundPosition: 'top',
             width: '100%',
-            height: '80vh',
+            height: '110vh',
             backgroundColor: 'transparent',
-            display: 'grid',
-            placeItems: 'center'
-
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'start'
           }}
           className="container-fluid custom-shape-divider-bottom-1687584617">
           {/* <!-- --Tittle-- --> */}

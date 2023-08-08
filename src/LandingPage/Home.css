@@ -128,7 +128,7 @@ body {
 
 .Enquiry.container {
     max-width: 450px;
-    /* margin: 20px auto; */
+    margin: 20px auto;
     background-color: #eedc30;
     border-radius: 5px 40px 5px 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -275,10 +275,11 @@ body {
 .cardHover>div {
     background: #3d5ce8;
     color: #fff;
+    cursor: pointer;
 }
 
 .cardHover>div:hover {
-    background: #fff;
+    background: #eedc30;
     color: #142572;
 }
 
@@ -334,7 +335,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 60vh;
+    height: 100vh;
 }
 
 .bgSixthSectionImg {
@@ -487,26 +488,28 @@ input[type="submit"] {
 
 .contactUsBanner {
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: bottom;
     background: linear-gradient(313deg, rgba(238, 220, 48, 1) 0%, rgba(20, 37, 114, 0.3926820728291317) 73%), url('https://www.searchenginejournal.com/wp-content/uploads/2022/08/contact-us-2-62fa2cc2edbaf-sej-1280x720.png');
-    padding-bottom: 25rem;
+    padding-bottom: 30rem;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: right;
     color: #eedc30;
 
 }
 
+
+
 .aboutUsBanner {
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
-    background: linear-gradient(62deg, #14257289 0%, #eedb30a8 100%), url('https://gophp.in/wp-content/uploads/2020/01/go-php-about-us.jpg');
-    padding-bottom: 20rem;
+    background-position: center;
+    background: linear-gradient(62deg, #14257289 0%, #eedb30a8 100%), url(../assets/img/AboutusBackground.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
+    height: 100vh;
+}
+
+.aboutUsPadding {
+    padding-top: 450px;
 }
 
 .WhyChooseUsBanner {
@@ -515,8 +518,6 @@ input[type="submit"] {
     background-position: bottom;
     background: linear-gradient(62deg, #14257289 0%, #eedb30a8 100%), url('https://www.wabarnes.co.uk/images/banners/why-choose-us.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
     color: #142572;
     font-weight: 600;
 }
@@ -525,10 +526,8 @@ input[type="submit"] {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    background: linear-gradient(62deg, #19191d89 0%, #21201aa8 100%), url('https://img.freepik.com/free-photo/terms-service-conditions-rule-policy-regulation-concept_53876-124149.jpg?w=1380&t=st=1686730351~exp=1686730951~hmac=4bfe4eaea94b0b38d5c2455c8c16554d8a9a43367c6330e194eb8b087944ea6c');
+    background: linear-gradient(62deg, #19191d89 0%, #21201aa8 100%), url(../assets/img/TermsAndConditionBackgound.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
     color: #fff;
     padding-bottom: 16rem;
     font-weight: 600;
@@ -538,7 +537,7 @@ input[type="submit"] {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    background: linear-gradient(62deg, #19191d89 0%, #21201aa8 100%), url('https://blog.ipleaders.in/wp-content/uploads/2020/10/bluestar_webbox_privacy-policy_1024x512_1218_V1_PRESS.jpg');
+    background: url(../assets/img/PrivacyAndPolicybackground.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
@@ -684,6 +683,14 @@ input[type="submit"] {
     padding-left: 350px;
 }
 
+.termsAndConditionPadding {
+    padding-top: 200px;
+}
+
+.privacyAndpolicyPadding {
+    padding-top: 400px;
+}
+
 @media (max-width: 1000px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -706,7 +713,25 @@ input[type="submit"] {
     .footerform {
 
         padding: 0px;
+        margin: 20px auto;
     }
+
+    .aboutUsPadding {
+        padding-top: 755px;
+    }
+
+    .contactUsPadding {
+        padding-top: 400px;
+    }
+
+    .termsAndConditionPadding {
+        padding-top: 500px;
+    }
+
+    .privacyAndpolicyPadding {
+        padding-top: 500px;
+    }
+
 }
 
 .whyCard.card {

@@ -3,10 +3,10 @@ import Navbar from '../../Components/Navbar';
 import Header from '../../Components/Header';
 import Card from 'react-bootstrap/Card';
 import Footer from '../../Components/Footer';
-import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
-import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
-import SalonBanner from '../../assets/img/SalonBanner.jpg'
-import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
+import PlumberBanner from '../../assets/img/PlumberBanner.png'
+import CarWashingBanner from '../../assets/img/CarWashingBanner.png'
+import SalonBanner from '../../assets/img/SalonBanner.png'
+import ElectricBanner from '../../assets/img/ElectricBanner.png'
 
 const TermAndCondition = () => {
     // State to keep track of the current image index
@@ -34,18 +34,22 @@ const TermAndCondition = () => {
     return (
         <>
             <Navbar />
+            <Header />
 
             <section>
-                <Header />
 
                 {/* Hero section with a rotating background image */}
                 <div
                     style={{
                         backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
                         backgroundSize: 'cover',
-                        backgroundPosition: 'center',
+                        backgroundPosition: 'top',
                         width: '100%',
-                        height: '500px',
+                        height: '110vh',
+                        backgroundColor: 'transparent',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'start'
                     }}
                     className="container-fluid"
                 >
@@ -79,9 +83,9 @@ const TermAndCondition = () => {
 
                 </div>
             </section>
-            <section>
+            <section style={{ background: '#4b5ced' }} >
                 {/* Footer section */}
-                <div className="container-fluid">
+                <div className="container-fluid termsAndConditionPadding">
                     <Footer />
                 </div>
             </section>
