@@ -26,73 +26,71 @@ const RolesProvider = ({ children }) => {
     const [serviceProviderRoles, setServiceProviderRoles] = useState(null)
 
 
+    // Role retrieval function
+    const getRolesByType = async (roleType) => {
+        try {
+            const response = await axios.get(`${API_URL}/roles/get/${roleType}`);
+            if (response.status === 200) {
+                return response.data.data;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     const UserRoleCalled = async (Role) => {
-        const role = Role ? Role : sessionStorage.getItem("role")
-        try {
-            const response = await axios.get(`${API_URL}/roles/get/${role}`)
-            if (response.status === 200) {
-                // setUserRole(response.data.data)
-                sessionStorage.setItem("roles", JSON.stringify(response.data.data))
-                setUserRole(JSON.parse(sessionStorage.getItem('roles')))
+        const role = Role ? Role : sessionStorage.getItem("role");
+        if (role) {
+            const rolesData = await getRolesByType(role);
+            if (rolesData) {
+                sessionStorage.setItem("roles", JSON.stringify(rolesData));
+                setUserRole(rolesData);
+                // console.log(rolesData);
             }
-        } catch (error) {
-            console.log(error)
         }
-    }
+    };
 
+    // Use the useEffect hook to call UserRoleCalled when the person logs in for the first time
     useEffect(() => {
-        UserRoleCalled()
-    }, [])
-    // call all the roles
+        UserRoleCalled();
+    }, []);
+
+    // Use the useEffect hook to call other role retrieval functions on component mount
+    useEffect(() => {
+        getAdminRoles();
+        getSupervisorRole();
+        GetBackofficeRoles();
+        GetServiceProvider();
+    }, []);
+
+    // Other role retrieval functions
     const getAdminRoles = async () => {
-        try {
-            const response = await axios.get(API_URL + "/roles/get/admin")
-            if (response.status === 200) {
-                setAdminRoles(response.data.data)
-            }
-        } catch (error) {
-            console.log(error)
+        const rolesData = await getRolesByType("admin");
+        if (rolesData) {
+            setAdminRoles(rolesData);
         }
-    }
-    const getSupervisorRole = async () => {
-        try {
-            const response = await axios.get(API_URL + "/roles/get/supervisor")
-            if (response.status === 200) {
-                setSupervisorRoles(response.data.data)
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    const GetBackofficeRoles = async () => {
-        try {
-            const response = await axios.get(API_URL + "/roles/get/office")
-            if (response.status === 200) {
-                setBackOfficeRoles(response.data.data)
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    const GetServiceProvider = async () => {
-        try {
-            const response = await axios.get(API_URL + "/roles/get/service")
-            if (response.status === 200) {
-                setServiceProviderRoles(response.data.data)
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    };
 
-    useEffect(() => {
-        // UserRoleCalled()
-        getAdminRoles()
-        getSupervisorRole()
-        GetBackofficeRoles()
-        GetServiceProvider()
-    }, [])
+    const getSupervisorRole = async () => {
+        const rolesData = await getRolesByType("supervisor");
+        if (rolesData) {
+            setSupervisorRoles(rolesData);
+        }
+    };
+
+    const GetBackofficeRoles = async () => {
+        const rolesData = await getRolesByType("office");
+        if (rolesData) {
+            setBackOfficeRoles(rolesData);
+        }
+    };
+
+    const GetServiceProvider = async () => {
+        const rolesData = await getRolesByType("service");
+        if (rolesData) {
+            setServiceProviderRoles(rolesData);
+        }
+    };
 
 
 

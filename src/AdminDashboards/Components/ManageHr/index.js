@@ -23,9 +23,9 @@ const AdminManageHr = () => {
     ActiveTabFunction()
   }, [userRole])
 
-  useEffect(() => {
-    UserRoleCalled()
-  }, [])
+  // useEffect(() => {
+  //   UserRoleCalled()
+  // }, [])
 
   return (
     <Fragment>
