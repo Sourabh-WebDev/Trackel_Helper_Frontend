@@ -693,8 +693,13 @@ input[type="submit"] {
     .card-grid {
         grid-template-columns: repeat(1, 1fr);
     }
+
     .paddingForMain {
         padding-left: 0px;
+    }
+
+    .SixthSectionpadding {
+        padding-bottom: 50rem !important;
     }
 }
 
@@ -762,11 +767,11 @@ input[type="submit"] {
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-  }
-  
-  .floating-button:hover {
+}
+
+.floating-button:hover {
     background-color: #4a59e4;
-  }
+}
 
 .floating-buttonS {
     position: fixed;
@@ -780,8 +785,22 @@ input[type="submit"] {
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-  }
-  
-  .floating-buttonS:hover {
+}
+
+.floating-buttonS:hover {
     background-color: #4a59e4;
-  }
+}
+
+.floating-buttonT {
+    position: fixed;
+    bottom: 400px;
+    right: -15px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}

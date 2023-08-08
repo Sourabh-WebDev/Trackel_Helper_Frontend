@@ -41,7 +41,7 @@ const SixthSection = () => {
     };
 
     return (
-        <div style={{background:'#99DBF5'}} className='text-center p-4'>
+        <div style={{ background: '#99DBF5', paddingTop: '5rem' }} className='text-center SixthSectionpadding'>
             <h1 className='txtColour'>Our Team</h1>
             <Slider {...settings} className=''>
 
