@@ -24,9 +24,6 @@ const AdminNavItems = () => {
         ,
     ]
 
-    useEffect(() => {
-        UserRoleCalled()
-    }, [])
     return (
         <div>
             {/* {console.log(userRole)} */}

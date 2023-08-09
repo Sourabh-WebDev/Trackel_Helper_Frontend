@@ -23,6 +23,8 @@ import { API_URL } from '../config';
 const SecondSection = ({ data }) => {
 
     const navigate = useNavigate()
+
+
     const PrimaryServices = [
         {
             id: 1,

@@ -1,4 +1,4 @@
- import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 
 import { DataGrid, GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid'
 import { Box } from '@mui/material'
@@ -9,10 +9,33 @@ import AdminDataTable from '../../Elements/AdminDataTable'
 import ModalComponent from '../../Elements/ModalComponent'
 import AdminAddEmployeeForm from './Forms/AdminAddEmployeeForm'
 import AdminEditEmploye from './Forms/AdminEditEmploye'
+import { useDispatch, useSelector } from 'react-redux'
+import { GetAllEmployeeAction } from '../../../Store/Actions/Dashboard/EmployeeActions/GetAllEmployee'
+import moment from 'moment'
 
 const ManageEmployee = () => {
 
     const navigate = useNavigate()
+
+    const { data } = useSelector(state => state.GetAllEmployeeDataReducer)
+
+    const dispatch = useDispatch()
+
+    const DataWithID = (data) => {
+        const NewData = []
+        if (data !== undefined) {
+            for (let item of data) {
+                NewData.push({ ...item, id: data.indexOf(item), date: moment(item.createdAt).format("D / M / Y") })
+            }
+        } else {
+            NewData.push({ id: 0 })
+        }
+        return NewData
+    }
+
+    useEffect(() => {
+        dispatch(GetAllEmployeeAction())
+    }, [])
 
     const [Block, setBlock] = useState(false)
     
@@ -36,14 +59,14 @@ const ManageEmployee = () => {
 
     const column = [
         { field: "id", headerName: "Sr No", flex: 1, minWidth: 50, editable: true },
-        { field: "designation", headerName: "Designation", minWidth: 120, editable: true },
+        { field: "designationName", headerName: "Designation", minWidth: 120, editable: true },
         { field: "registrarId", headerName: "Emp Id", minWidth: 120, editable: true },
         { field: "refName", headerName: "Ref Name", minWidth: 120, editable: true },
         { field: "name", headerName: "Name", minWidth: 120, editable: true },
-        { field: "mobileNumber", headerName: "Mobile No.", minWidth: 120, editable: true },
-        { field: "aadhaarNumber", headerName: "Aadhaar No.", minWidth: 120, editable: true },
+        { field: "mobileNo", headerName: "Mobile No.", minWidth: 120, editable: true },
+        { field: "aadharNo", headerName: "Aadhaar No.", minWidth: 120, editable: true },
         { field: "address", headerName: "Address", minWidth: 250, editable: true },
-        { field: "zipCode", headerName: "Password", minWidth: 120, editable: true },
+        { field: "password", headerName: "Password", minWidth: 120, editable: true },
         {
             field: "status",
             minWidth: 150,
@@ -97,8 +120,9 @@ const ManageEmployee = () => {
     const ToggleAddEmployee = () => setAddEmployee(!addEmployee)
     return (
         <Fragment>
+            {console.log(data)}
             {/* employee add form Modal  */}
-            <ModalComponent data={<AdminAddEmployeeForm />} modalTitle={"Add Employee Form"} modal={addEmployee} toggle={ToggleAddEmployee} size={"xl"} scrollable={true} />
+            <ModalComponent data={<AdminAddEmployeeForm ToggleAddEmployee={ToggleAddEmployee} />} modalTitle={"Add Employee Form"} modal={addEmployee} toggle={ToggleAddEmployee} size={"xl"} scrollable={true} />
             <h4 className='p-3 px-4 mt-3 bg-transparent text-white headingBelowBorder' style={{ maxWidth: "fit-content" }}>Employee List</h4>
             <div className='AttendenceNavBtn w-100 py-2 px-4 gap-3'>
                 <div className={`py-2 px-4 border shadow rounded-2 cursor-p hoverThis text-white Fw_500 d-flex align-items-center justify-content-center `} style={{ minWidth: "15rem", maxWidth: "15rem" }} onClick={ToggleAddEmployee} >
@@ -107,7 +131,7 @@ const ManageEmployee = () => {
 
             </div>
             <div className='p-4'>
-                <AdminDataTable rows={mockDataContacts} columns={column} CustomToolbar={CustomToolbar} />
+                <AdminDataTable rows={DataWithID(data)} columns={column} CustomToolbar={CustomToolbar} />
             </div>
             <ModalForEdit/>
         </Fragment>

@@ -5,6 +5,8 @@ import ImageUploadReducer from "./ImageUploadReducers";
 import GetLogInReducers from "./LandingPage/AuthReducer";
 import DeleterTheServiceReducer from "./Dashboard/DeleteServiceReducer";
 import GetSearchReducer from "./LandingPage/SearchReducer";
+import GetEmployeeRegReducer from "./Dashboard/EmployeeReducers/EmployeeRegReducer";
+import GetAllEmployeeDataReducer from "./Dashboard/EmployeeReducers/GetAllEmployeeReducer";
 
 
 const rootReducer = combineReducers({
@@ -12,6 +14,10 @@ const rootReducer = combineReducers({
     GetAllServicesReducer: GetAllServicesReducer,
     ImageUploadReducer: ImageUploadReducer,
     DeleterTheServiceReducer: DeleterTheServiceReducer,
+    GetEmployeeRegReducer: GetEmployeeRegReducer,
+
+    GetAllEmployeeDataReducer:
+        GetAllEmployeeDataReducer,
 
     // Landing Page 
     GetLogInReducers: GetLogInReducers,

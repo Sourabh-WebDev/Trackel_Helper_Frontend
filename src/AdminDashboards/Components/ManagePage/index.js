@@ -30,9 +30,6 @@ const AdminManageWebsite = () => {
         ActiveTabFunction()
     }, [userRole])
 
-    useEffect(() => {
-        UserRoleCalled()
-    }, [])
     return (
         <Fragment>
             <AdminHeader />

@@ -20,6 +20,7 @@ import AdminRolesAndPermission from './AdminDashboards/Components/RolesAndPermis
 import { useUserRoleContext } from './Context/RolesContext';
 import Profile from './AdminDashboards/Components/profile/Profile';
 import AdminPannel from './AdminDashboards/AdminPannel';
+import ProfileHistory from './LandingPage/Pages/ProfileHistory';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path='/Why-Choose-Us' element={<WhyChooseUs />} />
         <Route path='/Privacy-&-Policy' element={<Privacy />} />
         <Route path='/Term-&-Condition' element={<TermAndCondition />} />
+        <Route path='/YourPrifile/:id' element={<ProfileHistory />} />
 
 
 

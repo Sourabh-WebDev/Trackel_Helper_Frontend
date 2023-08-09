@@ -691,6 +691,11 @@ input[type="submit"] {
     padding-top: 400px;
 }
 
+.profilePadding {
+    padding-top: 500px;
+    background: #3d5ce8;
+}
+
 @media (max-width: 1000px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -730,6 +735,10 @@ input[type="submit"] {
 
     .privacyAndpolicyPadding {
         padding-top: 500px;
+    }
+
+    .profilePadding {
+        padding-top: 800px;
     }
 
 }

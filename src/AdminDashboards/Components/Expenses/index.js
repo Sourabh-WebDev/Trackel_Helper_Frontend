@@ -35,9 +35,6 @@ const AdminExpenses = () => {
         ActiveTabFunction()
     }, [userRole])
 
-    useEffect(() => {
-        UserRoleCalled()
-    }, [])
     return (
         <Fragment>
             <AdminHeader />

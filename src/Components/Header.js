@@ -31,6 +31,7 @@ function Header() {
             showConfirmButton: false,
             timer: 1500,
         });
+        navigate('/')
     };
 
     useEffect(() => {
@@ -46,7 +47,7 @@ function Header() {
             setCurrentUser(JSON.parse(sessionStorage.getItem('user')));
         } else if (LoginResult.isSuccess === false) {
             Swal.fire({
-                position: 'top-end',
+                position: 'bottom-end',
                 icon: 'error',
                 title: 'Ooops ! Log In failed',
                 showConfirmButton: false,
@@ -71,7 +72,7 @@ function Header() {
                         <Nav.Link className='txtColour' href='/Our-All-Services'>Services</Nav.Link>
                         <Nav.Link className='txtColour' href='/Contact-Us'>Help</Nav.Link>
                         {currentUser !== null ? <>
-                            <Nav.Link className='txtColour' >{currentUser.name}</Nav.Link>
+                            <Nav.Link className='txtColour' href={`/YourPrifile/${currentUser._id}`} >{currentUser.name}</Nav.Link>
                             <Nav.Link className='txtColour' ><Logout className='cursor-p' onClick={() => GetLogOut()} /></Nav.Link>
                         </> :
                             <>
