@@ -145,13 +145,22 @@ const MyProfile = ({ serviceData }) => {
                 </Col>
                 <Col xs={12} lg={8} xl={8} >
                     <Card className="mt-2">
-                        <CardBody>
+                        <div className='pl-2 pt-2 pr-2 pb-1'>
                             <Row>
                                 <Col sm="3">
                                     <h5>Full Name</h5>
                                 </Col>
                                 <Col sm="9">
                                     <p className="text-muted">{serviceData.name}</p>
+                                </Col>
+                            </Row>
+                            <hr />
+                            <Row>
+                                <Col sm="3">
+                                    <h5>Gender</h5>
+                                </Col>
+                                <Col sm="9">
+                                    <p className="text-muted">Male</p>
                                 </Col>
                             </Row>
                             <hr />
@@ -181,7 +190,7 @@ const MyProfile = ({ serviceData }) => {
                                     <p className="text-muted">Bay Area, San Francisco, CA</p>
                                 </Col>
                             </Row>
-                        </CardBody>
+                        </div>
                     </Card>
                 </Col>
             </Row>

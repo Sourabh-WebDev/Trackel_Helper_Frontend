@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Navbar from '../../Components/Navbar'
 import Header from '../../Components/Header'
 import Footer from '../../Components/Footer'
 import axios from 'axios'
 import { API_URL } from '../../config'
-import { BugReportTwoTone } from '@mui/icons-material'
 import { Button } from '@mui/material'
 import MyProfile from './MyProfile'
+import EditProfile from './EditProfile'
+import ManagePost from './ManagePost'
+import Swal from 'sweetalert2'
+import FreeService from './FreeService'
 
 
 const ProfileHistory = () => {
 
     const { id } = useParams()
-
+    const navigate = useNavigate();
     const [serviceData, setServiceData] = useState([]);
-
+    const [currentUser, setCurrentUser] = useState(
+        JSON.parse(sessionStorage.getItem('user'))
+    );
 
     useEffect(() => {
         axios.get(`${API_URL}/customer/getbyid/${id}`)
@@ -23,16 +28,12 @@ const ProfileHistory = () => {
                 if (response.status === 200) {
                     console.log(response.data.data)
                     setServiceData(response.data.data);
-                    // console.log(response.data) // Assuming the fetched data structure has a 'serviceHistory' property
                 }
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     }, [id]);
-
-
-    // console.log(serviceData)
 
 
     const [active, setActive] = useState('1')
@@ -42,6 +43,19 @@ const ProfileHistory = () => {
             setActive(tab)
         }
     }
+
+    const GetLogOut = () => {
+        sessionStorage.removeItem('user');
+        setCurrentUser(null);
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Logout Successfully',
+            showConfirmButton: false,
+            timer: 1500,
+        });
+        navigate('/')
+    };
 
     return (
         <div>
@@ -53,31 +67,33 @@ const ProfileHistory = () => {
                         onClick={() => {
                             toggle('1')
                         }}
-                        variant={active === '1' && 'outlined'}
                         sx={{ color: active === '1' ? '#eedc30' : '#fff' }} >My Profile</Button>
                     <Button active={active === '2'}
                         onClick={() => {
                             toggle('2')
                         }}
-                        sx={{ color: 'white' }} >Edit Profile</Button>
-                    {serviceData.freeServices && serviceData.freeServices.length === 0 ? null : <Button active={active === '3'}
+                        sx={{ color: active === '2' ? '#eedc30' : '#fff' }} >Edit Profile</Button>
+                    {serviceData.freeServices && serviceData.freeServices.length === 1 ? null : <Button active={active === '3'}
                         onClick={() => {
                             toggle('3')
                         }}
-                        sx={{ color: 'white' }} >Free Services</Button>}
+                        sx={{ color: active === '3' ? '#eedc30' : '#fff' }} >Free Services</Button>}
                     <Button active={active === '4'}
                         onClick={() => {
                             toggle('4')
                         }}
-                        sx={{ color: 'white' }} >Manage Post</Button>
-                    <Button active={active === '5'}
-                        onClick={() => {
-                            toggle('5')
-                        }}
-                        sx={{ color: 'white' }} >Logout</Button>
+                        sx={{ color: active === '4' ? '#eedc30' : '#fff' }} >Manage Post</Button>
+                    <Button
+                        onClick={() => GetLogOut()}
+                        sx={{ color: '#fff' }} >Logout</Button>
                 </div>
             </div>
-            {active === '1' ? <MyProfile serviceData={serviceData} /> : 'text'}
+            {
+                active === '1' ? <MyProfile serviceData={serviceData} /> :
+                    active === '2' ? <EditProfile /> :
+                        active === '3' ? <FreeService /> :
+                            active === '4' ? <ManagePost /> : null
+            }
 
             <div className='profilePadding'>
                 <Footer />
