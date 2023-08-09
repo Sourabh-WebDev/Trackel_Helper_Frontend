@@ -18,6 +18,7 @@ import AdminManageWebsite from './AdminDashboards/Components/ManagePage';
 import AdminCustomerManage from './AdminDashboards/Components/Customer';
 import AdminRolesAndPermission from './AdminDashboards/Components/RolesAndPermission';
 import { useUserRoleContext } from './Context/RolesContext';
+import Profile from './AdminDashboards/Components/profile/Profile';
 import AdminPannel from './AdminDashboards/AdminPannel';
 import ProfileHistory from './LandingPage/Pages/ProfileHistory';
 
@@ -51,6 +52,7 @@ function App() {
           <Route path='manage-website' element={<AdminManageWebsite />} />
           <Route path='customer' element={<AdminCustomerManage />} />
           <Route path='roles-&-permission' element={<AdminRolesAndPermission />} />
+          <Route path='profile' element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>

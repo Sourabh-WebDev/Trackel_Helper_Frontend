@@ -12,7 +12,9 @@ import { Logout } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
-    const navigate = useNavigate();
+
+    const navigate = useNavigate()
+
     const [currentUser, setCurrentUser] = useState(
         JSON.parse(sessionStorage.getItem('user'))
     );
