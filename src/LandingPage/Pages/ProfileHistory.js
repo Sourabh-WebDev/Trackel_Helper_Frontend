@@ -161,9 +161,15 @@ const ProfileHistory = () => {
             <Navbar />
             <Header />
             <div>
+                <div style={{ background: '#3d5ce8', borderRadius: '0px 0px 50px 50px', padding: '15px' }}>
+                    <Button color='error' variant='text'>My Profile</Button>
+                    <Button color='error' variant='text'>Edit Profile</Button>
+                    <Button color='error' variant='text'>Manage Post</Button>
+                    <Button color='error' variant='text'>Logout</Button>
+                </div>
                 <Row>
                     <Col xs={12} lg={4} xl={4} >
-                        <Card className='my-2'>
+                        <Card className='mt-2'>
                             <CardBody className="text-center">
                                 <img
                                     src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
@@ -181,7 +187,7 @@ const ProfileHistory = () => {
                         </Card>
                     </Col>
                     <Col xs={12} lg={8} xl={8} >
-                        <Card className="my-2">
+                        <Card className="mt-2">
                             <CardBody>
                                 <Row>
                                     <Col sm="3">
@@ -222,7 +228,7 @@ const ProfileHistory = () => {
                         </Card>
                     </Col>
                 </Row>
-                <Row>
+                <Row className='py-2'>
                     <Col xs={12}>
                         {/* Map over serviceData and create a table */}
                         <Card>
