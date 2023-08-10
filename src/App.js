@@ -30,14 +30,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<LandingPage />} />
-        <Route path='/serviceName' element={<ServicePage />} />
+        <Route path='/ServicePage' element={<ServicePage />} />
         <Route path='/Our-All-Services' element={<OurServices />} />
         <Route path='/Contact-Us' element={<ContactUs />} />
         <Route path='/About-Us' element={<AboutUs />} />
         <Route path='/Why-Choose-Us' element={<WhyChooseUs />} />
         <Route path='/Privacy-&-Policy' element={<Privacy />} />
         <Route path='/Term-&-Condition' element={<TermAndCondition />} />
-        <Route path='/YourPrifile/:id' element={<ProfileHistory />} />
+        <Route path='/YourProfile/:id' element={<ProfileHistory />} />
 
 
 

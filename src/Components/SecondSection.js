@@ -90,7 +90,7 @@ const SecondSection = ({ data }) => {
 
     const HandleServiceSubmit = (serviceName) => {
         const query = new URLSearchParams({ serviceName: serviceName })
-        navigate(`/serviceName?${query}`)
+        navigate(`/ServicePage?${query}`)
     }
 
 

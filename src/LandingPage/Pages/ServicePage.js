@@ -12,10 +12,10 @@ import SalonBanner from '../../assets/img/SalonBanner.png'
 import ElectricBanner from '../../assets/img/ElectricBanner.png'
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import GetSearchReducer from '../../Store/Reducers/LandingPage/SearchReducer';
 import { GetSearchServices } from '../../Store/Actions/LandingPage/SearchAction';
 import { BounceLoader } from 'react-spinners';
 import { API_URL } from '../../config';
+import { ServeiceRequestModal } from '../../Components/Modal';
 
 const ServicePage = () => {
 
@@ -23,10 +23,10 @@ const ServicePage = () => {
 
     const qureyParmas = new URLSearchParams(location.search)
     const serviceName = qureyParmas.get('serviceName')
-
+    const [serveRequestModalOpen, setserveRequestModalOpen] = useState(false)
 
     const search = {
-        serviceName: serviceName ? serviceName : ""
+        serviceName: serviceName
     }
 
     // State variables
@@ -76,11 +76,10 @@ const ServicePage = () => {
                             backgroundSize: 'cover',
                             backgroundPosition: 'top',
                             width: '100%',
-                            height: '110vh',
+                            height: '100vh',
                             backgroundColor: 'transparent',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'start'
+                            display: 'grid',
+                            placeItems: 'center'
                         }}
                         className="container-fluid"
                     >
@@ -94,23 +93,26 @@ const ServicePage = () => {
 
                 {getSearchData && getSearchData.data ? getSearchData.data.map((item, index) => (
                     <section>
+                        <ServeiceRequestModal
+                            serveRequestModalOpen={serveRequestModalOpen}
+                            serveRequestModalOpenfunction={() => setserveRequestModalOpen(!serveRequestModalOpen)} />
                         <div className="container-fluid">
                             <Row>
                                 <Col xl={6} style={{ background: '#142572' }} className='p-5 text-center'>
                                     <h2 style={{ color: '#eedc30' }}><em>{item.serviceName}</em></h2>
                                     <div className='text-white border' style={{ display: 'grid', placeItems: 'center', height: '300px' }}>
                                         <p>"We provide the best facial services ever, and we highly recommend trying it once to experience our affordable and convenient at-home service."</p>
-
-                                        {requestDone ?
+                                        {/* {requestDone ?
                                             <Button color='flat-primary' onClick={() => setRequestDone(false)} outline>
                                                 <img src={Done} width={25} alt="" />
                                             </Button> :
                                             <Button onClick={() => setRequestDone(true)}>Service Request</Button>
-                                        }
+                                        } */}
+                                        <Button onClick={() => setserveRequestModalOpen(!serveRequestModalOpen)}>Service Request</Button>
                                     </div>
                                 </Col>
                                 <Col xl={6} className='p-0'>
-                                    <img style={{ objectFit: "cover" }} className='img-fluid ServiceBannerS' src={API_URL + "/uploads/" + item.image} alt="" />
+                                    <img className='img-fluid ServiceBannerS' src={API_URL + "/uploads/" + item.image} alt="" />
                                 </Col>
                             </Row>
                         </div>

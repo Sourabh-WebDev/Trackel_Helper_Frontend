@@ -72,7 +72,7 @@ function Header() {
                         <Nav.Link className='txtColour' href='/Our-All-Services'>Services</Nav.Link>
                         <Nav.Link className='txtColour' href='/Contact-Us'>Help</Nav.Link>
                         {currentUser !== null ? <>
-                            <Nav.Link className='txtColour' href={`/YourPrifile/${currentUser._id}`} >{currentUser.name}</Nav.Link>
+                            <Nav.Link className='txtColour' href={`/YourProfile/${currentUser._id}`} >{currentUser.name}</Nav.Link>
                             <Nav.Link className='txtColour' ><Logout className='cursor-p' onClick={() => GetLogOut()} /></Nav.Link>
                         </> :
                             <>
