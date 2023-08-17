@@ -8,9 +8,10 @@ import GetAllServicesReducer from '../../../../Store/Reducers/Dashboard/GetAllSe
 import { GetAllServices } from '../../../../Store/Actions/Dashboard/servicesAction';
 import { ImageUploadAction } from '../../../../Store/Actions/ImageUploadAction';
 import ImageUploadReducer from '../../../../Store/Reducers/ImageUploadReducers';
-import { GetServiceProviderSignupAction } from '../../../../Store/Actions/Dashboard/Authentication/SignupActions';
+import { GetServiceProviderSignupAction } from '../../../../Store/Actions/Dashboard/Authentication/ServiceProviderActions';
 import { WaitLoader } from '../../../Elements/WaitLoader';
 import { useStateManager } from 'react-select';
+import { useAuth } from '../../../../Context/userAuthContext';
 
 
 
@@ -20,6 +21,10 @@ const AdminAddServiceProvider = () => {
     // get All service
     const { isSuccess, data } = useSelector(pre => pre.GetAllServicesReducer)
     const ImageResult = useSelector(pre => pre.ImageUploadReducer);
+
+
+    // current user data
+    const { currentUser, setCurrentUser } = useAuth()
 
 
 
@@ -37,10 +42,10 @@ const AdminAddServiceProvider = () => {
 
     const AddServiceProviderFormData = {
         username: "",
-        role: "",
+        role: "service",
         firstName: "",
         lastName: "",
-        image: uploadedImage.image ? uploadedImage.image : "",
+        image: "",
         mobileNo: "",
         aadharNo: "",
         panNo: "",
@@ -61,13 +66,13 @@ const AdminAddServiceProvider = () => {
         services: "",
         // Document information
         documentOne: "",
-        documentOneImg: uploadedImage.documentOneImg ? uploadedImage.documentOneImg : "",
+        documentOneImg: "",
         documentTwo: "",
-        documentTwoImg: uploadedImage.documentTwoImg ? uploadedImage.documentTwoImg : "",
+        documentTwoImg: "",
         documentThree: "",
-        documentThreeImg: uploadedImage.documentThreeImg ? uploadedImage.documentThreeImg : "",
+        documentThreeImg: "",
         // service provider info
-        serviceProviderType: selectedServiceType ? selectedServiceType : "",
+        serviceProviderType: "",
         about: ""
     }
 
@@ -79,7 +84,15 @@ const AdminAddServiceProvider = () => {
         const { firstName, lastName, ...otherData } = formdata;
 
         const name = `${firstName} ${lastName}`;
-        const updatedFormData = { ...otherData, name };
+        const updatedFormData = {
+            ...otherData,
+            name,
+            image: uploadedImage.image,
+            documentOneImg: uploadedImage.documentOneImg,
+            documentTwoImg: uploadedImage.documentTwoImg,
+            documentThreeImg: uploadedImage.documentThreeImg,
+            serviceProviderType: selectedServiceType.value
+        };
 
         dispatch(GetServiceProviderSignupAction(updatedFormData)).then(() => {
             resetForm();
@@ -129,11 +142,11 @@ const AdminAddServiceProvider = () => {
         setUploadedImage({ ...uploadedImage, ...NewArry })
     }, [ImageResult.isField]);
 
-    
+
 
     return (
         <Fragment>
-            
+
             {/* <h3 className='p-3 mt-3 bg-transparent headingBelowBorder text-blue' style={{ maxWidth: "fit-content" }}>Add Service Provider</h3> */}
             <div className='d-grid place-items-center'>
                 <Card className=" border-0 p-4">
@@ -189,7 +202,7 @@ const AdminAddServiceProvider = () => {
                                                     type="file"
                                                     name="image"
                                                     id="image"
-                                                    onChange={(e) => dispatch(ImageUploadAction(e))}
+                                                    onChange={(e) => dispatch(ImageUploadAction(e, currentUser._id))}
                                                 />
                                             </FormGroup>
                                         </Col>
@@ -423,7 +436,7 @@ const AdminAddServiceProvider = () => {
                                                     type="file"
                                                     name="documentOneImg"
                                                     id="image"
-                                                    onChange={(e) => dispatch(ImageUploadAction(e))}
+                                                    onChange={(e) => dispatch(ImageUploadAction(e, currentUser._id))}
 
                                                 />
                                             </FormGroup>
@@ -446,7 +459,7 @@ const AdminAddServiceProvider = () => {
                                                 <Input
                                                     type="file"
                                                     name="documentTwoImg"
-                                                    onChange={(e) => dispatch(ImageUploadAction(e))}
+                                                    onChange={(e) => dispatch(ImageUploadAction(e, currentUser._id))}
                                                     id="image"
 
                                                 />
@@ -470,7 +483,7 @@ const AdminAddServiceProvider = () => {
                                                 <Input
                                                     type="file"
                                                     name="documentThreeImg"
-                                                    onChange={(e) => dispatch(ImageUploadAction(e))}
+                                                    onChange={(e) => dispatch(ImageUploadAction(e, currentUser._id))}
                                                     id="image"
 
                                                 />

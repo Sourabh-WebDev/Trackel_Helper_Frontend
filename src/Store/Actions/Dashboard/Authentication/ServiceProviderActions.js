@@ -51,3 +51,19 @@ export const GetServiceProviderLoginAction = (formdata) => {
 const ShowMessage = (error, message) => {
     return Swal.fire({ icon: error ? "error" : "success", text: message, })
 }
+
+
+
+export const GetAllServiceProvider = () => {
+    return async (dispatch) => {
+        dispatch({ type: contant.SERVICE_PROVIDER_ALL_API_LOADING })
+        try {
+            const response = await axios.get(API_URL + '/service-provider/getall')
+            if (response.status === 200) {
+                dispatch({ type: contant.SERVICE_PROVIDER_ALL_API_SUCCESS, payload: response.data.data })
+            }
+        } catch (error) {
+            dispatch({ type: contant.SERVICE_PROVIDER_ALL_API_ERROR })
+        }
+    }
+}
