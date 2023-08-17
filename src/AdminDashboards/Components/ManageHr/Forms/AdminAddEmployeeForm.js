@@ -7,12 +7,14 @@ import { roles } from '../../../../config';
 import { useDispatch, useSelector } from 'react-redux';
 import { ImageUploadAction } from '../../../../Store/Actions/ImageUploadAction';
 import { GetRegEmployee } from '../../../../Store/Actions/Dashboard/EmployeeActions/EmployeeRegAction';
+import { useAuth } from '../../../../Context/userAuthContext';
 
 
 
 
 const AdminAddEmployeeForm = ({ ToggleAddEmployee }) => {
 
+    const { currentUser, setCurrentUser } = useAuth()
     // selected services
     const [selected, setSelected] = useState([])
     // Department
@@ -261,7 +263,7 @@ const AdminAddEmployeeForm = ({ ToggleAddEmployee }) => {
                                                     type="file"
                                                     name="img"
                                                     id="img"
-                                                    onChange={(e) => dispatch(ImageUploadAction(e))}
+                                                    onChange={(e) => dispatch(ImageUploadAction(e, currentUser._id))}
                                                 />
                                             </FormGroup>
                                         </Col>
@@ -297,7 +299,7 @@ const AdminAddEmployeeForm = ({ ToggleAddEmployee }) => {
                                                     type="file"
                                                     name="documentOneImg"
                                                     id="documentOneImg"
-                                                    onChange={(e) => dispatch(ImageUploadAction(e))}
+                                                    onChange={(e) => dispatch(ImageUploadAction(e, currentUser._id))}
                                                 />
                                             </FormGroup>
                                         </Col>
@@ -320,7 +322,7 @@ const AdminAddEmployeeForm = ({ ToggleAddEmployee }) => {
                                                     type="file"
                                                     name="documentTwoImg"
                                                     id="documentTwoImg"
-                                                    onChange={(e) => dispatch(ImageUploadAction(e))}
+                                                    onChange={(e) => dispatch(ImageUploadAction(e, currentUser._id))}
                                                 />
                                             </FormGroup>
                                         </Col>
@@ -343,7 +345,7 @@ const AdminAddEmployeeForm = ({ ToggleAddEmployee }) => {
                                                     type="file"
                                                     name="documentThreeImg"
                                                     id="documentThreeImg"
-                                                    onChange={(e) => dispatch(ImageUploadAction(e))}
+                                                    onChange={(e) => dispatch(ImageUploadAction(e, currentUser._id))}
                                                 />
                                             </FormGroup>
                                         </Col>

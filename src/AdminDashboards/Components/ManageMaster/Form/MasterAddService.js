@@ -13,6 +13,7 @@ import ImageUploadReducer from '../../../../Store/Reducers/ImageUploadReducers';
 import { ImageUploadAction } from '../../../../Store/Actions/ImageUploadAction';
 import { BounceLoader } from 'react-spinners';
 import zIndex from '@mui/material/styles/zIndex';
+import { useAuth } from '../../../../Context/userAuthContext';
 
 
 
@@ -22,6 +23,9 @@ const MasterAddService = ({ ToggleMasterAddService }) => {
     // data 
     const [cateName, setCateName] = useState("")
     const [selectedIcon, setSelectedIcon] = useState({})
+
+    // current user 
+    const { currentUser, setCurrentUser } = useAuth()
 
     const dispatch = useDispatch()
 
@@ -122,7 +126,7 @@ const MasterAddService = ({ ToggleMasterAddService }) => {
 
     const handleImageUpload = (e) => {
         setLoading(true)
-        dispatch(ImageUploadAction(e))
+        dispatch(ImageUploadAction(e, currentUser._id))
             .then(() => {
                 setLoading(false)
                 Swal.fire({
