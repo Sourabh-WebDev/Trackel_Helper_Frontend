@@ -46,7 +46,7 @@ const ThirdSection = () => {
                 </Col>
                 {/* Center Column */}
                 <Col xl='4' className='text-center'>
-                    <div className='d-flex justify-content-center align-items-center animate__animated animate__jackInTheBox animate__delay-2s' style={{ height: '800px' }}>
+                    <div className='d-flex justify-content-center align-items-center animate__animated animate__jackInTheBox animate__delay-2s'>
                         <div>
                             <img className='img-fluid' src={ServiceDirection} />
                             <h1 className='txtColour'>WHY CHOOSE US</h1>

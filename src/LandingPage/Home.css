@@ -116,6 +116,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0px 10px;
 }
 
 .bgColour {
@@ -228,6 +229,11 @@ body {
     line-height: 1.5;
     position: relative;
     color: #eedc30;
+}
+
+.BorderRadiusSearch {
+    background: #fff;
+    border-radius: 15px 5px 5px 15px;
 }
 
 .FirstSectionImgStyle {
@@ -380,7 +386,7 @@ body {
 
 
 .SixthSectionpadding {
-    padding-bottom: 30rem !important;
+    padding-bottom: 32rem !important;
 }
 
 .borderRadiusTeamFirst {
@@ -696,10 +702,44 @@ input[type="submit"] {
     background: #3d5ce8;
 }
 
+.paddingForm {
+    padding-top: 5rem;
+}
+
 @media (max-width: 1000px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media (max-width: 1024px) {
+    .SixthSectionpadding {
+        padding-bottom: 65rem !important;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .FirstSectionHeadinng {
+        font-size: 40px;
+        line-height: 1.5;
+        position: relative;
+        color: #eedc30;
+    }
+
+    .BorderRadiusSearch {
+        border-radius: 5px;
+    }
+
+    .SixthSectionpadding {
+        padding-bottom: 55rem !important;
+    }
+
+    .paddingForm {
+        padding-top: 0.1rem;
+    }
+
 }
 
 @media (max-width: 620px) {
@@ -708,11 +748,7 @@ input[type="submit"] {
     }
 
     .paddingForMain {
-        padding-left: 0px;
-    }
-
-    .SixthSectionpadding {
-        padding-bottom: 50rem !important;
+        padding-left:0.10px;
     }
 
     .footerform {
@@ -741,7 +777,55 @@ input[type="submit"] {
         padding-top: 800px;
     }
 
+
+
 }
+
+@media (max-width: 426px) {
+
+    .FirstSectionHeadinng {
+        font-size: 23px !important;
+        line-height: 1.5;
+        position: relative;
+        color: #eedc30;
+    }
+
+    .BorderRadiusSearch {
+        border-radius: 5px;
+    }
+
+    .SixthSectionpadding {
+        padding-bottom: 45rem !important;
+    }
+
+    .paddingForm {
+        padding-top: 0.1rem;
+    }
+
+}
+
+@media (max-width: 375px) {
+    .FirstSectionHeadinng {
+        font-size: 19px !important;
+        line-height: 1.5;
+        position: relative;
+        color: #eedc30;
+    }
+
+    .BorderRadiusSearch {
+        border-radius: 5px;
+    }
+
+    .SixthSectionpadding {
+        padding-bottom: 35rem !important;
+    }
+
+    .paddingForm {
+        padding-top: 0.1rem;
+    }
+
+}
+
 
 .whyCard.card {
     list-style: none;
@@ -843,4 +927,74 @@ input[type="submit"] {
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+}
+
+
+/* /--Media--/ */
+
+@media (min-width: 1024px) {
+
+
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: absolute !important;
+        left: -103px !important;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .NavbarChild {
+        text-align: center;
+    }
+
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: revert;
+        left: 0px;
+        text-align: center;
+    }
+
+}
+
+@media (min-width: 576px) {
+
+    .NavbarChild {
+        text-align: center;
+    }
+
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: revert;
+        left: 0px;
+        text-align: center;
+    }
+
+
+}
+
+@media (min-width: 425px) {
+
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: revert;
+        left: 0px;
+        text-align: center;
+    }
+
+}
+
+@media (min-width: 375px) {
+
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: revert;
+        left: 0px;
+        text-align: center;
+
+    }
+}
+
+@media (min-width: 320px) {
+
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: revert;
+        left: 0px;
+        text-align: center;
+    }
 }

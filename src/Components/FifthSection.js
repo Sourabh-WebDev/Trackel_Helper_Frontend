@@ -21,7 +21,7 @@ const FifthSection = () => {
                 },
             },
             {
-                breakpoint: 1200, // Adjust this breakpoint according to your design
+                breakpoint: 1024, // Adjust this breakpoint according to your design
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,

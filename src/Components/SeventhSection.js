@@ -15,7 +15,7 @@ const SeventhSection = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 1,
                     slidesToScroll: 3,
                     infinite: true,
                     dots: true
@@ -40,9 +40,9 @@ const SeventhSection = () => {
     };
 
     return (
-        <div style={{ marginTop: '15rem' }} className='text-center p-4'>
-            <h1 >Our Service Provider Team</h1>
-            <Slider {...settings} className=''>
+        <div style={{ marginTop: '15rem' }} className='text-center p-4 d-none d-sm-none d-md-none d-lg-block'>
+            <h1  >Our Service Provider Team</h1>
+            <Slider {...settings} >
                 <div className='py-5'>
                     <div className="d-flex justify-content-around gap-2">
                         <div className='border-0 '>

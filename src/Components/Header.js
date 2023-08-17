@@ -63,9 +63,9 @@ function Header() {
                     <img src={Logo} alt='MainLogo' />
                 </Navbar.Brand>
 
-                <Navbar.Toggle aria-controls='navbarScroll' />
-                <Navbar.Collapse id='navbarScroll'>
-                    <Nav className='ml-auto my-2 my-lg-0' style={{ maxHeight: '100px' }} navbarScroll>
+                <Navbar.Toggle  />
+                <Navbar.Collapse>
+                    <Nav className='ml-auto my-2 my-lg-0 text-center'>
 
                         <Nav.Link className='txtColour' href='#action1'>Register As A Professional</Nav.Link>
                         <Nav.Link className='txtColour' to='/About-Us'>About Us</Nav.Link>

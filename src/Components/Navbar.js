@@ -8,29 +8,14 @@ const Navbar = () => {
         <>
             <div className='Navbar'>
                 <Row className='m-0'>
-                    <Col sm={12} xl={6}>
+                    <Col xs={12} md={6} lg={6} xl={6}>
                         <div className='NavbarChild' >
-                            <div className='px-2'>
-                                <FiPhone /> <span> 0522-4300589</span>
-                            </div>
-                            |
-                            <div className='px-2'>
-                                <FiClock /> <span>Mon - Sun 12Hours / We are 24*7 available</span>
-                            </div>
+                            <FiPhone /> <span> 0522-4300589</span>
                         </div>
                     </Col>
-                    <Col sm={12} xl={6}>
-                        <div className='NavbarChild' >
-                            <div className='px-2'>
-                                <span>Helper Social</span>
-                            </div>
-                            |
-                            <div className='px-2 NavbarChild'>
-                                <BsFacebook className='ml-2' />
-                                <BsTwitter className='ml-2' />
-                                <BsSkype className='ml-2' />
-                                <BsPinterest className='ml-2' />
-                            </div>
+                    <Col xs={12} md={6} lg={6} xl={6}>
+                        <div className='text-center px-2' >
+                            <FiClock /> <span>Mon - Sun 12 Hours / We are 24*7 available</span>
                         </div>
                     </Col>
                 </Row>

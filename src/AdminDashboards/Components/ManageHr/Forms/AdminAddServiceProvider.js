@@ -4,13 +4,13 @@ import { Form, Row, Col, Card, FormGroup, Label, Input, Button } from 'reactstra
 import SelectBox from '../../../Elements/SelectBox';
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import GetAllServicesReducer from '../../../../Store/Reducers/Dashboard/GetAllServicesReducer';
+// import GetAllServicesReducer from '../../../../Store/Reducers/Dashboard/GetAllServicesReducer';
 import { GetAllServices } from '../../../../Store/Actions/Dashboard/servicesAction';
 import { ImageUploadAction } from '../../../../Store/Actions/ImageUploadAction';
-import ImageUploadReducer from '../../../../Store/Reducers/ImageUploadReducers';
+// import ImageUploadReducer from '../../../../Store/Reducers/ImageUploadReducers';
 import { GetServiceProviderSignupAction } from '../../../../Store/Actions/Dashboard/Authentication/SignupActions';
-import { WaitLoader } from '../../../Elements/WaitLoader';
-import { useStateManager } from 'react-select';
+// import { WaitLoader } from '../../../Elements/WaitLoader';
+// import { useStateManager } from 'react-select';
 
 
 

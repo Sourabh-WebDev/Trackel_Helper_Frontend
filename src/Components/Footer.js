@@ -44,8 +44,8 @@ const Footer = () => {
     };
 
     return (
-        <footer style={{ background: '#3d5ce8', paddingTop: '5rem' }} className='text-center text-lg-start text-white'>
-            <div className="footerform">
+        <footer style={{ background: '#3d5ce8' }} className='text-center text-lg-start text-white paddingForm'>
+            <div className="footerform d-none d-sm-none d-md-none d-lg-block">
                 <Row>
                     <Col sm={12} xl='4' style={{ display: 'grid', placeItems: 'center' }}>
                         <div>
@@ -180,7 +180,7 @@ const Footer = () => {
                                 {/* <FontAwesomeIcon icon={faGem} className="me-3" /> */}
                                 About Helper
                             </h6>
-                            <p className='text-left'>
+                            <p className=''>
                                 Linking businesses to customers, Providing all suitable opportunities to the service providers and entrepreneurs to expand their businesses, To cater to the daily needs of working couples who follow busy schedules by providing them.
                             </p>
                         </Col>
@@ -250,11 +250,11 @@ const Footer = () => {
                                 A/1412, Sector- I Ashiyana LDA Colony Near
                                 Pakripool Lucknow – 226012, UP, India
                             </p>
-                            <p className='text-nowrap'>
+                            <p className='d-none d-lg-none d-xl-block'>
                                 <FaEnvelope className="mr-2" />
                                 helperforyourservices@gmail.com
                             </p>
-                            <p className='text-nowrap'>
+                            <p className=''>
                                 <FaPhone className="mr-2" /> 0522-4300589, 0522-4330641
                             </p>
                             {/* <p>

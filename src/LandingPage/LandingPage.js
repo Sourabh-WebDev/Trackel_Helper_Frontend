@@ -10,10 +10,10 @@ import FourthSections from '../Components/FourthSections'
 import FifthSection from '../Components/FifthSection'
 import SixthSection from '../Components/SixthSection'
 import Footer from '../Components/Footer'
-import PlumberBanner from '../assets/img/PlumberBanner.png'
-import CarWashingBanner from '../assets/img/CarWashingBanner.png'
-import SalonBanner from '../assets/img/SalonBanner.png'
-import ElectricBanner from '../assets/img/ElectricBanner.png'
+import PlumberBanner from '../assets/img/PlumberBanner.jpg'
+import CarWashingBanner from '../assets/img/CarWashingBanner.jpg'
+import SalonBanner from '../assets/img/SalonBanner.jpg'
+import ElectricBanner from '../assets/img/ElectricBanner.jpg'
 import { Button, Offcanvas } from 'react-bootstrap'
 import { Col, Row } from 'reactstrap'
 import { BsFillTelephoneFill, BsWhatsapp, BsFacebook } from 'react-icons/bs'
@@ -29,10 +29,10 @@ const LandingPage = () => {
   const handleShow = () => setShow(true);
 
   const images = [
-    PlumberBanner,
     CarWashingBanner,
-    SalonBanner,
-    ElectricBanner
+    ElectricBanner,
+    PlumberBanner,
+    SalonBanner
   ];
 
   const phoneNumber = '7290900835'; // Replace with the actual phone number
@@ -71,7 +71,7 @@ const LandingPage = () => {
 
     // Cleanup the timer when the component is unmounted
     return () => clearInterval(timer);
-  }, []);
+  }, [images.length]); // Include images.length in the dependency array
 
 
   const { data } = useSelector(state => state.GetAllServicesReducer)
@@ -81,8 +81,8 @@ const LandingPage = () => {
 
 
   useEffect(() => {
-    dispatch(GetAllServices())
-  }, [])
+    dispatch(GetAllServices());
+  }, [dispatch]);
 
   return (
     <>
@@ -175,15 +175,15 @@ const LandingPage = () => {
           style={{
             backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'top',
+            backgroundPosition: 'center',
             width: '100%',
-            height: '110vh',
             backgroundColor: 'transparent',
+            height: '85vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'start'
           }}
-          className="container-fluid custom-shape-divider-bottom-1687584617">
+          className="container-fluid">
           {/* <!-- --Tittle-- --> */}
           <FirstSection />
         </div>
@@ -219,7 +219,7 @@ const LandingPage = () => {
         </div>
       </section >
       <section>
-        <div className="container-fluid bgSixthSectionImg">
+        <div className="container-fluid bgSixthSectionImg ">
           {/* <!-- --Tittle-- --> */}
           <SixthSection />
         </div>

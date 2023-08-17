@@ -6,10 +6,10 @@ import Footer from '../../Components/Footer';
 import { BsFillBuildingFill, BsMailbox } from 'react-icons/bs';
 import { SlSocialFacebook, SlSocialGoogle, SlSocialInstagram, SlSocialSkype } from 'react-icons/sl';
 import { Col, Row } from 'reactstrap';
-import PlumberBanner from '../../assets/img/PlumberBanner.png'
-import CarWashingBanner from '../../assets/img/CarWashingBanner.png'
-import SalonBanner from '../../assets/img/SalonBanner.png'
-import ElectricBanner from '../../assets/img/ElectricBanner.png'
+import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
+import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
+import SalonBanner from '../../assets/img/SalonBanner.jpg'
+import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
 
 const ContactUs = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
