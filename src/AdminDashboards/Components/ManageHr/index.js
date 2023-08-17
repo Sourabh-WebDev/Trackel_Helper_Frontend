@@ -39,15 +39,12 @@ const AdminManageHr = () => {
             {userRole && userRole.ManageServiceProvider ? <span className={` ${attendanceActive === "service-provider" ? "AttendenceTabs_Active" : ""}`} onClick={() => { setActiveAttendance("service-provider") }}>Manage Service Provider</span> : null}
           </div>
           <TabContent activeTab={attendanceActive} >
-            {userRole && userRole.ManageEmployee || userRole.ManageHR ?
-              <TabPane tabId="employee">
-                <ManageEmployee setActiveAttendance={setActiveAttendance} />
-              </TabPane>
-              : userRole.ManageServiceProvider ?
-                <TabPane tabId="service-provider">
-                  <ManageServiceProvider setActiveAttendance={setActiveAttendance} />
-                </TabPane>
-                : null}
+            <TabPane tabId="employee">
+              <ManageEmployee setActiveAttendance={setActiveAttendance} />
+            </TabPane>
+            <TabPane tabId="service-provider">
+              <ManageServiceProvider setActiveAttendance={setActiveAttendance} />
+            </TabPane>
           </TabContent>
         </div>
       </div>
