@@ -15,16 +15,16 @@ const FirstSection = () => {
                 <div>
                     <h1 className='FirstSectionHeadinng'>Home services, on demand. 👇</h1>
 
-                    <FormControl sx={{ background: 'white', borderRadius: '15px 5px 5px 15px' }} fullWidth variant="outlined">
-                        <Grid container spacing={0} >
-                            <Grid item xs={6} lg={2} xl={2}>
+                    <FormControl className='BorderRadiusSearch' fullWidth variant="outlined">
+                        <Grid container spacing={0}>
+                            <Grid item xs={12} sm={4} md={6} lg={2} xl={2}>
                                 <Select
                                     fullWidth
                                     value={location}
                                     onChange={handleLocationChange}
                                     displayEmpty
                                     inputProps={{ 'aria-label': 'Location' }}
-                                    sx={{ borderRadius: '15px 0px 0px 15px' }}
+                                    sx={{ borderRadius: '0px' }}
                                 >
                                     <MenuItem value="" disabled>
                                         Select Location
@@ -34,7 +34,7 @@ const FirstSection = () => {
                                     {/* Add more locations as needed */}
                                 </Select>
                             </Grid>
-                            <Grid item xs={6} lg={10} xl={10} >
+                            <Grid item xs={12} sm={8} md={6} lg={10} xl={10} >
                                 <Autocomplete
                                     id="search-autocomplete"
                                     freeSolo
@@ -44,7 +44,7 @@ const FirstSection = () => {
                                             {...params}
                                             fullWidth
                                             placeholder="Search..."
-                                            sx={{ borderRadius: '0px 15px 15px 0px' }}
+                                            sx={{ borderRadius: '0px' }}
                                             InputProps={{
                                                 ...params.InputProps,
                                                 endAdornment: (

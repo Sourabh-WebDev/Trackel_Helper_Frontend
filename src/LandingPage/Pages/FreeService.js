@@ -1,6 +1,6 @@
-import { Container } from '@mui/material'
 import React from 'react'
-import { Card, Col, Row } from 'reactstrap'
+import { Container } from '@mui/material'
+import { Col, Row } from 'reactstrap'
 
 const FreeService = () => {
     return (

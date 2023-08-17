@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Alert } from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Alert, Row, Col, Input, CardBody, CardHeader, Card } from 'reactstrap'
 import { UseStateManager } from '../Context/StateManageContext'
 import Logo from '../assets/svg/we_logo.png'
 import { Formik } from 'formik'
@@ -7,6 +7,8 @@ import { GetLogIn } from '../Store/Actions/LandingPage/AuthAction'
 import GetLogInReducers from '../Store/Reducers/LandingPage/AuthReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
+import { MenuItem, Select } from '@mui/material'
+import { GetAllServices } from '../Store/Actions/Dashboard/servicesAction'
 
 
 export const LoginModal = () => {
@@ -112,6 +114,262 @@ export const SingupModal = () => {
                         </div>
                     </form>
                 </div>
+            </ModalBody>
+        </Modal>
+    )
+}
+
+export const ServeiceRequestModal = ({ serveRequestModalOpen, serveRequestModalOpenfunction }) => {
+    const [formData, setFormData] = useState({
+        serviceName: '',
+        serviceType: '',
+        serviceTime: '',
+        serviceDate: '',
+        name: '',
+        mobileNo: '',
+        address: '',
+        landMark: '',
+        location: '',
+        problemDescription: '',
+    });
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value,
+        }));
+    };
+
+    const dispatch = useDispatch()
+
+    const { data } = useSelector(state => state.GetAllServicesReducer)
+
+
+    useEffect(() => {
+        dispatch(GetAllServices())
+    }, [])
+
+    const handleSubmit = () => {
+        console.log(formData); // You can replace this with yserviceNameour desired form submission logic
+        serveRequestModalOpenfunction(); // Close the modal after submission
+    };
+
+    return (
+        <Modal className='modal-dialog-centered modal-lg' isOpen={serveRequestModalOpen} toggle={serveRequestModalOpenfunction}>
+            <ModalHeader toggle={serveRequestModalOpenfunction}>Service Request Form</ModalHeader>
+            <ModalBody>
+                <div>
+                    <Row>
+                        <Col xs={12} lg={7}>
+                            <form onSubmit={handleSubmit}>
+                                <Row>
+                                    <Col xs={12} lg={6} xl={6}>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" htmlFor="stateSelect">Service Name *</label>
+                                            <Select style={{ maxHeight: '159px' }} id="stateSelect" name="serviceName" className="form-control" value={formData.serviceName} onChange={handleInputChange}>
+                                                {
+                                                    data.data && data.data.map((item, index) => (
+                                                        <MenuItem key={index} value={item.serviceName}>{item.serviceName}</MenuItem>
+                                                    ))
+                                                }
+                                            </Select>
+                                        </div>
+                                    </Col>
+                                    <Col xs={12} lg={6} xl={6}>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" htmlFor="stateSelect">Type *</label>
+                                            <Select id="stateSelect" name="serviceType" className="form-control" value={formData.serviceType} onChange={handleInputChange}>
+                                                <MenuItem value="booking">Booking</MenuItem>
+                                                <MenuItem value="urgent">Urgent</MenuItem>
+                                                <MenuItem value="regular">Regular</MenuItem>
+                                            </Select>
+                                        </div>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={12} lg={6} xl={6}>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" htmlFor="serviceName">Service Time *</label>
+                                            <Input
+                                                type="time"
+                                                name="serviceTime"
+                                                className="form-control"
+                                                value={formData.serviceTime}
+                                                onChange={handleInputChange}
+                                            />
+                                        </div>
+                                    </Col>
+                                    <Col xs={12} lg={6} xl={6}>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" htmlFor="serviceType">Service Date *</label>
+                                            <Input
+                                                type="date"
+                                                name="serviceDate"
+                                                className="form-control"
+                                                value={formData.serviceDate}
+                                                onChange={handleInputChange}
+                                            />
+                                        </div>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={12} lg={6} xl={6}>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" htmlFor="serviceName">Name *</label>
+                                            <Input
+                                                type="text"
+                                                name="name"
+                                                className="form-control"
+                                                value={formData.name}
+                                                onChange={handleInputChange}
+                                            />
+                                        </div>
+                                    </Col>
+                                    <Col xs={12} lg={6} xl={6}>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" htmlFor="serviceType">Mobile No. *</label>
+                                            <Input
+                                                type="number"
+                                                name="mobileNo"
+                                                className="form-control"
+                                                value={formData.mobileNo}
+                                                onChange={handleInputChange}
+                                            />
+                                        </div>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={12}>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" htmlFor="serviceType">Address *</label>
+                                            <Input
+                                                type="text"
+                                                name="address"
+                                                className="form-control"
+                                                value={formData.address}
+                                                onChange={handleInputChange}
+                                            />
+                                        </div>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={12} lg={6} xl={6}>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" htmlFor="serviceName">Landmark *</label>
+                                            <Input
+                                                type="text"
+                                                name="landMark"
+                                                className="form-control"
+                                                value={formData.landMark}
+                                                onChange={handleInputChange}
+                                            />
+                                        </div>
+                                    </Col>
+                                    <Col xs={12} lg={6} xl={6}>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" htmlFor="serviceType">Location *</label>
+                                            <Input
+                                                type="text"
+                                                name="location"
+                                                className="form-control"
+                                                value={formData.location}
+                                                onChange={handleInputChange}
+                                            />
+                                        </div>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={12}>
+                                        <div className="form-outline mb-2">
+                                            <label className="form-label" htmlFor="serviceName">Problem Description *</label>
+                                            <Input
+                                                type="textarea"
+                                                name="problemDescription"
+                                                className="form-control"
+                                                value={formData.problemDescription}
+                                                onChange={handleInputChange}
+                                                rows="4" cols="50"
+                                            />
+                                        </div>
+                                    </Col>
+                                </Row>
+                                <Button color="primary" className='btn-block' onClick={handleSubmit}>
+                                    Submit
+                                </Button>
+                            </form>
+                        </Col>
+                        <Col xs={12} lg={5}>
+                            <Card>
+                                <div className='p-2 bg-warning'>
+                                    <p><b>Terms and Conditions</b></p>
+                                </div>
+                                <CardBody>
+                                    <ul>
+                                        <li>Every Free Services for one & half hour.</li>
+                                        <li>After that it will paid by Member.</li>
+                                        <li>Material Cost paid by Member.</li>
+                                        <li>Associated service provider will responsibile for three quality.</li>
+                                        <li>Additional Charges will be paid by member as per the norms of the quality.</li>
+                                        <li>Beside Emergency Services other will be available form 8:00 am to 6:00 pm.</li>
+                                    </ul>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    </Row>
+                </div>
+            </ModalBody>
+        </Modal>
+    );
+}
+
+export const CustomerRemarkModal = ({ customerRemarkModalOpen, customerRemarkModalfunction }) => {
+
+    const [formData, setFormData] = useState({
+        serviceRemark: ''
+    });
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = () => {
+        console.log(formData); // You can replace this with yserviceNameour desired form submission logic
+        customerRemarkModalfunction(); // Close the modal after submission
+    };
+
+    return (
+        <Modal className='modal-dialog-centered modal-lg' isOpen={customerRemarkModalOpen} toggle={customerRemarkModalfunction}>
+            <ModalHeader toggle={customerRemarkModalfunction}>Service Remark</ModalHeader>
+            <ModalBody>
+                <Row>
+                    <Col xs={12}>
+                        <div className="form-outline mb-2">
+                            <label className="form-label" htmlFor="serviceRemark">Service Remark</label>
+                            <Input
+                                type="textarea"
+                                name="serviceRemark"
+                                className="w-100"
+                                value={formData.serviceRemark}
+                                onChange={handleInputChange}
+                                rows="6" // Increase the number of rows
+                                cols="50" // Adjust the number of columns if needed
+                            />
+                        </div>
+                        <div className='d-flex justify-content-evenly'>
+                            <Button color="primary" onClick={handleSubmit}>
+                                Submit
+                            </Button>
+                            <Button color="primary" outline onClick={customerRemarkModalfunction}>
+                                Close
+                            </Button>
+                        </div>
+                    </Col>
+                </Row>
             </ModalBody>
         </Modal>
     )

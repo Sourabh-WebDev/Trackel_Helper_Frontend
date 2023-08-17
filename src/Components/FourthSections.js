@@ -9,10 +9,10 @@ const FourthSections = () => {
                 <h1 className='txtColour' >Our Best Plans</h1>
             </div>
             <Row>
-                <Col sm={12} xl={6}>
+                <Col xs={12} sm={12} md={6} xl={6}>
                     <img className='img-fluid' src={Services} />
                 </Col>
-                <Col sm={12} xl={6}>
+                <Col xs={12} sm={12} md={6} xl={6}>
                     <div className="d-flex align-items-center justify-content-center mt-5">
                         <div>
                             <h3 className='txtColour'>MONTHLY PLAN STARTING</h3>

@@ -16,7 +16,16 @@ const SixthSection = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 1,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
                     slidesToScroll: 3,
                     infinite: true,
                     dots: true
@@ -41,7 +50,7 @@ const SixthSection = () => {
     };
 
     return (
-        <div style={{ background: '#99DBF5', paddingTop: '5rem' }} className='text-center SixthSectionpadding'>
+        <div style={{ background: '#99DBF5', paddingTop: '5rem' }} className='text-center SixthSectionpadding d-none d-sm-none d-md-none d-lg-block'>
             <h1 className='txtColour'>Our Team</h1>
             <Slider {...settings} className='text-center'>
 

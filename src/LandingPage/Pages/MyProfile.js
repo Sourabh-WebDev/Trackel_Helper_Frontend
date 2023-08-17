@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, CardBody, Col, Row } from 'reactstrap'
 import { DataGrid } from '@mui/x-data-grid';
 import { Button } from '@mui/material';
+import { CustomerRemarkModal, ServeiceRequestModal } from '../../Components/Modal';
 
 const MyProfile = ({ serviceData }) => {
+
+    const [serveRequestModalOpen, setserveRequestModalOpen] = useState(false)
+    const [customerRemarkModalOpen, setCustomerRemarkModalOpen] = useState(false)
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 100, headerCenter: true },
@@ -19,7 +23,7 @@ const MyProfile = ({ serviceData }) => {
         { field: 'paymentMethod', headerName: 'Payment Method', width: 180, headerCenter: true },
         {
             field: 'customerRemark', headerName: 'Customer Remark', width: 180, headerCenter: true,
-            renderCell: (params) => (<Button color='success' variant='contained'>Add Remark</Button>)
+            renderCell: (params) => (<Button color='success' onClick={() => setCustomerRemarkModalOpen(!customerRemarkModalOpen)} variant='contained'>Add Remark</Button>)
         },
         { field: 'supervisorRemark', headerName: 'Supervisor Remark', width: 180, headerCenter: true },
         {
@@ -123,8 +127,13 @@ const MyProfile = ({ serviceData }) => {
         },
     ]
 
+
     return (
         <div>
+            <CustomerRemarkModal
+                customerRemarkModalOpen={customerRemarkModalOpen}
+                customerRemarkModalfunction={() => setCustomerRemarkModalOpen(!customerRemarkModalOpen)}
+            />
             <Row>
                 <Col xs={12} lg={4} xl={4} >
                     <Card className='mt-2'>
@@ -136,16 +145,20 @@ const MyProfile = ({ serviceData }) => {
                                 style={{ width: '150px' }}
                                 fluid />
                             <h6 className="text-muted mb-1">{serviceData.name}</h6>
-                            <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                            <p className="text-muted mb-2">Bay Area, San Francisco, CA</p>
                             <div className="d-flex justify-content-center">
                                 <h5>Memeber Id: <span style={{ color: '#ff0000' }}>HM10884</span></h5>
                             </div>
+                            <Button onClick={() => setserveRequestModalOpen(!serveRequestModalOpen)} sx={{ background: '#3d5ce8' }} variant='contained'> Request New Service </Button>
+                            <ServeiceRequestModal
+                                serveRequestModalOpen={serveRequestModalOpen}
+                                serveRequestModalOpenfunction={() => setserveRequestModalOpen(!serveRequestModalOpen)} />
                         </CardBody>
                     </Card>
                 </Col>
                 <Col xs={12} lg={8} xl={8} >
-                    <Card className="mt-2">
-                        <div className='pl-2 pt-2 pr-2 pb-1'>
+                    <Card className="mt-2 py-2">
+                        <div className='pl-2 pt-2 pr-2 pb-2'>
                             <Row>
                                 <Col sm="3">
                                     <h5>Full Name</h5>
