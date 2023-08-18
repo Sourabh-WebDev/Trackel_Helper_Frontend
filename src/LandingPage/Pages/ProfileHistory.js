@@ -90,7 +90,7 @@ const ProfileHistory = () => {
             </div>
             {
                 active === '1' ? <MyProfile serviceData={serviceData} /> :
-                    active === '2' ? <EditProfile /> :
+                    active === '2' ? <EditProfile serviceData={serviceData} /> :
                         active === '3' ? <FreeService /> :
                             active === '4' ? <ManagePost /> : null
             }

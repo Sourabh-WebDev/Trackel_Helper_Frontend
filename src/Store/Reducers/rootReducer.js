@@ -9,6 +9,7 @@ import GetEmployeeRegReducer from "./Dashboard/EmployeeReducers/EmployeeRegReduc
 import GetAllEmployeeDataReducer from "./Dashboard/EmployeeReducers/GetAllEmployeeReducer";
 import GetAllServiceProviderReducer from "./Dashboard/Authentication/AllServiceProviderReducer";
 import GetAllCustomerReducer from "./CustomersReducers.js/GetAllCustomerReducers";
+import GetCustomerUpdateReducer from "./CustomersReducers.js/GetCustomerUpdateReducer";
 
 const rootReducer = combineReducers({
     SeviceAddReducer: SeviceAddReducer,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
     GetAllEmployeeDataReducer: GetAllEmployeeDataReducer,
     GetAllServiceProviderReducer: GetAllServiceProviderReducer,
     GetAllCustomerReducer: GetAllCustomerReducer,
+    GetCustomerUpdateReducer: GetCustomerUpdateReducer,
 
     // Landing Page 
     GetLogInReducers: GetLogInReducers,
