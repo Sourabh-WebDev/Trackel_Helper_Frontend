@@ -20,6 +20,23 @@ export const GetAllCustomers = () => {
 
 
 
+// get update the customer 
+export const GetUpdateTheCustomer = (id, formdata) => {
+    return async (dispatch) => {
+        dispatch({ type: constant.GET_CUSTOMER_UPDATE_LOADING })
+        try {
+            const response = await axios.patch(API_URL + '/customer/getupdate/' + id, formdata, { method: 'PATCH' })
+            if (response.status === 200) {
+                dispatch({ type: constant.GET_CUSTOMER_UPDATE_SUCCESS, payload: response.data })
+            }
+        } catch (error) {
+            dispatch({ type: constant.GET_CUSTOMER_UPDATE_ERROR })
+        }
+    }
+}
+
+
+
 
 
 

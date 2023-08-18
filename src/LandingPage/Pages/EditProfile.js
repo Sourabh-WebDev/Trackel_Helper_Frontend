@@ -1,19 +1,25 @@
 import { Container, Select, MenuItem, Button } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Input, Row } from 'reactstrap';
+import { useAuth } from '../../Context/userAuthContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { GetUpdateTheCustomer } from '../../Store/Actions/Dashboard/Customer/CustomerActions';
+import Swal from 'sweetalert2';
 
-const EditProfile = () => {
+const EditProfile = ({ serviceData }) => {
+    const { currentUser, setCurrentUser } = useAuth()
+
+    const updateResult = useSelector(state => state.GetCustomerUpdateReducer);
     const [imageFile, setImageFile] = useState(null);
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
+        name: '',
+        age: '',
         gender: '',
         mobileNo: '',
-        emailAddress: '',
-        locality: '',
-        city: '',
-        state: '',
+        email: '',
+        address: '',
         pinCode: '',
+        landmark: ''
     });
 
     const handleImageChange = (event) => {
@@ -23,6 +29,15 @@ const EditProfile = () => {
         }
     };
 
+    useEffect(() => {
+        if (serviceData) {
+            setFormData(prevFormData => ({
+                ...prevFormData,
+                ...serviceData
+            }));
+        }
+    }, [serviceData]);
+
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData(prevFormData => ({
@@ -31,9 +46,20 @@ const EditProfile = () => {
         }));
     };
 
+    const dispatch = useDispatch()
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(formData);
+        dispatch(GetUpdateTheCustomer(currentUser._id, formData)).then((result) => {
+            if (updateResult?.data.data) {
+                Swal.fire({
+                    title: 'Profile updated',
+                    icon: "success"
+                })
+            }
+        }).catch((err) => {
+            console.log(err)
+        });
     };
 
     return (
@@ -48,20 +74,19 @@ const EditProfile = () => {
                                     alt="avatar"
                                     className="rounded-circle img-fluid"
                                     style={{ width: '150px', height: '150px' }}
-
                                 />
                                 <div className='text-left'>
                                     <Row className="mb-4">
                                         <Col>
                                             <div className="form-outline mb-4">
                                                 <label className="form-label" htmlFor="form3Example1">Name</label>
-                                                <Input type="text" id="form3Example1" name="name" className="form-control" value={formData.firstName} onChange={handleInputChange} />
+                                                <Input type="text" id="form3Example1" name="name" className="form-control" value={formData.name} onChange={handleInputChange} />
                                             </div>
                                         </Col>
                                         <Col>
                                             <div className="form-outline mb-4">
                                                 <label className="form-label" htmlFor="form3Example2">Age</label>
-                                                <Input type="text" id="form3Example2" name="age" className="form-control" value={formData.lastName} onChange={handleInputChange} />
+                                                <Input type="text" id="form3Example2" name="age" className="form-control" value={formData.age} onChange={handleInputChange} />
                                             </div>
                                         </Col>
                                     </Row>
@@ -69,15 +94,15 @@ const EditProfile = () => {
                                         <Col>
                                             <div className="form-outline mb-4">
                                                 <label className="form-label" htmlFor="form3Example1">Upload Profile</label>
-                                                <Input type='file' onChange={handleImageChange} />
+                                                <Input type='file' name='image' onChange={handleImageChange} />
                                             </div>
                                         </Col>
                                         <Col>
                                             <div className="form-outline mb-4">
                                                 <label className="form-label" htmlFor="stateSelect">Gender</label>
                                                 <Select id="stateSelect" name="gender" className="form-control" value={formData.gender} onChange={handleInputChange}>
-                                                    <MenuItem value="gender1">Male</MenuItem>
-                                                    <MenuItem value="gender2">Female</MenuItem>
+                                                    <MenuItem value="male">Male</MenuItem>
+                                                    <MenuItem value="female">Female</MenuItem>
                                                 </Select>
                                             </div>
                                         </Col>
@@ -92,39 +117,29 @@ const EditProfile = () => {
                                         <Col>
                                             <div className="form-outline mb-4">
                                                 <label className="form-label" htmlFor="form3Example4">Email address</label>
-                                                <Input type="email" id="form3Example4" name="emailAddress" className="form-control" value={formData.emailAddress} onChange={handleInputChange} />
+                                                <Input type="email" id="form3Example4" name="email" className="form-control" value={formData.email} onChange={handleInputChange} />
                                             </div>
                                         </Col>
                                     </Row>
                                     <Row className="mb-4">
                                         <Col>
                                             <div className="form-outline mb-4">
-                                                <label className="form-label" htmlFor="form3Example5">Locality</label>
-                                                <Input type="text" id="form3Example5" name="locality" className="form-control" value={formData.locality} onChange={handleInputChange} />
-                                            </div>
-                                        </Col>
-                                        <Col>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label" htmlFor="form3Example6">City</label>
-                                                <Input type="text" id="form3Example6" name="city" className="form-control" value={formData.city} onChange={handleInputChange} />
+                                                <label className="form-label" htmlFor="form3Example5">Address</label>
+                                                <Input type="text" id="form3Example5" name="address" className="form-control" value={formData.address} onChange={handleInputChange} />
                                             </div>
                                         </Col>
                                     </Row>
                                     <Row className="mb-4">
                                         <Col>
                                             <div className="form-outline mb-4">
-                                                <label className="form-label" htmlFor="stateSelect">State</label>
-                                                <Select id="stateSelect" name="state" className="form-control" value={formData.state} onChange={handleInputChange}>
-                                                    <MenuItem value="state1">Lucknow</MenuItem>
-                                                    <MenuItem value="state2">Kanpur</MenuItem>
-                                                    <MenuItem value="state3">Allahbad</MenuItem>
-                                                </Select>
+                                                <label className="form-label" htmlFor="form3Example6">Landmark</label>
+                                                <Input type="text" id="form3Example6" name="landmark" className="form-control" value={formData.landmark} onChange={handleInputChange} />
                                             </div>
                                         </Col>
                                         <Col>
                                             <div className="form-outline mb-4">
-                                                <label className="form-label" htmlFor="form3Example8">Pin Code</label>
-                                                <Input type="text" id="form3Example8" name="pinCode" className="form-control" value={formData.pinCode} onChange={handleInputChange} />
+                                                <label className="form-label" htmlFor="form3Example6">Pin Code</label>
+                                                <Input type="text" id="form3Example6" name="pinCode" className="form-control" value={formData.pinCode} onChange={handleInputChange} />
                                             </div>
                                         </Col>
                                     </Row>
