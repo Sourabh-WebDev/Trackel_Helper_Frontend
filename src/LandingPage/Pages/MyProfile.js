@@ -139,15 +139,15 @@ const MyProfile = ({ serviceData }) => {
                     <Card className='mt-2'>
                         <CardBody className="text-center">
                             <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                                src={serviceData && serviceData.image ? serviceData.image : `https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp`}
                                 alt="avatar"
                                 className="rounded-circle"
                                 style={{ width: '150px' }}
                                 fluid />
                             <h6 className="text-muted mb-1">{serviceData.name}</h6>
-                            <p className="text-muted mb-2">Bay Area, San Francisco, CA</p>
+                            <p className="text-muted mb-4">{serviceData.address ? serviceData.address : '-------'}</p>
                             <div className="d-flex justify-content-center">
-                                <h5>Memeber Id: <span style={{ color: '#ff0000' }}>HM10884</span></h5>
+                                <h5>Memeber Id: <span style={{ color: '#ff0000' }}>{serviceData.customerId}</span></h5>
                             </div>
                             <Button onClick={() => setserveRequestModalOpen(!serveRequestModalOpen)} sx={{ background: '#3d5ce8' }} variant='contained'> Request New Service </Button>
                             <ServeiceRequestModal
@@ -173,7 +173,7 @@ const MyProfile = ({ serviceData }) => {
                                     <h5>Gender</h5>
                                 </Col>
                                 <Col sm="9">
-                                    <p className="text-muted">Male</p>
+                                    <p className="text-muted">{serviceData.gender}</p>
                                 </Col>
                             </Row>
                             <hr />
@@ -200,7 +200,7 @@ const MyProfile = ({ serviceData }) => {
                                     <h5>Address</h5>
                                 </Col>
                                 <Col sm="9">
-                                    <p className="text-muted">Bay Area, San Francisco, CA</p>
+                                    <p className="text-muted">{serviceData.address ? serviceData.address : '-------'}</p>
                                 </Col>
                             </Row>
                         </div>
