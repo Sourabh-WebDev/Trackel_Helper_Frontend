@@ -11,7 +11,7 @@ export const AddService = (formdata) => {
         try {
             const response = await axios.post(API_URL + "/service/add", formdata, {
                 headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
+                    "Content-Type": "application/json"
                 }
             })
             if (response.status === 200) {

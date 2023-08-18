@@ -54,14 +54,14 @@ const EditProfile = () => {
                                     <Row className="mb-4">
                                         <Col>
                                             <div className="form-outline mb-4">
-                                                <label className="form-label" htmlFor="form3Example1">First name</label>
-                                                <Input type="text" id="form3Example1" name="firstName" className="form-control" value={formData.firstName} onChange={handleInputChange} />
+                                                <label className="form-label" htmlFor="form3Example1">Name</label>
+                                                <Input type="text" id="form3Example1" name="name" className="form-control" value={formData.firstName} onChange={handleInputChange} />
                                             </div>
                                         </Col>
                                         <Col>
                                             <div className="form-outline mb-4">
-                                                <label className="form-label" htmlFor="form3Example2">Last name</label>
-                                                <Input type="text" id="form3Example2" name="lastName" className="form-control" value={formData.lastName} onChange={handleInputChange} />
+                                                <label className="form-label" htmlFor="form3Example2">Age</label>
+                                                <Input type="text" id="form3Example2" name="age" className="form-control" value={formData.lastName} onChange={handleInputChange} />
                                             </div>
                                         </Col>
                                     </Row>

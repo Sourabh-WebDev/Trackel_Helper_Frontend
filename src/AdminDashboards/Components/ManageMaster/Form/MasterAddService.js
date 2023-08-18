@@ -104,25 +104,7 @@ const MasterAddService = ({ ToggleMasterAddService }) => {
 
         return response;
     };
-    // useEffect(() => {
-    //     if (imgUpload.isUploaded === true) {
-    //         Swal.fire({
-    //             position: 'top-end',
-    //             icon: 'success',
-    //             title: 'Image Uploaded Successfully',
-    //             showConfirmButton: false,
-    //             timer: 1500
-    //         })
-    //     } else if (imgUpload.isUploaded === false) {
-    //         Swal.fire({
-    //             position: 'top-end',
-    //             icon: 'error',
-    //             title: 'Failed Image Not Uploaded',
-    //             showConfirmButton: false,
-    //             timer: 2000
-    //         })
-    //     }
-    // }, [imgUpload.isUploaded])
+
 
     const handleImageUpload = (e) => {
         setLoading(true)
@@ -156,6 +138,7 @@ const MasterAddService = ({ ToggleMasterAddService }) => {
 
     return (
         <div className='position-relative'>
+            {console.log(serviceResult)}
             <div className={`${Loading ? "d-flex" : "d-none"} align-items-center justify-content-center`} style={{ zIndex: "10", background: "rgba(0,0,0,0.6)", position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }}>
                 <BounceLoader
                     color="#fff83f"
