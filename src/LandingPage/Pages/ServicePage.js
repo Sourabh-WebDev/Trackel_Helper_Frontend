@@ -72,20 +72,17 @@ const ServicePage = () => {
                     {/* Image slideshow section */}
                     <div
                         style={{
-                            backgroundImage: `linear-gradient(62deg, #14257289 100%, #eedb30a8 0%), url(${images[currentImageIndex]})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'top',
                             width: '100%',
-                            height: '100vh',
-                            backgroundColor: 'transparent',
-                            display: 'grid',
-                            placeItems: 'center'
+                            height: '50vh',
+                            display: 'flex',
+                            alignItems: 'center',
+                            background: 'linear-gradient(62deg, #eedc3063 100%, #eedb30a8 0%), url(https://servicemaster.qodeinteractive.com/wp-content/uploads/2017/02/about-us-parallax1.png)'
                         }}
                         className="container-fluid"
                     >
                         <div className="container" style={{ display: 'grid', placeItems: 'center', height: '500px' }}>
                             <Card className="bg-transparent text-center ServiceBanner p-2">
-                                <h1 className='display-3 font-weight-bold text-warning'>{serviceName}</h1>
+                                <h1 style={{ color: '#3d5ce8' }} className='display-3 font-weight-bold'>{serviceName}</h1>
                             </Card>
                         </div>
                     </div>
@@ -98,7 +95,7 @@ const ServicePage = () => {
                             serveRequestModalOpenfunction={() => setserveRequestModalOpen(!serveRequestModalOpen)} />
                         <div className="container-fluid">
                             <Row>
-                                <Col xl={6} style={{ background: '#142572' }} className='p-5 text-center'>
+                                <Col xl={6} style={{ background: '#3d5ce8' }} className='p-5 text-center'>
                                     <h2 style={{ color: '#eedc30' }}><em>{item.serviceName}</em></h2>
                                     <div className='text-white border' style={{ display: 'grid', placeItems: 'center', height: '300px' }}>
                                         <p>"We provide the best facial services ever, and we highly recommend trying it once to experience our affordable and convenient at-home service."</p>
@@ -112,7 +109,7 @@ const ServicePage = () => {
                                     </div>
                                 </Col>
                                 <Col xl={6} className='p-0'>
-                                    <img className='img-fluid ServiceBannerS' src={API_URL + "/uploads/" + item.image} alt="" />
+                                    <img className='w-100 ServiceBannerS' src={API_URL + "/uploads/" + item.image} alt="" />
                                 </Col>
                             </Row>
                         </div>

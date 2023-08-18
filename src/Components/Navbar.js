@@ -9,7 +9,7 @@ const Navbar = () => {
             <div className='Navbar'>
                 <Row className='m-0'>
                     <Col xs={12} md={6} lg={6} xl={6}>
-                        <div className='NavbarChild' >
+                        <div className='text-center px-2' >
                             <FiPhone /> <span> 0522-4300589</span>
                         </div>
                     </Col>

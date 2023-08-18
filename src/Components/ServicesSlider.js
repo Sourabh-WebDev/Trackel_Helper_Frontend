@@ -43,11 +43,14 @@ const ServicesSlider = () => {
 
     return (
         <div className='text-center'>
+            <div style={{ backgroundColor: '#eedc30', color: '#142572', padding: '20px' }}>
+                <h2>Welcome to Helper Services</h2>
+            </div>
             <Slider {...settings} className='py-2'>
                 <div >
                     <Card sx={{ background: '#3d5ce8', maxWidth: 800, padding: 1, boxShadow: 'none' }}>
                         <img
-                            style={{ height: 400 }}
+                            style={{ height: 350 }}
                             className='w-100'
                             src="https://mytotalhelper.com//upload/WhatsApp_Image_2019-05-16_at_14_27_26.jpeg"
                             title="green iguana"
@@ -57,7 +60,7 @@ const ServicesSlider = () => {
                 <div>
                     <Card sx={{ background: '#3d5ce8', maxWidth: 800, padding: 1, boxShadow: 'none' }}>
                         <img
-                            style={{ height: 400 }}
+                            style={{ height: 350 }}
                             className='w-100'
                             src="https://mytotalhelper.com//upload/WhatsApp_Image_2019-05-15_at_11_48_44.jpeg"
                             title="green iguana"
@@ -67,7 +70,7 @@ const ServicesSlider = () => {
                 <div>
                     <Card sx={{ background: '#3d5ce8', maxWidth: 800, padding: 1, boxShadow: 'none' }}>
                         <img
-                            style={{ height: 400 }}
+                            style={{ height: 350 }}
                             className='w-100'
                             src="https://mytotalhelper.com//upload/WhatsApp_Image_2019-05-16_at_14_27_26.jpeg"
                             title="green iguana"
@@ -78,7 +81,7 @@ const ServicesSlider = () => {
                 <div>
                     <Card sx={{ background: '#3d5ce8', maxWidth: 800, padding: 1, boxShadow: 'none' }}>
                         <img
-                            style={{ height: 400 }}
+                            style={{ height: 350 }}
                             className='w-100'
                             src="https://mytotalhelper.com//upload/WhatsApp_Image_2019-05-15_at_13_57_53.jpeg"
                             title="green iguana"
@@ -88,7 +91,7 @@ const ServicesSlider = () => {
                 <div>
                     <Card sx={{ background: '#3d5ce8', maxWidth: 800, padding: 1, boxShadow: 'none' }}>
                         <img
-                            style={{ height: 400 }}
+                            style={{ height: 350 }}
                             className='w-100'
                             src="https://mytotalhelper.com//upload/WhatsApp_Image_2019-05-15_at_11_48_44.jpeg"
                             title="green iguana"

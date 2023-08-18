@@ -341,7 +341,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100vh;
+    height: 50vh;
 }
 
 .bgSixthSectionImg {
@@ -706,6 +706,14 @@ input[type="submit"] {
     padding-top: 5rem;
 }
 
+.planCard {
+    transition: transform 0.2s;
+}
+
+.planCard:hover {
+    transform: scale(1.05);
+}
+
 @media (max-width: 1000px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -748,7 +756,7 @@ input[type="submit"] {
     }
 
     .paddingForMain {
-        padding-left:0.10px;
+        padding-left: 0.10px;
     }
 
     .footerform {
