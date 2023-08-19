@@ -195,7 +195,7 @@ const LandingPage = () => {
         </div>
       </section >
       <section>
-        <div className="container-fluid ">
+        <div  className="container-fluid ">
           {/* <!-- --Tittle-- --> */}
           <SecondSection data={data} />
         </div>
@@ -227,7 +227,7 @@ const LandingPage = () => {
       <section>
         <div className="container-fluid">
           {/* <!-- --Tittle-- --> */}
-          <Footer />
+          <Footer paddingForm={'paddingForm'} reqrem={'reqremFor'} />
         </div>
       </section >
     </>

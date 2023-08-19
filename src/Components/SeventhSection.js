@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from "react-slick";
 
-const SeventhSection = () => {
+const SeventhSection = ({reqrem}) => {
 
     const settings = {
         ddots: true,
@@ -40,7 +40,7 @@ const SeventhSection = () => {
     };
 
     return (
-        <div style={{ marginTop: '15rem' }} className='text-center p-4 d-none d-sm-none d-md-none d-lg-block'>
+        <div className={`text-center p-4 d-none d-sm-none d-md-none d-lg-block ${reqrem}`}>
             <h1  >Our Service Provider Team</h1>
             <Slider {...settings} >
                 <div className='py-5'>

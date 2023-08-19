@@ -95,7 +95,7 @@ const SecondSection = ({ data }) => {
 
 
     return (
-        <div className="bgColour text-center pt-3 pb-5">
+        <div id='services' className="bgColour text-center pt-3 pb-5">
             <div className="text-center pb-3">
                 <h1 style={{ color: '#142572' }} >Our Services</h1>
                 <h5>Get our services at minimum cost in a required time at the best deal possible with granted good work.</h5>

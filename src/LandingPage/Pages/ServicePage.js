@@ -75,6 +75,8 @@ const ServicePage = () => {
                             width: '100%',
                             height: '50vh',
                             display: 'flex',
+                            // borderTop:'5px solid #3d5ce8',
+                            borderBottom:'5px solid #3d5ce8',
                             alignItems: 'center',
                             background: 'linear-gradient(62deg, #eedc3063 100%, #eedb30a8 0%), url(https://servicemaster.qodeinteractive.com/wp-content/uploads/2017/02/about-us-parallax1.png)'
                         }}
@@ -119,16 +121,16 @@ const ServicePage = () => {
 
 
                 {/* Slider section */}
-                <section>
+                {/* <section>
                     <div style={{ backgroundImage: 'url(https://c4.wallpaperflare.com/wallpaper/492/842/325/sparkle-wallpaper-preview.jpg)' }} className="container-fluid bgSeventhSectionImg">
                         <OfferSlider />
                     </div>
-                </section>
+                </section> */}
 
                 <section>
                     {/* Footer section */}
                     <div className="container-fluid">
-                        <Footer />
+                        <Footer hide={'hide'} />
                     </div>
                 </section>
             </>

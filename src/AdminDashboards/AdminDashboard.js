@@ -116,13 +116,12 @@ const AdminDashboard = () => {
 
                     {userRole && userRole.Dashboard ?
                         <Row>
-                            <Col md={7}>
+                            {/* <Col md={7}>
                                 <div className='card bg-glass shadow-lg' style={{ height: "50vh", width: "100%" }}>
-                                    {/* <LineCharts style={{}} /> */}
                                     <BarCharts data={barchartdata} dataValue={BarKeys} />
                                 </div>
-                            </Col>
-                            <Col md={5}>
+                            </Col> */}
+                            <Col md={12}>
                                 <div className='DashboardAnalytics'>
                                     <StackBox title="Total Income" amount={20000} rupee={true} style={{ background: "linear-gradient(to right bottom ,var(--yellow) , var(--yellow))", gridArea: "one" }} />
                                     <StackBox title={"Total Expenses"} amount={20000000} rupee={true} style={{ background: "linear-gradient(to right bottom ,yellow , goldenrod)", gridArea: "two" }} />
