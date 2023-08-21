@@ -32,7 +32,7 @@ const FifthSection = () => {
 
 
     return (
-        <div className='text-center p-4 min-100-vh'>
+        <div className='text-center p-4'>
             <h2 style={{ color: '#eedc30' }} >Testimonial</h2>
             <Slider {...settings} className=''>
                 <div className='p-2'>

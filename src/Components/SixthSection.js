@@ -54,7 +54,7 @@ const SixthSection = () => {
             <h1 className='txtColour'>Our Team</h1>
             <Slider {...settings} className='text-center'>
 
-                <div className='SixthSectionAwesome d-flex justify-content-evenly gap-2 py-2'>
+                <div className='SixthSectionAwesome d-flex justify-content-around gap-2 py-2'>
                     <div>
                         <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                     </div>
@@ -69,7 +69,7 @@ const SixthSection = () => {
                     </div>
 
                 </div>
-                <div className='SixthSectionAwesome d-flex justify-content-evenly gap-2 py-2'>
+                <div className='SixthSectionAwesome d-flex justify-content-around gap-2 gap-2 py-2'>
                     <div>
                         <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                     </div>
@@ -84,7 +84,7 @@ const SixthSection = () => {
                     </div>
 
                 </div>
-                <div className='SixthSectionAwesome d-flex justify-content-evenly gap-2 py-2'>
+                <div className='SixthSectionAwesome d-flex justify-content-around gap-2 gap-2 py-2'>
                     <div>
                         <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                     </div>
@@ -99,7 +99,7 @@ const SixthSection = () => {
                     </div>
 
                 </div>
-                <div className='SixthSectionAwesome d-flex justify-content-evenly gap-2 py-2'>
+                <div className='SixthSectionAwesome d-flex justify-content-around gap-2 gap-2 py-2'>
                     <div>
                         <img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src="https://static01.nyt.com/images/2014/04/19/your-money/19stewart/19stewart-superJumbo.jpg" />
                     </div>

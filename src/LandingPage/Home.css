@@ -341,7 +341,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100vh;
+    height: 50vh;
 }
 
 .bgSixthSectionImg {
@@ -496,7 +496,7 @@ input[type="submit"] {
     background-size: cover;
     background-position: bottom;
     background: linear-gradient(313deg, rgba(238, 220, 48, 1) 0%, rgba(20, 37, 114, 0.3926820728291317) 73%), url('https://www.searchenginejournal.com/wp-content/uploads/2022/08/contact-us-2-62fa2cc2edbaf-sej-1280x720.png');
-    padding-bottom: 30rem;
+    padding: 5rem 0rem;
     background-size: cover;
     background-repeat: no-repeat;
     color: #eedc30;
@@ -532,7 +532,7 @@ input[type="submit"] {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    background: linear-gradient(62deg, #19191d89 0%, #21201aa8 100%), url(../assets/img/TermsAndConditionBackgound.jpg);
+    background: url(../assets/img/TermsAndConditionBackgound.jpg);
     background-size: cover;
     color: #fff;
     padding-bottom: 16rem;
@@ -542,14 +542,12 @@ input[type="submit"] {
 .PrivcyAndPolicyBanner {
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
     background: url(../assets/img/PrivacyAndPolicybackground.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: right;
     color: #fff;
-    padding-bottom: 16rem;
     font-weight: 600;
+    min-height: 80vh;
 }
 
 .ContactUS.container {
@@ -706,6 +704,22 @@ input[type="submit"] {
     padding-top: 5rem;
 }
 
+.planCard {
+    transition: transform 0.2s;
+}
+
+.planCard:hover {
+    transform: scale(1.05);
+}
+
+.hide {
+    display: none !important;
+}
+
+.reqremFor {
+    margin-top: 15rem;
+}
+
 @media (max-width: 1000px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -748,7 +762,7 @@ input[type="submit"] {
     }
 
     .paddingForMain {
-        padding-left:0.10px;
+        padding-left: 0.10px;
     }
 
     .footerform {

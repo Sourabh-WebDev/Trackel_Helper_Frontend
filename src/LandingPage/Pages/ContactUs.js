@@ -67,10 +67,10 @@ const ContactUs = () => {
                         backgroundSize: 'cover',
                         backgroundPosition: 'top',
                         width: '100%',
-                        height: '110vh',
+                        height: '50vh',
                         backgroundColor: 'transparent',
-                        display: 'grid',
-                        placeItems: 'center'
+                        display:'flex',
+                        alignItems:'center'
                     }}
                     className="container-fluid"
                 >
@@ -97,7 +97,7 @@ const ContactUs = () => {
                                 referrerPolicy="no-referrer-when-downgrade"
                             ></iframe>
                         </Col>
-                        <Col xl="3" style={{ background: '#eedc30', color: '#142572', display: 'grid', placeItems: 'center' }}>
+                        <Col xl="3" style={{ background: '#eedc30', color: '#3d5ce8', display: 'grid', placeItems: 'center' }}>
                             <div className="text-center">
                                 <BsFillBuildingFill size={60} />
                                 <h4 className="py-5">OFFICE</h4>
@@ -107,7 +107,7 @@ const ContactUs = () => {
                                 </p>
                             </div>
                         </Col>
-                        <Col xl="3" style={{ background: '#142572', color: '#eedc30', display: 'grid', placeItems: 'center' }}>
+                        <Col xl="3" style={{ background: '#3d5ce8', color: '#eedc30', display: 'grid', placeItems: 'center' }}>
                             <div className="text-center">
                                 <BsMailbox size={60} />
                                 <h4 className="py-5">Contact Via</h4>
@@ -196,7 +196,7 @@ const ContactUs = () => {
             <section style={{ background: '#4b5ced' }} >
                 {/* Footer section */}
                 <div className="container-fluid contactUsPadding">
-                    <Footer />
+                    <Footer hide={'hide'} />
                 </div>
             </section>
         </>

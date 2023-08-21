@@ -46,10 +46,10 @@ const AboutUs = () => {
             backgroundSize: 'cover',
             backgroundPosition: 'bottom',
             width: '100%',
-            height: '100vh',
+            height: '50vh',
             backgroundColor: 'transparent',
-            display: 'grid',
-            placeItems: 'center'
+            display:'flex',
+            alignItems:'center'
           }}
           className="container-fluid"
         >
@@ -88,7 +88,7 @@ const AboutUs = () => {
       <section style={{ background: '#4b5ced' }} >
         {/* Footer section */}
         <div className="container-fluid aboutUsPadding">
-          <Footer />
+          <Footer paddingForm={'paddingForm'} reqrem={'reqremFor'} />
         </div>
       </section>
     </>

@@ -8,7 +8,7 @@ import { IoMdSend, IoSend } from "react-icons/io";
 import SeventhSection from './SeventhSection';
 import { Button, InputAdornment, TextField } from '@mui/material';
 
-const Footer = () => {
+const Footer = ({ hide, reqrem, paddingForm }) => {
 
     const [message, setMessage] = useState('');
 
@@ -44,8 +44,8 @@ const Footer = () => {
     };
 
     return (
-        <footer style={{ background: '#3d5ce8' }} className='text-center text-lg-start text-white paddingForm'>
-            <div className="footerform d-none d-sm-none d-md-none d-lg-block">
+        <footer style={{ background: '#3d5ce8' }} className={`text-center text-lg-start text-white ${paddingForm}`}>
+            <div className={`footerform d-none d-sm-none d-md-none d-lg-block ${hide}`}>
                 <Row>
                     <Col sm={12} xl='4' style={{ display: 'grid', placeItems: 'center' }}>
                         <div>
@@ -88,7 +88,7 @@ const Footer = () => {
                         </div>
                     </Col>
                     <Col sm={12} xl='4'>
-                        <div className="Enquiry container animate__animated animate__backInRight">
+                        <div className="Enquiry text-center container animate__animated animate__backInRight">
                             <b><h2 className='txtColour font-weight-bold p-1' >Enquiry Form</h2> </b>
                             <form className="pb-2 px-2" onSubmit={handleSubmit}>
                                 <div className="form-group">
@@ -149,7 +149,7 @@ const Footer = () => {
             </div>
             <section>
 
-                <SeventhSection />
+                <SeventhSection reqrem={reqrem} />
             </section>
             <section style={{ marginTop: '5px' }} className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
                 <div className='me-5 d-none d-lg-block'>
@@ -227,7 +227,7 @@ const Footer = () => {
                                 </a>
                             </p>
                             <p>
-                                <a href='/Our-All-Services' className='text-reset'>
+                                <a href='#services' className='text-reset'>
                                     Services
                                 </a>
                             </p>
@@ -264,9 +264,9 @@ const Footer = () => {
                     </Row>
                 </Container>
             </section>
-
-            <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-                © 2019 - {new Date().getFullYear()} All rights reserved | Helper Services
+            <div className='text-center p-2' style={{ backgroundColor: '#eedc30', color: '#142572' }}>
+                <b>Copyright © 2019 - {new Date().getFullYear()} All rights reserved | Helper Services</b>
+                <p>Designed & Developed By Trickle Solutions</p>
             </div>
         </footer>
     )
