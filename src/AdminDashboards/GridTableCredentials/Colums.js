@@ -1,3 +1,7 @@
+import { toggleButtonClasses } from "@mui/material";
+import { red } from "@mui/material/colors";
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
+
 export const columns = [
     { field: "id", headerName: "ID", flex: 1, minWidth: 100, editable: true },
     { field: "registrarId", headerName: "Customer ID", minWidth: 120, editable: true },
@@ -14,12 +18,36 @@ export const columns = [
         minWidth: 150,
         editable: true,
     },
+
     { field: "service", headerName: "Service Name", minWidth: 120, editable: true },
     { field: "servicedetails", headerName: "Service Details", minWidth: 150, editable: true },
     { field: "supervisor", headerName: "Supervisor", minWidth: 120, editable: true },
     { field: "serviceprovider", headerName: "Service Provider", minWidth: 150, editable: true },
     { field: "vehicleused", headerName: "Vehicle Used", minWidth: 120, editable: true },
-    { field: "billingamount", headerName: "Billing Amount", minWidth: 150, editable: true },
+    {
+        field: "billingamount", headerName: "Billing Amount", minWidth: 150,
+        renderCell: (params) => (
+
+            <p
+
+                className=""
+                style={{
+                    borderRadius: "5px",
+                    cursor: "pointer",
+                    color: "red",
+
+                }}
+
+
+            >
+                <Button color="danger" onClick={toggleButtonClasses}>
+                    Amount
+                </Button >
+                
+            </p>
+
+        ),
+    },
     { field: "paidamount", headerName: "Paid Amount", minWidth: 150, editable: true },
     { field: "balanceamount", headerName: "Balance Amount", minWidth: 150, editable: true },
     { field: "paymentmethod", headerName: "Payment Method", minWidth: 150, editable: true },
@@ -98,3 +126,25 @@ export const columns = [
         editable: true,
     },
 ];
+<div className="modal" id="myModal">
+    <div className="modal-dialog">
+        <div className="modal-content">
+
+
+            <div className="modal-header">
+                <h4 className="modal-title"> Modal Heading </h4>
+                <button type="button" className="close" data-dismiss="modal">&times;</button>
+            </div>
+
+
+            <div className="modal-body">
+                Modal body.
+            </div>
+
+            <div className="modal-footer">
+                <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>

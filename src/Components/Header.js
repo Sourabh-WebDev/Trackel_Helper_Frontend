@@ -75,7 +75,7 @@ function Header() {
                             <Nav.Link className='txtColour' href={`/YourProfile/${currentUser._id}`} >{currentUser.name}</Nav.Link>
                             <Nav.Link className='txtColour' ><Logout className='cursor-p' onClick={() => GetLogOut()} /></Nav.Link>
                         </> :
-                            <>
+                   <>
                                 <NavDropdown title='Login' id='nav-dropdown'>
                                     <NavDropdown.Item onClick={() => setLoginOpen(!LoginOpen)} eventKey='4.1'>Customer Login</NavDropdown.Item>
                                     <NavDropdown.Divider />
