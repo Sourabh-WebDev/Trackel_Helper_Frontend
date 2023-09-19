@@ -4,8 +4,6 @@ import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import { Button, Col, Row } from 'reactstrap';
 import Card from 'react-bootstrap/Card';
-import OfferSlider from './OfferSlider';
-import Done from '../../assets/gif/check-mark-verified-unscreen.gif';
 import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
 import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
 import SalonBanner from '../../assets/img/SalonBanner.jpg'
@@ -31,7 +29,7 @@ const ServicePage = () => {
 
     // State variables
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [requestDone, setRequestDone] = useState(false);
+    // const [requestDone, setRequestDone] = useState(false);
 
     const getSearchData = useSelector(state => state.GetSearchReducer)
 
@@ -50,11 +48,12 @@ const ServicePage = () => {
         const timer = setInterval(() => {
             // Increment the current image index
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+            console.log(currentImageIndex)
         }, 5000); // Change the image every 5 seconds
 
         // Cleanup the timer when the component is unmounted
         return () => clearInterval(timer);
-    }, []);
+    }, [images.length, currentImageIndex]);
 
     useEffect(() => {
         dispatch(GetSearchServices(search))
@@ -76,7 +75,7 @@ const ServicePage = () => {
                             height: '50vh',
                             display: 'flex',
                             // borderTop:'5px solid #3d5ce8',
-                            borderBottom:'5px solid #3d5ce8',
+                            borderBottom: '5px solid #3d5ce8',
                             alignItems: 'center',
                             background: 'linear-gradient(62deg, #eedc3063 100%, #eedb30a8 0%), url(https://servicemaster.qodeinteractive.com/wp-content/uploads/2017/02/about-us-parallax1.png)'
                         }}

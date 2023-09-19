@@ -54,27 +54,31 @@ const AdminExpenses = () => {
                             <TabPane tabId="head">
                                 <ManageHeadExpenses setActiveAttendance={setActiveAttendance} />
                             </TabPane>
-                            : userRole.AddExpense ?
-                                <TabPane tabId="expense">
-                                    <AddExpense setActiveAttendance={setActiveAttendance} />
-                                </TabPane>
-                                : userRole.AddCollections ?
-                                    <TabPane tabId="collection">
-                                        <AddCollections setActiveAttendance={setActiveAttendance} />
-                                    </TabPane>
-                                    : userRole.TodaysReport ?
-                                        <TabPane tabId="report">
-                                            <TodaysReport setActiveAttendance={setActiveAttendance} />
-                                        </TabPane>
-                                        : userRole.AllTransactionReport ?
-                                            <TabPane tabId="all">
-                                                <AllTransactionReport setActiveAttendance={setActiveAttendance} />
-                                            </TabPane>
-                                            : null}
+                            : null}
+                        {userRole && userRole.AddExpense ?
+                            < TabPane tabId="expense">
+                                <AddExpense setActiveAttendance={setActiveAttendance} />
+                            </TabPane> : null}
+                        {userRole && userRole.AddCollections ?
+                            <TabPane tabId="collection">
+                                <AddCollections setActiveAttendance={setActiveAttendance} />
+                            </TabPane>
+                            : null}
+                        {userRole && userRole.TodaysReport ?
+                            <TabPane tabId="report">
+                                <TodaysReport setActiveAttendance={setActiveAttendance} />
+                            </TabPane>
+                            : null}
+
+                        {userRole && userRole.AllTransactionReport ?
+                            <TabPane tabId="all">
+                                <AllTransactionReport setActiveAttendance={setActiveAttendance} />
+                            </TabPane>
+                            : null}
                     </TabContent>
                 </div>
             </div>
-        </Fragment>
+        </Fragment >
     )
 }
 
