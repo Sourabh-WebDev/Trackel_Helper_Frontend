@@ -67,9 +67,10 @@ function Header() {
                 <Navbar.Collapse>
                     <Nav className='ml-auto my-2 my-lg-0 text-center'>
 
-                        <Nav.Link className='txtColour' href='#action1'>Register As A Professional</Nav.Link>
-                        <Nav.Link className='txtColour' to='/About-Us'>About Us</Nav.Link>
-                        <Nav.Link className='txtColour' href='/Our-All-Services'>Services</Nav.Link>
+                        {/* <Nav.Link className='txtColour' href='#action1'>Register As A Professional</Nav.Link> */}
+                        <Nav.Link className='txtColour' href='/'>Home</Nav.Link>
+                        <Nav.Link className='txtColour' href='/About-Us'>About Us</Nav.Link>
+                        <Nav.Link className='txtColour' href='/'>Services</Nav.Link>
                         <Nav.Link className='txtColour' href='/Contact-Us'>Help</Nav.Link>
                         {currentUser !== null ? <>
                             <Nav.Link className='txtColour' href={`/YourProfile/${currentUser._id}`} >{currentUser.name}</Nav.Link>
