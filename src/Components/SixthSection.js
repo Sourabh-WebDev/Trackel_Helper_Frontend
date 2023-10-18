@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React from 'react'
 import { Card } from 'react-bootstrap';
 import Slider from "react-slick";
@@ -51,7 +52,7 @@ const SixthSection = () => {
 
     return (
         <div style={{ background: '#99DBF5', paddingTop: '5rem' }} className='text-center SixthSectionpadding d-none d-sm-none d-md-none d-lg-block'>
-            <h1 className='txtColour'>Our Team</h1>
+            <Typography variant='h3' className='txtColour' fontWeight={600}>Our Team</Typography>
             <Slider {...settings} className='text-center'>
 
                 <div className='SixthSectionAwesome d-flex justify-content-around gap-2 py-2'>

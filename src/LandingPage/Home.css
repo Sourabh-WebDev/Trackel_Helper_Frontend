@@ -229,11 +229,18 @@ body {
     line-height: 1.5;
     position: relative;
     color: #eedc30;
+    font-family: 'Cabin Sketch', sans-serif !important;
+    font-weight: 900;
+}
+
+.sketchFamily {
+    font-family: 'Cabin Sketch', sans-serif !important;
+    font-family: 600;
 }
 
 .BorderRadiusSearch {
     background: #fff;
-    border-radius: 15px 5px 5px 15px;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .FirstSectionImgStyle {
@@ -427,6 +434,18 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+}
+
+.fourthsectionCardHeading {
+    color: #eedc30;
+    font-family: 'Cabin Sketch', sans-serif !important;
+    font-weight: 700;
+}
+
+.fourthsectionCardSubHeading {
+    color: #3d5ce8;
+    font-family: 'Cabin Sketch', sans-serif !important;
+    font-weight: 800;
 }
 
 .footerform {

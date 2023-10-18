@@ -68,22 +68,23 @@ function Header() {
                     <Nav className='ml-auto my-2 my-lg-0 text-center'>
 
                         {/* <Nav.Link className='txtColour' href='#action1'>Register As A Professional</Nav.Link> */}
-                        <Nav.Link className='txtColour' href='/'>Home</Nav.Link>
-                        <Nav.Link className='txtColour' href='/About-Us'>About Us</Nav.Link>
-                        <Nav.Link className='txtColour' href='/'>Services</Nav.Link>
-                        <Nav.Link className='txtColour' href='/Contact-Us'>Help</Nav.Link>
+                        <Nav.Link className='txtColour' href='/'><b>Home</b></Nav.Link>
+                        <Nav.Link className='txtColour' href='/About-Us'><b>About Us</b></Nav.Link>
+                        <Nav.Link className='txtColour' href='/'><b>Services</b></Nav.Link>
+                        <Nav.Link className='txtColour' href='/Contact-Us'><b>Help</b></Nav.Link>
                         {currentUser !== null ? <>
                             <Nav.Link className='txtColour' href={`/YourProfile/${currentUser._id}`} >{currentUser.name}</Nav.Link>
                             <Nav.Link className='txtColour' ><Logout className='cursor-p' onClick={() => GetLogOut()} /></Nav.Link>
                         </> :
                             <>
-                                <NavDropdown title='Login' id='nav-dropdown'>
+                                <NavDropdown className='font-weight-bold' title='Login' id='nav-dropdown'>
                                     <NavDropdown.Item onClick={() => setLoginOpen(!LoginOpen)} eventKey='4.1'>Customer Login</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item onClick={() => navigate('/admin')} eventKey='4.2'>Office Login</NavDropdown.Item>
                                 </NavDropdown>
                             </>
                         }
+                        <Nav.Link className='txtColour'></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

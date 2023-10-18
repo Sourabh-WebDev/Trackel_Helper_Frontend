@@ -19,6 +19,7 @@ import Nurses from '../assets/img/Nurses.png'
 import { useNavigate } from 'react-router';
 import { Col, Row } from 'reactstrap';
 import { API_URL } from '../config';
+import { Typography } from '@mui/material';
 
 const SecondSection = ({ data }) => {
 
@@ -95,10 +96,10 @@ const SecondSection = ({ data }) => {
 
 
     return (
-        <div id='services' className="bgColour text-center pt-3 pb-5">
+        <div id='services' className="bgColour text-center pt-3 pb-4">
             <div className="text-center pb-3">
-                <h1 style={{ color: '#142572' }} >Our Services</h1>
-                <h5>Get our services at minimum cost in a required time at the best deal possible with granted good work.</h5>
+                <Typography variant='h4' sx={{ color: '#142572' }} fontWeight={800}>Our Services</Typography>
+                <Typography variant='h6' fontWeight={700} className='sketchFamily'>Get our services at minimum cost in a required time at the best deal possible with granted good work.</Typography>
             </div>
             <div className='bgColour'>
                 <div className="bgSecondSectionImg">
@@ -121,7 +122,7 @@ const SecondSection = ({ data }) => {
                                     <div className="border">
                                         <img className='w-100' height={150} src={item.image} />
                                         <Card.Body>
-                                            <Card.Title>{item.serviceName}</Card.Title>
+                                            <Card.Title className='sketchFamily'>{item.serviceName}</Card.Title>
                                         </Card.Body>
                                     </div>
                                 </Card>

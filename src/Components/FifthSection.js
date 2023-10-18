@@ -1,4 +1,4 @@
-import { Card } from '@mui/material';
+import { Card, Typography } from '@mui/material';
 import React from 'react'
 import Slider from "react-slick";
 
@@ -33,11 +33,11 @@ const FifthSection = () => {
 
     return (
         <div className='text-center p-4'>
-            <h2 style={{ color: '#eedc30' }} >Testimonial</h2>
+            <Typography variant='h4' sx={{ color: '#eedc30' }} fontWeight={800}>Testimonial</Typography>
             <Slider {...settings} className=''>
                 <div className='p-2'>
-                    <Card style={{ border: '5px solid #1c2575', textAlign: 'center' }}>
-                        <h4 className='text-primary p-2'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
+                    <Card style={{ border: '10px double #1c2575', textAlign: 'center', borderRadius:'10px' }}>
+                        <h4 className='text-primary sketchFamily p-2'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
                         <div className="d-flex justify-content-center ">
                             <center>
                                 <img width={80} height={80} className='rounded-circle border' src="https://cdn5.vectorstock.com/i/1000x1000/91/79/indian-woman-face-avatar-cartoon-vector-25919179.jpg" alt="female" />
@@ -47,8 +47,8 @@ const FifthSection = () => {
                     </Card>
                 </div>
                 <div className='p-2'>
-                    <Card style={{ border: '5px solid #1c2575', textAlign: 'center' }}>
-                        <h4 className='text-primary p-2'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
+                    <Card style={{ border: '10px double #1c2575', textAlign: 'center', borderRadius:'10px' }}>
+                        <h4 className='text-primary p-2 sketchFamily'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
                         <div className="d-flex justify-content-center ">
                             <center>
                                 <img width={80} height={80} className='rounded-circle border' src="https://cdn5.vectorstock.com/i/1000x1000/91/79/indian-woman-face-avatar-cartoon-vector-25919179.jpg" alt="female" />
@@ -58,8 +58,8 @@ const FifthSection = () => {
                     </Card>
                 </div>
                 <div className='p-2'>
-                    <Card style={{ border: '5px solid #1c2575', textAlign: 'center' }}>
-                        <h4 className='text-primary p-2'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
+                    <Card style={{ border: '10px double #1c2575', textAlign: 'center', borderRadius:'10px' }}>
+                        <h4 className='text-primary p-2 sketchFamily'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
                         <div className="d-flex justify-content-center ">
                             <center>
                                 <img width={80} height={80} className='rounded-circle border' src="https://cdn5.vectorstock.com/i/1000x1000/91/79/indian-woman-face-avatar-cartoon-vector-25919179.jpg" alt="female" />
@@ -69,8 +69,8 @@ const FifthSection = () => {
                     </Card>
                 </div>
                 <div className='p-2'>
-                    <Card style={{ border: '5px solid #1c2575', textAlign: 'center' }}>
-                        <h4 className='text-primary p-2'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
+                    <Card style={{ border: '10px double #1c2575', textAlign: 'center', borderRadius:'10px' }}>
+                        <h4 className='text-primary p-2 sketchFamily'>“I got my AC repaired from them they are so good that they repaired my AC within a day and didn't charge any extra.”</h4>
                         <div className="d-flex justify-content-center ">
                             <center>
                                 <img width={80} height={80} className='rounded-circle border' src="https://cdn5.vectorstock.com/i/1000x1000/91/79/indian-woman-face-avatar-cartoon-vector-25919179.jpg" alt="female" />

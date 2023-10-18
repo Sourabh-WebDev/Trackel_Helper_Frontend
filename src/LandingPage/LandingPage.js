@@ -103,13 +103,13 @@ const LandingPage = () => {
         <BsFillTelephoneFill size={25} />
       </Button>
 
-      <Offcanvas className='bg-warning' placement={'end'} show={show} onHide={handleClose}>
+      <Offcanvas className='bg-light' placement={'end'} show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
         </Offcanvas.Header>
         <Offcanvas.Body >
           <Row>
             <Col sm={12} xl='12'>
-              <div className="Enquiry container">
+              <div className="Enquiry container text-center">
                 <b><h2 className='txtColour font-weight-bold p-1' >Enquiry Form</h2> </b>
                 <form className="pb-2 px-2" onSubmit={handleSubmit}>
                   <div className="form-group">

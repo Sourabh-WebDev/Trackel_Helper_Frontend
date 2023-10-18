@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Autocomplete, FormControl, Grid, InputAdornment, MenuItem, Select, TextField } from '@mui/material';
+import { Autocomplete, Button, FormControl, Grid, InputAdornment, MenuItem, Select, TextField } from '@mui/material';
 import { Search } from '@mui/icons-material';
 
 const FirstSection = () => {
@@ -9,56 +9,54 @@ const FirstSection = () => {
     const handleLocationChange = (event) => {
         setLocation(event.target.value);
     };
+
+    const top100Films = [
+        { label: 'The Shawshank Redemption', year: 1994 },
+        { label: 'The Godfather', year: 1972 },
+        { label: 'The Godfather: Part II', year: 1974 },
+        { label: 'The Dark Knight', year: 2008 },
+    ]
     return (
         <>
             <div className="animate__animated animate__backInLeft" style={{ height: '500px', display: 'grid', placeItems: 'center' }}>
                 <div>
                     <h1 className='FirstSectionHeadinng'>Home services, on demand. 👇</h1>
 
-                    <FormControl className='BorderRadiusSearch' fullWidth variant="outlined">
+                    <FormControl className='BorderRadiusSearch' fullWidth>
                         <Grid container spacing={0}>
-                            <Grid item xs={12} sm={4} md={6} lg={2} xl={2}>
+                            <Grid item xs={12} sm={4} md={6} lg={3} xl={3}>
                                 <Select
                                     fullWidth
                                     value={location}
                                     onChange={handleLocationChange}
                                     displayEmpty
+                                    variant='filled'
                                     inputProps={{ 'aria-label': 'Location' }}
                                     sx={{ borderRadius: '0px' }}
                                 >
                                     <MenuItem value="" disabled>
                                         Select Location
                                     </MenuItem>
-                                    <MenuItem value="location1">Location 1</MenuItem>
-                                    <MenuItem value="location2">Location 2</MenuItem>
+                                    <MenuItem value="location1">Ashiyana</MenuItem>
+                                    {/* <MenuItem value="location2">Location 2</MenuItem> */}
                                     {/* Add more locations as needed */}
                                 </Select>
                             </Grid>
-                            <Grid item xs={12} sm={8} md={6} lg={10} xl={10} >
+                            <Grid item xs={12} sm={8} md={6} lg={9} xl={9} >
                                 <Autocomplete
-                                    id="search-autocomplete"
-                                    freeSolo
-                                    options={[]}
-                                    renderInput={(params) => (
-                                        <TextField
-                                            {...params}
-                                            fullWidth
-                                            placeholder="Search..."
-                                            sx={{ borderRadius: '0px' }}
-                                            InputProps={{
-                                                ...params.InputProps,
-                                                endAdornment: (
-                                                    <InputAdornment position="end">
-                                                        <Search color='#eedc30' />
-                                                    </InputAdornment>
-                                                ),
-                                            }}
-                                        />
-                                    )}
+                                    disablePortal
+                                    id="combo-box-demo"
+                                    options={top100Films}
+                                    // sx={{ width: 300 }}
+                                    renderInput={(params) => <TextField {...params} variant='filled' placeholder='Select or Type Service Name' />}
                                 />
                             </Grid>
                         </Grid>
                     </FormControl>
+
+                    <div className="text-center mt-2">
+                        <Button sx={{ color: '#eedc30' }} variant='contained'>Search Now</Button>
+                    </div>
                 </div>
             </div>
         </>

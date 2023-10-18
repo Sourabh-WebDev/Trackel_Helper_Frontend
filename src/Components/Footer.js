@@ -157,13 +157,13 @@ const Footer = ({ hide, reqrem, paddingForm }) => {
                 </div>
 
                 <div>
-                    <a href='' className='mr-4 text-reset'>
+                    <a href='https://www.facebook.com/mytotal.helper?ref=br_rs' className='mr-4 text-reset'>
                         <FaFacebook />
                     </a>
                     <a href='' className='mr-4 text-reset'>
                         <FaTwitter />
                     </a>
-                    <a href='' className='mr-4 text-reset'>
+                    <a href='mailto:helperforyourservices@gmail.com' className='mr-4 text-reset'>
                         <FaGoogle />
                     </a>
                     <a href='' className='mr-4 text-reset'>
@@ -188,27 +188,27 @@ const Footer = ({ hide, reqrem, paddingForm }) => {
                         <Col md="2" lg="2" xl="2" className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Services</h6>
                             <p>
-                                <a href='/ServicePage' className='text-reset'>
+                                <a href={`ServicePage?serviceName=Electrician`} className='text-reset'>
                                     Electrician
                                 </a>
                             </p>
                             <p>
-                                <a href='/ServicePage' className='text-reset'>
+                                <a href={`ServicePage?serviceName=Plumber`} className='text-reset'>
                                     Plumber
                                 </a>
                             </p>
                             <p>
-                                <a href='/ServicePage' className='text-reset'>
+                                <a href={`ServicePage?serviceName=Car Washing`} className='text-reset'>
                                     Car Washing
                                 </a>
                             </p>
                             <p>
-                                <a href='/ServicePage' className='text-reset'>
+                                <a href={`ServicePage?serviceName=Travels & Driver`} className='text-reset'>
                                     Travels & Driver
                                 </a>
                             </p>
                             <p>
-                                <a href='/ServicePage' className='text-reset'>
+                                <a href={`ServicePage?serviceName=Security Gaurd`} className='text-reset'>
                                     Security Gaurd
                                 </a>
                             </p>
@@ -247,15 +247,18 @@ const Footer = ({ hide, reqrem, paddingForm }) => {
                             <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
                             <p>
                                 <FaHome className="mr-2" />
-                                A/1412, Sector- I Ashiyana LDA Colony Near
-                                Pakripool Lucknow – 226012, UP, India
+                                A/1412, Sector- I Ashiyana, LDA Colony Near
+                                Pakripool, Lucknow, 226012, UP, India
                             </p>
-                            <p className='d-none d-lg-none d-xl-block'>
+                            <p className='d-none d-lg-none d-xl-block text-nowrap'>
                                 <FaEnvelope className="mr-2" />
                                 helperforyourservices@gmail.com
                             </p>
                             <p className=''>
-                                <FaPhone className="mr-2" /> 0522-4300589, 0522-4330641
+                                <FaPhone className="mr-2" /> 0522-4300589
+                            </p>
+                            <p className=''>
+                                <FaPhone className="mr-2" /> 0522-4330641
                             </p>
                             {/* <p>
                                 <FaPrint className="me-3" /> + 01 234 567 89
