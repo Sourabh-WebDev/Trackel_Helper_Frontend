@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import Avatar from '@mui/material/Avatar';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
+import HelperDash from '../../../assets/img/HelperDash.jpg'
+import WeLogo from '../../../assets/img/we_logo.png'
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useAuth } from '../../../Context/userAuthContext';
 import { useState } from 'react';
 import { roles } from '../../../config';
@@ -23,17 +21,9 @@ import { useUserRoleContext } from '../../../Context/RolesContext';
 function AdminSignIn() {
 
     const location = useLocation()
-    const navigate = useNavigate()
     const [selectedRole, setSelectedRole] = useState(roles.super);
-
-
-
     const { UserRoleCalled } = useUserRoleContext();
-
-    const { currentUser, setCurrentUser, getUserLogIn } = useAuth();
-
-    // TODO remove, this demo shouldn't need to reset the theme.
-    const defaultTheme = createTheme();
+    const { currentUser, getUserLogIn } = useAuth();
 
     if (currentUser) {
         if (location.pathname === '/admin') {
@@ -56,38 +46,25 @@ function AdminSignIn() {
         })
     }
 
-
-
     return (
-        <ThemeProvider theme={defaultTheme}>
-            <Container component="main" maxWidth="xs">
-                <CssBaseline />
-                <Box
-                    sx={{
-                        marginTop: 8,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                    }}
-                >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Sign in
-                    </Typography>
-                    {/* role select */}
-                    <Box>
-                        <Button className='w-50 text-nowrap' onClick={() => setSelectedRole(roles.super)} variant={selectedRole === roles.super ? "contained" : 'outlined'} color='primary'>Super Admin Login</Button>
-                        <Button className='w-50 text-nowrap' onClick={() => setSelectedRole(roles.admin)} variant={selectedRole === roles.admin ? "contained" : 'outlined'} color='primary'>Admin Login</Button>
-                        <Button className='w-50 text-nowrap' onClick={() => setSelectedRole(roles.supervisor)} variant={selectedRole === roles.supervisor ? "contained" : 'outlined'} color='primary'>Supervisor Login</Button>
-                        <Button className='w-50 text-nowrap' onClick={() => setSelectedRole(roles.service)} variant={selectedRole === roles.service ? "contained" : 'outlined'} color='primary'>Service Provider Login</Button>
-                        <Button className='w-50 text-nowrap' onClick={() => setSelectedRole(roles.office)} variant={selectedRole === roles.office ? "contained" : 'outlined'} color='primary'>Back Office Login</Button>
-                    </Box>
-
+        <Container sx={{ display: 'grid', placeItems: 'center' }}>
+            <Grid container spacing={1} mt={10}>
+                <Grid item lg={4}>
+                    <img className='animate__animated animate__backInLeft' src={HelperDash} width={450} alt="..." />
+                </Grid>
+                <Grid className='animate__animated animate__zoomIn' item lg={4}>
+                    <div className="text-center">
+                        <img src={WeLogo} alt="Logo" />
+                        <Typography fontWeight={600} sx={{ mt: 1 }} variant="h5">
+                            {
+                                selectedRole === 'super' ? 'Super Admin ' : selectedRole === 'admin' ? 'Admin ' : selectedRole === 'supervisor' ? 'Supervisor ' : selectedRole === 'service' ? 'Service Provider ' : selectedRole === 'office' && 'Office '
+                            }
+                            Sign in
+                        </Typography>
+                    </div>
                     <Formik initialValues={LoginData} onSubmit={OnLoginSubmit} enableReinitialize>
                         {({ values, handleChange, handleSubmit }) => (
-                            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 0.5 }}>
                                 <TextField
                                     margin="normal"
                                     required
@@ -134,10 +111,18 @@ function AdminSignIn() {
                             </Box>
                         )}
                     </Formik>
-
-                </Box>
-            </Container>
-        </ThemeProvider>
+                </Grid>
+                <Grid item lg={4} sx={{ display: 'grid', placeItems: 'center' }}>
+                    <div className="d-flex animate__animated animate__bounceInRight flex-column gap-4">
+                        <Button onClick={() => setSelectedRole(roles.super)} variant={selectedRole === roles.super ? "contained" : 'outlined'} color='primary'>Super Admin Login</Button>
+                        <Button onClick={() => setSelectedRole(roles.admin)} variant={selectedRole === roles.admin ? "contained" : 'outlined'} color='primary'>Admin Login</Button>
+                        <Button onClick={() => setSelectedRole(roles.supervisor)} variant={selectedRole === roles.supervisor ? "contained" : 'outlined'} color='primary'>Supervisor Login</Button>
+                        <Button onClick={() => setSelectedRole(roles.service)} variant={selectedRole === roles.service ? "contained" : 'outlined'} color='primary'>Service Provider Login</Button>
+                        <Button onClick={() => setSelectedRole(roles.office)} variant={selectedRole === roles.office ? "contained" : 'outlined'} color='primary'>Back Office Login</Button>
+                    </div>
+                </Grid>
+            </Grid>
+        </Container>
     );
 }
 
