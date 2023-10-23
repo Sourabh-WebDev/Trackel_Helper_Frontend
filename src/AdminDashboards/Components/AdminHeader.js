@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa'
-import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, PopoverBody, PopoverHeader, Row, UncontrolledPopover } from 'reactstrap'
+import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'reactstrap'
 import "../AdminDashboard.css"
 import { useAuth } from '../../Context/userAuthContext'
-import { CgUser } from 'react-icons/cg'
 import { FiLogOut, FiUser } from 'react-icons/fi'
 import Swal from 'sweetalert2'
+import { isMobile } from 'react-device-detect'
 
 const AdminHeader = () => {
 
@@ -33,7 +33,7 @@ const AdminHeader = () => {
     return (
         <Fragment>
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="/">
                     <img src="https://mytotalhelper.com/webcss/images/logo.jpg" alt="" />
                 </a>
@@ -41,12 +41,12 @@ const AdminHeader = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <Dropdown className='ml-auto' isOpen={dropdownOpen} toggle={toggleDropdown}>
+                    <Dropdown className='ml-lg-auto px-2' isOpen={dropdownOpen} toggle={toggleDropdown}>
                         <DropdownToggle className='dropdownMenu-btn-header' >
-                            <div id="drop-menu" className="AdminDash_UserInfo d-flex align-items-center justify-content-end   gap-3">
-                                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
-                                <div>
-                                    <h6>{currentUser && currentUser.name ? currentUser.name : "yourName "}</h6>
+                            <div id="drop-menu" className="AdminDash_UserInfo d-flex align-items-center">
+                                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=".." />
+                                <div className='mx-1'>
+                                    <h6 className='d-none d-md-block'>{currentUser && currentUser.name ? currentUser.name : "yourName "}</h6>
                                     <small>{currentUser && currentUser.role ? currentUser.role : ""}</small>
                                 </div>
                                 <FaChevronDown />
@@ -59,25 +59,25 @@ const AdminHeader = () => {
                         </DropdownMenu>
                     </Dropdown>
                 </div>
-            </nav>
+            </nav> */}
 
 
-            {/* <div className='AdminDashbaord_Header shadow border-bottom'>
+            <div className='shadow border-bottom'>
                 <Row>
-                    <Col md={6} className='d-flex align-items-center justify-content-start'>
+                    <Col sm={6} lg={6} className={isMobile ? 'd-flex align-items-center justify-content-center' : 'd-flex align-items-center justify-content-start'}>
                         <div className="helperLogo">
-                            <img src="https://mytotalhelper.com/webcss/images/logo.jpg" alt="" />
+                            <img width={'150px'} src="https://mytotalhelper.com/webcss/images/logo.jpg" alt="" />
                         </div>
                     </Col>
 
-                    <Col md={6} className='d-flex justify-content-end'>
+                    <Col sm={6} lg={6} className={isMobile ? 'd-flex justify-content-center' : 'd-flex justify-content-end'}>
 
                         <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
                             <DropdownToggle className='dropdownMenu-btn-header' >
                                 <div id="drop-menu" className="AdminDash_UserInfo d-flex align-items-center justify-content-end   gap-3">
-                                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
-                                    <div>
-                                        <h6>{currentUser && currentUser.name ? currentUser.name : "yourName "}</h6>
+                                    <img width={'100px'} src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+                                    <div className=''>
+                                        <h6 className='d-none d-md-block'>{currentUser && currentUser.name ? currentUser.name : "yourName "}</h6>
                                         <small>{currentUser && currentUser.role ? currentUser.role : ""}</small>
                                     </div>
                                     <FaChevronDown />
@@ -91,7 +91,7 @@ const AdminHeader = () => {
                         </Dropdown>
                     </Col>
                 </Row>
-            </div> */}
+            </div>
 
         </Fragment>
     )

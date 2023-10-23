@@ -22,7 +22,7 @@ const FirstSection = () => {
                 <div>
                     <h1 className='FirstSectionHeadinng'>Home services, on demand. 👇</h1>
 
-                    <Grid container bgcolor={'#fff'} spacing={0}>
+                    <Grid container bgcolor={'#fff'} className='rounded' spacing={0}>
                         <Grid item xs={12} sm={4} md={6} lg={3} xl={3}>
                             <Select
                                 fullWidth
@@ -31,24 +31,23 @@ const FirstSection = () => {
                                 // variant='filled'
                                 displayEmpty
                                 inputProps={{ 'aria-label': 'Location' }}
-                                sx={{ borderRadius: '0px' }}
+                                sx={{ borderRadius: '6px 0px 0px 6px' }}
                             >
                                 <MenuItem value="" disabled>
                                     Select Location
                                 </MenuItem>
                                 <MenuItem value="location1">Ashiyana</MenuItem>
-                                {/* <MenuItem value="location2">Location 2</MenuItem> */}
+                                <MenuItem value="location2">Alambagh</MenuItem>
                                 {/* Add more locations as needed */}
                             </Select>
                         </Grid>
                         <Grid item xs={12} sm={8} md={6} lg={9} xl={9} >
                             <Autocomplete
                                 disablePortal
-                                id="combo-box-demo"
-                                sx={{ borderRadius: '0px' }}
+                                sx={{ borderRadius: '0px 6px 6px 0px' }}
                                 options={top100Films}
                                 // sx={{ width: 300 }}
-                                renderInput={(params) => <TextField {...params} placeholder='Select or Type Service Name' />}
+                                renderInput={(params) => <TextField sx={{ borderRadius: '0px 6px 6px 0px' }} {...params} placeholder='Select or Type Service Name' />}
                             />
                         </Grid>
                     </Grid>

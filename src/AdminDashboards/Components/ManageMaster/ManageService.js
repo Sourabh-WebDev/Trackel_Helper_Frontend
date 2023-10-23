@@ -1,19 +1,19 @@
 import { GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid';
 import React, { Fragment, useEffect, useState } from 'react'
-import { Button } from 'reactstrap';
-import { mockDataContacts } from '../../data/mockData';
 import { useSelector, useDispatch } from "react-redux";
-import * as ALlIcon from "react-icons/fa"
 import MasterAddService from './Form/MasterAddService';
 import ModalComponent from '../../Elements/ModalComponent';
 import AdminDataTable from '../../Elements/AdminDataTable';
-import GetAllServicesReducer from '../../../Store/Reducers/Dashboard/GetAllServicesReducer';
 import { GetAllServices } from '../../../Store/Actions/Dashboard/servicesAction';
-import DeleterTheServiceReducer from '../../../Store/Reducers/Dashboard/DeleteServiceReducer';
 import { DeleteService } from '../../../Store/Actions/Dashboard/servicesAction';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
 import Swal from 'sweetalert2';
 import moment from 'moment/moment';
 import { API_URL } from '../../../config';
+import { Button } from '@mui/material';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import BlockIcon from '@mui/icons-material/Block';
 
 const ManageService = () => {
 
@@ -23,9 +23,9 @@ const ManageService = () => {
     const [deleteSuccess, setDeleteSuccess] = useState(false); // New state variable
 
 
-    const { isSuccess, data } = useSelector(pre => pre.GetAllServicesReducer)
+    const { data } = useSelector(pre => pre.GetAllServicesReducer)
     // service reducere
-    const DeletResult = useSelector(pre => pre.DeleterTheServiceReducer)
+    // const DeletResult = useSelector(pre => pre.DeleterTheServiceReducer)
 
     const DataWithID = (data) => {
         const NewData = []
@@ -38,10 +38,10 @@ const ManageService = () => {
         }
         return NewData
     }
-    const IconWrapper = ({ icon }) => {
-        const IconComponent = ALlIcon[icon];
-        return IconComponent ? <IconComponent /> : null;
-    };
+    // const IconWrapper = ({ icon }) => {
+    //     const IconComponent = ALlIcon[icon];
+    //     return IconComponent ? <IconComponent /> : null;
+    // };
 
     const handleDeleteServices = (id) => {
 
@@ -78,19 +78,21 @@ const ManageService = () => {
         { field: "id", headerName: "Sr No", flex: 1, minWidth: 50 },
         // { field: "refName", headerName: "Ref Name", minWidth: 120, editable: true },
         { field: "date", headerName: "Date", minWidth: 160 },
-        { field: "serviceName", headerName: "Service Name", minWidth: 400, editable: true },
+        { field: "serviceName", headerName: "Service Name", minWidth: 200, editable: true },
         {
             field: "icon", headerName: "Icon", minWidth: 120, renderCell: (params) => {
-                return <img src={`${API_URL}/uploads/${params.value}`} />;
+                return <img src={`${API_URL}/uploads/${params.value}`} alt='icon' style={{ width: 100, height: 50 }} />;
             }
         },
         {
             field: "image", headerName: "Image", minWidth: 120, renderCell: (params) => (
-                <img src={API_URL + "/uploads/" + params.value} alt="Image" style={{ width: 100, height: 100 }} />
+                <div>
+                    <img src={API_URL + "/uploads/" + params.value} alt="Image" style={{ width: 100, height: 50 }} />
+                </div>
             )
         },
         {
-            field: "details", headerName: 'Service Details', minWidth: 300, innerHeight: 200
+            field: "details", headerName: 'Service Details', minWidth: 200, innerHeight: 200
         },
         // { field: "mobileNumber", headerName: "Mobile No.", minWidth: 120, editable: true },
         // { field: "email", headerName: "Email", minWidth: 120, editable: true },
@@ -112,22 +114,26 @@ const ManageService = () => {
             minWidth: 250,
             renderCell: (params) => (
                 <div className="d-flex gap-2">
-                    <Button className="text-white bg-blue">Edit</Button>
-                    <Button className="text-white bg-green">View</Button>
-                    <Button onClick={() => handleDeleteServices(params.id)} className="text-white bg-red">Delete</Button>
+                    <Button variant='contained' color='primary'><BorderColorIcon /></Button>
+                    <Button variant="contained" color="success">
+                        <VisibilityIcon />
+                    </Button>
+                    <Button onClick={() => handleDeleteServices(params.id)} variant="contained" color="error">
+                        <DeleteForeverIcon />
+                    </Button>
                 </div>
             ),
         },
         {
             field: "block",
             headerName: "Block",
-            minWidth: 250,
+            minWidth: 100,
             renderCell: (params) => (
                 <div className="d-flex gap-2">
                     {Block ?
                         <Button className="text-white bg-warning border-warning" onClick={() => setBlock(false)}>Un-Block</Button>
                         :
-                        <Button className="text-white bg-red" onClick={() => setBlock(true)}>Block Service</Button>
+                        <Button variant="contained" color="error" onClick={() => setBlock(true)}><BlockIcon /></Button>
                     }
                 </div>
             ),

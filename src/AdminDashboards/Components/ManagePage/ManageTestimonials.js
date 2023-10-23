@@ -1,11 +1,14 @@
-import { Box } from '@mui/material';
-import { DataGrid, GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid';
+import { GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid';
 import React, { Fragment, useState } from 'react'
-import { Button } from 'reactstrap';
 import { mockDataContacts } from '../../data/mockData';
 import AddTestimonialForm from './Forms/AddTestimonialForm';
 import ModalComponent from '../../Elements/ModalComponent';
 import AdminDataTable from '../../Elements/AdminDataTable';
+import VisibilityIcon from '@mui/icons-material/Visibility'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import BlockIcon from '@mui/icons-material/Block'
+import BorderColorIcon from '@mui/icons-material/BorderColor'
+import { Button } from '@mui/material';
 
 const ManageTestimonials = () => {
     const [Block, setBlock] = useState(false)
@@ -34,25 +37,29 @@ const ManageTestimonials = () => {
         {
             field: "action",
             headerName: "Action",
-            minWidth: 250,
+            minWidth: 220,
             renderCell: (params) => (
                 <div className="d-flex gap-2">
-                    <Button className="text-white bg-blue">Edit</Button>
-                    <Button className="text-white bg-green">View</Button>
-                    <Button className="text-white bg-red">Delete</Button>
+                    <Button variant='contained' color='primary'><BorderColorIcon /></Button>
+                    <Button variant="contained" color="success">
+                        <VisibilityIcon />
+                    </Button>
+                    <Button variant="contained" color="error">
+                        <DeleteForeverIcon />
+                    </Button>
                 </div>
             ),
         },
         {
             field: "block",
             headerName: "Block",
-            minWidth: 250,
+            minWidth: 100,
             renderCell: (params) => (
                 <div className="d-flex gap-2">
                     {Block ?
                         <Button className="text-white bg-warning border-warning" onClick={() => setBlock(false)}>Un-Block</Button>
                         :
-                        <Button className="text-white bg-red" onClick={() => setBlock(true)}>Block</Button>
+                        <Button variant="contained" color="error" onClick={() => setBlock(true)}><BlockIcon /></Button>
                     }
                 </div>
             ),

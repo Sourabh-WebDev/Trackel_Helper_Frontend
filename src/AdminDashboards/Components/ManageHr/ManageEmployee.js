@@ -1,9 +1,10 @@
 import React, { Fragment, useEffect, useState } from 'react'
-
-import { DataGrid, GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid'
-import { Box } from '@mui/material'
-import { mockDataContacts } from '../../data/mockData'
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
+import VisibilityIcon from '@mui/icons-material/Visibility'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import BlockIcon from '@mui/icons-material/Block'
+import BorderColorIcon from '@mui/icons-material/BorderColor'
+import { GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid'
+import { Modal, ModalBody, ModalHeader } from 'reactstrap'
 import { useNavigate } from 'react-router-dom/dist'
 import AdminDataTable from '../../Elements/AdminDataTable'
 import ModalComponent from '../../Elements/ModalComponent'
@@ -12,6 +13,7 @@ import AdminEditEmploye from './Forms/AdminEditEmploye'
 import { useDispatch, useSelector } from 'react-redux'
 import { GetAllEmployeeAction } from '../../../Store/Actions/Dashboard/EmployeeActions/GetAllEmployee'
 import moment from 'moment'
+import { Button } from '@mui/material'
 
 const ManageEmployee = () => {
 
@@ -38,21 +40,21 @@ const ManageEmployee = () => {
     }, [])
 
     const [Block, setBlock] = useState(false)
-    
+
     const [modal, setModal] = useState(false);
 
     const toggle = () => setModal(!modal);
     const ModalForEdit = () => {
 
-      
-        return(
+
+        return (
 
             <Modal isOpen={modal} toggle={toggle} >
-            <ModalHeader toggle={toggle}> Edit Empy Form</ModalHeader>
-            <ModalBody>
-                <AdminEditEmploye closeModal={toggle}/>
-            </ModalBody>
-          </Modal>
+                <ModalHeader toggle={toggle}> Edit Empy Form</ModalHeader>
+                <ModalBody>
+                    <AdminEditEmploye closeModal={toggle} />
+                </ModalBody>
+            </Modal>
         )
     }
 
@@ -78,25 +80,29 @@ const ManageEmployee = () => {
         {
             field: "action",
             headerName: "Action",
-            minWidth: 250,
+            minWidth: 220,
             renderCell: (params) => (
                 <div className="d-flex gap-2">
-                    <Button onClick={toggle} className="text-white bg-blue">Edit</Button>
-                    <Button className="text-white bg-green">View</Button>
-                    <Button className="text-white bg-red">Delete</Button>
+                    <Button onClick={toggle} variant='contained' color='primary'><BorderColorIcon /></Button>
+                    <Button variant="contained" color="success">
+                        <VisibilityIcon />
+                    </Button>
+                    <Button variant="contained" color="error">
+                        <DeleteForeverIcon />
+                    </Button>
                 </div>
             ),
         },
         {
             field: "block",
             headerName: "Block",
-            minWidth: 250,
+            minWidth: 100,
             renderCell: (params) => (
                 <div className="d-flex gap-2">
                     {Block ?
                         <Button className="text-white bg-warning border-warning" onClick={() => setBlock(false)}>Un-Block</Button>
                         :
-                        <Button className="text-white bg-red" onClick={() => setBlock(true)}>Block Employee</Button>
+                        <Button variant="contained" color="error" onClick={() => setBlock(true)}><BlockIcon /></Button>
                     }
                 </div>
             ),
@@ -133,7 +139,7 @@ const ManageEmployee = () => {
             <div className='p-4'>
                 <AdminDataTable rows={DataWithID(data)} columns={column} CustomToolbar={CustomToolbar} />
             </div>
-            <ModalForEdit/>
+            <ModalForEdit />
         </Fragment>
     )
 }

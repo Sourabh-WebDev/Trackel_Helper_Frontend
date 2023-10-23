@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid';
-import { mockDataContacts } from '../../data/mockData';
-import { Button } from 'reactstrap';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AddExpensesForm from './Forms/AddExpensesForm';
 import ModalComponent from '../../Elements/ModalComponent';
 import AdminDataTable from '../../Elements/AdminDataTable';
@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GetAllHeadExp, GetDeleteHeadExp } from '../../../Store/Actions/Dashboard/expenseActions';
 import moment from 'moment';
 import Swal from 'sweetalert2';
+import { Button } from '@mui/material';
 
 const ManageHeadExpenses = () => {
 
@@ -70,12 +71,12 @@ const ManageHeadExpenses = () => {
 
     const column = [
         { field: "id", headerName: "Sr No", flex: 1, minWidth: 50, editable: true },
-        { field: "expName", flex: 1, headerName: "Name", minWidth: 120, editable: true },
+        { field: "expName", flex: 1, headerName: "Name", minWidth: 50, editable: true },
         {
-            field: "action ", flex: 1, headerName: "Action", minWidth: 120, renderCell: (params) => (
+            field: "action ", flex: 1, headerName: "Action", minWidth: 50, renderCell: (params) => (
                 <div className='d-flex align-items-center gap-2 justify-content-start'>
-                    <Button className='text-white bg-blue' >Edit</Button>
-                    <Button className='text-white bg-red' onClick={() => { DeleteById(params.row._id) }} >Delete</Button>
+                    <Button variant='contained' color='primary'><BorderColorIcon /></Button>
+                    <Button variant="contained" color="error" onClick={() => { DeleteById(params.row._id) }} ><DeleteForeverIcon /></Button>
                 </div>
             )
         },

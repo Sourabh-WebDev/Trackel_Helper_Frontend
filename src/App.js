@@ -17,14 +17,12 @@ import AdminManageMaster from './AdminDashboards/Components/ManageMaster';
 import AdminManageWebsite from './AdminDashboards/Components/ManagePage';
 import AdminCustomerManage from './AdminDashboards/Components/Customer';
 import AdminRolesAndPermission from './AdminDashboards/Components/RolesAndPermission';
-import { useUserRoleContext } from './Context/RolesContext';
 import Profile from './AdminDashboards/Components/profile/Profile';
 import AdminPannel from './AdminDashboards/AdminPannel';
 import ProfileHistory from './LandingPage/Pages/ProfileHistory';
 
 
 function App() {
-  const { userRole, setUserRole } = useUserRoleContext()
 
   return (
     <BrowserRouter>

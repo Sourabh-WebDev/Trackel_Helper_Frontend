@@ -3,8 +3,6 @@ import Navbar from '../../Components/Navbar';
 import Header from '../../Components/Header';
 import Card from 'react-bootstrap/Card';
 import Footer from '../../Components/Footer';
-import { Col, Row } from 'reactstrap';
-import AboutUsImg from '../../assets/img/AboutUs.png';
 
 const WhyChooseUs = () => {
     // State to keep track of the current image index
@@ -72,37 +70,37 @@ const WhyChooseUs = () => {
 
                     <div className="hero-section">
                         <div className="card-grid">
-                            <a href="#" className=" whyCard card">
+                            <div className=" whyCard card">
                                 <div className="card__bg" style={{ backgroundImage: "url(https://news.euspert.com/wp-content/uploads/2018/12/pic-650x492.jpg)" }}></div>
                                 <div className="card__content">
                                     <h3 className="card__heading">EXPERIENCED PROFESSIONALS</h3>
                                     <p className="card__category">Choose us always because we know our work well.</p>
                                 </div>
-                            </a>
+                            </div>
 
-                            <a href="#" className=" whyCard card">
+                            <div className=" whyCard card">
                                 <div className="card__bg" style={{ backgroundImage: "url(https://timeular.com/wp-content/uploads/2022/11/time-clock-work.jpg)" }}></div>
                                 <div className="card__content">
                                     <h3 className="card__heading">FAST WORK</h3>
                                     <p className="card__category">We assure you recive very fast service and you get all the things done within no time.</p>
                                 </div>
-                            </a>
+                            </div>
 
-                            <a href="#" className=" whyCard card">
+                            <div className=" whyCard card">
                                 <div className="card__bg" style={{ backgroundImage: "url(https://img.freepik.com/free-vector/guarantee-best-quality-stamp_1017-7145.jpg?w=2000)" }}></div>
                                 <div className="card__content">
                                     <p className="card__category">QUALITY GUARANTEE</p>
                                     <h3 className="card__heading">We guarantee you recived best services.</h3>
                                 </div>
-                            </a>
+                            </div>
 
-                            <a href="#" className=" whyCard card">
+                            <div className=" whyCard card">
                                 <div className="card__bg" style={{ backgroundImage: "url(https://fonolo.com/wp-content/uploads/2016/03/A-Guide-to-247-Customer-Service-1.jpg)" }}></div>
                                 <div className="card__content">
                                     <h3 className="card__heading">12x7 SERVICE AVAILABLE</h3>
                                     <p className="card__category">We are 12*7 available to you and ready to help you out with your home appliances problem.</p>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
 

@@ -7,7 +7,6 @@ import PlumberBanner from '../../assets/img/PlumberBanner.jpg'
 import CarWashingBanner from '../../assets/img/CarWashingBanner.jpg'
 import SalonBanner from '../../assets/img/SalonBanner.jpg'
 import ElectricBanner from '../../assets/img/ElectricBanner.jpg'
-import TermsAndConditionBackgound from '../../assets/img/TermsAndConditionBackgound.jpg'
 import { Col, Row } from 'reactstrap';
 
 const TermAndCondition = () => {

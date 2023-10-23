@@ -1,19 +1,21 @@
-import { Box } from '@mui/material';
-import { DataGrid, GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid';
+import { GridToolbarColumnsButton, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton, GridToolbarQuickFilter } from '@mui/x-data-grid';
 import React, { Fragment, useEffect, useState } from 'react'
-import { Button } from 'reactstrap';
-import { mockDataContacts } from '../../data/mockData';
 import { useNavigate } from 'react-router-dom/dist';
 import AddNewCustomerForm from './Froms/AddNewCustomerForm';
 import ModalComponent from '../../Elements/ModalComponent';
 import AdminDataTable from '../../Elements/AdminDataTable';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetAllCustomers } from '../../../Store/Actions/Dashboard/Customer/CustomerActions';
-import GetAllCustomerReducer from '../../../Store/Reducers/CustomersReducers.js/GetAllCustomerReducers';
 import moment from 'moment';
 import axios from 'axios';
 import { API_URL } from '../../../config';
 import Swal from 'sweetalert2';
+import VisibilityIcon from '@mui/icons-material/Visibility'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import BlockIcon from '@mui/icons-material/Block'
+import BorderColorIcon from '@mui/icons-material/BorderColor'
+import RotateLeftIcon from '@mui/icons-material/RotateLeft';
+import { Button } from '@mui/material';
 
 
 const ManageCustomer = () => {
@@ -96,29 +98,33 @@ const ManageCustomer = () => {
         {
             field: "action",
             headerName: "Action",
-            minWidth: 250,
+            minWidth: 220,
             renderCell: (params) => (
                 <div className="d-flex gap-2">
-                    <Button className="text-white bg-blue">Edit</Button>
-                    <Button className="text-white bg-green">View</Button>
-                    <Button className="text-white bg-red" onClick={(e) => {
+                <Button variant='contained' color='primary'><BorderColorIcon /></Button>
+                <Button variant="contained" color="success">
+                    <VisibilityIcon />
+                </Button>
+                <Button  onClick={(e) => {
                         GetDeleteByID(params.row._id)
-                    }}>Delete</Button>
-                </div>
+                    }} variant="contained" color="error">
+                    <DeleteForeverIcon />
+                </Button>
+            </div>
             ),
         },
         {
             field: "block",
             headerName: "Block",
-            minWidth: 320,
+            minWidth: 150,
             renderCell: (params) => (
                 <div className="d-flex gap-2">
                     {Block ?
                         <Button className="text-white bg-warning border-warning" onClick={() => setBlock(false)}>Un-Block</Button>
                         :
-                        <Button className="text-white bg-red" onClick={() => setBlock(true)}>Block </Button>
+                        <Button variant="contained" color="error" onClick={() => setBlock(true)}><BlockIcon /></Button>
                     }
-                    <Button className='text-white bg-green'> Reset Ratings </Button>
+                    <Button variant="contained" color="success"> <RotateLeftIcon /> </Button>
                 </div>
             ),
         },

@@ -1,6 +1,5 @@
 import React from 'react'
 import { FiPhone, FiClock } from "react-icons/fi";
-import { BsFacebook, BsTwitter, BsSkype, BsPinterest } from "react-icons/bs";
 import { Col, Row } from 'reactstrap';
 
 const Navbar = () => {

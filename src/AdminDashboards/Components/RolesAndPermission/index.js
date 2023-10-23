@@ -6,8 +6,6 @@ import { TabContent, TabPane } from 'reactstrap'
 import AdminRoles from './AdminRoles'
 import SupervisorRoles from './SupervisorRoles'
 import OfficeRoles from './OfficeRoles'
-import axios from 'axios'
-import { API_URL } from '../../../config'
 import { useUserRoleContext } from '../../../Context/RolesContext'
 import ServiceProviderRoles from './ServiceProviderRoles'
 
@@ -17,11 +15,7 @@ const AdminRolesAndPermission = () => {
     const { supervisorRoles,
         backOfficeRoles,
         serviceProviderRoles,
-        adminRoles,
-        getAdminRoles,
-        getSupervisorRole,
-        GetBackofficeRoles,
-        GetServiceProvider } = useUserRoleContext();
+        adminRoles } = useUserRoleContext();
 
 
     return (

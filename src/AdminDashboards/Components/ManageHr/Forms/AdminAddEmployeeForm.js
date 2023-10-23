@@ -1,9 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
-
 import { Form, Row, Col, Card, FormGroup, Label, Input, Button } from 'reactstrap';
-import SelectBox from '../../../Elements/SelectBox';
 import { Formik } from 'formik';
-import { roles } from '../../../../config';
 import { useDispatch, useSelector } from 'react-redux';
 import { ImageUploadAction } from '../../../../Store/Actions/ImageUploadAction';
 import { GetRegEmployee } from '../../../../Store/Actions/Dashboard/EmployeeActions/EmployeeRegAction';
@@ -14,9 +11,8 @@ import { useAuth } from '../../../../Context/userAuthContext';
 
 const AdminAddEmployeeForm = ({ ToggleAddEmployee }) => {
 
-    const { currentUser, setCurrentUser } = useAuth()
+    const { currentUser } = useAuth()
     // selected services
-    const [selected, setSelected] = useState([])
     // Department
     const [department, setDepartment] = useState(null)
     //designation
@@ -28,7 +24,7 @@ const AdminAddEmployeeForm = ({ ToggleAddEmployee }) => {
 
     // State to keep track of the selected value
     // final submit 
-    const submitData = useSelector(state => state.GetEmployeeRegReducer)
+    // const submitData = useSelector(state => state.GetEmployeeRegReducer)
 
     // final submit 
     const finalFormSubmit = (formdata, { resetForm }) => {
@@ -50,28 +46,28 @@ const AdminAddEmployeeForm = ({ ToggleAddEmployee }) => {
     }
 
 
-    const ManageSelected = (index) => {
-        if (selected.includes(index) === true) {
-            setSelected(selected.filter(x => x !== index))
-        } else {
-            let array = [...selected, index]
-            setSelected(array)
-        }
-    }
+    // const ManageSelected = (index) => {
+    //     if (selected.includes(index) === true) {
+    //         setSelected(selected.filter(x => x !== index))
+    //     } else {
+    //         let array = [...selected, index]
+    //         setSelected(array)
+    //     }
+    // }
 
 
     const ImageResult = useSelector(state => state.ImageUploadReducer)
     const dispatch = useDispatch()
 
 
-    const options = [
-        { value: 'Date', label: 'Date' },
-        { value: 'Name', label: 'Name' },
-        { value: 'Designation', label: 'Designation' },
-    ];
-    const Dummy = [
-        { value: '----', label: '----' },
-    ];
+    // const options = [
+    //     { value: 'Date', label: 'Date' },
+    //     { value: 'Name', label: 'Name' },
+    //     { value: 'Designation', label: 'Designation' },
+    // ];
+    // const Dummy = [
+    //     { value: '----', label: '----' },
+    // ];
 
     const Departments = [
         { value: 'it', label: 'IT' },

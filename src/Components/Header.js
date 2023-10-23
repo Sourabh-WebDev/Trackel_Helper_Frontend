@@ -11,7 +11,8 @@ import { useSelector } from 'react-redux';
 import { Logout } from '@mui/icons-material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button, Grid, Paper, Typography } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
+import { BsFillTelephoneFill } from "react-icons/bs";
 
 function Header() {
 
@@ -58,8 +59,6 @@ function Header() {
         }
     }, [LoginResult, setLoginOpen]);
 
-
-
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -75,68 +74,95 @@ function Header() {
 
                 <Navbar.Toggle />
                 <Navbar.Collapse>
-                    <Nav className='ml-auto my-2 my-lg-0 text-center'>
+                    <Nav
+                        // style={{ marginLeft: '200px' }}
+                        className='ml-auto my-2 my-lg-0 text-center'>
 
                         {/* <Nav.Link className='txtColour' href='#action1'>Register As A Professional</Nav.Link> */}
-                        <Nav.Link className='txtColour' href='/'><b>Home</b></Nav.Link>
-                        <Nav.Link className='txtColour' href='/About-Us'><b>About Us</b></Nav.Link>
-                        {/* <Nav.Link className='txtColour' href='/'><b>Services</b></Nav.Link> */}
-                        <Nav.Link className='txtColour' href='/Contact-Us'><b>Help</b></Nav.Link>
-                        <div className="mega-menu">
-                            <Button variant='text' sx={{ pt: 1 }} onClick={toggleMenu}>
-                                <b>Services</b>
+                        <Nav.Link className='txtColour' href='/'><b>HOME</b></Nav.Link>
+                        <div className="mega-menu d-none d-md-block bgColour">
+                            <Nav.Link className='txtColour' sx={{ pt: 1 }} onClick={toggleMenu}>
+                                <b>SERVICES</b>
                                 <ArrowDropDownIcon />
-                            </Button>
+                            </Nav.Link>
                             {menuOpen && (
-                                <Paper sx={{ position: 'absolute', right: '5px', zIndex: '1200' }} className="dropdown-content">
-                                    <Grid container spacing={2}>
-                                        <Grid item xs={4} className="column">
-                                            <u> <Typography variant="subtitle1" fontWeight={700}>Services</Typography></u>
-                                            <div className="d-flex flex-column p-2 text-left">
-                                                <Link to={`/ServicePage?serviceName=Plumber`}><Typography variant='subtitle2'>Plumber</Typography></Link>
-                                                <Link to={`/ServicePage?serviceName=Car Servicing`}><Typography variant='subtitle2'>Car Servicing</Typography></Link>
-                                                <Link to={`/ServicePage?serviceName=Travel & Driver`}><Typography variant='subtitle2'>Travel & Driver</Typography></Link>
-                                                <Link to={`/ServicePage?serviceName=Security Guard`}><Typography variant='subtitle2'>Security Guard</Typography></Link>
-                                                <Link to={`/ServicePage?serviceName=Doctor`}><Typography variant='subtitle2'>Doctor</Typography></Link>
+                                <Paper sx={{ position: 'absolute', zIndex: '1200', width: '900px', top: '65px', right: '20%' }} className="dropdown-content animate__animated animate__flipInX">
+                                    {/* <Typography color={'#142572'} fontWeight={600} variant='h6'>OUR SERVICES</Typography>
+                                    <hr style={{ margin: '0px' }} /> */}
+                                    <Grid container className='bgColour rounded shadow-lg' sx={{ border: '10px double blue' }} spacing={2}>
+                                        <Grid item xs={3} className="column">
+                                            <div className="d-flex flex-column text-left m-2 p-3 gap-2">
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Plumber`}><Typography color={'#000'} variant='subtitle1'>Plumber</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} className='text-nowrap' to={`/ServicePage?serviceName=Car Servicing`}><Typography color={'#000'} variant='subtitle1'>Car Servicing</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} className='text-nowrap' to={`/ServicePage?serviceName=Travel & Driver`}><Typography color={'#000'} variant='subtitle1'>Travel & Driver</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} className='text-nowrap' to={`/ServicePage?serviceName=Security Guard`}><Typography color={'#000'} variant='subtitle1'>Security Guard</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Doctor`}><Typography color={'#000'} variant='subtitle1'>Doctor</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Medicine`}><Typography color={'#000'} variant='subtitle1'>Medicine</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} className='text-nowrap' to={`/ServicePage?serviceName=Day to Day Supply`}><Typography color={'#000'} variant='subtitle1'>Day to Day Supply</Typography></Link>
                                             </div>
                                         </Grid>
-                                        <Grid item xs={4} className="column">
+                                        <Grid item xs={3} className="column">
                                             {/* <Typography variant="h6">Category 2</Typography> */}
-                                            <div className='d-flex flex-column p-2 text-left'>
-                                                <Link to={`/ServicePage?serviceName=Medicine`}><Typography variant='subtitle2'>Medicine</Typography></Link>
-                                                <Link className='text-nowrap' to={`/ServicePage?serviceName=Day to Day Supply`}><Typography variant='subtitle2'>Day to Day Supply</Typography></Link>
-                                                <Link to={`/ServicePage?serviceName=Restaurants`}><Typography variant='subtitle2'>Restaurants</Typography></Link>
-                                                <Link to={`/ServicePage?serviceName=Nurses`}><Typography variant='subtitle2'>Nurses</Typography></Link>
-                                                <Link to={`/ServicePage?serviceName=Interior Designer`}><Typography variant='subtitle2'>Interior Designer</Typography></Link>
+                                            <div className='d-flex flex-column text-left m-2 p-3 gap-2'>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Restaurants`}><Typography color={'#000'} variant='subtitle1'>Restaurants</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Nurses`}><Typography color={'#000'} variant='subtitle1'>Nurses</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} className='text-nowrap' to={`/ServicePage?serviceName=Interior Designer`}><Typography color={'#000'} variant='subtitle1'>Interior Designer</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Catering`}><Typography color={'#000'} variant='subtitle1'>Catering</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} className='text-nowrap' to={`/ServicePage?serviceName=Marriage Lawn`}><Typography color={'#000'} variant='subtitle1'>Marriage Lawn</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 1`}><Typography color={'#000'} variant='subtitle1'>Service 1</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 2`}><Typography color={'#000'} variant='subtitle1'>Service 2</Typography></Link>
                                             </div>
                                         </Grid>
-                                        <Grid item xs={4} className="column">
+                                        <Grid item xs={3} className="column">
                                             {/* <Typography variant="h6">Category 3</Typography> */}
-                                            <div className="d-flex flex-column p-2 text-left">
-
-                                                <Link to={`/ServicePage?serviceName=Catering`}><Typography variant='subtitle2'>Catering</Typography></Link>
-                                                <Link to={`/ServicePage?serviceName=Marriage Lawn`}><Typography variant='subtitle2'>Marriage Lawn</Typography></Link>
+                                            <div className="d-flex flex-column text-left m-2 p-3 gap-2">
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 3`}><Typography color={'#000'} variant='subtitle1'>Service 3</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 4`}><Typography color={'#000'} variant='subtitle1'>Service 4</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 5`}><Typography color={'#000'} variant='subtitle1'>Service 5</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 6`}><Typography color={'#000'} variant='subtitle1'>Service 6</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 7`}><Typography color={'#000'} variant='subtitle1'>Service 7</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 8`}><Typography color={'#000'} variant='subtitle1'>Service 8</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 9`}><Typography color={'#000'} variant='subtitle1'>Service 9</Typography></Link>
+                                            </div>
+                                        </Grid>
+                                        <Grid item xs={3} className="column">
+                                            {/* <Typography variant="h6">Category 3</Typography> */}
+                                            <div className="d-flex flex-column text-left m-2 p-3 gap-2">
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 3`}><Typography color={'#000'} variant='subtitle1'>Service 10</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 4`}><Typography color={'#000'} variant='subtitle1'>Service 11</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 5`}><Typography color={'#000'} variant='subtitle1'>Service 12</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 6`}><Typography color={'#000'} variant='subtitle1'>Service 13</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 7`}><Typography color={'#000'} variant='subtitle1'>Service 14</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 8`}><Typography color={'#000'} variant='subtitle1'>Service 15</Typography></Link>
+                                                <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 9`}><Typography color={'#000'} variant='subtitle1'>Service 16</Typography></Link>
                                             </div>
                                         </Grid>
                                     </Grid>
                                 </Paper>
                             )}
                         </div>
+                        <Nav.Link className='txtColour' href='/About-Us'><b>ABOUT US</b></Nav.Link>
+                        {/* <Nav.Link className='txtColour' href='/'><b>Services</b></Nav.Link> */}
+                        {/* <Nav.Link className='txtColour' href='/Contact-Us'><b>Help</b></Nav.Link> */}
                         {currentUser !== null ? <>
                             <Nav.Link className='txtColour' href={`/YourProfile/${currentUser._id}`} >{currentUser.name}</Nav.Link>
                             <Nav.Link className='txtColour' ><Logout className='cursor-p' onClick={() => GetLogOut()} /></Nav.Link>
                         </> :
                             <>
-                                <NavDropdown className='font-weight-bold' title='Login' id='nav-dropdown'>
+                                <NavDropdown className='font-weight-bold txtColour  ' title='LOGIN' id='nav-dropdown'>
                                     <NavDropdown.Item onClick={() => setLoginOpen(!LoginOpen)} eventKey='4.1'>Customer Login</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item onClick={() => navigate('/admin')} eventKey='4.2'>Office Login</NavDropdown.Item>
                                 </NavDropdown>
                             </>
                         }
-                        <Nav.Link className='txtColour'></Nav.Link>
                     </Nav>
+                    {/* <Nav.Link className='txtColour' href='/Contact-Us'><b>HELP</b></Nav.Link> */}
                 </Navbar.Collapse>
+                <div style={{ border: '1px solid #4a59e4' }} className='bgColour d-flex align-items-center rounded-pill px-2 m-1 d-none d-md-block'>
+                    <BsFillTelephoneFill color='#4a59e4' />
+                    <Typography variant='caption'>&nbsp;0522-4300589</Typography>
+                </div>
             </Container>
             <LoginModal />
             <SingupModal />

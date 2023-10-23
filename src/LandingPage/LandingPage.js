@@ -67,7 +67,7 @@ const LandingPage = () => {
     const timer = setInterval(() => {
       // Increment the current image index
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change the image every 5 seconds
+    }, 3000); // Change the image every 5 seconds
 
     // Cleanup the timer when the component is unmounted
     return () => clearInterval(timer);
