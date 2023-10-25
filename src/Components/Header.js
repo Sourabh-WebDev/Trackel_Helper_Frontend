@@ -80,15 +80,14 @@ function Header() {
 
                         {/* <Nav.Link className='txtColour' href='#action1'>Register As A Professional</Nav.Link> */}
                         <Nav.Link className='txtColour' href='/'><b>HOME</b></Nav.Link>
-                        <div className="mega-menu d-none d-md-block bgColour">
+                        {/* <div className="mega-menu d-none d-md-block bgColour">
                             <Nav.Link className='txtColour' sx={{ pt: 1 }} onClick={toggleMenu}>
                                 <b>SERVICES</b>
                                 <ArrowDropDownIcon />
                             </Nav.Link>
                             {menuOpen && (
                                 <Paper sx={{ position: 'absolute', zIndex: '1200', width: '900px', top: '65px', right: '20%' }} className="dropdown-content animate__animated animate__flipInX">
-                                    {/* <Typography color={'#142572'} fontWeight={600} variant='h6'>OUR SERVICES</Typography>
-                                    <hr style={{ margin: '0px' }} /> */}
+                        
                                     <Grid container className='bgColour rounded shadow-lg' sx={{ border: '10px double blue' }} spacing={2}>
                                         <Grid item xs={3} className="column">
                                             <div className="d-flex flex-column text-left m-2 p-3 gap-2">
@@ -102,7 +101,6 @@ function Header() {
                                             </div>
                                         </Grid>
                                         <Grid item xs={3} className="column">
-                                            {/* <Typography variant="h6">Category 2</Typography> */}
                                             <div className='d-flex flex-column text-left m-2 p-3 gap-2'>
                                                 <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Restaurants`}><Typography color={'#000'} variant='subtitle1'>Restaurants</Typography></Link>
                                                 <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Nurses`}><Typography color={'#000'} variant='subtitle1'>Nurses</Typography></Link>
@@ -114,7 +112,6 @@ function Header() {
                                             </div>
                                         </Grid>
                                         <Grid item xs={3} className="column">
-                                            {/* <Typography variant="h6">Category 3</Typography> */}
                                             <div className="d-flex flex-column text-left m-2 p-3 gap-2">
                                                 <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 3`}><Typography color={'#000'} variant='subtitle1'>Service 3</Typography></Link>
                                                 <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 4`}><Typography color={'#000'} variant='subtitle1'>Service 4</Typography></Link>
@@ -126,7 +123,6 @@ function Header() {
                                             </div>
                                         </Grid>
                                         <Grid item xs={3} className="column">
-                                            {/* <Typography variant="h6">Category 3</Typography> */}
                                             <div className="d-flex flex-column text-left m-2 p-3 gap-2">
                                                 <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 3`}><Typography color={'#000'} variant='subtitle1'>Service 10</Typography></Link>
                                                 <Link style={{ textDecoration: 'none' }} to={`/ServicePage?serviceName=Service 4`}><Typography color={'#000'} variant='subtitle1'>Service 11</Typography></Link>
@@ -140,7 +136,7 @@ function Header() {
                                     </Grid>
                                 </Paper>
                             )}
-                        </div>
+                        </div> */}
                         <Nav.Link className='txtColour' href='/About-Us'><b>ABOUT US</b></Nav.Link>
                         {/* <Nav.Link className='txtColour' href='/'><b>Services</b></Nav.Link> */}
                         {/* <Nav.Link className='txtColour' href='/Contact-Us'><b>Help</b></Nav.Link> */}

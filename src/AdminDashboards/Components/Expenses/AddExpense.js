@@ -1,113 +1,151 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from "react";
 
-import { Button, Input } from 'reactstrap'
-import { useNavigate } from 'react-router-dom'
-import SelectBox from '../../Elements/SelectBox'
-import { useDispatch, useSelector } from 'react-redux'
-import { GetAddExpense, GetAllHeadExp } from '../../../Store/Actions/Dashboard/expenseActions'
-import { WaitLoader } from '../../Elements/WaitLoader'
-import { BarLoader, ClipLoader, RingLoader } from 'react-spinners'
+import { Button, Input } from "reactstrap";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import SelectBox from "../../Elements/SelectBox";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  GetAddExpense,
+  GetAllHeadExp,
+} from "../../../Store/Actions/Dashboard/expenseActions";
+import { WaitLoader } from "../../Elements/WaitLoader";
+import { BarLoader, ClipLoader, RingLoader } from "react-spinners";
 
 const AddExpense = ({ setActiveAttendance }) => {
-    const [Loading, setLoading] = useState(false)
-    // all head of the expenses 
-    const expensesHead = useSelector(state => state.GetAllHeadExpReducer)
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
+ 
 
-    // data states
-    const [selectedHeadExp, setSelectedHeadExp] = useState(null);
-    const [selectedPayment, setSelectedPayment] = useState(null);
-    const [formData, setFormData] = useState({})
+  const [Loading, setLoading] = useState(false);
+  // all head of the expenses
+  const expensesHead = useSelector((state) => state.GetAllHeadExpReducer);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-    const OptionModify = (array) => {
-        let options = [];
-        array.forEach(element => {
-            const newEle = { value: element, label: element }
-            options.push(newEle)
-        });
-        return options
-    }
+  // data states
+  const [selectedHeadExp, setSelectedHeadExp] = useState(null);
+  const [selectedPayment, setSelectedPayment] = useState(null);
+  const [formData, setFormData] = useState({});
 
-    const HandleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        })
-    }
+  const OptionModify = (array) => {
+    let options = [];
+    array.forEach((element) => {
+      const newEle = { value: element, label: element };
+      options.push(newEle);
+    });
+    return options;
+  };
 
+  const HandleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-    // const options = [
-    //     { value: 'Date', label: 'Date' },
-    //     { value: 'Name', label: 'Name' },
-    //     { value: 'Designation', label: 'Designation' },
-    // ];
+  // STATIC PAYMENT METHOD
+  const PaymentOptions = [
+    { value: "cash in hand", label: "Cash in hand" },
+    { value: "online", label: "Online" },
+    { value: "cheque", label: "Cheque" },
+  ];
 
-    // STATIC PAYMENT METHOD  
-    const PaymentOptions = [
-        { value: 'cash in hand', label: 'Cash in hand' },
-        { value: 'online', label: 'Online' },
-        { value: 'cheque', label: 'Cheque' },
-    ];
+  const GetSubmitAddExpense = () => {
+    setLoading(true);
+    let data = formData;
+    formData.expHead = selectedHeadExp.value;
+    formData.paymentMethod = selectedPayment.value;
+    dispatch(GetAddExpense(data)).then(() => {
+      setFormData({});
+      setLoading(false);
+    });
+  };
 
-    const GetSubmitAddExpense = () => {
-        setLoading(true)
-        let data = formData
-        formData.expHead = selectedHeadExp.value
-        formData.paymentMethod = selectedPayment.value
-        dispatch(GetAddExpense(data)).then(() => {
-            setFormData({})
-            setLoading(false)
-        })
-    }
-
-    useEffect(() => {
-        dispatch(GetAllHeadExp())
-    }, [])
-    return (
-        <Fragment>
-            <WaitLoader loading={Loading} offset={[50, 70]} />
-            {/* <DashHeader /> */}
-            <h5 className='pt-4 pb-3 px-4 text-white headingBelowBorder d-flex  flex-nowrap' style={{ width: "fit-content" }}>Add Expense  </h5>
-            <div className='AttendenceNavBtn w-100 py-2 px-4 gap-3'>
-                <div className={`py-2 px-4 border shadow rounded-2 cursor-p hoverThis text-white Fw_500 d-flex align-items-center justify-content-center `} onClick={() => { setActiveAttendance('report') }} style={{ minWidth: "15rem", maxWidth: "15rem" }} >
-                    Transaction Report
-                </div>
+  useEffect(() => {
+    dispatch(GetAllHeadExp());
+  }, []);
+  return (
+    <Fragment>
+      <WaitLoader loading={Loading} offset={[50, 70]} />
+      {/* <DashHeader /> */}
+      <h5
+        className="pt-4 pb-3 px-4 text-white headingBelowBorder d-flex  flex-nowrap"
+        style={{ width: "fit-content" }}
+      >
+        Add Expense{" "}
+      </h5>
+      <div className="AttendenceNavBtn w-100 py-2 px-4 gap-3">
+        <div
+          className={`py-2 px-4 border shadow rounded-2 cursor-p hoverThis text-white Fw_500 d-flex align-items-center justify-content-center `}
+          onClick={() => {
+            setActiveAttendance("report");
+          }}
+          style={{ minWidth: "15rem", maxWidth: "15rem" }}
+        >
+          Transaction Report
+        </div>
+      </div>
+      <div className=" h-100 d-grid pb-5 ">
+        <div className="text-blue bg-primary card shadow-lg border-0 MainAttendenceReportForm mt-3 p-4  gap-3">
+          <div className=" mt-3 d-flex flex-nowrap ReportFormWhole w-100">
+            <div className="d-flex flex-column justify-content-center gap-1 w-100">
+              <h6>Expense Head</h6>
+              <SelectBox
+                options={OptionModify(expensesHead.data.map((x) => x.expName))}
+                setSelcted={setSelectedHeadExp}
+              />
             </div>
-            <div className=' h-100 d-grid pb-5 ' >
-
-                <div className='text-blue bg-primary card shadow-lg border-0 MainAttendenceReportForm mt-3 p-4  gap-3'>
-                    <div className=' mt-3 d-flex flex-nowrap ReportFormWhole w-100'>
-                        <div className='d-flex flex-column justify-content-center gap-1 w-100'>
-                            <h6 >Expense Head</h6>
-                            <SelectBox options={OptionModify(expensesHead.data.map(x => x.expName))} setSelcted={setSelectedHeadExp} />
-                        </div>
-                        <div className='d-flex flex-column   justify-content-center gap-1 w-100'>
-                            <h6 >Payment Method</h6>
-                            <SelectBox options={PaymentOptions} setSelcted={setSelectedPayment} />
-                        </div>
-                        <div className='d-flex flex-column   justify-content-center gap-1 w-100' >
-                            <h6 >Enter Amount</h6>
-                            <Input placeholder='Amount' name='amount' onChange={HandleChange} value={formData.amount || ''} />
-                        </div>
-                        <div className='d-flex flex-column   justify-content-center gap-1 w-100' >
-                            <h6 >Person Name</h6>
-                            <Input type='text' placeholder='Name' name='personName' value={formData.personName || ''} onChange={HandleChange} />
-                        </div>
-                        <div className='d-flex flex-column   justify-content-center gap-1 w-100' >
-                            <h6 >Date</h6>
-                            <Input type='date' name='date' onChange={HandleChange} value={formData.date || ''} />
-                        </div>
-                        <div className='d-flex flex-column   justify-content-center gap-1 w-100' >
-                            <h6 >Remark</h6>
-                            <Input type='textarea' className='w-100' name='remark' value={formData.remark || ''} onChange={HandleChange} />
-                        </div>
-                    </div>
-                    <Button onClick={GetSubmitAddExpense} className='hoverThis bg-blue'>Submit</Button>
-                </div>
+            <div className="d-flex flex-column   justify-content-center gap-1 w-100">
+              <h6>Payment Method</h6>
+              <SelectBox
+                options={PaymentOptions}
+                setSelcted={setSelectedPayment}
+              />
             </div>
-        </Fragment>
-    )
-}
+            <div className="d-flex flex-column   justify-content-center gap-1 w-100">
+              <h6>Enter Amount</h6>
+              <Input
+                placeholder="Amount"
+                name="amount"
+                onChange={HandleChange}
+                value={formData.amount || ""}
+              />
+            </div>
+            <div className="d-flex flex-column   justify-content-center gap-1 w-100">
+              <h6>Person Name</h6>
+              <Input
+                type="text"
+                placeholder="Name"
+                name="personName"
+                value={formData.personName || ""}
+                onChange={HandleChange}
+              />
+            </div>
+            <div className="d-flex flex-column   justify-content-center gap-1 w-100">
+              <h6>Date</h6>
+              <Input
+                type="date"
+                name="date"
+                onChange={HandleChange}
+                value={formData.date || ""}
+              />
+            </div>
+            <div className="d-flex flex-column   justify-content-center gap-1 w-100">
+              <h6>Remark</h6>
+              <Input
+                type="textarea"
+                className="w-100"
+                name="remark"
+                value={formData.remark || ""}
+                onChange={HandleChange}
+              />
+            </div>
+          </div>
+          <Button onClick={GetSubmitAddExpense} className="hoverThis bg-blue">
+            Submit
+          </Button>
+        </div>
+      </div>
+    </Fragment>
+  );
+};
 
-export default AddExpense
+export default AddExpense;
