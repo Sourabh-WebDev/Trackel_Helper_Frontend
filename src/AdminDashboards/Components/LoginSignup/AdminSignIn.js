@@ -16,6 +16,7 @@ import { useState } from 'react';
 import { roles } from '../../../config';
 import { Formik } from 'formik';
 import { useUserRoleContext } from '../../../Context/RolesContext';
+import { isMobile } from 'react-device-detect';
 
 
 function AdminSignIn() {
@@ -48,11 +49,11 @@ function AdminSignIn() {
 
     return (
         <Container sx={{ display: 'grid', placeItems: 'center' }}>
-            <Grid container spacing={1} mt={10}>
-                <Grid item lg={4}>
-                    <img className='animate__animated animate__backInLeft' src={HelperDash} width={450} alt="..." />
+            <Grid container spacing={1} mt={isMobile ? 1 : 10} mb={isMobile ? 1 : 0}>
+                <Grid className='d-none d-md-block' item lg={4} xs={12}>
+                    <img className='animate__animated animate__backInLeft w-100' src={HelperDash} alt="..." />
                 </Grid>
-                <Grid className='animate__animated animate__zoomIn' item lg={4}>
+                <Grid className='animate__animated animate__zoomIn' item lg={4} xs={12}>
                     <div className="text-center">
                         <img src={WeLogo} alt="Logo" />
                         <Typography fontWeight={600} sx={{ mt: 1 }} variant="h5">
@@ -112,7 +113,7 @@ function AdminSignIn() {
                         )}
                     </Formik>
                 </Grid>
-                <Grid item lg={4} sx={{ display: 'grid', placeItems: 'center' }}>
+                <Grid item xs={12} lg={4} sx={{ display: 'grid', placeItems: 'center' }}>
                     <div className="d-flex animate__animated animate__bounceInRight flex-column gap-4">
                         <Button onClick={() => setSelectedRole(roles.super)} variant={selectedRole === roles.super ? "contained" : 'outlined'} color='primary'>Super Admin Login</Button>
                         <Button onClick={() => setSelectedRole(roles.admin)} variant={selectedRole === roles.admin ? "contained" : 'outlined'} color='primary'>Admin Login</Button>

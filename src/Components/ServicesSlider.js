@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import { Card, CardMedia, Typography } from '@mui/material';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { isMobile } from 'react-device-detect';
 
 const ServicesSlider = () => {
     const settings = {
@@ -44,7 +45,7 @@ const ServicesSlider = () => {
     return (
         <div className='text-center'>
             <div style={{ backgroundColor: '#eedc30', color: '#142572', padding: '20px' }}>
-                <Typography variant='h3' fontWeight={800}>Welcome to Helper Services</Typography>
+                <Typography variant={isMobile ? 'h4' : 'h3'} fontWeight={800}>Welcome to Helper Services</Typography>
             </div>
             <Slider {...settings} className='py-2'>
                 <div >

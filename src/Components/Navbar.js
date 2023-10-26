@@ -1,4 +1,6 @@
+import { Typography } from '@mui/material';
 import React from 'react'
+import { isMobile } from 'react-device-detect';
 import { FiPhone, FiClock } from "react-icons/fi";
 import { Col, Row } from 'reactstrap';
 
@@ -7,15 +9,15 @@ const Navbar = () => {
         <>
             <div className='Navbar'>
                 <Row className='m-0'>
-                    <Col xs={12} md={6} lg={6} xl={6}>
-                        <div className='text-center px-2' >
+                    <Col xs={6} md={6} lg={6} xl={6}>
+                        <Typography variant={isMobile ? 'caption' : 'h6'} className='text-center px-2' >
                             <FiPhone /> <span> 0522-4300589</span>
-                        </div>
+                        </Typography>
                     </Col>
-                    <Col xs={12} md={6} lg={6} xl={6}>
-                        <div className='text-center px-2' >
-                            <FiClock /> <span>Mon - Sun 12 Hours / We are 24*7 available</span>
-                        </div>
+                    <Col xs={6} md={6} lg={6} xl={6}>
+                        <Typography variant={isMobile ? 'caption' : 'h6'} className='text-center px-2' >
+                            {isMobile ? <span> We are 24*7 available</span> : <span><FiClock /> Mon - Sun 12 Hours / We are 24*7 available</span>}
+                        </Typography>
                     </Col>
                 </Row>
             </div>
