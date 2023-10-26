@@ -11,6 +11,7 @@ import EditProfile from './EditProfile'
 import ManagePost from './ManagePost'
 import Swal from 'sweetalert2'
 import FreeService from './FreeService'
+import { isMobile, isMobileOnly } from 'react-device-detect'
 
 
 const ProfileHistory = () => {
@@ -19,7 +20,7 @@ const ProfileHistory = () => {
     const navigate = useNavigate();
     const [serviceData, setServiceData] = useState([]);
     const [currentUser, setCurrentUser] = useState(
-        JSON.parse(sessionStorage.getItem('user'))
+        JSON.parse(sessionStorage.getItem('customer'))
     );
 
     useEffect(() => {
@@ -95,8 +96,8 @@ const ProfileHistory = () => {
                             active === '4' ? <ManagePost /> : null
             }
 
-            <div className='profilePadding'>
-                <Footer />
+            <div className={isMobile ? 'd-none' : 'profilePadding mt-5'}>
+                <Footer reqrem={'d-none'} />
             </div>
         </div >
     )

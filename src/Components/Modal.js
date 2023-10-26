@@ -18,17 +18,23 @@ import {
 import { UseStateManager } from "../Context/StateManageContext";
 import Logo from "../assets/svg/we_logo.png";
 import { Formik } from "formik";
-import { GetLogIn } from "../Store/Actions/LandingPage/AuthAction";
+import {
+  GetCustomerLogIn,
+  GetLogIn,
+} from "../Store/Actions/LandingPage/AuthAction";
 import GetLogInReducers from "../Store/Reducers/LandingPage/AuthReducer";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { MenuItem, Select } from "@mui/material";
 import { GetAllServices } from "../Store/Actions/Dashboard/servicesAction";
+import { ClockLoader } from "react-spinners";
+import { useAuth } from "../Context/userAuthContext";
 
 export const LoginModal = () => {
   const [mobileNo, setMobileNo] = useState("");
   const [otp, setOpt] = useState("");
-  const [otpId, setOptId] = useState("");
+  // const [otpId, setOptId] = useState("");
+  const [loader, setLoader] = useState(false);
   const dispatch = useDispatch();
 
   const users = {
@@ -42,14 +48,53 @@ export const LoginModal = () => {
   const [loginPerson, setLoginPerson] = useState(users.Customer);
 
   const LoginResult = useSelector((pre) => pre.GetLogInReducers);
+  const [isTimerComplete, setIsTimerComplete] = useState(false);
+  const [timeRemaining, setTimeRemaining] = useState(60);
+  const { sendOtp, otpid, setOtpId } = useAuth();
 
   const loginForm = {
     email: "",
     password: "",
   };
 
-  const handleOtpSend = (e) => {
-    setOptId("37489384989");
+  const handleOtpSend = async (otp) => {
+    setLoader(true);
+    await sendOtp(otp);
+    setTimeRemaining(60);
+    setLoader(false);
+  };
+
+  const handleSubmit = async (number, otp, otpid) => {
+    setLoader(true);
+    await dispatch(GetCustomerLogIn(number, otp, otpid)).then(() => {
+      setLoader(false);
+    });
+  };
+
+  useEffect(() => {
+    let timer;
+
+    // Start the timer when the component mounts
+    timer = setInterval(() => {
+      setTimeRemaining((prevTime) => {
+        if (prevTime === 1) {
+          setIsTimerComplete(true);
+          clearInterval(timer);
+          return 0;
+        }
+        return prevTime - 1;
+      });
+    }, 1000); // Update the time remaining every 1 second (1000 milliseconds)
+
+    // Clean up the timer when the component unmounts
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  const HandleResendBtn = async (number) => {
+    await handleOtpSend(number);
+    setTimeRemaining(60);
   };
 
   return (
@@ -65,7 +110,8 @@ export const LoginModal = () => {
         {" "}
         Login
       </ModalHeader>
-      <ModalBody className="LoginBgMain">
+      <ModalBody className="LoginBgMain relative">
+        {otpid && <h6 className="absolute top-2 right-2">{timeRemaining}</h6>}
         <div className="w-100 d-flex loginmain">
           <div className="text-center rounded">
             <img src={Logo} alt="MainLogo" />
@@ -84,12 +130,12 @@ export const LoginModal = () => {
                   name="mobileNo"
                   id="mobileNo"
                   value={mobileNo}
-                  disabled={otpId !== ""}
+                  disabled={otpid !== null}
                   placeholder="992XXXXXXX"
                   onChange={(e) => setMobileNo(e.target.value)}
                 />
               </FormGroup>
-              {otpId ? (
+              {otpid ? (
                 <FormGroup className="d-flex align-items-center gap-2 ">
                   <Label for="mobileNo text-nowrap w-25">Enter Otp :</Label>
                   <Input
@@ -107,21 +153,49 @@ export const LoginModal = () => {
               <Button type="button" className="ml-3 bg-blue w-25">
                 Cancel
               </Button>
-              {otpId ? (
-                <Button
-                  type="button"
-                  className="ml-3 bg-blue w-25"
-                  onClick={handleOtpSend}
-                >
-                  Login
-                </Button>
+              {otpid ? (
+                <>
+                  <Button
+                    type="button"
+                    className="ml-3 bg-blue w-25"
+                    onClick={() => handleSubmit(mobileNo, otp, otpid)}
+                  >
+                    Login
+                    <ClockLoader
+                      size={16}
+                      className="ml-2 "
+                      color="#fff"
+                      loading={loader}
+                    />
+                  </Button>
+                  <Button
+                    type="button"
+                    disabled={timeRemaining >= 5}
+                    className="ml-3 bg-blue w-25"
+                    onClick={() => HandleResendBtn(mobileNo)}
+                  >
+                    Resend
+                    <ClockLoader
+                      size={16}
+                      className="ml-2 "
+                      color="#fff"
+                      loading={loader}
+                    />
+                  </Button>
+                </>
               ) : (
                 <Button
                   type="button"
                   className="ml-3 bg-blue w-25"
-                  onClick={handleOtpSend}
+                  onClick={() => handleOtpSend(mobileNo)}
                 >
                   Verify
+                  <ClockLoader
+                    size={16}
+                    className="ml-2 "
+                    color="#fff"
+                    loading={loader}
+                  />
                 </Button>
               )}
             </form>
