@@ -1,169 +1,195 @@
-import * as constant from '../../../Constants/Dashboard/expenseConstants';
+import * as constant from "../../../Constants/Dashboard/expenseConstants";
 
 const initialState = {
-    isLoading: false,
-    data: [],
-    isError: false,
-}
-
-
+  isLoading: false,
+  data: [],
+  isError: false,
+};
 
 const GetAddHeadExpReducers = (state = initialState, action) => {
-    switch (action.type) {
-        case constant.HEAD_EXPENSE_API_LOADING:
-            return {
-                ...state,
-                isLoading: true
-            }
-        case constant.HEAD_EXPENSE_API_SUCCESS:
-            return {
-                ...state,
-                isLoading: false,
-                data: action.payload
-            }
-        case constant.HEAD_EXPENSE_API_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-                isError: true
-            }
+  switch (action.type) {
+    case constant.HEAD_EXPENSE_API_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case constant.HEAD_EXPENSE_API_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload,
+      };
+    case constant.HEAD_EXPENSE_API_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
 
-        default:
-            return state;
-    }
-}
+    default:
+      return state;
+  }
+};
 
 const GetAllHeadExpReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case constant.GET_ALLHEADEXP_API_LOADING:
-            return {
-                ...state,
-                isLoading: true
-            }
-        case constant.GET_ALLHEADEXP_API_SUCCESS:
-            return {
-                ...state,
-                isLoding: false,
-                data: action.payload,
-            }
-        case constant.GET_ALLHEADEXP_API_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-                isError: true
-            }
+  switch (action.type) {
+    case constant.GET_ALLHEADEXP_API_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case constant.GET_ALLHEADEXP_API_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload,
+      };
+    case constant.GET_ALLHEADEXP_API_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
 
-        default:
-            return state;
-    }
-}
+    default:
+      return state;
+  }
+};
 
-
-// ADD NEW EXPENSE  
+// ADD NEW EXPENSE
 const GetAddExpenseReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case constant.GET_ADDEXP_API_LOADING:
-            return {
-                ...state,
-                isLoading: true
-            }
-        case constant.GET_ADDEXP_API_SUCCESS:
-            return {
-                ...state,
-                isLoding: false,
-                data: action.payload,
-            }
-        case constant.GET_ADDEXP_API_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-                isError: true
-            }
+  switch (action.type) {
+    case constant.GET_ADDEXP_API_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case constant.GET_ADDEXP_API_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload,
+      };
+    case constant.GET_ADDEXP_API_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
 
-        default:
-            return state;
-    }
-}
+    default:
+      return state;
+  }
+};
 
-// ADD New collections  
+// ADD New collections
 const GetAddCollectionReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case constant.GET_ADD_COLLECTION_LOADING:
-            return {
-                ...state,
-                isLoading: true
-            }
-        case constant.GET_ADD_COLLECTION_SUCCESS:
-            return {
-                ...state,
-                isLoding: false,
-                data: action.payload,
-            }
-        case constant.GET_ADD_COLLECTION_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-                isError: true
-            }
+  switch (action.type) {
+    case constant.GET_ADD_COLLECTION_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case constant.GET_ADD_COLLECTION_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload,
+      };
+    case constant.GET_ADD_COLLECTION_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
 
-        default:
-            return state;
-    }
-}
+    default:
+      return state;
+  }
+};
 
-// Get ALl Expenses  
+// Get ALl Expenses
 const GetAllExpenseReducers = (state = initialState, action) => {
-    switch (action.type) {
-        case constant.GET_ALL_EXP_API_LOADING:
-            return {
-                ...state,
-                isLoading: true
-            }
-        case constant.GET_ALL_EXP_API_SUCCESS:
-            return {
-                ...state,
-                isLoding: false,
-                data: action.payload,
-            }
-        case constant.GET_ALL_EXP_API_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-                isError: true
-            }
+  switch (action.type) {
+    case constant.GET_ALL_EXP_API_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case constant.GET_ALL_EXP_API_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload,
+      };
+    case constant.GET_ALL_EXP_API_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
 
-        default:
-            return state;
-    }
-}
+    default:
+      return state;
+  }
+};
 
-// Get ALl Collections  
+// Get ALl Collections
 const GetAllCollectionReducers = (state = initialState, action) => {
-    switch (action.type) {
-        case constant.GET_ALL_COLL_API_LOADING:
-            return {
-                ...state,
-                isLoading: true
-            }
-        case constant.GET_ALL_COLL_API_SUCCESS:
-            return {
-                ...state,
-                isLoding: false,
-                data: action.payload,
-            }
-        case constant.GET_ALL_COLL_API_ERROR:
-            return {
-                ...state,
-                isLoading: false,
-                isError: true
-            }
+  switch (action.type) {
+    case constant.GET_ALL_COLL_API_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case constant.GET_ALL_COLL_API_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload,
+      };
+    case constant.GET_ALL_COLL_API_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
 
-        default:
-            return state;
-    }
-}
+    default:
+      return state;
+  }
+};
 
+// update Head Expens e
+const UpdateHeadExpReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case constant.UPDATE_HEAD_EXP_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case constant.UPDATE_HEAD_EXP_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload,
+      };
+    case constant.UPDATE_HEAD_EXP_ERROR:
+      return {
+        ...state,
+        isError: true,
+      };
+    default:
+      return state;
+  }
+};
 
-
-
-export { GetAddHeadExpReducers, GetAllHeadExpReducer, GetAddExpenseReducer, GetAddCollectionReducer, GetAllExpenseReducers, GetAllCollectionReducers };
+export {
+  GetAddHeadExpReducers,
+  GetAllHeadExpReducer,
+  GetAddExpenseReducer,
+  GetAddCollectionReducer,
+  GetAllExpenseReducers,
+  GetAllCollectionReducers,
+  UpdateHeadExpReducer,
+};
