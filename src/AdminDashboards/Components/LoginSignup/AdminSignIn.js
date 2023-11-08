@@ -163,12 +163,12 @@ function AdminSignIn() {
               {selectedRole === "super"
                 ? "Super Admin "
                 : selectedRole === "admin"
-                ? "Admin "
-                : selectedRole === "supervisor"
-                ? "Supervisor "
-                : selectedRole === "service"
-                ? "Service Provider "
-                : selectedRole === "office" && "Office "}
+                  ? "Admin "
+                  : selectedRole === "supervisor"
+                    ? "Supervisor "
+                    : selectedRole === "service"
+                      ? "Service Provider "
+                      : selectedRole === "office" && "Office "}
               Sign in {otpid && `00:${timeRemaining}`}
             </Typography>
           </div>
@@ -209,10 +209,10 @@ function AdminSignIn() {
                     value={values.password}
                     autoComplete="current-password"
                   />
-                  <FormControlLabel
+                  {selectedRole === 'super' ? <FormControlLabel
                     control={<Checkbox value="remember" color="primary" />}
                     label="Remember me"
-                  />
+                  /> : null}
                   <Button
                     type="submit"
                     fullWidth
@@ -227,11 +227,11 @@ function AdminSignIn() {
                         Forgot password?
                       </Link>
                     </Grid>
-                    <Grid item>
+                    {/* <Grid item>
                       <Link href="#" variant="body2">
                         {"Don't have an account? Sign Up"}
                       </Link>
-                    </Grid>
+                    </Grid> */}
                   </Grid>
                 </Box>
               )}
@@ -277,10 +277,6 @@ function AdminSignIn() {
                       autoFocus
                     />
                   )}
-                  <FormControlLabel
-                    control={<Checkbox value="remember" color="primary" />}
-                    label="Remember me"
-                  />
                   <Grid container spacing={1}>
                     <Grid item xs={6} textAlign={"center"}>
                       {" "}
@@ -304,17 +300,17 @@ function AdminSignIn() {
                         variant="contained"
                         sx={{ mt: 3, mb: 2 }}
                       >
-                        {otpid ? "Re-send" : "Verify"}
+                        {otpid ? "Re-send" : "Continue"}
                       </Button>
                     </Grid>
                   </Grid>
-                  <Grid container>
+                  {/* <Grid container>
                     <Grid item xs>
                       <Link href="#" variant="body2">
                         Forgot password?
                       </Link>
                     </Grid>
-                  </Grid>
+                  </Grid> */}
                 </Box>
               )}
             </Formik>
