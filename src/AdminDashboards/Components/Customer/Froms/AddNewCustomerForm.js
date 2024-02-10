@@ -43,8 +43,6 @@ const AddNewCustomerForm = () => {
         landmark: '',
         email: '',
         location: '',
-        telno: '',
-        officeno: '',
         alternateno: '',
         aadharno: '',
         occupation: '',
@@ -54,7 +52,7 @@ const AddNewCustomerForm = () => {
         image: null, // Assuming you want to upload an image
         fm: '',
         refredBy: '',
-        membership: null,
+        membership: '',
         payment: null,
         damount: '',
         ramount: '',
@@ -98,7 +96,7 @@ const AddNewCustomerForm = () => {
                 <Col md={6}>
                     <FormGroup>
                         <Label for="gender" >Gender</Label>
-                        <SelectBox options={options} />
+                        <SelectBox options={options} value={'Male'} setSelcted={'Male'} />
                     </FormGroup>
                 </Col>
                 <Col md={6}>
@@ -129,18 +127,6 @@ const AddNewCustomerForm = () => {
                     <FormGroup>
                         <Label for="location">Location</Label>
                         <Input onChange={handleInputChange} type='text' name='location' placeholder='Location' />
-                    </FormGroup>
-                </Col>
-                <Col md={6}>
-                    <FormGroup>
-                        <Label for="telno">Tel No.</Label>
-                        <Input onChange={handleInputChange} type='text' name='telno' placeholder='Tel No' />
-                    </FormGroup>
-                </Col>
-                <Col md={6}>
-                    <FormGroup>
-                        <Label for="officeno">Office No</Label>
-                        <Input onChange={handleInputChange} type='text' name='officeno' placeholder='Office No' />
                     </FormGroup>
                 </Col>
                 <Col md={6}>
@@ -256,7 +242,7 @@ const AddNewCustomerForm = () => {
                         <Input onChange={handleInputChange} />
                     </FormGroup>
                 </Col>
-                <Button className='bg-primary h-fit text-blue'> Submit</Button>
+                <Button onClick={handleSubmit} className='bg-primary h-fit text-blue'> Submit</Button>
             </Row>
 
         </Fragment>
