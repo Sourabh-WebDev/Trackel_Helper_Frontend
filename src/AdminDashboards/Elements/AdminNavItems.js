@@ -31,7 +31,7 @@ const AdminNavItems = () => {
             <div className="AllMenuCards">
                 {NavItems.filter(x => userRole ? userRole[x.field] : false === true).map((item, index) => (
                     <div onClick={() => navigate(item.title !== "" ? `/admin/${item.title.toLocaleLowerCase().split(" ").join("-")}` : "/admin")} className={`${""} d-flex cursor-p bg-white  text-blue hoverShadow hoverPrimary flex-column align-items-center justify-content-center gap-2 border rounded-3`}>
-                        {console.log(userRole ? userRole[item.field] === true ? "d-flex " : "d-none" : "d-none")}
+                        {/* {console.log(userRole ? userRole[item.field] === true ? "d-flex " : "d-none" : "d-none")} */}
                         {item.icon}
                         <h6 className='text-center'>{item.title}</h6>
                     </div>
